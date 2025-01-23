@@ -1,15 +1,14 @@
-import { Geist, Geist_Mono } from "next/font/google";
-import "./globals.css";
+import { Geist,Prata,Mali} from "next/font/google";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const pratafont = Prata({
   subsets: ["latin"],
+  weight:"400"
+})
+const malifont = Mali({
+  subsets: ["latin"],
+  weight:['200', '300', '400', '500', '600', '700']
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
 
 export const metadata = {
   title: "Create Next App",
@@ -19,8 +18,14 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
+      <head>
+        <meta charSet="UTF-8" />
+        <link rel="icon" href="favicon.png" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Slicer Slider</title>
+      </head>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${pratafont.className} ${malifont.className} antialiased`}
       >
         {children}
       </body>
