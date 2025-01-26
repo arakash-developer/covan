@@ -8,6 +8,7 @@ import {
   RiYoutubeFill,
 } from "react-icons/ri";
 import Container from "./component/Container";
+import AppendDots from "./component/AppendDots";
 
 const page = () => {
   return (
@@ -365,6 +366,8 @@ const page = () => {
           </div>
         </Container>
       </section>
+
+      <AppendDots />
     </>
   );
 };
