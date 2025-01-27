@@ -6,3 +6,16 @@
   --background: #ffffff;
   --foreground: #171717;
 }
+
+.bannar .slick-dots{
+ @apply absolute left-1/2 -translate-x-1/2 bottom-[115px] !bg-transparent
+}
+.bannar .slick-dots ul{
+  @apply !flex gap-[10px] 
+}
+.bannar .slick-dots ul li .dot{
+  @apply w-3 h-3 bg-[#ccc] rounded-md !text-[0px] cursor-pointer
+}
+.bannar .slick-dots ul li.slick-active .dot{
+  @apply w-3 h-3 bg-[#e7b053]
+}

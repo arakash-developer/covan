@@ -12,7 +12,9 @@ export default {
         foreground: "var(--foreground)",
       },
       backgroundImage: {
-        'banner': "url('/')",
+        'bannar': "url('/bannar1.jpg')",
+        'bannar2': "url('/bannar2.jpg')",
+        'bannar3': "url('/bannar3.jpg')",
       },
     },
   },

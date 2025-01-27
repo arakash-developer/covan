@@ -9,6 +9,7 @@ import {
 } from "react-icons/ri";
 import Container from "./component/Container";
 import AppendDots from "./component/AppendDots";
+import Link from "next/link";
 
 const page = () => {
   return (
@@ -344,28 +345,7 @@ const page = () => {
         </div>
       </nav>
 
-      <section className="banner pt-[130px] pb-[115px]">
-        <Container>
-          <h1 className="max-w-[566px] font-normal text-[4.38rem] leading-[100%] text-[#080808]">
-            The Beauty from Natural
-          </h1>
-          <p className="max-w-[417px] mt-[37px] mb-[56px] font-normal text-lg leading-[156%] text-[#666]">
-            You can do anything here. So don’t worry about it. In your world you
-            can create.
-          </p>
-          <a
-            href="#"
-            className="py-4 px-8 bg-[#e7b053] tracking-[3px] font-normal text-[0.69rem] leading-[409%] uppercase text-[#fff]"
-          >
-            read more
-          </a>
-          <div className="mt-[156px] flex gap-[10px]">
-            <div className="rounded-md w-3 h-3 bg-[#e7b053]"></div>
-            <div className="rounded-md w-3 h-3 bg-[#ccc]"></div>
-            <div className="rounded-md w-3 h-3 bg-[#ccc]"></div>
-          </div>
-        </Container>
-      </section>
+   
 
       <AppendDots />
     </>
