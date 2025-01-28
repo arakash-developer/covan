@@ -4,6 +4,7 @@ import Cat3 from "@/public/cat3.jpg";
 import CatLine from "@/public/catline.png";
 import { Prata } from "next/font/google";
 import Image from "next/image";
+import Link from "next/link";
 import { FaRegUser } from "react-icons/fa";
 import { LuPhoneCall } from "react-icons/lu";
 import { MdOutlineEmail } from "react-icons/md";
@@ -15,7 +16,7 @@ import {
 } from "react-icons/ri";
 import AppendDots from "./component/AppendDots";
 import Container from "./component/Container";
-import Item from "./component/Item";
+import NewArrival from "./component/NewArrival";
 
 const Pratafont = Prata({
   weight: "400",
@@ -382,23 +383,75 @@ const page = () => {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-[30px]">
-            <div className="w-full">
-              <Image className="w-full h-full bg-cover" src={Cat1} alt="cat1" />
+            <div className="w-full relative group overflow-hidden cursor-pointer">
+              <Image
+                className="w-full h-full bg-cover group-hover:scale-105 transition-all duration-[0.1s] ease-linear"
+                src={Cat1}
+                alt="cat1"
+              />
+              <div className="absolute bottom-[15%] left-[12%] w-full z-[9999]">
+                <h4 className="text-[#909090] font-normal text-[12px] uppercase tracking-[3px]">
+                  special product
+                </h4>
+                <h3
+                  className={`text-[#080808] text-[22px] mt-[11px] font-normal mb-[10px] ${Pratafont.className}`}
+                >
+                  Power Make Up Face
+                </h3>
+                <Link
+                  href="#"
+                  className="text-[12px] tracking-[3px]  uppercase inline-block h-[30px] bg-[#e7b053] px-5 leading-[30px] text-[#fff] font-bold mt-5"
+                >
+                  View Shop
+                </Link>
+              </div>
             </div>
             <div className="grid grid-rows-1 md:grid-rows-2 gap-[30px]">
-              <div className="w-full">
+              <div className="w-full group overflow-hidden cursor-pointer relative">
                 <Image
-                  className="w-full h-full bg-cover"
+                  className="w-full h-full bg-cover group-hover:scale-105 transition-all duration-[0.1s] ease-linear"
                   src={Cat2}
                   alt="cat2"
                 />
+                <div className="absolute top-[23%] right-[10%] z-[9999]">
+                  <h4 className="text-[#909090] font-normal text-[12px] uppercase tracking-[3px]">
+                    special product
+                  </h4>
+                  <h3
+                    className={`text-[#080808] text-[22px] mt-[11px] font-normal mb-[10px] ${Pratafont.className}`}
+                  >
+                    Power Make Up Face
+                  </h3>
+                  <Link
+                    href="#"
+                    className="text-[12px] tracking-[3px]  uppercase inline-block h-[30px] bg-[#e7b053] px-5 leading-[30px] text-[#fff] font-bold mt-5"
+                  >
+                    View Shop
+                  </Link>
+                </div>
               </div>
-              <div className="w-full">
+              <div className="w-full group overflow-hidden cursor-pointer relative">
                 <Image
-                  className="w-full h-full bg-cover"
+                  className="w-full h-full bg-cover group-hover:scale-105 transition-all duration-[0.1s] ease-linear"
                   src={Cat3}
                   alt="cat3"
                 />
+                  <div className="absolute top-[25%] left-[12%] z-[9999]">
+                  <h4 className="text-[#909090] font-normal text-[12px] uppercase tracking-[3px]">
+                    special product
+                  </h4>
+                  <h3
+                    className={`text-[#080808] text-[22px] mt-[11px] font-normal mb-[10px] ${Pratafont.className}`}
+                  >
+                    Power Make Up Face
+                  </h3>
+                  <Link
+                    href="#"
+                    className="text-[12px] tracking-[3px]  uppercase inline-block h-[30px] bg-[#e7b053] px-5 leading-[30px] text-[#fff] font-bold mt-5"
+                  >
+                    View Shop
+                  </Link>
+                </div>
               </div>
             </div>
           </div>
@@ -424,12 +477,7 @@ const page = () => {
               alt="catline"
             />
           </div>
-        <div className="flex items-center justify-between">
-          <Item />
-          <Item />
-          <Item />
-          <Item />
-        </div>
+          <NewArrival />
         </Container>
       </section>
       {/* Category */}
