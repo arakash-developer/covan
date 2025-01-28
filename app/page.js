@@ -1,3 +1,9 @@
+import Cat1 from "@/public/cat1.jpg";
+import Cat2 from "@/public/cat2.jpg";
+import Cat3 from "@/public/cat3.jpg";
+import CatLine from "@/public/catline.png";
+import { Prata } from "next/font/google";
+import Image from "next/image";
 import { FaRegUser } from "react-icons/fa";
 import { LuPhoneCall } from "react-icons/lu";
 import { MdOutlineEmail } from "react-icons/md";
@@ -9,8 +15,11 @@ import {
 } from "react-icons/ri";
 import AppendDots from "./component/AppendDots";
 import Container from "./component/Container";
-import Image from "next/image";
 
+const Pratafont = Prata({
+  weight: "400",
+  subsets: ["latin"],
+});
 const page = () => {
   return (
     <>
@@ -52,7 +61,9 @@ const page = () => {
           {/* top */}
         </div>
       </div>
+      {/* top */}
 
+      {/* Navbar*/}
       <nav className="bg-white border-gray-200 dark:bg-gray-900">
         <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
           <div className="flex items-center md:order-2 space-x-1 md:space-x-0 rtl:space-x-reverse">
@@ -344,6 +355,7 @@ const page = () => {
           </a>
         </div>
       </nav>
+      {/* Navbar*/}
 
       {/* Bannar */}
       <AppendDots />
@@ -352,11 +364,48 @@ const page = () => {
       {/* Category */}
       <section className="py-[100px]">
         <Container>
+          <div className="mb-[50px] text-center">
+            <h4 className="font-normal text-[14px] leading-[175%] uppercase text-center text-[#909090]">
+              welcome to our shop
+            </h4>
+            <h2
+              className={`py-5 font-normal text-[2.13rem] leading-[120%] text-center text-[#080808] ${Pratafont.className}`}
+            >
+              Shop By Category
+            </h2>
+            <Image
+              className="text-center inline-block"
+              src={CatLine}
+              alt="catline"
+            />
+          </div>
+
           <div className="grid grid-cols-1 md:grid-cols-2 gap-[30px]">
-            <Image src={} />
+            <div className="w-full">
+              <Image className="w-full h-full bg-cover" src={Cat1} alt="cat1" />
+            </div>
+            <div className="grid grid-rows-1 md:grid-rows-2 gap-[30px]">
+              <div className="w-full">
+                <Image
+                  className="w-full h-full bg-cover"
+                  src={Cat2}
+                  alt="cat2"
+                />
+              </div>
+              <div className="w-full">
+                <Image
+                  className="w-full h-full bg-cover"
+                  src={Cat3}
+                  alt="cat3"
+                />
+              </div>
+            </div>
           </div>
         </Container>
       </section>
+      {/* Category */}
+
+      
     </>
   );
 };
