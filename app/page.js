@@ -15,6 +15,7 @@ import {
 } from "react-icons/ri";
 import AppendDots from "./component/AppendDots";
 import Container from "./component/Container";
+import Item from "./component/Item";
 
 const Pratafont = Prata({
   weight: "400",
@@ -405,7 +406,33 @@ const page = () => {
       </section>
       {/* Category */}
 
-      
+      {/* New Arrivals */}
+      <section className="pt-[100px] pb-[172px]">
+        <Container>
+          <div className="mb-[50px] text-center">
+            <h4 className="font-normal text-[14px] leading-[175%] uppercase text-center text-[#909090]">
+              product collection
+            </h4>
+            <h2
+              className={`py-5 font-normal text-[2.13rem] leading-[120%] text-center text-[#080808] ${Pratafont.className}`}
+            >
+              New Arrivals
+            </h2>
+            <Image
+              className="text-center inline-block"
+              src={CatLine}
+              alt="catline"
+            />
+          </div>
+        <div className="flex items-center justify-between">
+          <Item />
+          <Item />
+          <Item />
+          <Item />
+        </div>
+        </Container>
+      </section>
+      {/* Category */}
     </>
   );
 };
