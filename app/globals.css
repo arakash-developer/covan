@@ -19,3 +19,6 @@
 .bannar .slick-dots ul li.slick-active .dot{
   @apply w-3 h-3 bg-[#e7b053]
 }
+.product:hover .actionbtn{
+  @apply visible
+}
