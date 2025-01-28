@@ -7,9 +7,9 @@ import {
   RiTwitterXFill,
   RiYoutubeFill,
 } from "react-icons/ri";
-import Container from "./component/Container";
 import AppendDots from "./component/AppendDots";
-import Link from "next/link";
+import Container from "./component/Container";
+import Image from "next/image";
 
 const page = () => {
   return (
@@ -345,9 +345,18 @@ const page = () => {
         </div>
       </nav>
 
-   
-
+      {/* Bannar */}
       <AppendDots />
+      {/* Bannar */}
+
+      {/* Category */}
+      <section className="py-[100px]">
+        <Container>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-[30px]">
+            <Image src={} />
+          </div>
+        </Container>
+      </section>
     </>
   );
 };
