@@ -21,6 +21,7 @@ import AppendDots from "./component/AppendDots";
 import Container from "./component/Container";
 import NewArrival from "./component/NewArrival";
 import News from "./component/News";
+import Heading from "./component/layers/Heading";
 
 const Pratafont = Prata({
   weight: "400",
@@ -40,8 +41,8 @@ const page = () => {
                   +84 100-2345-6799
                 </p>
               </div>
-              <div className="bg-[#CCCCCC] h-3 w-[1px]"></div>
-              <div className="flex items-center gap-1">
+              <div className="bg-[#CCCCCC] h-3 w-[1px] hidden md:block"></div>
+              <div className="items-center gap-1  hidden md:flex">
                 <MdOutlineEmail className="font-normal text-[15px] text-[#909090] leading-[344%]" />
                 <p className="font-normal text-[15px] leading-[344%] text-[#909090]">
                   contact@covanshop.com
@@ -56,7 +57,7 @@ const page = () => {
                 </p>
               </div>
               <div className="bg-[#CCCCCC] h-3 w-[1px]"></div>
-              <div className="flex items-center gap-3">
+              <div className="items-center gap-3 hidden xsm:flex">
                 <RiTwitterXFill className="w-4 h-4 inline-block text-[#909090]" />
                 <RiInstagramLine className="w-4 h-4 inline-block text-[#909090]" />
                 <RiFacebookFill className="w-4 h-4 inline-block text-[#909090]" />
@@ -370,21 +371,7 @@ const page = () => {
       {/* Category */}
       <section className="py-[100px]">
         <Container>
-          <div className="mb-[50px] text-center">
-            <h4 className="font-normal text-[14px] leading-[175%] uppercase text-center text-[#909090]">
-              welcome to our shop
-            </h4>
-            <h2
-              className={`py-5 font-normal text-[2.13rem] leading-[120%] text-center text-[#080808] ${Pratafont.className}`}
-            >
-              Shop By Category
-            </h2>
-            <Image
-              className="text-center inline-block"
-              src={CatLine}
-              alt="catline"
-            />
-          </div>
+          <Heading h1="Shop By Category" h4=" welcome to our shop" />
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-[30px]">
             <div className="w-full relative group overflow-hidden cursor-pointer">
@@ -576,7 +563,7 @@ const page = () => {
 
       {/* blog1 */}
       <section className="mb-[98px]">
-        <Container className="grid grid-cols-2 justify-between items-center h-[266px] gap-[30px]">
+        <Container className="grid grid-cols-1 md:grid-cols-2 justify-between items-center md:h-[266px] gap-[30px]">
           <div className="h-full overflow-hidden relative group cursor-pointer">
             <Image
               className="w-full h-full bg-cover group-hover:scale-105 transition-all duration-[0.1s] ease-linear"
@@ -627,11 +614,10 @@ const page = () => {
       </section>
       {/* blog1 */}
 
-
       {/* news */}
       <section className="mb-[60px]">
         <Container>
-        <div className="mb-[50px] text-center">
+          <div className="mb-[50px] text-center">
             <h4 className="font-normal text-[14px] leading-[175%] uppercase text-center text-[#909090]">
               product trending
             </h4>
@@ -650,6 +636,14 @@ const page = () => {
         <News />
       </section>
       {/* news */}
+
+      {/* newslatter */}
+      <section className="my-32">
+        <Container>
+          <Heading />
+        </Container>
+      </section>
+      {/* newslatter */}
     </>
   );
 };

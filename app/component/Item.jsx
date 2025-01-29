@@ -34,7 +34,7 @@ const Item = ({
           </div>
         </div>
 
-        <div className="w-full h-[339px] flex justify-center items-center">
+        <div className="w-full lg:h-[339px] h-[300px] flex justify-center items-center">
           <Image
             src={thumbnail}
             alt="product"
