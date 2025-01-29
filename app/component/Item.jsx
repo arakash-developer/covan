@@ -4,12 +4,15 @@ import { FaArrowRightLong, FaRegHeart } from "react-icons/fa6";
 import { HiSearch } from "react-icons/hi";
 import { TiStarFullOutline } from "react-icons/ti";
 
-const Item = ({ className }) => {
+const Item = ({
+  className,
+  Name = "Product Name",
+  Price = 0,
+  thumbnail = Product1,
+}) => {
   return (
-    <div
-      className={`product ${className} w-[270px] h-[436px] cursor-pointer`}
-    >
-      <div className="w-full h-full relative hover:border">
+    <div className={`product ${className} w-[270px] h-[436px] cursor-pointer`}>
+      <div className="w-full h-full relative bg-slate-200">
         <div className="flex justify-center items-center absolute left-[20px] top-[20px] w-[55px] h-[30px]">
           <p className="font-normal text-sm leading-[214%] capitalize text-center text-[#fff]">
             -25%
@@ -31,11 +34,13 @@ const Item = ({ className }) => {
           </div>
         </div>
 
-        <div className="w-full h-[339px] bg-lime-700">
+        <div className="w-full h-[339px]">
           <Image
-            src={Product1}
+            src={thumbnail}
             alt="product"
             className="w-full h-full object-cover"
+            width={270}
+            height={339}  
           />
         </div>
         <div className="mt-5">
@@ -46,10 +51,12 @@ const Item = ({ className }) => {
             <TiStarFullOutline />
           </div>
           <h3 className="font-normal text-lg leading-[123%] capitalize text-[#080808]">
-            True Cosme
+            {Name}
+            {/* True Cosme */}
           </h3>
           <h3 className="font-normal text-base text-[#e7b053] mt-2">
-            $30.00 – $46.00
+            {/* $30.00 – $46.00 */}
+            {Price}
           </h3>
         </div>
       </div>

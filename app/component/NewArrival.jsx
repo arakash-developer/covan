@@ -1,16 +1,18 @@
 "use client";
 import Container from "@/app/component/Container";
+import { useEffect, useState } from "react";
 import { FaArrowLeftLong, FaArrowRightLong } from "react-icons/fa6";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick-theme.css";
 import "slick-carousel/slick/slick.css";
+import getAllProduct from "../utils/getAllProduct";
 import Item from "./Item";
 
 function SampleNextArrow(props) {
   const { className, style, onClick } = props;
   return (
     <div
-      className="rightarrow absolute left-full top-1/2 -translate-y-1/2 cursor-pointer w-10 h-10 hover:bg-[#e7b053] border border-[#ccc] hover:border-[#e7b053] flex justify-center items-center group"
+      className="rightarrow absolute right-[30px] -top-10 2xl:left-full 2xl:top-1/2 2xl:-translate-y-1/2 cursor-pointer w-10 h-10 hover:bg-[#e7b053] border border-[#ccc] hover:border-[#e7b053] flex justify-center items-center group"
       onClick={onClick}
     >
       <FaArrowRightLong className="text-[#ccc] text-[20px] group-hover:text-[#fff] inline-block" />
@@ -22,7 +24,7 @@ function SamplePrevArrow(props) {
   const { className, style, onClick } = props;
   return (
     <div
-      className="leftarrow absolute right-full z-[99999] top-1/2 -translate-y-1/2 cursor-pointer
+      className="leftarrow absolute right-[80px] -top-10 2xl:right-full z-[99999] 2xl:top-1/2 2xl:-translate-y-1/2 cursor-pointer
       w-10 h-10 hover:bg-[#e7b053] border border-[#ccc] hover:border-[#e7b053] flex justify-center items-center group"
       onClick={onClick}
     >
@@ -36,6 +38,8 @@ const App = () => {
     arrows: true,
     dots: false,
     infinite: false,
+    autoplay: true,
+    autoplaySpeed: 2000,
     speed: 500,
     slidesToShow: 4,
     slidesToScroll: 4,
@@ -68,24 +72,30 @@ const App = () => {
       },
     ],
   };
+
+  let [allProducts, setAllProduct] = useState([]);
+  useEffect(() => {
+    datarece();
+  }, []);
+
+  let datarece = async () => {
+    let res = await getAllProduct();
+    setAllProduct(res);
+  };
+
+  console.log(allProducts);
+
   return (
     <>
       <div className="arrivals">
         {/* <Container className="mb-8 bg-fuchsia-600">App</Container> */}
         <Container className="max-w-[1296px]">
           <Slider {...settings}>
-            <Item className="w-full px-[30px]" />
-            <Item className="w-full px-[30px]" />
-            <Item className="w-full px-[30px]" />
-            <Item className="w-full px-[30px]" />
-            <Item className="w-full px-[30px]" />
-            <Item className="w-full px-[30px]" />
-            <Item className="w-full px-[30px]" />
-            <Item className="w-full px-[30px]" />
-            <Item className="w-full px-[30px]" />
-            <Item className="w-full px-[30px]" />
-            <Item className="w-full px-[30px]" />
-            <Item className="w-full px-[30px]" />
+            {allProducts?.map((item) => (
+              <Item key={item.id} className="w-full px-[30px]" Name={item.name} Price={item.price}
+              thumbnail={item.image_link}
+               />
+            ))}
           </Slider>
         </Container>
       </div>

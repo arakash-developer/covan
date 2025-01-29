@@ -22,28 +22,31 @@
 .product:hover .actionbtn {
   @apply visible;
 }
-.arrivals .leftarrow {
-  right: 98%;
-}
-.arrivals .rightarrow {
-  left: 98%;
-}
 
-.arrivals .rightarrow,
-.arrivals .leftarrow {
-  visibility: hidden;
-  opacity: 0;
-  -webkit-transition: all 0.3s ease;
-  transition: all 0.3s ease;
-}
-.arrivals:hover .leftarrow {
-  right: 100%;
-}
-.arrivals:hover .rightarrow {
-  left: 100%;
-}
-.arrivals:hover .rightarrow,
-.arrivals:hover .leftarrow {
-  visibility: visible;
-  opacity: 1;
+@media (min-width: 1536px) {
+  .arrivals .leftarrow {
+    right: 98%;
+  }
+  .arrivals .rightarrow {
+    left: 98%;
+  }
+
+  .arrivals .rightarrow,
+  .arrivals .leftarrow {
+    visibility: hidden;
+    opacity: 0;
+    -webkit-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+  }
+  .arrivals:hover .leftarrow {
+    right: 100%;
+  }
+  .arrivals:hover .rightarrow {
+    left: 100%;
+  }
+  .arrivals:hover .rightarrow,
+  .arrivals:hover .leftarrow {
+    visibility: visible;
+    opacity: 1;
+  }
 }
