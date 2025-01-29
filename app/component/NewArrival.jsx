@@ -42,7 +42,7 @@ const App = () => {
     autoplaySpeed: 2000,
     speed: 500,
     slidesToShow: 4,
-    slidesToScroll: 4,
+    slidesToScroll: 1,
     initialSlide: 0,
     nextArrow: <SampleNextArrow />,
     prevArrow: <SamplePrevArrow />,
@@ -93,7 +93,7 @@ const App = () => {
           <Slider {...settings}>
             {allProducts?.map((item) => (
               <Item key={item.id} className="w-full px-[30px]" Name={item.name} Price={item.price}
-              thumbnail={item.image_link}
+              // thumbnail={item.image_link}
                />
             ))}
           </Slider>

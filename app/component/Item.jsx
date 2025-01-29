@@ -12,7 +12,7 @@ const Item = ({
 }) => {
   return (
     <div className={`product ${className} w-[270px] h-[436px] cursor-pointer`}>
-      <div className="w-full h-full relative bg-slate-200">
+      <div className="w-full h-full relative">
         <div className="flex justify-center items-center absolute left-[20px] top-[20px] w-[55px] h-[30px]">
           <p className="font-normal text-sm leading-[214%] capitalize text-center text-[#fff]">
             -25%
@@ -34,29 +34,29 @@ const Item = ({
           </div>
         </div>
 
-        <div className="w-full h-[339px]">
+        <div className="w-full h-[339px] flex justify-center items-center">
           <Image
             src={thumbnail}
             alt="product"
             className="w-full h-full object-cover"
-            width={270}
-            height={339}  
+            width={1000}
+            height={1000}
           />
         </div>
         <div className="mt-5">
           <div className="mb-2 flex items-center gap-1">
-            <TiStarFullOutline />
-            <TiStarFullOutline />
-            <TiStarFullOutline />
-            <TiStarFullOutline />
+            <TiStarFullOutline className="inline-block text-[#e7b053]" />
+            <TiStarFullOutline className="inline-block text-[#e7b053]" />
+            <TiStarFullOutline className="inline-block text-[#e7b053]" />
+            <TiStarFullOutline className="inline-block text-[#ccc]" />
           </div>
           <h3 className="font-normal text-lg leading-[123%] capitalize text-[#080808]">
-            {Name}
+            {Name.substr(0, 26) + "..."}
             {/* True Cosme */}
           </h3>
           <h3 className="font-normal text-base text-[#e7b053] mt-2">
             {/* $30.00 – $46.00 */}
-            {Price}
+            {Price} $
           </h3>
         </div>
       </div>

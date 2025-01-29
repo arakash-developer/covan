@@ -436,7 +436,7 @@ const page = () => {
                   src={Cat3}
                   alt="cat3"
                 />
-                  <div className="absolute top-[25%] left-[12%] z-[9999]">
+                <div className="absolute top-[25%] left-[12%] z-[9999]">
                   <h4 className="text-[#909090] font-normal text-[12px] uppercase tracking-[3px]">
                     special product
                   </h4>
@@ -478,9 +478,65 @@ const page = () => {
             />
           </div>
         </Container>
-          <NewArrival />
+        <NewArrival />
       </section>
-      {/* Category */}
+      {/* New Arrivals */}
+
+      {/* Deal */}
+      <section className="pt-[180px] pb-[195px] bg-deal bg-cover bg-center bg-no-repeat">
+       <Container>
+        <h4 className="font-normal text-sm leading-[179%] tracking-[3px] uppercase text-[#909090]">Season offers</h4>
+        <h2 className={`font-normal text-6xl leading-[120%] text-[#080808] my-2 ${Pratafont.className}`}>
+        Deals Of The Day
+        </h2>
+        <p className="font-normal text-lg leading-[139%] text-[#666] max-w-[530px]">Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu
+        pellentesque Aenean commodo.</p>
+        <div className="mt-[45px] mb-[53px] flex gap-5 items-center">
+          <div className="rounded-full h-[115px] w-[115px] bg-[#fff] flex justify-center items-center flex-col">
+            <h3 className="font-normal text-2xl leading-[104%] text-center text-[#e7b053]">259</h3>
+            <p className="font-normal text-xs leading-[208%] uppercase text-center text-[#666]">Days</p>
+          </div>
+          <div className="rounded-full h-[115px] w-[115px] bg-[#fff] flex justify-center items-center flex-col">
+            <h3 className="font-normal text-2xl leading-[104%] text-center text-[#e7b053]">14</h3>
+            <p className="font-normal text-xs leading-[208%] uppercase text-center text-[#666]">Hours</p>
+          </div>
+          <div className="rounded-full h-[115px] w-[115px] bg-[#fff] flex justify-center items-center flex-col">
+            <h3 className="font-normal text-2xl leading-[104%] text-center text-[#e7b053]">35</h3>
+            <p className="font-normal text-xs leading-[208%] uppercase text-center text-[#666]">Mins</p>
+          </div>
+          <div className="rounded-full h-[115px] w-[115px] bg-[#fff] flex justify-center items-center flex-col">
+            <h3 className="font-normal text-2xl leading-[104%] text-center text-[#e7b053]">43</h3>
+            <p className="font-normal text-xs leading-[208%] uppercase text-center text-[#666]">secs</p>
+          </div>
+        </div>
+        <Link href="#" className="font-normal text-[12px] tracking-[5px] leading-[409%] uppercase text-[#fff] bg-[#080808] py-[5px] px-[20px] inline-block">VIEW OFFER</Link>
+       </Container>
+      </section>
+      {/* Deal */}
+
+      {/* Recommended For You */}
+      <section className="pt-[100px] pb-[172px]">
+        <Container>
+          <div className="mb-[50px] text-center">
+            <h4 className="font-normal text-[14px] leading-[175%] uppercase text-center text-[#909090]">
+              product trending
+            </h4>
+            <h2
+              className={`py-5 font-normal text-[2.13rem] leading-[120%] text-center text-[#080808] ${Pratafont.className}`}
+            >
+              Recommended For You
+            </h2>
+            <Image
+              className="text-center inline-block"
+              src={CatLine}
+              alt="catline"
+            />
+          </div>
+        </Container>
+        <NewArrival />
+     
+      </section>
+      {/* Recommended For You */}
     </>
   );
 };
