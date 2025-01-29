@@ -409,7 +409,7 @@ const page = () => {
                     sale up to 50%
                   </h4>
                   <h3
-                    className={`text-[#080808] text-[22px] mt-[11px] font-normal mb-[10px] ${Pratafont.className}`}
+                    className={`text-[#080808] text-[22px] sm:mt-[11px] font-normal sm:mb-[10px] ${Pratafont.className}`}
                   >
                     Natural Collagen Cream
                   </h3>
@@ -432,7 +432,7 @@ const page = () => {
                     Natural Oils Body
                   </h4>
                   <h3
-                    className={`text-[#080808] text-[22px] mt-[11px] font-normal mb-[10px] ${Pratafont.className}`}
+                    className={`text-[#080808] text-[22px] sm:mt-[11px] font-normal sm:mb-[10px] ${Pratafont.className}`}
                   >
                     Natural Oils Body
                   </h3>
