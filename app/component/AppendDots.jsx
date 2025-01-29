@@ -31,7 +31,7 @@ function AppendDots() {
   };
   return (
     <>
-      <div className="bannar px-3 lg:px-0 lg:px-0">
+      <div className="bannar px-3 lg:px-0">
         <Slider {...settings}>
           <div className="md:pt-[130px] sm:pt-[71px] pt-[45px]  md:pb-[285px] sm:pb-[226px] pb-[150px] bg-bannar bg-cover bg-no-repeat bg-center">
             <Container className="relative">
@@ -53,7 +53,7 @@ function AppendDots() {
           <div className="md:pt-[130px] sm:pt-[71px] pt-[45px]  md:pb-[285px] sm:pb-[226px] pb-[150px] bg-bannar2 bg-cover bg-no-repeat bg-center">
             <Container className="relative">
               <h1 className="max-w-[566px] font-normal md:text-[4.38rem] text-[3.38rem] leading-[100%] text-[#ffffff]">
-                The Beauty from Naturalz
+                The Beauty from Natural
               </h1>
               <p className="max-w-[417px] mt-[37px] md:mb-[56px] mb-[40px] font-normal text-lg leading-[156%] text-[#ffffff]">
                 You can do anything here. So don’t worry about it. In your world
