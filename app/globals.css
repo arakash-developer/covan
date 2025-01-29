@@ -9,9 +9,15 @@
 
 .bannar .slick-dots {
   @apply !bg-transparent;
-} 
+}
+
 .bannar .slick-dots ul {
-  @apply !flex gap-2 absolute left-1/2 -translate-x-1/2 bottom-[115px];
+  @apply !flex gap-2 absolute left-1/2 -translate-x-1/2  bottom-[120px];
+}
+@media (min-width: 768) {
+  .bannar .slick-dots ul {
+    @apply bottom-[115px];
+  }
 }
 .bannar .slick-dots ul li .dot {
   @apply w-3 h-3 bg-[#ccc] rounded-md !text-[0px] cursor-pointer;
@@ -53,11 +59,11 @@
 
 .slick-slider {
   margin-inline: -30px;
-.slick-slide {
-  >div { 
-    margin-inline: 15px;
+  .slick-slide {
+    > div {
+      margin-inline: 15px;
+    }
   }
-}
-/* first space between slides * (-1) */
+  /* first space between slides * (-1) */
 }
 /* second space between slides / 2 */

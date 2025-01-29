@@ -33,12 +33,12 @@ function AppendDots() {
     <>
       <div className="bannar">
         <Slider {...settings}>
-          <div className="md:pt-[130px] sm:pt-[71px] pt-[40px]  md:pb-[285px] sm:pb-[226px] pb-[150px] bg-bannar bg-cover bg-no-repeat bg-center">
+          <div className="md:pt-[130px] sm:pt-[71px] pt-[45px]  md:pb-[285px] sm:pb-[226px] pb-[150px] bg-bannar bg-cover bg-no-repeat bg-center">
             <Container className="relative">
-              <h1 className="max-w-[566px] font-normal text-[4.38rem] leading-[100%] text-[#080808]">
+              <h1 className="max-w-[566px] font-normal md:text-[4.38rem] text-[3.38rem] leading-[100%] text-[#080808]">
                 The Beauty from Natural
               </h1>
-              <p className="max-w-[417px] mt-[37px] mb-[56px] font-normal text-lg leading-[156%] text-[#666]">
+              <p className="max-w-[417px] mt-[37px] md:mb-[56px] mb-[40px] font-normal text-lg leading-[156%] text-[#666]">
                 You can do anything here. So don’t worry about it. In your world
                 you can create.
               </p>
@@ -50,12 +50,12 @@ function AppendDots() {
               </Link>
             </Container>
           </div>
-          <div className="md:pt-[130px] sm:pt-[71px] pt-[40px]  md:pb-[285px] sm:pb-[226px] pb-[150px] bg-bannar2 bg-cover bg-no-repeat bg-center">
+          <div className="md:pt-[130px] sm:pt-[71px] pt-[45px]  md:pb-[285px] sm:pb-[226px] pb-[150px] bg-bannar2 bg-cover bg-no-repeat bg-center">
             <Container className="relative">
-              <h1 className="max-w-[566px] font-normal text-[4.38rem] leading-[100%] text-[#ffffff]">
-                The Beauty from Naturalx
+              <h1 className="max-w-[566px] font-normal md:text-[4.38rem] text-[3.38rem] leading-[100%] text-[#ffffff]">
+                The Beauty from Naturalz
               </h1>
-              <p className="max-w-[417px] mt-[37px] mb-[56px] font-normal text-lg leading-[156%] text-[#ffffff]">
+              <p className="max-w-[417px] mt-[37px] md:mb-[56px] mb-[40px] font-normal text-lg leading-[156%] text-[#ffffff]">
                 You can do anything here. So don’t worry about it. In your world
                 you can create.
               </p>
@@ -67,12 +67,12 @@ function AppendDots() {
               </Link>
             </Container>
           </div>
-          <div className="md:pt-[130px] sm:pt-[71px] pt-[40px]  md:pb-[285px] sm:pb-[226px] pb-[195px] bg-bannar3 bg-cover bg-no-repeat bg-center">
+          <div className="md:pt-[130px] sm:pt-[71px] pt-[45px]  md:pb-[285px] sm:pb-[226px] pb-[150px] bg-bannar3 bg-cover bg-no-repeat bg-center">
             <Container className="relative">
-              <h1 className="max-w-[566px] font-normal text-[4.38rem] leading-[100%] text-[#080808]">
+              <h1 className="max-w-[566px] font-normal md:text-[4.38rem] text-[3.38rem] leading-[100%] text-[#080808]">
                 The Beauty from Natural
               </h1>
-              <p className="max-w-[417px] mt-[37px] mb-[56px] font-normal text-lg leading-[156%] text-[#666]">
+              <p className="max-w-[417px] mt-[37px] md:mb-[56px] mb-[40px] font-normal text-lg leading-[156%] text-[#666]">
                 You can do anything here. So don’t worry about it. In your world
                 you can create.
               </p>
