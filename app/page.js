@@ -3,6 +3,8 @@ import Cat1 from "@/public/cat1.jpg";
 import Cat2 from "@/public/cat2.jpg";
 import Cat3 from "@/public/cat3.jpg";
 import CatLine from "@/public/catline.png";
+import Blog2 from "@/public/image21.jpg";
+import Blog1 from "@/public/image22.jpg";
 import { Prata } from "next/font/google";
 import Image from "next/image";
 import Link from "next/link";
@@ -18,6 +20,7 @@ import {
 import AppendDots from "./component/AppendDots";
 import Container from "./component/Container";
 import NewArrival from "./component/NewArrival";
+import News from "./component/News";
 
 const Pratafont = Prata({
   weight: "400",
@@ -416,12 +419,12 @@ const page = () => {
                 />
                 <div className="absolute top-[23%] right-[10%] z-[9999]">
                   <h4 className="text-[#909090] font-normal text-[12px] uppercase tracking-[3px]">
-                    special product
+                    sale up to 50%
                   </h4>
                   <h3
                     className={`text-[#080808] text-[22px] mt-[11px] font-normal mb-[10px] ${Pratafont.className}`}
                   >
-                    Power Make Up Face
+                    Natural Collagen Cream
                   </h3>
                   <Link
                     href="#"
@@ -439,12 +442,12 @@ const page = () => {
                 />
                 <div className="absolute top-[25%] left-[12%] z-[9999]">
                   <h4 className="text-[#909090] font-normal text-[12px] uppercase tracking-[3px]">
-                    special product
+                    Natural Oils Body
                   </h4>
                   <h3
                     className={`text-[#080808] text-[22px] mt-[11px] font-normal mb-[10px] ${Pratafont.className}`}
                   >
-                    Power Make Up Face
+                    Natural Oils Body
                   </h3>
                   <Link
                     href="#"
@@ -571,9 +574,82 @@ const page = () => {
       </section>
       {/* Recommended For You */}
 
+      {/* blog1 */}
+      <section className="mb-[98px]">
+        <Container className="grid grid-cols-2 justify-between items-center h-[266px] gap-[30px]">
+          <div className="h-full overflow-hidden relative group cursor-pointer">
+            <Image
+              className="w-full h-full bg-cover group-hover:scale-105 transition-all duration-[0.1s] ease-linear"
+              src={Blog1}
+              alt={Blog1}
+            />
+            <div className="absolute top-[25%] left-[12%] z-[9999]">
+              <h4 className="text-[#909090] font-normal text-[12px] uppercase tracking-[3px]">
+                Sale Up to 50%
+              </h4>
+              <h3
+                className={`text-[#080808] text-[22px] mt-[15px] font-normal mb-[22px] ${Pratafont.className}`}
+              >
+                Sale Up to 50%
+              </h3>
+              <Link
+                href="#"
+                className="text-[12px] tracking-[3px]  uppercase inline-block h-[30px] bg-[#e7b053] px-5 leading-[30px] text-[#fff] font-bold mt-5"
+              >
+                View Shop
+              </Link>
+            </div>
+          </div>
+          <div className="h-full overflow-hidden relative group cursor-pointer">
+            <Image
+              className="w-full h-full bg-cover group-hover:scale-105 transition-all duration-[0.1s] ease-linear"
+              src={Blog2}
+              alt={Blog2}
+            />
+            <div className="absolute top-[25%] left-[12%] z-[9999]">
+              <h4 className="text-[#909090] font-normal text-[12px] uppercase tracking-[3px]">
+                Body Oil Beauty
+              </h4>
+              <h3
+                className={`text-[#080808] text-[22px] mt-[15px] font-normal mb-[22px] ${Pratafont.className}`}
+              >
+                100% Natural Extracts{" "}
+              </h3>
+              <Link
+                href="#"
+                className="text-[12px] tracking-[3px]  uppercase inline-block h-[30px] bg-[#e7b053] px-5 leading-[30px] text-[#fff] font-bold mt-5"
+              >
+                View Shop
+              </Link>
+            </div>
+          </div>
+        </Container>
+      </section>
+      {/* blog1 */}
 
 
-
+      {/* news */}
+      <section className="mb-[60px]">
+        <Container>
+        <div className="mb-[50px] text-center">
+            <h4 className="font-normal text-[14px] leading-[175%] uppercase text-center text-[#909090]">
+              product trending
+            </h4>
+            <h2
+              className={`py-5 font-normal text-[2.13rem] leading-[120%] text-center text-[#080808] ${Pratafont.className}`}
+            >
+              Recommended For You
+            </h2>
+            <Image
+              className="text-center inline-block"
+              src={CatLine}
+              alt="catline"
+            />
+          </div>
+        </Container>
+        <News />
+      </section>
+      {/* news */}
     </>
   );
 };

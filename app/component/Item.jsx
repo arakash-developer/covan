@@ -13,13 +13,13 @@ const Item = ({
   return (
     <div className={`product ${className} w-[270px] h-[436px] cursor-pointer`}>
       <div className="w-full h-full relative">
-        <div className="flex justify-center items-center absolute left-[20px] top-[20px] w-[55px] h-[30px]">
+        <div className="flex justify-center items-center absolute left-[20px] top-[20px] w-[55px] h-[30px] bg-[#82aa17]">
           <p className="font-normal text-sm leading-[214%] capitalize text-center text-[#fff]">
             -25%
           </p>
         </div>
 
-        <div className="absolute right-0 top-1/2 -translate-y-1/2 flex flex-col gap-1 invisible actionbtn">
+        <div className="absolute right-[-10px] top-1/2 -translate-y-1/2 flex flex-col gap-1 invisible actionbtn transition-all ease-in-out duration-[0.3s]">
           <div className="w-10 h-10 group hover:bg-[#e7b053] transition-all ease-linear duration-[0.1s] rounded-full flex justify-center items-center">
             <FaArrowRightLong className="inline-block text-[17px] text-[#666] group-hover:text-[#fff]" />
           </div>

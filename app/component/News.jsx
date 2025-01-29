@@ -7,6 +7,7 @@ import "slick-carousel/slick/slick-theme.css";
 import "slick-carousel/slick/slick.css";
 import getAllProduct from "../utils/getAllProduct";
 import Item from "./Item";
+import NewsItem from "./NewsItem";
 
 function SampleNextArrow(props) {
   const { className, style, onClick } = props;
@@ -33,15 +34,15 @@ function SamplePrevArrow(props) {
   );
 }
 
-const App = () => {
+const News = () => {
   var settings = {
     arrows: true,
     dots: false,
-    infinite: true,
-    autoplay: true,
+    // infinite: true,
+    // autoplay: true,
     autoplaySpeed: 2000,
     speed: 500,
-    slidesToShow: 4,
+    slidesToShow: 3,
     slidesToScroll: 1,
     initialSlide: 0,
     nextArrow: <SampleNextArrow />,
@@ -50,16 +51,15 @@ const App = () => {
       {
         breakpoint: 1024,
         settings: {
-          slidesToShow: 3,
-          slidesToScroll: 3,
+          slidesToShow: 2,
           infinite: true,
         },
       },
       {
         breakpoint: 600,
         settings: {
-          slidesToShow: 2,
-          slidesToScroll: 2,
+          slidesToShow: 1,
+          slidesToScroll: 1,
           initialSlide: 2,
         },
       },
@@ -87,13 +87,12 @@ const App = () => {
 
   return (
     <>
-      <div className="arrivals">
+      <div className="arrivals news">
         {/* <Container className="mb-8 bg-fuchsia-600">App</Container> */}
-        <Container className="max-w-[1296px]">
+        <Container>
           <Slider {...settings}>
             {allProducts?.map((item) => (
-              <Item key={item.id} className="w-full px-[30px]" Name={item.name} Price={item.price}
-              // thumbnail={item.image_link}
+              <NewsItem key={item.id} className="" 
                />
             ))}
           </Slider>
@@ -103,4 +102,4 @@ const App = () => {
   );
 };
 
-export default App;
+export default News;
