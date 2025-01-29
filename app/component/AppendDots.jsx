@@ -31,7 +31,7 @@ function AppendDots() {
   };
   return (
     <>
-      <div className="bannar">
+      <div className="bannar px-3 lg:px-0 lg:px-0">
         <Slider {...settings}>
           <div className="md:pt-[130px] sm:pt-[71px] pt-[45px]  md:pb-[285px] sm:pb-[226px] pb-[150px] bg-bannar bg-cover bg-no-repeat bg-center">
             <Container className="relative">
