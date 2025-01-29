@@ -56,7 +56,7 @@ const page = () => {
                   My Account
                 </p>
               </div>
-              <div className="bg-[#CCCCCC] h-3 w-[1px]"></div>
+              <div className="bg-[#CCCCCC] h-3 w-[1px] hidden xsm:block"></div>
               <div className="items-center gap-3 hidden xsm:flex">
                 <RiTwitterXFill className="w-4 h-4 inline-block text-[#909090]" />
                 <RiInstagramLine className="w-4 h-4 inline-block text-[#909090]" />
