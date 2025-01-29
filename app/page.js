@@ -477,8 +477,8 @@ const page = () => {
               alt="catline"
             />
           </div>
-          <NewArrival />
         </Container>
+          <NewArrival />
       </section>
       {/* Category */}
     </>

@@ -4,11 +4,13 @@ import { FaArrowRightLong, FaRegHeart } from "react-icons/fa6";
 import { HiSearch } from "react-icons/hi";
 import { TiStarFullOutline } from "react-icons/ti";
 
-const Item = () => {
+const Item = ({ className }) => {
   return (
-    <>
-      <div className="product w-[270px] h-[436px] cursor-pointer relative">
-        <div className="flex justify-center items-center absolute left-[20px] top-[20px] w-[55px] h-[30px] bg-[#82aa17]">
+    <div
+      className={`product ${className} w-[270px] h-[436px] cursor-pointer`}
+    >
+      <div className="w-full h-full relative hover:border">
+        <div className="flex justify-center items-center absolute left-[20px] top-[20px] w-[55px] h-[30px]">
           <p className="font-normal text-sm leading-[214%] capitalize text-center text-[#fff]">
             -25%
           </p>
@@ -51,7 +53,7 @@ const Item = () => {
           </h3>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 
