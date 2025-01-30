@@ -77,3 +77,49 @@ img{
 .box-shadow-none{
   box-shadow: none !important;
 }
+
+.range-container {
+  position: relative;
+  width: 100%; /* Adjust the width of the container */
+}
+
+input[type="range"] {
+  -webkit-appearance: none;
+  appearance: none;
+  position: absolute;
+  width: 100%;
+  height: 10px;
+  background: #ddd;
+  border-radius: 5px;
+  pointer-events: none; /* Prevent interaction with background slider */
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  background: #4CAF50;
+  border-radius: 50%;
+  cursor: pointer;
+  position: absolute;
+  pointer-events: all; /* Allow interaction with the thumbs */
+}
+
+input[type="range"]::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  background: #4CAF50;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.range-values {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+#min-value, #max-value {
+  font-size: 16px;
+}

@@ -47,3 +47,18 @@ z-index: 10;
     text-transform: uppercase;
     font-size: 13px;
     font-family: Prata,serif !important;
+
+
+    <div class="bwp-filter-price">
+		    <h3>Price</h3>
+			<div class="content-filter-price">
+				<div id="bwp_slider_price" data-min="12" data-max="815" class="ui-slider ui-corner-all ui-slider-horizontal ui-widget ui-widget-content"><div class="ui-slider-range ui-corner-all ui-widget-header" style="left: 0%; width: 100%;"></div><span tabindex="0" class="ui-slider-handle ui-corner-all ui-state-default" style="left: 0%;"></span><span tabindex="0" class="ui-slider-handle ui-corner-all ui-state-default" style="left: 100%;"></span></div>
+				<div class="price-input">
+					<span>Range : </span>
+					$<span class="input-text text-price-filter" id="text-price-filter-min-text">12</span> -
+					$<span class="input-text text-price-filter" id="text-price-filter-max-text">815</span>	
+					<input class="input-text text-price-filter hidden" id="price-filter-min-text" type="text" value="12">
+					<input class="input-text text-price-filter hidden" id="price-filter-max-text" type="text" value="815">
+				</div>
+			</div>
+		</div>
