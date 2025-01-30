@@ -1,4 +1,5 @@
 import Logo from "@/public/footerlogo.png";
+import Payment from "@/public/payment.png";
 import Map from "@/public/map.png";
 import Image from "next/image";
 import Link from "next/link";
@@ -8,8 +9,8 @@ import Container from "./Container";
 
 const Footer = () => {
   return (
-    <footer className="pt-[80px] pb-[70px] bg-[#080808]">
-      <Container className="flex items-start justify-between flex-wrap gap-y-10">
+    <footer className="pt-[80px]  bg-[#080808]">
+      <Container className="pb-[95px] flex items-start justify-between flex-wrap gap-y-10">
         <div className="">
           <Image src={Logo} alt="logo" />
           <div className="mt-[34px] flex flex-col gap-[15px]">
@@ -133,6 +134,17 @@ const Footer = () => {
             <Image src={Map} alt="map" />
           </div>
         </div>
+      </Container>
+      <div className="border-t border-[#323232]"></div>
+      <Container className="py-8 flex justify-between items-center flex-wrap gap-y-3">
+        <p className="font-normal text-sm leading-[171%] text-[#afafaf]">
+          Copyright © 2020
+          <span className="font-normal text-sm leading-[171%] text-[#e7b053]">
+            Wpbingo
+          </span>
+          . All rights reserved.
+        </p>
+       <Image src={Payment} alt={Payment} />
       </Container>
     </footer>
   );

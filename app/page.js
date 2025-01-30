@@ -662,11 +662,6 @@ const page = () => {
           </Container>
         </section>
         {/* newslatter */}
-
-
-
-
-
       </div>
     </>
   );
