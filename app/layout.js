@@ -1,11 +1,11 @@
-import {Mulish } from "next/font/google";
+import { Mulish } from "next/font/google";
+import Footer from "./component/Footer";
 import "./globals.css";
 
 const mulish = Mulish({
   weight: ["200", "300", "400", "500", "600", "700"],
   subsets: ["latin"],
 });
-
 
 export const metadata = {
   title: "Covan – Cosmetics Nextjs Theme – Just another Nextjs site",
@@ -15,10 +15,9 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body
-        className={`${mulish.className}`}
-      >
+      <body className={`${mulish.className}`}>
         {children}
+        <Footer />
       </body>
     </html>
   );

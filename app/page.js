@@ -643,7 +643,7 @@ const page = () => {
         <section className="pt-[75px] md:pb-[85px] pb-[185px] bg-newslatter bg-contain lg:bg-cover bg-center bg-no-repeat">
           <Container className="flex justify-center items-center">
             <div className="flex items-center flex-col md:flex-row md:gap-[60px] gap-y-5">
-              <h3 className="font-normal text-[2.13rem] leading-[100%] text-right text-[#080808]">
+              <h3 className="font-normal sm:text-[2.13rem] xsm:text-[25px] text-[20px] leading-[100%] text-right text-[#080808]">
                 Join our cosmetics news & offers
               </h3>
               <div className="flex items-center ">
@@ -662,6 +662,11 @@ const page = () => {
           </Container>
         </section>
         {/* newslatter */}
+
+
+
+
+
       </div>
     </>
   );
