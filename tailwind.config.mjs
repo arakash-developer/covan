@@ -23,6 +23,7 @@ export default {
         'cat3': "url('/cat3.jpg')",
         'deal': "url('/deal2.png')",
         'newslatter': "url('/newslatter.png')",
+        'shop': "url('/image06.jpg')",
       },
     },
   },
