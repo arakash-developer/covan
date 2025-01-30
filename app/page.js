@@ -9,6 +9,7 @@ import { Prata } from "next/font/google";
 import Image from "next/image";
 import Link from "next/link";
 import { FaRegUser } from "react-icons/fa";
+import { HiOutlineMail } from "react-icons/hi";
 import { LuPhoneCall } from "react-icons/lu";
 import { MdOutlineEmail } from "react-icons/md";
 import {
@@ -601,7 +602,7 @@ const page = () => {
                 <h3
                   className={`text-[#080808] text-[22px] sm:mt-[15px] font-normal sm:mb-[22px] ${Pratafont.className}`}
                 >
-                  100% Natural Extracts{" "}
+                  100% Natural Extracts
                 </h3>
                 <Link
                   href="#"
@@ -639,9 +640,25 @@ const page = () => {
         {/* news */}
 
         {/* newslatter */}
-        <section className="my-32">
-          <Container>
-            <Heading />
+        <section className="pt-[75px] md:pb-[85px] pb-[185px] bg-newslatter bg-contain lg:bg-cover bg-center bg-no-repeat">
+          <Container className="flex justify-center items-center">
+            <div className="flex items-center flex-col md:flex-row md:gap-[60px] gap-y-5">
+              <h3 className="font-normal text-[2.13rem] leading-[100%] text-right text-[#080808]">
+                Join our cosmetics news & offers
+              </h3>
+              <div className="flex items-center ">
+                <div className="flex items-center px-[30px] bg-[#e4e4e4] w-[269px] h-[45px]">
+                  <input
+                    className="font-medium inline-block w-full text-[0.81rem] text-[#666] bg-transparent border-none box-shadow-none outline-none"
+                    type="text"
+                    placeholder="E-mail address"
+                  />
+                </div>
+                <div className="flex justify-center items-center h-[45px] w-[70px] bg-[#080808] cursor-pointer">
+                  <HiOutlineMail className="text-[#fff] text-[22px] inline-block" />
+                </div>
+              </div>
+            </div>
           </Container>
         </section>
         {/* newslatter */}

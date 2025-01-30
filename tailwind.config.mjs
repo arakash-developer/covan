@@ -22,6 +22,7 @@ export default {
         'cat2': "url('/cat2.jpg')",
         'cat3': "url('/cat3.jpg')",
         'deal': "url('/deal2.png')",
+        'newslatter': "url('/newslatter.png')",
       },
     },
   },
