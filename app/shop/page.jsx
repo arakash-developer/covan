@@ -1,6 +1,8 @@
 "use client";
 import MultiRangeSlider from "@/app/component/multiRangeSlider/PriceRangeSlider";
+import Brand1 from "@/public/brand1.png";
 import { Prata } from "next/font/google";
+import Image from "next/image";
 import { useState } from "react";
 import { FaAngleRight } from "react-icons/fa";
 import Container from "../component/Container";
@@ -207,8 +209,26 @@ const page = () => {
             <div className="mb-[50px]">
               <CatLine categoryName="Brands" />
               <div className="mt-6 flex justify-between items-start flex-wrap gap-y-[10px]">
-                <div className="w-[125px] h-[115px] border-2 border-[#ccc]"></div>
+                <div className="w-[125px] h-[115px] border-2 border-[#ccc] flex justify-center items-center p-2">
+                  <Image src={Brand1} alt="brand1" />
+                </div>
+                <div className="w-[125px] h-[115px] border-2 border-[#ccc] flex justify-center items-center p-2">
+                  <Image src={Brand1} alt="brand1" />
+                </div>
+                <div className="w-[125px] h-[115px] border-2 border-[#ccc] flex justify-center items-center p-2">
+                  <Image src={Brand1} alt="brand1" />
+                </div>
+                <div className="w-[125px] h-[115px] border-2 border-[#ccc] flex justify-center items-center p-2">
+                  <Image src={Brand1} alt="brand1" />
+                </div>
+                <div className="w-[125px] h-[115px] border-2 border-[#ccc] flex justify-center items-center p-2">
+                  <Image src={Brand1} alt="brand1" />
+                </div>
               </div>
+            </div>
+            <div className="mb-[50px]">
+              <CatLine categoryName="Products Tags" />
+              <div className="mt-6 flex justify-betweenitems-start flex-wrap gap-[10px]"></div> 
             </div>
           </div>
           <div className="rightside w-full">
