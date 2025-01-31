@@ -5,6 +5,7 @@ import { useState } from "react";
 import { FaAngleRight } from "react-icons/fa";
 import Container from "../component/Container";
 import Item2 from "../component/Item2";
+import Paginate from "../component/Paginate";
 
 const Pratafont = Prata({
   weight: "400",
@@ -151,7 +152,8 @@ const page = () => {
           </div>
           <div className="rightside w-full">
             <div className="filtertop mb-[50px] h-[43px] bg-lime-400"></div>
-            <div
+            <Paginate itemsPerPage={12} />
+            {/* <div
               className=" grid justify-between grid-cols-2 md:grid-cols-3 gap-[30px]
             "
             >
@@ -160,7 +162,7 @@ const page = () => {
                   <Item2 key={index} className="w-full" />
                 ))
               }
-            </div>
+            </div> */}
             <div className=""></div>
           </div>
         </Container>
