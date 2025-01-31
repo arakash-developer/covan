@@ -1,9 +1,10 @@
 "use client";
+import MultiRangeSlider from "@/app/component/multiRangeSlider/PriceRangeSlider";
 import { Prata } from "next/font/google";
+import { useState } from "react";
 import { FaAngleRight } from "react-icons/fa";
 import Container from "../component/Container";
-import React, { useState } from "react";
-import MultiRangeSlider from "@/app/component/multiRangeSlider/PriceRangeSlider";
+import Item2 from "../component/Item2";
 
 const Pratafont = Prata({
   weight: "400",
@@ -39,7 +40,7 @@ const page = () => {
 
       {/* Product */}
       <section className="py-[110px]">
-        <Container className="flex items-start justify-between">
+        <Container className="flex items-start justify-between flex-wrap">
           <div className="">
             <h3
               className={`font-medium text-md leading-[143%] uppercase text-[#080808] ${Pratafont.className}`}
@@ -135,15 +136,26 @@ const page = () => {
                 <div className="w-[200px] h-[2px] bg-[#e1e1e1]"></div>
               </div>
               <div className="mmy">
-                  <MultiRangeSlider
-                    min={100}
-                    max={1000}
-                    onChange={handleRangeChange}
-                  />
+                <MultiRangeSlider
+                  min={100}
+                  max={1000}
+                  onChange={handleRangeChange}
+                />
               </div>
             </div>
           </div>
-          <div className=""></div>
+          <div className="rightside w-full">
+            <div className="filtertop mb-[50px] h-[43px]"></div>
+            <div
+              className=" grid justify-between grid-cols-2 md:grid-cols-3 gap-[30px]
+            "
+            >
+              <Item2 className="w-full" />
+              <Item2 className="w-full" />
+              <Item2 className="w-full" />
+            </div>
+            <div className=""></div>
+          </div>
         </Container>
       </section>
       {/* Product */}
