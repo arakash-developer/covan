@@ -2,6 +2,8 @@
 import { Prata } from "next/font/google";
 import { FaAngleRight } from "react-icons/fa";
 import Container from "../component/Container";
+import React, { useState } from "react";
+import MultiRangeSlider from "@/app/component/multiRangeSlider/PriceRangeSlider";
 
 const Pratafont = Prata({
   weight: "400",
@@ -9,6 +11,11 @@ const Pratafont = Prata({
 });
 
 const page = () => {
+  const [rangeValues, setRangeValues] = useState({ min: 0, max: 100 });
+
+  const handleRangeChange = (values) => {
+    setRangeValues(values);
+  };
   return (
     <>
       {/* Shop */}
@@ -128,7 +135,11 @@ const page = () => {
                 <div className="w-[200px] h-[2px] bg-[#e1e1e1]"></div>
               </div>
               <div className="mmy">
-                
+                  <MultiRangeSlider
+                    min={100}
+                    max={1000}
+                    onChange={handleRangeChange}
+                  />
               </div>
             </div>
           </div>

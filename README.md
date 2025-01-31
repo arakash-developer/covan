@@ -35,29 +35,10 @@ The easiest way to deploy your Next.js app is to use the [Vercel Platform](https
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
 
-z-index: 10;
-cursor: pointer;
-display: none;
-text-align: right;
-display: block;
-padding: 0;
-background: #e7b053;
-padding: 10px 20px 20px;
-color: #fff;
-text-transform: uppercase;
-font-size: 13px;
-font-family: Prata,serif !important;
 
-    <div className="bwp-filter-price">
-    	    <h3>Price</h3>
-    		<div className="content-filter-price">
-    			<div id="bwp_slider_price" data-min="12" data-max="815" className="ui-slider ui-corner-all ui-slider-horizontal ui-widget ui-widget-content"><div className="ui-slider-range ui-corner-all ui-widget-header" style="left: 0%; width: 100%;"></div><span tabindex="0" className="ui-slider-handle ui-corner-all ui-state-default" style="left: 0%;"></span><span tabindex="0" className="ui-slider-handle ui-corner-all ui-state-default" style="left: 100%;"></span></div>
-    			<div className="price-input">
-    				<span>Range : </span>
-    				$<span className="input-text text-price-filter" id="text-price-filter-min-text">12</span> -
-    				$<span className="input-text text-price-filter" id="text-price-filter-max-text">815</span>
-    				<input className="input-text text-price-filter hidden" id="price-filter-min-text" type="text" value="12">
-    				<input className="input-text text-price-filter hidden" id="price-filter-max-text" type="text" value="815">
-    			</div>
-    		</div>
-    	</div>
+
+
+  top: -6px;
+  margin-left: -5px;
+ 
+}
