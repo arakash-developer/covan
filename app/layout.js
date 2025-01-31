@@ -1,7 +1,7 @@
 import { Mulish } from "next/font/google";
 import Footer from "./component/Footer";
-import "./globals.css";
 import Navbar from "./component/Navbar";
+import "./globals.css";
 
 const mulish = Mulish({
   weight: ["200", "300", "400", "500", "600", "700"],

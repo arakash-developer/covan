@@ -1,3 +1,4 @@
+"use client";
 import { Prata } from "next/font/google";
 import { FaAngleRight } from "react-icons/fa";
 import Container from "../component/Container";
@@ -126,29 +127,50 @@ const page = () => {
                 <div className="w-[70px] h-[4px] bg-[#e7b053]"></div>
                 <div className="w-[200px] h-[2px] bg-[#e1e1e1]"></div>
               </div>
-              <div className="">
-                <div className="range-container">
-                  <input
-                    type="range"
-                    id="range-min"
-                    min="0"
-                    max="100"
-                    step="1"
-                    value="20"
-                  />
-                  <input
-                    type="range"
-                    id="range-max"
-                    min="0"
-                    max="100"
-                    step="1"
-                    value="80"
-                  />
+              <div className="mmy">
+                <div className="flex justify-center w-full mb-5">
+                  <div className="flex items-center text-sm">
+                    <div
+                      id="hs-thousands-separators-and-decimal-points-min-target"
+                      className="text-center min-w-36"
+                    >
+                      250
+                    </div>
+                    -
+                    <div
+                      id="hs-thousands-separators-and-decimal-points-max-target"
+                      className="text-center min-w-36"
+                    >
+                      750
+                    </div>
+                  </div>
                 </div>
-                <div className="range-values">
-                  <span id="min-value">Min: 20</span>
-                  <span id="max-value">Max: 80</span>
-                </div>
+                <label className="sr-only">Example range</label>
+                <div
+                  id="hs-thousands-separators-and-decimal-points"
+                  className="--prevent-on-load-init"
+                  data-hs-range-slider='{
+  "start": [2500000, 7500000],
+  "range": {
+    "min": 0,
+    "max": 10000000
+  },
+  "connect": true,
+  "formatter": {
+    "prefix": "USD ",
+    "type": "thousandsSeparatorAndDecimalPoints"
+  },
+  "cssClasses": {
+    "target": "relative h-2 rounded-full bg-gray-100",
+    "base": "w-full h-full relative z-1",
+    "origin": "absolute top-0 end-0 w-full h-full origin-[0_0] rounded-full",
+    "handle": "absolute top-1/2 end-0 w-[1.125rem] h-[1.125rem] bg-white border-4 border-blue-600 rounded-full cursor-pointer translate-x-2/4 -translate-y-2/4",
+    "connects": "relative z-0 w-full h-full rounded-full overflow-hidden",
+    "connect": "absolute top-0 end-0 z-1 w-full h-full bg-blue-600 origin-[0_0]",
+    "touchArea": "absolute -top-1 -bottom-1 -start-1 -end-1"
+  }
+}'
+                ></div>
               </div>
             </div>
           </div>
