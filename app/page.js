@@ -164,10 +164,11 @@ const page = () => {
               Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu
               pellentesque Aenean commodo.
             </p>
-            <div className="mt-[45px] mb-[53px] flex gap-2 md:gap-5 items-center">
-              <div className="rounded-full h-[30px] md:h-[115px] w-[30px] md:w-[115px] bg-[#fff] flex justify-center items-center flex-col">
-                <h3 className="font-normal text-md sm:text-2xl leading-[104%] text-center text-[#e7b053]">
-                  259
+            <div className="mt-[45px] mb-[53px] flex gap-2 md:gap-5 items-center flex-wrap">
+              
+              <div className="rounded-full h-[115px] w-[115px] bg-[#fff] flex justify-center items-center flex-col">
+                <h3 className="font-normal text-2xl leading-[104%] text-center text-[#e7b053]">
+                  29
                 </h3>
                 <p className="font-normal text-xs leading-[208%] uppercase text-center text-[#666]">
                   Days
