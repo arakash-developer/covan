@@ -17,6 +17,11 @@ const page = () => {
   const handleRangeChange = (values) => {
     setRangeValues(values);
   };
+
+  let Products = [];
+  for (let i = 1; i <= 200; i++) {
+    Products.push(i);
+  }
   return (
     <>
       {/* Shop */}
@@ -150,9 +155,11 @@ const page = () => {
               className=" grid justify-between grid-cols-2 md:grid-cols-3 gap-[30px]
             "
             >
-              <Item2 className="w-full" />
-              <Item2 className="w-full" />
-              <Item2 className="w-full" />
+              {
+                Products?.map((item,index)=>(
+                  <Item2 key={index} className="w-full" />
+                ))
+              }
             </div>
             <div className=""></div>
           </div>
