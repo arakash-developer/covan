@@ -127,7 +127,7 @@ const page = () => {
                 <div className="w-[200px] h-[2px] bg-[#e1e1e1]"></div>
               </div>
               <div className="">
-                <div class="range-container">
+                <div className="range-container">
                   <input
                     type="range"
                     id="range-min"
@@ -145,7 +145,7 @@ const page = () => {
                     value="80"
                   />
                 </div>
-                <div class="range-values">
+                <div className="range-values">
                   <span id="min-value">Min: 20</span>
                   <span id="max-value">Max: 80</span>
                 </div>
