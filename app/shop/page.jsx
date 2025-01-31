@@ -84,7 +84,7 @@ const page = () => {
                 className="font-semibold text-[13px] leading-[178%] uppercase text-[#080808]
                 py-[18px] border-b-[2px] border-dashed border-[#e8ebf0]"
               >
-                Makeup Powder{" "}
+                Makeup Powder
                 <span className="font-semibold text-[13px] leading-[196%] uppercase text-[#666]">
                   (8)
                 </span>
@@ -93,7 +93,7 @@ const page = () => {
                 className="font-semibold text-[13px] leading-[178%] uppercase text-[#080808]
                 py-[18px] border-b-[2px] border-dashed border-[#e8ebf0]"
               >
-                Shop Lipstick{" "}
+                Shop Lipstick
                 <span className="font-semibold text-[13px] leading-[196%] uppercase text-[#666]">
                   (1)
                 </span>
@@ -102,7 +102,7 @@ const page = () => {
                 className="font-semibold text-[13px] leading-[178%] uppercase text-[#080808]
                 py-[18px] border-b-[2px] border-dashed border-[#e8ebf0]"
               >
-                Shop Perfume{" "}
+                Shop Perfume
                 <span className="font-semibold text-[13px] leading-[196%] uppercase text-[#666]">
                   (19)
                 </span>
@@ -111,7 +111,7 @@ const page = () => {
                 className="font-semibold text-[13px] leading-[178%] uppercase text-[#080808]
                 py-[18px] border-b-[2px] border-dashed border-[#e8ebf0]"
               >
-                Soap Beauty{" "}
+                Soap Beauty
                 <span className="font-semibold text-[13px] leading-[196%] uppercase text-[#666]">
                   (9)
                 </span>
