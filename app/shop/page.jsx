@@ -40,7 +40,7 @@ const page = () => {
 
       {/* Product */}
       <section className="py-[110px]">
-        <Container className="flex items-start justify-between flex-wrap">
+        <Container className="flex lg:flex-row flex-col items-start justify-between">
           <div className="">
             <h3
               className={`font-medium text-md leading-[143%] uppercase text-[#080808] ${Pratafont.className}`}
@@ -145,7 +145,7 @@ const page = () => {
             </div>
           </div>
           <div className="rightside w-full">
-            <div className="filtertop mb-[50px] h-[43px]"></div>
+            <div className="filtertop mb-[50px] h-[43px] bg-lime-400"></div>
             <div
               className=" grid justify-between grid-cols-2 md:grid-cols-3 gap-[30px]
             "
