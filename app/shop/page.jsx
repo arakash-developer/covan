@@ -167,8 +167,47 @@ const page = () => {
             </div>
             <div className="mb-[50px]">
               <CatLine categoryName="Color" />
-              <div className="mt-6">s
-                
+              <div className="mt-6 flex justify-between items-start">
+                <div className="flex flex-col gap-2">
+                  <div className="flex gap-[10px] items-center">
+                    <div className="w-[22px] h-[22px] border-2 border-[#ccc] rounded-full flex justify-center items-center">
+                      <div className="w-4 h-4 bg-[#000] rounded-full"></div>
+                    </div>
+                    <h3 className="font-medium text-[14px] leading-[180%] text-[#666]">
+                      Black
+                    </h3>
+                  </div>
+                  <div className="flex gap-[10px] items-center">
+                    <div className="w-[22px] h-[22px] border-2 border-[#ccc] rounded-full flex justify-center items-center">
+                      <div className="w-4 h-4 bg-[#E88EED] rounded-full"></div>
+                    </div>
+                    <h3 className="font-medium text-[14px] leading-[180%] text-[#666]">
+                      Pink
+                    </h3>
+                  </div>
+                  <div className="flex gap-[10px] items-center">
+                    <div className="w-[22px] h-[22px] border-2 border-[#ccc] rounded-full flex justify-center items-center">
+                      <div className="w-4 h-4 bg-[#DD3333] rounded-full"></div>
+                    </div>
+                    <h3 className="font-medium text-[14px] leading-[180%] text-[#666]">
+                      Red
+                    </h3>
+                  </div>
+                  <div className="flex gap-[10px] items-center">
+                    <div className="w-[22px] h-[22px] border-2 border-[#ccc] rounded-full flex justify-center items-center">
+                      <div className="w-4 h-4 bg-[#EEEE22] rounded-full"></div>
+                    </div>
+                    <h3 className="font-medium text-[14px] leading-[180%] text-[#666]">
+                      Yellow
+                    </h3>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="mb-[50px]">
+              <CatLine categoryName="Brands" />
+              <div className="mt-6">
+
               </div>
             </div>
           </div>
