@@ -82,9 +82,9 @@ const Paginate = ({ itemsPerPage, catagory }) => {
           previousClassName="hidden"
           nextClassName="hidden"
           containerClassName="ul flex gap-x-[15px]"
-          pageClassName="w-9 h-9 border border-[1px] border-[#F0F0F0] text-[#767676]"
+          pageClassName="w-9 h-9 border border-[1px] border-[#E7B053] text-[#767676]"
           pageLinkClassName="h-full w-full flex justify-center items-center font-normal hover:text-[#767676] text-sm font-dm hover:no-underline"
-          activeClassName="bg-[#262626] text-[#fff] border-[#262626]"
+          activeClassName="bg-[#E7B053] text-[#fff] border-[#E7B053]"
           renderOnZeroPageCount={null}
         />
         <p>

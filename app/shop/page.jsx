@@ -4,8 +4,8 @@ import { Prata } from "next/font/google";
 import { useState } from "react";
 import { FaAngleRight } from "react-icons/fa";
 import Container from "../component/Container";
-import Item2 from "../component/Item2";
 import Paginate from "../component/Paginate";
+import CatLine from "../component/layers/CatLine";
 
 const Pratafont = Prata({
   weight: "400",
@@ -46,17 +46,9 @@ const page = () => {
 
       {/* Product */}
       <section className="py-[110px]">
-        <Container className="flex lg:flex-row flex-col items-start justify-between">
-          <div className="">
-            <h3
-              className={`font-medium text-md leading-[143%] uppercase text-[#080808] ${Pratafont.className}`}
-            >
-              Categories
-            </h3>
-            <div className="line flex items-center mt-[10px]">
-              <div className="w-[70px] h-[4px] bg-[#e7b053]"></div>
-              <div className="w-[200px] h-[2px] bg-[#e1e1e1]"></div>
-            </div>
+        <Container className="w-full flex lg:flex-row flex-col items-start justify-between">
+          <div className="w-[280px] mr-4">
+            <CatLine categoryName="Categories" />
             <div>
               <li
                 className="font-semibold text-[13px] leading-[178%] uppercase text-[#080808]
@@ -131,17 +123,9 @@ const page = () => {
                 </span>
               </li>
             </div>
-            <div className="mt-8">
-              <h3
-                className={`font-medium text-md leading-[143%] uppercase text-[#080808] ${Pratafont.className}`}
-              >
-                Price
-              </h3>
-              <div className="line flex items-center mt-[10px]">
-                <div className="w-[70px] h-[4px] bg-[#e7b053]"></div>
-                <div className="w-[200px] h-[2px] bg-[#e1e1e1]"></div>
-              </div>
-              <div className="mmy">
+            <div className="mt-8 mb-[50px]">
+              <CatLine categoryName="Price" />
+              <div className="w-full">
                 <MultiRangeSlider
                   min={100}
                   max={1000}
@@ -149,21 +133,48 @@ const page = () => {
                 />
               </div>
             </div>
+            <div className="mb-[50px]">
+              <CatLine categoryName="Capacity" />
+              <div className="mt-6 flex items-start gap-[10px] flex-wrap">
+                <div className="py-[13px] px-[13px] border-2 border-[#ccc]">
+                  100g
+                </div>
+                <div className="py-[13px] px-[13px] border-2 border-[#ccc]">
+                  100ml
+                </div>
+                <div className="py-[13px] px-[13px] border-2 border-[#ccc]">
+                  200g
+                </div>
+                <div className="py-[13px] px-[13px] border-2 border-[#ccc]">
+                  200ml
+                </div>
+                <div className="py-[13px] px-[13px] border-2 border-[#ccc]">
+                  300g
+                </div>
+                <div className="py-[13px] px-[13px] border-2 border-[#ccc]">
+                  300ml
+                </div>
+                <div className="py-[13px] px-[13px] border-2 border-[#ccc]">
+                  400g
+                </div>
+                <div className="py-[13px] px-[13px] border-2 border-[#ccc]">
+                  400ml
+                </div>
+                <div className="py-[13px] px-[13px] border-2 border-[#ccc]">
+                  500g
+                </div>
+              </div>
+            </div>
+            <div className="mb-[50px]">
+              <CatLine categoryName="Color" />
+              <div className="mt-6">s
+                
+              </div>
+            </div>
           </div>
           <div className="rightside w-full">
             <div className="filtertop mb-[50px] h-[43px] bg-lime-400"></div>
             <Paginate itemsPerPage={12} />
-            {/* <div
-              className=" grid justify-between grid-cols-2 md:grid-cols-3 gap-[30px]
-            "
-            >
-              {
-                Products?.map((item,index)=>(
-                  <Item2 key={index} className="w-full" />
-                ))
-              }
-            </div> */}
-            <div className=""></div>
           </div>
         </Container>
       </section>

@@ -16,7 +16,7 @@ const PriceRangeSlider = ({
   onChange,
   rangeColor = "#ff0303",
   valueStyle = valueCSS,
-  width = "300px",
+  width = "270px",
   currencyText = "$",
 }) => {
   const [minVal, setMinVal] = useState(min);
@@ -62,7 +62,7 @@ const PriceRangeSlider = ({
   }, [minVal, maxVal, onChange]);
 
   return (
-    <div className="w-full flex items-center justify-center flex-col">
+    <div className="w-full flex items-start justify-start flex-col">
       {/* Style the price range slider */}
       <div
         className="multi-slide-input-container mt-[30px] mb-[23px]"
