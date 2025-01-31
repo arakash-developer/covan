@@ -206,8 +206,8 @@ const page = () => {
             </div>
             <div className="mb-[50px]">
               <CatLine categoryName="Brands" />
-              <div className="mt-6">
-
+              <div className="mt-6 flex justify-between items-start flex-wrap gap-y-[10px]">
+                <div className="w-[125px] h-[115px] border-2 border-[#ccc]"></div>
               </div>
             </div>
           </div>
