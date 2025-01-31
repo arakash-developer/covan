@@ -75,11 +75,15 @@ const Navbar = () => {
             className="font-normal text-[30px] leading-[109%] uppercase text-[#080808] hover:text-[#e7b053] cursor-pointer md:hidden"
             onClick={closehandler}
           />
-          <Image src={Logo} alt="logo" />
+          <Link href="#">
+            <Image src={Logo} alt="logo" />
+          </Link>
           <div
             className={`md:static absolute top-0 w-[280px] md:w-auto z-[9999999] bg-[#fff] md:bg-transparent h-full transition-all duration-[0.5s] ease-in-out  ${
-              isOpen ? "opacity-100 left-0" : "-left-40 opacity-0 pointer-events-none"
-            } md:opacity-100`}
+              isOpen
+                ? "opacity-100 left-0"
+                : "-left-40 opacity-0 pointer-events-none"
+            } md:opacity-100 md:pointer-events-auto`}
           >
             <div
               className="bg-[#e7b053] w-full md:hidden pt-[10px] pb-5 px-5 text-right flex items-center justify-end cursor-pointer"
