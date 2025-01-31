@@ -156,7 +156,7 @@ const page = () => {
               Season offers
             </h4>
             <h2
-              className={`font-normal text-6xl leading-[120%] text-[#080808] my-2 ${Pratafont.className}`}
+              className={`font-normal text-4xl md:text-5xl  leading-[120%] text-[#080808] my-2 ${Pratafont.className}`}
             >
               Deals Of The Day
             </h2>
@@ -164,7 +164,7 @@ const page = () => {
               Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu
               pellentesque Aenean commodo.
             </p>
-            <div className="mt-[45px] mb-[53px] flex gap-5 items-center">
+            <div className="mt-[45px] mb-[53px] flex gap-2 md:gap-5 items-center">
               <div className="rounded-full h-[115px] w-[115px] bg-[#fff] flex justify-center items-center flex-col">
                 <h3 className="font-normal text-2xl leading-[104%] text-center text-[#e7b053]">
                   259
