@@ -75,7 +75,7 @@ const Navbar = () => {
             className="font-normal text-[30px] leading-[109%] uppercase text-[#080808] hover:text-[#e7b053] cursor-pointer md:hidden"
             onClick={closehandler}
           />
-          <Link href="#">
+          <Link href="/">
             <Image src={Logo} alt="logo" />
           </Link>
           <div
