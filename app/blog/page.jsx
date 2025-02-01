@@ -273,7 +273,7 @@ const page = () => {
                 </div>
                 <div className="mt-5">
                   <h2 className="font-normal text-[2.06rem] leading-[130%] capitalize text-[#080808]">Traveling Solo Is Awesome</h2>
-                  <div className="flex items-center gap-[50px] mt-2 mb-5">
+                  <div className="flex items-center sm:gap-[50px] gap-2 mt-2 mb-5">
                     <div className="flex items-center gap-[3px]">
                       <MdAccessTime className="font-normal text-xs leading-[100%] capitalize text-[#e7b053]" />
                       <p className="font-normal text-xs leading-[175%] capitalize text-[#909090]">
@@ -314,7 +314,7 @@ const page = () => {
                 </div>
                 <div className="mt-5">
                   <h2 className="font-normal text-[2.06rem] leading-[130%] capitalize text-[#080808]">Traveling Solo Is Awesome</h2>
-                  <div className="flex items-center gap-[50px] mt-2 mb-5">
+                  <div className="flex items-center sm:gap-[50px] gap-2 mt-2 mb-5">
                     <div className="flex items-center gap-[3px]">
                       <MdAccessTime className="font-normal text-xs leading-[100%] capitalize text-[#e7b053]" />
                       <p className="font-normal text-xs leading-[175%] capitalize text-[#909090]">
@@ -355,7 +355,7 @@ const page = () => {
                 </div>
                 <div className="mt-5">
                   <h2 className="font-normal text-[2.06rem] leading-[130%] capitalize text-[#080808]">Traveling Solo Is Awesome</h2>
-                  <div className="flex items-center gap-[50px] mt-2 mb-5">
+                  <div className="flex items-center sm:gap-[50px] gap-2 mt-2 mb-5">
                     <div className="flex items-center gap-[3px]">
                       <MdAccessTime className="font-normal text-xs leading-[100%] capitalize text-[#e7b053]" />
                       <p className="font-normal text-xs leading-[175%] capitalize text-[#909090]">
@@ -396,7 +396,7 @@ const page = () => {
                 </div>
                 <div className="mt-5">
                   <h2 className="font-normal text-[2.06rem] leading-[130%] capitalize text-[#080808]">Traveling Solo Is Awesome</h2>
-                  <div className="flex items-center gap-[50px] mt-2 mb-5">
+                  <div className="flex items-center sm:gap-[50px] gap-2 mt-2 mb-5">
                     <div className="flex items-center gap-[3px]">
                       <MdAccessTime className="font-normal text-xs leading-[100%] capitalize text-[#e7b053]" />
                       <p className="font-normal text-xs leading-[175%] capitalize text-[#909090]">
@@ -437,7 +437,7 @@ const page = () => {
                 </div>
                 <div className="mt-5">
                   <h2 className="font-normal text-[2.06rem] leading-[130%] capitalize text-[#080808]">Traveling Solo Is Awesome</h2>
-                  <div className="flex items-center gap-[50px] mt-2 mb-5">
+                  <div className="flex items-center sm:gap-[50px] gap-2 mt-2 mb-5">
                     <div className="flex items-center gap-[3px]">
                       <MdAccessTime className="font-normal text-xs leading-[100%] capitalize text-[#e7b053]" />
                       <p className="font-normal text-xs leading-[175%] capitalize text-[#909090]">
@@ -478,7 +478,7 @@ const page = () => {
                 </div>
                 <div className="mt-5">
                   <h2 className="font-normal text-[2.06rem] leading-[130%] capitalize text-[#080808]">Traveling Solo Is Awesome</h2>
-                  <div className="flex items-center gap-[50px] mt-2 mb-5">
+                  <div className="flex items-center sm:gap-[50px] gap-2 mt-2 mb-5">
                     <div className="flex items-center gap-[3px]">
                       <MdAccessTime className="font-normal text-xs leading-[100%] capitalize text-[#e7b053]" />
                       <p className="font-normal text-xs leading-[175%] capitalize text-[#909090]">
@@ -519,7 +519,7 @@ const page = () => {
                 </div>
                 <div className="mt-5">
                   <h2 className="font-normal text-[2.06rem] leading-[130%] capitalize text-[#080808]">Traveling Solo Is Awesome</h2>
-                  <div className="flex items-center gap-[50px] mt-2 mb-5">
+                  <div className="flex items-center sm:gap-[50px] gap-2 mt-2 mb-5">
                     <div className="flex items-center gap-[3px]">
                       <MdAccessTime className="font-normal text-xs leading-[100%] capitalize text-[#e7b053]" />
                       <p className="font-normal text-xs leading-[175%] capitalize text-[#909090]">
