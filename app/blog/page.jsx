@@ -49,8 +49,8 @@ const page = () => {
 
       <div className="my-[110px]">
         <Container>
-          <div className="flex justify-between items-start gap-[35px]">
-            <div className="w-[300px] pl-[15px]">
+          <div className="flex flex-col md:flex-row md:justify-between md:items-start gap-[35px]">
+            <div className="md:w-[300px] md:pl-[15px] px-[15px]">
               <div className="search w-full h-[45px] flex items-center">
                 <input
                   type="text"
