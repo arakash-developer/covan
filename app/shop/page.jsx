@@ -272,7 +272,7 @@ const page = () => {
               </div>
               <div className="flex items-center gap-[10px]">
                 <div className="leading-[43px] h-full px-[11px] border-2 border-[#ccc] cursor-pointer relative">
-                  <div className="absolute right-0 top-full w-[70px] justify-center flex border-2 border-[#ccc] z-20">
+                  <div className="absolute right-0 top-[105%] w-[70px] justify-center flex border border-[#00000026] z-20 bg-[#fff]">
                     <div className="flex flex-col gap-y-1 w-full  ">
                       <div className="w-full flex justify-center hover:bg-[#e7b053] hover:text-[#fff]">
                         <p className="font-medium text-sm leading-[286%] capitalize text-[#666]">
