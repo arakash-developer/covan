@@ -5,7 +5,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 import { AiOutlineSearch } from "react-icons/ai";
-import { FaAngleRight, FaChevronRight } from "react-icons/fa";
+import { FaAngleRight, FaChevronRight, FaCommentDots, FaRegEdit } from "react-icons/fa";
+import { MdAccessTime } from "react-icons/md";
 import Container from "../component/Container";
 import CatLine from "../component/layers/CatLine";
 
@@ -243,24 +244,65 @@ const page = () => {
                 <CatLine categoryName="Tags" />
                 <div className="mt-6 flex items-start gap-[10px] flex-wrap">
                   <div className="py-[10px] px-[20px] border-2 border-[#ccc]">
-                  Baby Needs
+                    Baby Needs
                   </div>
                   <div className="py-[10px] px-[20px] border-2 border-[#ccc]">
-                  Beauty
+                    Beauty
                   </div>
                   <div className="py-[10px] px-[20px] border-2 border-[#ccc]">
-                  Ear Care
+                    Ear Care
                   </div>
                   <div className="py-[10px] px-[20px] border-2 border-[#ccc]">
-                  For man
+                    For man
                   </div>
                   <div className="py-[10px] px-[20px] border-2 border-[#ccc]">
-                  Make Up
+                    Make Up
                   </div>
                 </div>
               </div>
             </div>
-            <div className="w-full bg-green-300">b</div>
+            <div className="w-full">
+              <div className="">
+                <div className="w-full h-[571px] overflow-hidden">
+                  <Image
+                    src={Product5}
+                    alt={Product5}
+                    className="w-full h-full bg-cover"
+                  />
+                </div>
+                <div className="">
+                  <h2 className="font-normal text-[2.06rem] leading-9 leading-[130%] capitalize text-[#080808]">Traveling Solo Is Awesome</h2>
+                  <div className="flex items-center gap-[50px]">
+                    <div className="flex items-center gap-[3px]">
+                      <MdAccessTime className="font-normal text-xs leading-[100%] capitalize text-[#e7b053]" />
+                      <p className="font-normal text-xs leading-[175%] capitalize text-[#909090]">
+                        August 27, 2020
+                      </p>
+                    </div>
+                    <div className="flex items-center gap-[3px]">
+                      <FaRegEdit className="font-normal text-xs leading-[100%] capitalize text-[#e7b053]" />
+                      <p className="font-normal text-xs leading-[175%] capitalize text-[#909090]">
+                        Wpbingo
+                      </p>
+                    </div>
+                    <div className="flex items-center gap-[3px]">
+                      <FaCommentDots className="font-normal text-xs leading-[100%] capitalize text-[#e7b053]" />
+                      <p className="font-normal text-xs leading-[175%] capitalize text-[#909090]">
+                        4 Comments
+                      </p>
+                    </div>
+                  </div>
+                  <p>
+                    Donec at nunc et felis vehicula imperdiet. Aliquam ac nulla
+                    id purus lacinia imperdiet commodo sit amet nunc. Interdum
+                    et malesuada fames ac ante ipsum primis in faucibus. Aenean
+                    ultricies et risus in porta. Nam finibus, nisl ut sodales
+                    ultrices, libero urna condimentum tortor, a commodo tortor
+                    tortor a...
+                  </p>
+                </div>
+              </div>
+            </div>
           </div>
         </Container>
       </div>
