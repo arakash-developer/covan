@@ -262,7 +262,8 @@ const page = () => {
               </div>
             </div>
             <div className="w-full">
-              <div className="">
+              <div className="w-full flex flex-col gap-[80px]">
+              <div className="w-full">
                 <div className="w-full h-[571px] overflow-hidden">
                   <Image
                     src={Product5}
@@ -270,9 +271,9 @@ const page = () => {
                     className="w-full h-full bg-cover"
                   />
                 </div>
-                <div className="">
-                  <h2 className="font-normal text-[2.06rem] leading-9 leading-[130%] capitalize text-[#080808]">Traveling Solo Is Awesome</h2>
-                  <div className="flex items-center gap-[50px]">
+                <div className="mt-5">
+                  <h2 className="font-normal text-[2.06rem] leading-[130%] capitalize text-[#080808]">Traveling Solo Is Awesome</h2>
+                  <div className="flex items-center gap-[50px] mt-2 mb-5">
                     <div className="flex items-center gap-[3px]">
                       <MdAccessTime className="font-normal text-xs leading-[100%] capitalize text-[#e7b053]" />
                       <p className="font-normal text-xs leading-[175%] capitalize text-[#909090]">
@@ -292,7 +293,7 @@ const page = () => {
                       </p>
                     </div>
                   </div>
-                  <p>
+                  <p className="font-normal text-sm leading-[175%] text-[#666] max-w-[816px] mb-[33px]">
                     Donec at nunc et felis vehicula imperdiet. Aliquam ac nulla
                     id purus lacinia imperdiet commodo sit amet nunc. Interdum
                     et malesuada fames ac ante ipsum primis in faucibus. Aenean
@@ -300,7 +301,255 @@ const page = () => {
                     ultrices, libero urna condimentum tortor, a commodo tortor
                     tortor a...
                   </p>
+                  <Link href="#" className="font-bold text-[0.69rem] leading-[273%] uppercase text-[#fff] tracking-[3px] px-5 py-2 bg-[#e7b053]">Read More</Link>
                 </div>
+              </div>
+              <div className="w-full">
+                <div className="w-full h-[571px] overflow-hidden">
+                  <Image
+                    src={Product5}
+                    alt={Product5}
+                    className="w-full h-full bg-cover"
+                  />
+                </div>
+                <div className="mt-5">
+                  <h2 className="font-normal text-[2.06rem] leading-[130%] capitalize text-[#080808]">Traveling Solo Is Awesome</h2>
+                  <div className="flex items-center gap-[50px] mt-2 mb-5">
+                    <div className="flex items-center gap-[3px]">
+                      <MdAccessTime className="font-normal text-xs leading-[100%] capitalize text-[#e7b053]" />
+                      <p className="font-normal text-xs leading-[175%] capitalize text-[#909090]">
+                        August 27, 2020
+                      </p>
+                    </div>
+                    <div className="flex items-center gap-[3px]">
+                      <FaRegEdit className="font-normal text-xs leading-[100%] capitalize text-[#e7b053]" />
+                      <p className="font-normal text-xs leading-[175%] capitalize text-[#909090]">
+                        Wpbingo
+                      </p>
+                    </div>
+                    <div className="flex items-center gap-[3px]">
+                      <FaCommentDots className="font-normal text-xs leading-[100%] capitalize text-[#e7b053]" />
+                      <p className="font-normal text-xs leading-[175%] capitalize text-[#909090]">
+                        4 Comments
+                      </p>
+                    </div>
+                  </div>
+                  <p className="font-normal text-sm leading-[175%] text-[#666] max-w-[816px] mb-[33px]">
+                    Donec at nunc et felis vehicula imperdiet. Aliquam ac nulla
+                    id purus lacinia imperdiet commodo sit amet nunc. Interdum
+                    et malesuada fames ac ante ipsum primis in faucibus. Aenean
+                    ultricies et risus in porta. Nam finibus, nisl ut sodales
+                    ultrices, libero urna condimentum tortor, a commodo tortor
+                    tortor a...
+                  </p>
+                  <Link href="#" className="font-bold text-[0.69rem] leading-[273%] uppercase text-[#fff] tracking-[3px] px-5 py-2 bg-[#e7b053]">Read More</Link>
+                </div>
+              </div>
+              <div className="w-full">
+                <div className="w-full h-[571px] overflow-hidden">
+                  <Image
+                    src={Product5}
+                    alt={Product5}
+                    className="w-full h-full bg-cover"
+                  />
+                </div>
+                <div className="mt-5">
+                  <h2 className="font-normal text-[2.06rem] leading-[130%] capitalize text-[#080808]">Traveling Solo Is Awesome</h2>
+                  <div className="flex items-center gap-[50px] mt-2 mb-5">
+                    <div className="flex items-center gap-[3px]">
+                      <MdAccessTime className="font-normal text-xs leading-[100%] capitalize text-[#e7b053]" />
+                      <p className="font-normal text-xs leading-[175%] capitalize text-[#909090]">
+                        August 27, 2020
+                      </p>
+                    </div>
+                    <div className="flex items-center gap-[3px]">
+                      <FaRegEdit className="font-normal text-xs leading-[100%] capitalize text-[#e7b053]" />
+                      <p className="font-normal text-xs leading-[175%] capitalize text-[#909090]">
+                        Wpbingo
+                      </p>
+                    </div>
+                    <div className="flex items-center gap-[3px]">
+                      <FaCommentDots className="font-normal text-xs leading-[100%] capitalize text-[#e7b053]" />
+                      <p className="font-normal text-xs leading-[175%] capitalize text-[#909090]">
+                        4 Comments
+                      </p>
+                    </div>
+                  </div>
+                  <p className="font-normal text-sm leading-[175%] text-[#666] max-w-[816px] mb-[33px]">
+                    Donec at nunc et felis vehicula imperdiet. Aliquam ac nulla
+                    id purus lacinia imperdiet commodo sit amet nunc. Interdum
+                    et malesuada fames ac ante ipsum primis in faucibus. Aenean
+                    ultricies et risus in porta. Nam finibus, nisl ut sodales
+                    ultrices, libero urna condimentum tortor, a commodo tortor
+                    tortor a...
+                  </p>
+                  <Link href="#" className="font-bold text-[0.69rem] leading-[273%] uppercase text-[#fff] tracking-[3px] px-5 py-2 bg-[#e7b053]">Read More</Link>
+                </div>
+              </div>
+              <div className="w-full">
+                <div className="w-full h-[571px] overflow-hidden">
+                  <Image
+                    src={Product5}
+                    alt={Product5}
+                    className="w-full h-full bg-cover"
+                  />
+                </div>
+                <div className="mt-5">
+                  <h2 className="font-normal text-[2.06rem] leading-[130%] capitalize text-[#080808]">Traveling Solo Is Awesome</h2>
+                  <div className="flex items-center gap-[50px] mt-2 mb-5">
+                    <div className="flex items-center gap-[3px]">
+                      <MdAccessTime className="font-normal text-xs leading-[100%] capitalize text-[#e7b053]" />
+                      <p className="font-normal text-xs leading-[175%] capitalize text-[#909090]">
+                        August 27, 2020
+                      </p>
+                    </div>
+                    <div className="flex items-center gap-[3px]">
+                      <FaRegEdit className="font-normal text-xs leading-[100%] capitalize text-[#e7b053]" />
+                      <p className="font-normal text-xs leading-[175%] capitalize text-[#909090]">
+                        Wpbingo
+                      </p>
+                    </div>
+                    <div className="flex items-center gap-[3px]">
+                      <FaCommentDots className="font-normal text-xs leading-[100%] capitalize text-[#e7b053]" />
+                      <p className="font-normal text-xs leading-[175%] capitalize text-[#909090]">
+                        4 Comments
+                      </p>
+                    </div>
+                  </div>
+                  <p className="font-normal text-sm leading-[175%] text-[#666] max-w-[816px] mb-[33px]">
+                    Donec at nunc et felis vehicula imperdiet. Aliquam ac nulla
+                    id purus lacinia imperdiet commodo sit amet nunc. Interdum
+                    et malesuada fames ac ante ipsum primis in faucibus. Aenean
+                    ultricies et risus in porta. Nam finibus, nisl ut sodales
+                    ultrices, libero urna condimentum tortor, a commodo tortor
+                    tortor a...
+                  </p>
+                  <Link href="#" className="font-bold text-[0.69rem] leading-[273%] uppercase text-[#fff] tracking-[3px] px-5 py-2 bg-[#e7b053]">Read More</Link>
+                </div>
+              </div>
+              <div className="w-full">
+                <div className="w-full h-[571px] overflow-hidden">
+                  <Image
+                    src={Product5}
+                    alt={Product5}
+                    className="w-full h-full bg-cover"
+                  />
+                </div>
+                <div className="mt-5">
+                  <h2 className="font-normal text-[2.06rem] leading-[130%] capitalize text-[#080808]">Traveling Solo Is Awesome</h2>
+                  <div className="flex items-center gap-[50px] mt-2 mb-5">
+                    <div className="flex items-center gap-[3px]">
+                      <MdAccessTime className="font-normal text-xs leading-[100%] capitalize text-[#e7b053]" />
+                      <p className="font-normal text-xs leading-[175%] capitalize text-[#909090]">
+                        August 27, 2020
+                      </p>
+                    </div>
+                    <div className="flex items-center gap-[3px]">
+                      <FaRegEdit className="font-normal text-xs leading-[100%] capitalize text-[#e7b053]" />
+                      <p className="font-normal text-xs leading-[175%] capitalize text-[#909090]">
+                        Wpbingo
+                      </p>
+                    </div>
+                    <div className="flex items-center gap-[3px]">
+                      <FaCommentDots className="font-normal text-xs leading-[100%] capitalize text-[#e7b053]" />
+                      <p className="font-normal text-xs leading-[175%] capitalize text-[#909090]">
+                        4 Comments
+                      </p>
+                    </div>
+                  </div>
+                  <p className="font-normal text-sm leading-[175%] text-[#666] max-w-[816px] mb-[33px]">
+                    Donec at nunc et felis vehicula imperdiet. Aliquam ac nulla
+                    id purus lacinia imperdiet commodo sit amet nunc. Interdum
+                    et malesuada fames ac ante ipsum primis in faucibus. Aenean
+                    ultricies et risus in porta. Nam finibus, nisl ut sodales
+                    ultrices, libero urna condimentum tortor, a commodo tortor
+                    tortor a...
+                  </p>
+                  <Link href="#" className="font-bold text-[0.69rem] leading-[273%] uppercase text-[#fff] tracking-[3px] px-5 py-2 bg-[#e7b053]">Read More</Link>
+                </div>
+              </div>
+              <div className="w-full">
+                <div className="w-full h-[571px] overflow-hidden">
+                  <Image
+                    src={Product5}
+                    alt={Product5}
+                    className="w-full h-full bg-cover"
+                  />
+                </div>
+                <div className="mt-5">
+                  <h2 className="font-normal text-[2.06rem] leading-[130%] capitalize text-[#080808]">Traveling Solo Is Awesome</h2>
+                  <div className="flex items-center gap-[50px] mt-2 mb-5">
+                    <div className="flex items-center gap-[3px]">
+                      <MdAccessTime className="font-normal text-xs leading-[100%] capitalize text-[#e7b053]" />
+                      <p className="font-normal text-xs leading-[175%] capitalize text-[#909090]">
+                        August 27, 2020
+                      </p>
+                    </div>
+                    <div className="flex items-center gap-[3px]">
+                      <FaRegEdit className="font-normal text-xs leading-[100%] capitalize text-[#e7b053]" />
+                      <p className="font-normal text-xs leading-[175%] capitalize text-[#909090]">
+                        Wpbingo
+                      </p>
+                    </div>
+                    <div className="flex items-center gap-[3px]">
+                      <FaCommentDots className="font-normal text-xs leading-[100%] capitalize text-[#e7b053]" />
+                      <p className="font-normal text-xs leading-[175%] capitalize text-[#909090]">
+                        4 Comments
+                      </p>
+                    </div>
+                  </div>
+                  <p className="font-normal text-sm leading-[175%] text-[#666] max-w-[816px] mb-[33px]">
+                    Donec at nunc et felis vehicula imperdiet. Aliquam ac nulla
+                    id purus lacinia imperdiet commodo sit amet nunc. Interdum
+                    et malesuada fames ac ante ipsum primis in faucibus. Aenean
+                    ultricies et risus in porta. Nam finibus, nisl ut sodales
+                    ultrices, libero urna condimentum tortor, a commodo tortor
+                    tortor a...
+                  </p>
+                  <Link href="#" className="font-bold text-[0.69rem] leading-[273%] uppercase text-[#fff] tracking-[3px] px-5 py-2 bg-[#e7b053]">Read More</Link>
+                </div>
+              </div>
+              <div className="w-full">
+                <div className="w-full h-[571px] overflow-hidden">
+                  <Image
+                    src={Product5}
+                    alt={Product5}
+                    className="w-full h-full bg-cover"
+                  />
+                </div>
+                <div className="mt-5">
+                  <h2 className="font-normal text-[2.06rem] leading-[130%] capitalize text-[#080808]">Traveling Solo Is Awesome</h2>
+                  <div className="flex items-center gap-[50px] mt-2 mb-5">
+                    <div className="flex items-center gap-[3px]">
+                      <MdAccessTime className="font-normal text-xs leading-[100%] capitalize text-[#e7b053]" />
+                      <p className="font-normal text-xs leading-[175%] capitalize text-[#909090]">
+                        August 27, 2020
+                      </p>
+                    </div>
+                    <div className="flex items-center gap-[3px]">
+                      <FaRegEdit className="font-normal text-xs leading-[100%] capitalize text-[#e7b053]" />
+                      <p className="font-normal text-xs leading-[175%] capitalize text-[#909090]">
+                        Wpbingo
+                      </p>
+                    </div>
+                    <div className="flex items-center gap-[3px]">
+                      <FaCommentDots className="font-normal text-xs leading-[100%] capitalize text-[#e7b053]" />
+                      <p className="font-normal text-xs leading-[175%] capitalize text-[#909090]">
+                        4 Comments
+                      </p>
+                    </div>
+                  </div>
+                  <p className="font-normal text-sm leading-[175%] text-[#666] max-w-[816px] mb-[33px]">
+                    Donec at nunc et felis vehicula imperdiet. Aliquam ac nulla
+                    id purus lacinia imperdiet commodo sit amet nunc. Interdum
+                    et malesuada fames ac ante ipsum primis in faucibus. Aenean
+                    ultricies et risus in porta. Nam finibus, nisl ut sodales
+                    ultrices, libero urna condimentum tortor, a commodo tortor
+                    tortor a...
+                  </p>
+                  <Link href="#" className="font-bold text-[0.69rem] leading-[273%] uppercase text-[#fff] tracking-[3px] px-5 py-2 bg-[#e7b053]">Read More</Link>
+                </div>
+              </div>
               </div>
             </div>
           </div>
