@@ -3,15 +3,19 @@ import MultiRangeSlider from "@/app/component/multiRangeSlider/PriceRangeSlider"
 import Brand1 from "@/public/brand1.png";
 import { Prata } from "next/font/google";
 import Image from "next/image";
+import Link from "next/link";
 import { useState } from "react";
-import { FaAngleRight, FaCaretDown, FaServer } from "react-icons/fa";
+import { AiOutlineSearch } from "react-icons/ai";
+import {
+  FaAngleRight,
+  FaCaretDown,
+  FaChevronRight,
+  FaServer,
+} from "react-icons/fa";
 import { TfiLayoutGrid3Alt } from "react-icons/tfi";
 import Container from "../component/Container";
 import Paginate from "../component/Paginate";
 import CatLine from "../component/layers/CatLine";
-import { AiOutlineSearch } from "react-icons/ai";
-
-
 
 const Pratafont = Prata({
   weight: "400",
@@ -61,8 +65,61 @@ const page = () => {
                   placeholder="Search..."
                 />
                 <div className="h-full w-[70px] flex justify-center items-center bg-[#e7b053]  border-2 border-[#e7b053] cursor-pointer">
-                <AiOutlineSearch className="font-normal text-lg leading-[250%] text-center text-[#fff]"/>
+                  <AiOutlineSearch className="font-normal text-lg leading-[250%] text-center text-[#fff]" />
                 </div>
+              </div>
+              <div className="mt-[45px] mb-[38px]">
+                <CatLine categoryName="Categories" />
+                <ul className="mt-[18px] flex flex-col gap-[9px]">
+                  <li className="flex items-center gap-[10px]">
+                    <FaChevronRight className="font-black text-[0.81rem] leading-[175%] text-[#666]" />
+                    <Link
+                      className="font-normal text-md leading-[175%] text-[#666] capitalize"
+                      href="#"
+                    >
+                      kithen
+                    </Link>
+                  </li>
+                  <li className="flex items-center gap-[10px]">
+                    <FaChevronRight className="font-black text-[0.81rem] leading-[175%] text-[#666]" />
+                    <Link
+                      className="font-normal text-md leading-[175%] text-[#666] capitalize"
+                      href="#"
+                    >
+                      Life Style
+                    </Link>
+                  </li>
+                  <li className="flex items-center gap-[10px]">
+                    <FaChevronRight className="font-black text-[0.81rem] leading-[175%] text-[#666]" />
+                    <Link
+                      className="font-normal text-md leading-[175%] text-[#666] capitalize"
+                      href="#"
+                    >
+                      Makeup Powder
+                    </Link>
+                  </li>
+                  <li className="flex items-center gap-[10px]">
+                    <FaChevronRight className="font-black text-[0.81rem] leading-[175%] text-[#e7b053]" />
+                    <Link
+                      className="font-normal text-md leading-[175%] text-[#e7b053] capitalize"
+                      href="#"
+                    >
+                      News
+                    </Link>
+                  </li>
+                  <li className="flex items-center gap-[10px]">
+                    <FaChevronRight className="font-black text-[0.81rem] leading-[175%] text-[#666]" />
+                    <Link
+                      className="font-normal text-md leading-[175%] text-[#666] capitalize"
+                      href="#"
+                    >
+                      Photography
+                    </Link>
+                  </li>
+                </ul>
+              </div>
+              <div className="mb-[45px]">
+              <CatLine categoryName="Recent Posts" />
               </div>
             </div>
             <div className="w-full bg-green-300">b</div>
