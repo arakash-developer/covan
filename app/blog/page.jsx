@@ -264,7 +264,7 @@ const page = () => {
             <div className="w-full">
               <div className="w-full flex flex-col gap-[80px]">
               <div className="w-full">
-                <div className="w-full h-[571px] overflow-hidden">
+                <div className="w-full md:h-[571px] sm:h-[400px] h-[300px] overflow-hidden">
                   <Image
                     src={Product5}
                     alt={Product5}
@@ -305,7 +305,7 @@ const page = () => {
                 </div>
               </div>
               <div className="w-full">
-                <div className="w-full h-[571px] overflow-hidden">
+                <div className="w-full md:h-[571px] sm:h-[400px] h-[300px] overflow-hidden">
                   <Image
                     src={Product5}
                     alt={Product5}
@@ -346,7 +346,7 @@ const page = () => {
                 </div>
               </div>
               <div className="w-full">
-                <div className="w-full h-[571px] overflow-hidden">
+                <div className="w-full md:h-[571px] sm:h-[400px] h-[300px] overflow-hidden">
                   <Image
                     src={Product5}
                     alt={Product5}
@@ -387,7 +387,7 @@ const page = () => {
                 </div>
               </div>
               <div className="w-full">
-                <div className="w-full h-[571px] overflow-hidden">
+                <div className="w-full md:h-[571px] sm:h-[400px] h-[300px] overflow-hidden">
                   <Image
                     src={Product5}
                     alt={Product5}
@@ -428,7 +428,7 @@ const page = () => {
                 </div>
               </div>
               <div className="w-full">
-                <div className="w-full h-[571px] overflow-hidden">
+                <div className="w-full md:h-[571px] sm:h-[400px] h-[300px] overflow-hidden">
                   <Image
                     src={Product5}
                     alt={Product5}
@@ -469,7 +469,7 @@ const page = () => {
                 </div>
               </div>
               <div className="w-full">
-                <div className="w-full h-[571px] overflow-hidden">
+                <div className="w-full md:h-[571px] sm:h-[400px] h-[300px] overflow-hidden">
                   <Image
                     src={Product5}
                     alt={Product5}
@@ -510,7 +510,7 @@ const page = () => {
                 </div>
               </div>
               <div className="w-full">
-                <div className="w-full h-[571px] overflow-hidden">
+                <div className="w-full md:h-[571px] sm:h-[400px] h-[300px] overflow-hidden">
                   <Image
                     src={Product5}
                     alt={Product5}
