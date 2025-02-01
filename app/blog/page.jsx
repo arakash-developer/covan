@@ -9,6 +9,9 @@ import { TfiLayoutGrid3Alt } from "react-icons/tfi";
 import Container from "../component/Container";
 import Paginate from "../component/Paginate";
 import CatLine from "../component/layers/CatLine";
+import { AiOutlineSearch } from "react-icons/ai";
+
+
 
 const Pratafont = Prata({
   weight: "400",
@@ -28,7 +31,7 @@ const page = () => {
   }
   return (
     <>
-      {/* Shop */}
+      {/* blog */}
       <section className="flex justify-center items-center flex-col py-[120px] bg-shop bg-cover bg-no-repeat bg-center">
         <h2
           className={`font-normal text-3xl leading-[120%] uppercase text-center text-[#fff] ${Pratafont.className}`}
@@ -45,12 +48,23 @@ const page = () => {
           </p>
         </div>
       </section>
-      {/* Shop */}
+      {/* blog */}
 
       <div className="my-[110px]">
         <Container>
           <div className="flex justify-between items-start gap-[35px]">
-            <div className="w-[300px] bg-red-300">a</div>
+            <div className="w-[300px] pl-[15px]">
+              <div className="search w-full h-[45px] flex items-center">
+                <input
+                  type="text"
+                  className="w-full h-full px-4 outline-none  border-2 border-[#8F8F8F40] font-normal text-sm text-[#757575]"
+                  placeholder="Search..."
+                />
+                <div className="h-full w-[70px] flex justify-center items-center bg-[#e7b053]  border-2 border-[#e7b053] cursor-pointer">
+                <AiOutlineSearch className="font-normal text-lg leading-[250%] text-center text-[#fff]"/>
+                </div>
+              </div>
+            </div>
             <div className="w-full bg-green-300">b</div>
           </div>
         </Container>
