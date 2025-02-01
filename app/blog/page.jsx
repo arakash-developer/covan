@@ -1,21 +1,12 @@
 "use client";
-import MultiRangeSlider from "@/app/component/multiRangeSlider/PriceRangeSlider";
-import Brand1 from "@/public/brand1.png";
 import Product5 from "@/public/image27.jpg";
 import { Prata } from "next/font/google";
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 import { AiOutlineSearch } from "react-icons/ai";
-import {
-  FaAngleRight,
-  FaCaretDown,
-  FaChevronRight,
-  FaServer,
-} from "react-icons/fa";
-import { TfiLayoutGrid3Alt } from "react-icons/tfi";
+import { FaAngleRight, FaChevronRight } from "react-icons/fa";
 import Container from "../component/Container";
-import Paginate from "../component/Paginate";
 import CatLine from "../component/layers/CatLine";
 
 const Pratafont = Prata({
@@ -216,12 +207,47 @@ const page = () => {
                   </div>
                 </div>
               </div>
+              <div className="mb-[38px]">
+                <CatLine categoryName="Archives" />
+                <ul className="mt-[18px] flex flex-col gap-[9px]">
+                  <li className="flex items-center gap-[10px]">
+                    <FaChevronRight className="font-black text-[0.81rem] leading-[175%] text-[#666]" />
+                    <Link
+                      className="font-normal text-md leading-[175%] text-[#666] capitalize"
+                      href="#"
+                    >
+                      May 2018
+                    </Link>
+                  </li>
+                  <li className="flex items-center gap-[10px]">
+                    <FaChevronRight className="font-black text-[0.81rem] leading-[175%] text-[#666]" />
+                    <Link
+                      className="font-normal text-md leading-[175%] text-[#666] capitalize"
+                      href="#"
+                    >
+                      April 2017
+                    </Link>
+                  </li>
+                  <li className="flex items-center gap-[10px]">
+                    <FaChevronRight className="font-black text-[0.81rem] leading-[175%] text-[#666]" />
+                    <Link
+                      className="font-normal text-md leading-[175%] text-[#666] capitalize"
+                      href="#"
+                    >
+                      November 2016
+                    </Link>
+                  </li>
+                </ul>
+              </div>
+              <div className="">
+                <CatLine categoryName="Tags" />
+                <div className=""></div>
+              </div>
             </div>
             <div className="w-full bg-green-300">b</div>
           </div>
         </Container>
       </div>
-
     </>
   );
 };
