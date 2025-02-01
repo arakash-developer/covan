@@ -25,7 +25,7 @@ const page = () => {
       <div className="overflow-x-hidden">
 
         <div
-          className="bg-[#FFC312] border-t-4 border-[#ffa305] rounded-b text-teal-900 px-4 py-3 shadow-md 
+          className="bg-[#FFC312] border-t-4 border-[#ffa305] rounded-b text-teal-900 px-2 py-1 shadow-md 
           fixed bottom-10 left-5 z-[9999999999999]"
           role="alert"
         >
@@ -40,7 +40,7 @@ const page = () => {
               </svg>
             </div>
             <div>
-              <p className="font-bold text-[#fff] uppercase tracking-[2px]">In Progress</p>
+              <p className="font-bold text-[#fff] uppercase tracking-[1px]">In Progress</p>
               <p className="text-sm text-[#fff]">
                 Updating.. 
               </p>
