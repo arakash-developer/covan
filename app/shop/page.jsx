@@ -273,18 +273,22 @@ const page = () => {
               <div className="flex items-center gap-[10px]">
                 <div className="leading-[43px] h-full px-[11px] border-2 border-[#ccc] cursor-pointer relative">
                   <div className="absolute right-0 top-full w-[70px] justify-center flex border-2 border-[#ccc] z-20">
-                    <div className="flex flex-col gap-y-1">
-
-                    <div className="w-full flex justify-center">
-                      <p className="font-medium text-sm leading-[286%] capitalize text-[#666]">
-                        24
-                      </p>
-                    </div>
-                    <div className="w-full flex justify-center hover:bg-[#e7b053]">
-                      <p className="font-medium text-sm leading-[286%] capitalize text-[#666]">
-                        36
-                      </p>
-                    </div>
+                    <div className="flex flex-col gap-y-1 w-full  ">
+                      <div className="w-full flex justify-center hover:bg-[#e7b053] hover:text-[#fff]">
+                        <p className="font-medium text-sm leading-[286%] capitalize text-[#666]">
+                          24
+                        </p>
+                      </div>
+                      <div className="w-full flex justify-center hover:bg-[#e7b053] hover:text-[#fff]">
+                        <p className="font-medium text-sm leading-[286%] capitalize text-[#666]">
+                          36
+                        </p>
+                      </div>
+                      <div className="w-full flex justify-center hover:bg-[#e7b053] hover:text-[#fff]">
+                        <p className="font-medium text-sm leading-[286%] capitalize text-[#666]">
+                          48
+                        </p>
+                      </div>
                     </div>
                   </div>
                   <p className="font-medium text-sm leading-[286%] capitalize text-[#666] flex items-center gap-1">
