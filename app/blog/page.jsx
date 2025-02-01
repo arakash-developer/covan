@@ -241,7 +241,23 @@ const page = () => {
               </div>
               <div className="">
                 <CatLine categoryName="Tags" />
-                <div className=""></div>
+                <div className="mt-6 flex items-start gap-[10px] flex-wrap">
+                  <div className="py-[10px] px-[20px] border-2 border-[#ccc]">
+                  Baby Needs
+                  </div>
+                  <div className="py-[10px] px-[20px] border-2 border-[#ccc]">
+                  Beauty
+                  </div>
+                  <div className="py-[10px] px-[20px] border-2 border-[#ccc]">
+                  Ear Care
+                  </div>
+                  <div className="py-[10px] px-[20px] border-2 border-[#ccc]">
+                  For man
+                  </div>
+                  <div className="py-[10px] px-[20px] border-2 border-[#ccc]">
+                  Make Up
+                  </div>
+                </div>
               </div>
             </div>
             <div className="w-full bg-green-300">b</div>
