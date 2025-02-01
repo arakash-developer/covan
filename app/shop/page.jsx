@@ -4,7 +4,8 @@ import Brand1 from "@/public/brand1.png";
 import { Prata } from "next/font/google";
 import Image from "next/image";
 import { useState } from "react";
-import { FaAngleRight } from "react-icons/fa";
+import { FaAngleRight, FaCaretDown, FaServer } from "react-icons/fa";
+import { TfiLayoutGrid3Alt } from "react-icons/tfi";
 import Container from "../component/Container";
 import Paginate from "../component/Paginate";
 import CatLine from "../component/layers/CatLine";
@@ -230,41 +231,75 @@ const page = () => {
               <CatLine categoryName="Products Tags" />
               <div className="mt-6 flex items-start gap-[10px] flex-wrap">
                 <div className="py-[13px] px-[13px] border-2 border-[#ccc]">
-                Baby Needs
+                  Baby Needs
                 </div>
                 <div className="py-[13px] px-[13px] border-2 border-[#ccc]">
-                Beauty
+                  Beauty
                 </div>
                 <div className="py-[13px] px-[13px] border-2 border-[#ccc]">
-                For Men
+                  For Men
                 </div>
                 <div className="py-[13px] px-[13px] border-2 border-[#ccc]">
-                For summer
+                  For summer
                 </div>
                 <div className="py-[13px] px-[13px] border-2 border-[#ccc]">
-                For Winter
+                  For Winter
                 </div>
                 <div className="py-[13px] px-[13px] border-2 border-[#ccc]">
-                Life Style
+                  Life Style
                 </div>
-          
+
                 <div className="py-[13px] px-[13px] border-2 border-[#ccc]">
-                Lipstick
-                </div>
-                <div className="py-[13px] px-[13px] border-2 border-[#ccc]">
-                Makeup Powder
+                  Lipstick
                 </div>
                 <div className="py-[13px] px-[13px] border-2 border-[#ccc]">
-                Shop Lipstick
+                  Makeup Powder
                 </div>
                 <div className="py-[13px] px-[13px] border-2 border-[#ccc]">
-                Shop Perfume
+                  Shop Lipstick
                 </div>
-            </div>
+                <div className="py-[13px] px-[13px] border-2 border-[#ccc]">
+                  Shop Perfume
+                </div>
+              </div>
             </div>
           </div>
           <div className="rightside w-full">
-            <div className="filtertop mb-[50px] h-[43px] bg-lime-400"></div>
+            <div className="filtertop mb-[50px] h-[43px] flex justify-between items-start">
+              <div className=" flex  gap-[10px] items-center">
+                <TfiLayoutGrid3Alt className="text-[#E7B053] text-xl h-full" />
+                <FaServer className="text-[#E7B053] text-xl h-full" />
+              </div>
+              <div className="flex items-center gap-[10px]">
+                <div className="leading-[43px] h-full px-[11px] border-2 border-[#ccc] cursor-pointer relative">
+                  <div className="absolute right-0 top-full w-[70px] justify-center flex border-2 border-[#ccc] z-20">
+                    <div className="flex flex-col gap-y-1">
+
+                    <div className="w-full flex justify-center">
+                      <p className="font-medium text-sm leading-[286%] capitalize text-[#666]">
+                        24
+                      </p>
+                    </div>
+                    <div className="w-full flex justify-center hover:bg-[#e7b053]">
+                      <p className="font-medium text-sm leading-[286%] capitalize text-[#666]">
+                        36
+                      </p>
+                    </div>
+                    </div>
+                  </div>
+                  <p className="font-medium text-sm leading-[286%] capitalize text-[#666] flex items-center gap-1">
+                    12
+                    <FaCaretDown />
+                  </p>
+                </div>
+                <div className="leading-[43px] h-full px-[11px] border-2 border-[#ccc] cursor-pointer">
+                  <p className="font-medium text-sm leading-[286%] capitalize text-[#666] flex  items-center gap-1">
+                    Default sorting
+                    <FaCaretDown />
+                  </p>
+                </div>
+              </div>
+            </div>
             <Paginate itemsPerPage={12} />
           </div>
         </Container>
