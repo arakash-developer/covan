@@ -1,6 +1,7 @@
 "use client";
 import MultiRangeSlider from "@/app/component/multiRangeSlider/PriceRangeSlider";
 import Brand1 from "@/public/brand1.png";
+import Product5 from "@/public/image27.jpg";
 import { Prata } from "next/font/google";
 import Image from "next/image";
 import Link from "next/link";
@@ -119,20 +120,101 @@ const page = () => {
                 </ul>
               </div>
               <div className="mb-[45px]">
-              <CatLine categoryName="Recent Posts" />
-              <div className="mt-[25px]">
-                <div className="w-full h-full flex items-start gap-2 pb-6 border-b-2 border-dashed border-[#ccc]">
-                  <div className="w-[120px] h-[120px] overflow-hidden">
-
+                <CatLine categoryName="Recent Posts" />
+                <div className="mt-[25px] flex flex-col gap-[25px]">
+                  <div className="w-full h-full flex items-start gap-2 pb-6 border-b-2 border-dashed border-[#ccc]">
+                    <div className="w-[120px] h-[120px] overflow-hidden relative">
+                      <div className="w-[24px] h-[24px] bg-[#080808] absolute left-0 top-0 flex justify-center items-center text-[#fff]font-normal text-[0.63rem] leading-[240%] text-center text-[#fff]">
+                        0
+                      </div>
+                      <Image
+                        src={Product5}
+                        alt={Product5}
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
+                    <div className="">
+                      <h4 className="font-semibold text-[0.69rem] leading-[175%] uppercase text-[#e7b053]">
+                        Life Style
+                      </h4>
+                      <h2 className="font-bold text-base leading-[125%] capitalize text-[#080808] max-w-[125px] mb-1 mt-[9px]">
+                        Traveling Solo Is Awesome
+                      </h2>
+                      <p className="font-normal text-[0.63rem] leading-[175%] uppercase text-[#666]">
+                        May 30, 2018
+                      </p>
+                    </div>
                   </div>
-                  <div className="">
-                    <h4 className="font-semibold text-[0.69rem] leading-[175%] uppercase text-[#e7b053]">Life Style</h4>
-                    <h2 className="font-bold text-base leading-[125%] capitalize text-[#080808] max-w-[125px] mb-1 mt-[9px]">Traveling Solo Is
-                    Awesome</h2>
-                    <p className="font-normal text-[0.63rem] leading-[175%] uppercase text-[#666]">May 30, 2018</p>
+                  <div className="w-full h-full flex items-start gap-2 pb-6 border-b-2 border-dashed border-[#ccc]">
+                    <div className="w-[120px] h-[120px] overflow-hidden relative">
+                      <div className="w-[24px] h-[24px] bg-[#080808] absolute left-0 top-0 flex justify-center items-center text-[#fff]font-normal text-[0.63rem] leading-[240%] text-center text-[#fff]">
+                        0
+                      </div>
+                      <Image
+                        src={Product5}
+                        alt={Product5}
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
+                    <div className="">
+                      <h4 className="font-semibold text-[0.69rem] leading-[175%] uppercase text-[#e7b053]">
+                        Life Style
+                      </h4>
+                      <h2 className="font-bold text-base leading-[125%] capitalize text-[#080808] max-w-[125px] mb-1 mt-[9px]">
+                        Traveling Solo Is Awesome
+                      </h2>
+                      <p className="font-normal text-[0.63rem] leading-[175%] uppercase text-[#666]">
+                        May 30, 2018
+                      </p>
+                    </div>
+                  </div>
+                  <div className="w-full h-full flex items-start gap-2 pb-6 border-b-2 border-dashed border-[#ccc]">
+                    <div className="w-[120px] h-[120px] overflow-hidden relative">
+                      <div className="w-[24px] h-[24px] bg-[#080808] absolute left-0 top-0 flex justify-center items-center text-[#fff]font-normal text-[0.63rem] leading-[240%] text-center text-[#fff]">
+                        0
+                      </div>
+                      <Image
+                        src={Product5}
+                        alt={Product5}
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
+                    <div className="">
+                      <h4 className="font-semibold text-[0.69rem] leading-[175%] uppercase text-[#e7b053]">
+                        Life Style
+                      </h4>
+                      <h2 className="font-bold text-base leading-[125%] capitalize text-[#080808] max-w-[125px] mb-1 mt-[9px]">
+                        Traveling Solo Is Awesome
+                      </h2>
+                      <p className="font-normal text-[0.63rem] leading-[175%] uppercase text-[#666]">
+                        May 30, 2018
+                      </p>
+                    </div>
+                  </div>
+                  <div className="w-full h-full flex items-start gap-2 pb-6 border-b-2 border-dashed border-[#ccc]">
+                    <div className="w-[120px] h-[120px] overflow-hidden relative">
+                      <div className="w-[24px] h-[24px] bg-[#080808] absolute left-0 top-0 flex justify-center items-center text-[#fff]font-normal text-[0.63rem] leading-[240%] text-center text-[#fff]">
+                        0
+                      </div>
+                      <Image
+                        src={Product5}
+                        alt={Product5}
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
+                    <div className="">
+                      <h4 className="font-semibold text-[0.69rem] leading-[175%] uppercase text-[#e7b053]">
+                        Life Style
+                      </h4>
+                      <h2 className="font-bold text-base leading-[125%] capitalize text-[#080808] max-w-[125px] mb-1 mt-[9px]">
+                        Traveling Solo Is Awesome
+                      </h2>
+                      <p className="font-normal text-[0.63rem] leading-[175%] uppercase text-[#666]">
+                        May 30, 2018
+                      </p>
+                    </div>
                   </div>
                 </div>
-              </div>
               </div>
             </div>
             <div className="w-full bg-green-300">b</div>
