@@ -1,7 +1,6 @@
 "use client";
 import Logo from "@/public/logo.png";
 import Image from "next/image";
-import { BiShoppingBag } from "react-icons/bi";
 import { FaAngleDown, FaRegUser } from "react-icons/fa";
 import { FaRegHeart } from "react-icons/fa6";
 import { IoClose, IoMenu, IoSearchSharp } from "react-icons/io5";
@@ -10,13 +9,14 @@ import { MdOutlineEmail } from "react-icons/md";
 
 import { Prata } from "next/font/google";
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import {
   RiFacebookFill,
   RiInstagramLine,
   RiTwitterXFill,
   RiYoutubeFill,
 } from "react-icons/ri";
+import Cart from "./layers/Cart";
 const Pratafont = Prata({
   weight: "400",
   subsets: ["latin"],
@@ -26,6 +26,8 @@ const Navbar = () => {
   let closehandler = () => {
     setIsOpen(!isOpen);
   };
+
+  
   return (
     <>
       {/* top */}
@@ -170,14 +172,8 @@ const Navbar = () => {
               </div>
             </div>
             <div className="relative">
-              <div className="relative">
-                <BiShoppingBag className="font-normal text-[22px] leading-[109%] uppercase text-[#080808] hover:text-[#e7b053]  cursor-pointer" />
-                <div className="absolute w-6 h-6 rounded-full bg-[#e7b053] bottom-[10px] left-[13px] flex justify-center items-center">
-                  <p className="font-normal text-[0.81rem] leading-[185%] text-center text-[#fff]">
-                    0
-                  </p>
-                </div>
-              </div>
+              <Cart />
+
               <div className="absolute w-6 h-6 rounded-full bg-[#e7b053] bottom-[10px] left-[13px] flex justify-center items-center">
                 <p className="font-normal text-[0.81rem] leading-[185%] text-center text-[#fff]">
                   0
