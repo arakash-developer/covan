@@ -18,6 +18,10 @@ li{
 img{
   max-width: 100%;
 }
+.brdr {
+  @apply border-2 border-red-600
+}
+
 .bannar .slick-dots {
   @apply !bg-transparent;
 }
