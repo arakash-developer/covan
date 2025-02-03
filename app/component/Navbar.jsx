@@ -9,7 +9,7 @@ import { MdOutlineEmail } from "react-icons/md";
 
 import { Prata } from "next/font/google";
 import Link from "next/link";
-import { useEffect, useRef, useState } from "react";
+import { useState } from "react";
 import {
   RiFacebookFill,
   RiInstagramLine,
@@ -27,7 +27,6 @@ const Navbar = () => {
     setIsOpen(!isOpen);
   };
 
-  
   return (
     <>
       {/* top */}
@@ -137,7 +136,7 @@ const Navbar = () => {
                   </span>
                 </Link>
               </li>
-              <li>
+              <li className="relative">
                 <Link
                   className="flex items-center gap-1 font-normal text-[15px] leading-[109%] uppercase text-[#080808] hover:text-[#e7b053] relative after:w-0 after:h-[2px] after:absolute after:left-0 after:bottom-[-5px] after:bg-[#e7b053] after:transition-all after:ease-linear after:duration-[0.3s] hover:after:w-full w-[240px] md:w-auto justify-between md:justify-start py-5 md:py-0 border-b-2 md:border-0"
                   href=""
@@ -147,6 +146,9 @@ const Navbar = () => {
                     <FaAngleDown />
                   </span>
                 </Link>
+                <div className="hidden absolute top-[150%] left-0 w-full bg-[#e7b053]">
+                  ddd
+                </div>
               </li>
               <li>
                 <Link
