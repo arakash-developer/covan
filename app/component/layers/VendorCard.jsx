@@ -12,7 +12,7 @@ const VendorCard = ({
   Call = "Vendor Call",
 }) => {
   return (
-    <div className="w-[370px]">
+    <div className="w-full">
       <div className="w-full h-[220px] relative">
         <div className="w-full h-full overflow-hidden after:absolute after:top-0 after:left-0 after:w-full after:h-full after:bg-[#000000] after:bg-opacity-[45%] after:z-10 z-20  relative">
           <Image

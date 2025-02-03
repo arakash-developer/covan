@@ -13,7 +13,7 @@ const page = ({
   return (
     <div>
       <Container className="mt-[110px] mb-[150px]">
-        <div className="flex items-start gap-[30px] flex-wrap">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-[30px]">
           <VendorCard />
           <VendorCard />
           <VendorCard />
