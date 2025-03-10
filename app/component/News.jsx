@@ -85,7 +85,6 @@ const News = () => {
   return (
     <>
       <div className="arrivals news">
-        {/* <Container className="mb-8 bg-fuchsia-600">App</Container> */}
         <Container>
           <Slider {...settings}>
             {allProducts?.map((item) => (
