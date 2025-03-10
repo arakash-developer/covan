@@ -18,7 +18,7 @@ const Item = ({
   };
   return (
     <div
-      className={`product ${className} w-[270px] h-[436px] cursor-pointer bg-gray-200`}
+      className={`product ${className} w-[270px] h-[436px] cursor-pointer`}
       onClick={handlerClick}
     >
       <div className="w-full h-full relative">
@@ -43,7 +43,7 @@ const Item = ({
           </div>
         </div>
 
-        <div className="w-full lg:h-[339px] h-[300px] flex justify-center items-center">
+        <div className="w-full lg:h-[339px] h-[300px] flex justify-center items-center border border-[#e5e7eb]">
           <Image
             src={thumbnail}
             alt="product"
