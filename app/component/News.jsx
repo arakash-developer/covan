@@ -6,7 +6,6 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick-theme.css";
 import "slick-carousel/slick/slick.css";
 import getAllProduct from "../utils/getAllProduct";
-import Item from "./Item";
 import NewsItem from "./NewsItem";
 
 function SampleNextArrow(props) {
@@ -80,10 +79,8 @@ const News = () => {
 
   let datarece = async () => {
     let res = await getAllProduct();
-    setAllProduct(res);
+    setAllProduct(res.products);
   };
-
-  console.log(allProducts);
 
   return (
     <>
@@ -92,8 +89,7 @@ const News = () => {
         <Container>
           <Slider {...settings}>
             {allProducts?.map((item) => (
-              <NewsItem key={item.id} className="" 
-               />
+              <NewsItem key={item.id} className="" />
             ))}
           </Slider>
         </Container>

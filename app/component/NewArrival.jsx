@@ -75,15 +75,13 @@ const App = () => {
 
   let [allProducts, setAllProduct] = useState([]);
   useEffect(() => {
-    datarece();
+    getData();
   }, []);
 
-  let datarece = async () => {
+  let getData = async () => {
     let res = await getAllProduct();
-    setAllProduct(res);
+    setAllProduct(res.products);
   };
-
-  console.log(allProducts);
 
   return (
     <>
@@ -92,9 +90,15 @@ const App = () => {
         <Container className="max-w-[1296px]">
           <Slider {...settings}>
             {allProducts?.map((item) => (
-              <Item key={item.id} className="w-full px-[30px]" Name={item.name} Price={item.price}
-              // thumbnail={item.image_link}
-               />
+              <Item
+                key={item.id}
+                className="w-full px-[30px]"
+                Name={item.name}
+                Price={item.price}
+                thumbnail={item.thumbnail}
+                id={item.id}
+                title={item.title}
+              />
             ))}
           </Slider>
         </Container>
