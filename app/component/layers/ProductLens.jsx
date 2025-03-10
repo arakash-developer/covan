@@ -10,7 +10,7 @@ function SampleNextArrow(props) {
   const { className, style, onClick } = props;
   return (
     <div
-      className="rightarrow absolute  right-[-30px] top-1/2 -translate-y-1/2 cursor-pointer w-10 h-10 hover:bg-[#e7b053] border border-[#ccc] hover:border-[#e7b053] flex justify-center items-center group"
+      className="rightarrow absolute right-[-80px] top-1/2 -translate-y-1/2 cursor-pointer w-10 h-10 hover:bg-[#e7b053] border border-[#ccc] hover:border-[#e7b053] flex justify-center items-center group"
       onClick={onClick}
     >
       <FaArrowRightLong className="text-[#ccc] text-[20px] group-hover:text-[#fff] inline-block" />
@@ -44,21 +44,15 @@ const ProductLens = () => {
     nextArrow: <SampleNextArrow />,
   };
   return (
-    <div className="w-full bg-red-300">
+    <div className="productLens w-full">
       <Image className="h-[668px] w-full object-cover" src={Img1.src} />
-      <div className="suggetion w-full mt-5 cursor-pointer ">
-        <Slider {...settings} className="h-[190px] flex bg-green-300 ">
-          <Image className="w-full" src={Img1.src} preview={false} />
-          <Image className="w-full" src={Img1.src} preview={false} />
-          <Image className="w-full" src={Img1.src} preview={false} />
-          <Image className="w-full" src={Img1.src} preview={false} />
-          <Image className="w-full" src={Img1.src} preview={false} />
-          <Image className="w-full" src={Img1.src} preview={false} />
-          <Image className="w-full" src={Img1.src} preview={false} />
-          <Image className="w-full" src={Img1.src} preview={false} />
-          <Image className="w-full" src={Img1.src} preview={false} />
-          <Image className="w-full" src={Img1.src} preview={false} />
-          <Image className="w-full" src={Img1.src} preview={false} />
+      <div className="suggetion w-full mt-5 cursor-pointer">
+        <Slider {...settings} className="h-[150px] w-full flex relative left-4">
+          <Image className="w-[150px]" src={Img1.src} />
+          <Image className="w-[150px]" src={Img1.src} />
+          <Image className="w-[150px]" src={Img1.src} />
+          <Image className="w-[150px]" src={Img1.src} />
+          <Image className="w-[150px]" src={Img1.src} />
         </Slider>
       </div>
     </div>
