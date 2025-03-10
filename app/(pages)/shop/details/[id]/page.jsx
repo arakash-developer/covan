@@ -1,6 +1,7 @@
+import Container from "@/app/component/Container";
+import ProductLens from "@/app/component/layers/ProductLens";
 import { Prata } from "next/font/google";
 import { FaAngleRight } from "react-icons/fa";
-
 const Pratafont = Prata({
   weight: "400",
   subsets: ["latin"],
@@ -28,6 +29,20 @@ const page = async ({ params }) => {
         </div>
       </section>
       {/* Shop */}
+
+      {/* Product */}
+      <section className="my-[110px]">
+        <Container className="grid grid-cols-1 md:grid-cols-2 gap-[30px]">
+          <div className="product_img">
+            <ProductLens />
+          </div>
+          <div className="product_description">
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nemo,
+            nihil!
+          </div>
+        </Container>
+      </section>
+      {/* Product */}
     </>
   );
 };

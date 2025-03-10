@@ -1,4 +1,4 @@
-import Pa from '@/app/component/layers/Pa'
+import Pa from '@/app/component/layers/ProductLens'
 import React from 'react'
 
 const page = () => {
