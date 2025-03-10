@@ -58,12 +58,15 @@ const ProductLens = ({ id = 1 }) => {
 
   let handlerPicture = (index) => () => {
     console.log(index);
+    setProductImage(index);
   };
+  console.log(productImage);
+  
   return (
     <div className="productLens w-full">
       <Image
         className="h-[840px] w-full lg:min-w-[670px] object-cover"
-        src={product.thumbnail}
+        src={product.images[productImage]}
       />
       <div className="suggetion w-full mt-5 cursor-pointer">
         <Slider {...settings} className="h-[150px] w-full flex relative left-4">
