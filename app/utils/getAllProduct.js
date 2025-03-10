@@ -1,6 +1,6 @@
 const getAllProduct = async () => {
   let response = await fetch(
-    "https://makeup-api.herokuapp.com/api/v1/products.json?brand=covergirl"
+    "https://dummyjson.com/products/"
   );
   let blobs = await response.json();
   return blobs;

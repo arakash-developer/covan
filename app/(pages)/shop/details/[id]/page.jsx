@@ -34,7 +34,7 @@ const page = async ({ params }) => {
       <section className="my-8 md:my-[110px]">
         <Container className="grid grid-cols-1 md:grid-cols-2 gap-[30px]">
           <div className="product_img">
-            <ProductLens />
+            <ProductLens id={id} />
           </div>
           <div className="product_description">
             Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nemo,

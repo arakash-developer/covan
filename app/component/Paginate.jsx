@@ -2,6 +2,7 @@
 import { useEffect, useState } from "react";
 import ReactPaginate from "react-paginate";
 import Item2 from "../component/Item2";
+import getAllProduct from "../utils/getAllProduct";
 
 function Items({ currentItems }) {
   return (
@@ -10,7 +11,7 @@ function Items({ currentItems }) {
         {currentItems &&
           currentItems.map((item, index) => (
             <div key={index}>
-              <Item2 className="w-full xsm:w-auto" />
+              <Item2 className="w-full xsm:w-auto" Name={item?.title} thumbnail={item?.thumbnail} id={item.id} />
             </div>
           ))}
       </div>
@@ -20,14 +21,22 @@ function Items({ currentItems }) {
 
 const Paginate = ({ itemsPerPage, catagory }) => {
   let [items, setItems] = useState([]);
-
+  let getdata = async () => {
+    let response = await getAllProduct();
+    setItems(response.products);
+  };
   useEffect(() => {
-    let Products = [];
-    for (let i = 1; i <= 200; i++) {
-      Products.push(i);
-    }
-    setItems(Products);
+    getdata();
   }, []);
+  console.log(items);
+
+  // useEffect(() => {
+  //   let Products = [];
+  //   for (let i = 1; i <= 200; i++) {
+  //     Products.push(i);
+  //   }
+  //   setItems(Products);
+  // }, []);
   // useEffect(() => {
   //     let getdata = async () => {
   //         let response = await fetch("https://dummyjson.com/products");
