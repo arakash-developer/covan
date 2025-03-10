@@ -31,7 +31,7 @@ const page = async ({ params }) => {
       {/* Shop */}
 
       {/* Product */}
-      <section className="my-[110px]">
+      <section className="my-8 md:my-[110px]">
         <Container className="grid grid-cols-1 md:grid-cols-2 gap-[30px]">
           <div className="product_img">
             <ProductLens />

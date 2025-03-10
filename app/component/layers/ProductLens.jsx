@@ -47,10 +47,7 @@ const ProductLens = () => {
     <div className="productLens w-full">
       <Image className="h-[668px] w-full object-cover" src={Img1.src} />
       <div className="suggetion w-full mt-5 cursor-pointer">
-        <Slider
-          {...settings}
-          className="h-[150px] w-full flex relative left-4"
-        >
+        <Slider {...settings} className="h-[150px] w-full flex relative left-4">
           <Image className="w-[150px]" src={Img1.src} />
           <Image className="w-[150px]" src={Img1.src} />
           <Image className="w-[150px]" src={Img1.src} />
