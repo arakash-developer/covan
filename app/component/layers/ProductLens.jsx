@@ -10,7 +10,7 @@ function SampleNextArrow(props) {
   const { className, style, onClick } = props;
   return (
     <div
-      className="rightarrow absolute right-[-80px] top-1/2 -translate-y-1/2 cursor-pointer w-10 h-10 hover:bg-[#e7b053] border border-[#ccc] hover:border-[#e7b053] flex justify-center items-center group"
+      className="rightarrow absolute right-0 md:right-[-80px] top-1/2 -translate-y-1/2 cursor-pointer w-10 h-10 hover:bg-[#e7b053] border border-[#ccc] hover:border-[#e7b053] hidden md:flex justify-center items-center group"
       onClick={onClick}
     >
       <FaArrowRightLong className="text-[#ccc] text-[20px] group-hover:text-[#fff] inline-block" />
@@ -49,7 +49,7 @@ const ProductLens = () => {
       <div className="suggetion w-full mt-5 cursor-pointer">
         <Slider
           {...settings}
-          className="h-[150px] w-full flex flex-col md:flex-row relative left-4"
+          className="h-[150px] w-full flex relative left-4"
         >
           <Image className="w-[150px]" src={Img1.src} />
           <Image className="w-[150px]" src={Img1.src} />
