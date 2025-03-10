@@ -6,9 +6,9 @@ import Image from "next/image";
 import { useState } from "react";
 import { FaAngleRight, FaCaretDown, FaServer } from "react-icons/fa";
 import { TfiLayoutGrid3Alt } from "react-icons/tfi";
-import Container from "../component/Container";
-import Paginate from "../component/Paginate";
-import CatLine from "../component/layers/CatLine";
+import Container from "../../component/Container";
+import Paginate from "../../component/Paginate";
+import CatLine from "../../component/layers/CatLine";
 
 const Pratafont = Prata({
   weight: "400",

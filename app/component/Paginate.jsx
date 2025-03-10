@@ -4,8 +4,6 @@ import ReactPaginate from "react-paginate";
 import Item2 from "../component/Item2";
 
 function Items({ currentItems }) {
-  console.log(currentItems);
-
   return (
     <>
       <div className=" grid justify-between grid-cols-1 xsm:grid-cols-2 md:grid-cols-3 gap-[30px]">

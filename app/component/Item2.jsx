@@ -1,5 +1,6 @@
 import Product1 from "@/public/product1.jpg";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 import { FaArrowRightLong, FaRegHeart } from "react-icons/fa6";
 import { HiSearch } from "react-icons/hi";
 import { TiStarFullOutline } from "react-icons/ti";
@@ -9,9 +10,17 @@ const Item = ({
   Name = "Product Name",
   Price = 0,
   thumbnail = Product1,
+  id = 1,
 }) => {
+  const router = useRouter();
+  const handlerClick = () => {
+    router.push(`/shop/details/${id}`);
+  };
   return (
-    <div className={`product ${className} w-[270px] h-[436px] cursor-pointer`}>
+    <div
+      className={`product ${className} w-[270px] h-[436px] cursor-pointer`}
+      onClick={handlerClick}
+    >
       <div className="w-full h-full relative">
         <div className="flex justify-center items-center absolute left-[20px] top-[20px] w-[55px] h-[30px] bg-[#82aa17]">
           <p className="font-normal text-sm leading-[214%] capitalize text-center text-[#fff]">

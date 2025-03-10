@@ -7,8 +7,8 @@ import { useState } from "react";
 import { AiOutlineSearch } from "react-icons/ai";
 import { FaAngleRight, FaChevronRight, FaCommentDots, FaRegEdit } from "react-icons/fa";
 import { MdAccessTime } from "react-icons/md";
-import Container from "../component/Container";
-import CatLine from "../component/layers/CatLine";
+import Container from "../../component/Container";
+import CatLine from "../../component/layers/CatLine";
 
 const Pratafont = Prata({
   weight: "400",

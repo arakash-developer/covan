@@ -1,8 +1,8 @@
 import Vendor1 from "@/public/vendor1.png";
 import VendorLogo1 from "@/public/vendorlogo1.jpg";
 import { IoFilterSharp } from "react-icons/io5";
-import Container from "../component/Container";
-import VendorCard from "../component/layers/VendorCard";
+import Container from "../../component/Container";
+import VendorCard from "../../component/layers/VendorCard";
 import { FaMicrosoft } from "react-icons/fa6";
 import { FaBars } from "react-icons/fa";
 import { RiFunctionFill } from "react-icons/ri";
