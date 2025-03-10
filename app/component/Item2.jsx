@@ -18,7 +18,7 @@ const Item = ({
   };
   return (
     <div
-      className={`product ${className} w-[270px] h-[436px] cursor-pointer`}
+      className={`product ${className} w-[270px] h-[436px] cursor-pointer bg-gray-200`}
       onClick={handlerClick}
     >
       <div className="w-full h-full relative">
