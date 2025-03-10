@@ -1,5 +1,5 @@
 "use client";
-import Product from "./context/product";
+import Product from "./context/productContext";
 
 const StoreProvider = ({ children }) => {
   return (

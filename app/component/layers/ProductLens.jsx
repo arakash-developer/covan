@@ -1,7 +1,8 @@
 "use client";
+import { Context } from "@/app/context/productContext";
 import getSingleProduct from "@/app/utils/getSingleProduct";
 import { Image } from "antd";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { FaArrowRightLong } from "react-icons/fa6";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick-theme.css";
@@ -45,15 +46,19 @@ const ProductLens = ({ id = 1 }) => {
     nextArrow: <SampleNextArrow />,
   };
   let [product, setProduct] = useState([]);
+  let { productImage, setProductImage } = useContext(Context);
   let getData = async () => {
     let products = await getSingleProduct(id);
     setProduct(products);
+    setProductImage(product.images);
   };
   useEffect(() => {
     getData();
   }, []);
-  console.log(product);
 
+  let handlerPicture = (index) => () => {
+    console.log(index);
+  };
   return (
     <div className="productLens w-full">
       <Image
@@ -64,6 +69,7 @@ const ProductLens = ({ id = 1 }) => {
         <Slider {...settings} className="h-[150px] w-full flex relative left-4">
           {product.images?.map((item, index) => (
             <Image
+              onClick={handlerPicture(index)}
               key={index}
               preview={false}
               className="w-[150px]"
