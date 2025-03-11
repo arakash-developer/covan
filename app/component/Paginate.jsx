@@ -40,7 +40,7 @@ const Paginate = ({ itemsPerPage, catagory }) => {
   };
   useEffect(() => {
     getdata();
-  }, []);
+  }, [catagory]);
   // console.log(items);
 
   // let filpro = items.filter((data) => data.category == catagory);

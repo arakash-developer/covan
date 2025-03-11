@@ -97,8 +97,11 @@ const page = () => {
               {uniqueCategories.map((item, index) => (
                 <li
                   key={index}
+                  onClick={() => {
+                    setCategory(item);
+                  }}
                   className="font-semibold text-[13px] leading-[178%] uppercase text-[#080808]
-                py-[18px] border-b-[2px] border-dashed border-[#e8ebf0]"
+                py-[18px] border-b-[2px] border-dashed border-[#e8ebf0] cursor-pointer"
                 >
                   {item}
                   <span className="font-semibold text-[13px] leading-[196%] uppercase text-[#666]">
