@@ -24,10 +24,12 @@ function Items({ currentItems }) {
   );
 }
 
-const Paginate = ({ itemsPerPage, catagory, setLoading,loading }) => {
+const Paginate = ({ itemsPerPage, catagory }) => {
   let [items, setItems] = useState([]);
+  let [loading, setLoading] = useState();
 
   let getdata = async () => {
+    setLoading(true);
     let response = await getAllProduct();
     let product = response.products;
     if (catagory) {
@@ -36,6 +38,7 @@ const Paginate = ({ itemsPerPage, catagory, setLoading,loading }) => {
     } else {
       setItems(product);
     }
+    setLoading(false);
   };
   useEffect(() => {
     getdata();
@@ -64,7 +67,9 @@ const Paginate = ({ itemsPerPage, catagory, setLoading,loading }) => {
     <>
       <Items currentItems={currentItems} />
       <div
-        className={`flex-col sm:flex-row md:items-end items-center justify-between mt-[50px]`}
+        className={`flex-col sm:flex-row md:items-end items-center justify-between mt-[50px] ${
+          loading ? "hidden" : "flex"
+        }`}
       >
         <ReactPaginate
           breakLabel="..."
