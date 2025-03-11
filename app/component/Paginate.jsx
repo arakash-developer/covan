@@ -42,7 +42,6 @@ const Paginate = ({ itemsPerPage, catagory }) => {
     getdata();
   }, [catagory]);
 
-
   const [itemOffset, setItemOffset] = useState(0);
 
   // Simulate fetching items from another resources.
