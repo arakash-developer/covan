@@ -23,7 +23,7 @@ const page = () => {
   const popupRef = useRef(null);
   let [category, setCategory] = useState();
   let [product, setProduct] = useState([]);
-
+  let [filterLeft, setFilterLeft] = useState(false);
   // Toggle popup visibility
   const togglePopup = () => {
     setIsPopupVisible(!isPopupVisible);
@@ -36,10 +36,8 @@ const page = () => {
         setIsPopupVisible(false);
       }
     };
-
     // Listen for outside clicks
     document.addEventListener("mousedown", handleClickOutside);
-
     // Cleanup the event listener on component unmount
     return () => {
       document.removeEventListener("mousedown", handleClickOutside);
@@ -90,8 +88,10 @@ const page = () => {
 
       {/* Product */}
       <section className="py-[110px]">
-        <Container className="w-full flex lg:flex-row flex-col items-start justify-between">
-          <div className="w-[280px] mr-4">
+        <Container
+          className={`w-full flex lg:flex-row flex-col items-start justify-between `}
+        >
+          <div className={`w-[280px] mr-4  lg:block hidden`}>
             <CatLine categoryName="Categories" />
             <div>
               {uniqueCategories.map((item, index) => (
