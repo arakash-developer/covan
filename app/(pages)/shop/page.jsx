@@ -55,7 +55,7 @@ const page = () => {
     setIsPopupVisible(false);
   };
 
-  // fetch data from
+  // fetch data
   let getdata = async () => {
     let response = await getAllProduct();
     let product = response.products;
@@ -65,9 +65,8 @@ const page = () => {
   useEffect(() => {
     getdata();
   }, []);
-
+  // unique categories
   const uniqueCategories = [...new Set(product.map((item) => item.category))];
-  console.log(uniqueCategories);
   return (
     <>
       {/* Shop */}
@@ -95,78 +94,18 @@ const page = () => {
           <div className="w-[280px] mr-4">
             <CatLine categoryName="Categories" />
             <div>
-              <li
-                className="font-semibold text-[13px] leading-[178%] uppercase text-[#080808]
+              {uniqueCategories.map((item, index) => (
+                <li
+                  key={index}
+                  className="font-semibold text-[13px] leading-[178%] uppercase text-[#080808]
                 py-[18px] border-b-[2px] border-dashed border-[#e8ebf0]"
-              >
-                Body Oil{" "}
-                <span className="font-semibold text-[13px] leading-[196%] uppercase text-[#666]">
-                  (6)
-                </span>
-              </li>
-              <li
-                className="font-semibold text-[13px] leading-[178%] uppercase text-[#080808]
-                py-[18px] border-b-[2px] border-dashed border-[#e8ebf0]"
-              >
-                Concealer{" "}
-                <span className="font-semibold text-[13px] leading-[196%] uppercase text-[#666]">
-                  (6)
-                </span>
-              </li>
-              <li
-                className="font-semibold text-[13px] leading-[178%] uppercase text-[#080808]
-                py-[18px] border-b-[2px] border-dashed border-[#e8ebf0]"
-              >
-                Eyeshadow{" "}
-                <span className="font-semibold text-[13px] leading-[196%] uppercase text-[#666]">
-                  (7)
-                </span>
-              </li>
-              <li
-                className="font-semibold text-[13px] leading-[178%] uppercase text-[#080808]
-                py-[18px] border-b-[2px] border-dashed border-[#e8ebf0]"
-              >
-                For Autumn{" "}
-                <span className="font-semibold text-[13px] leading-[196%] uppercase text-[#666]">
-                  (15)
-                </span>
-              </li>
-              <li
-                className="font-semibold text-[13px] leading-[178%] uppercase text-[#080808]
-                py-[18px] border-b-[2px] border-dashed border-[#e8ebf0]"
-              >
-                Makeup Powder
-                <span className="font-semibold text-[13px] leading-[196%] uppercase text-[#666]">
-                  (8)
-                </span>
-              </li>
-              <li
-                className="font-semibold text-[13px] leading-[178%] uppercase text-[#080808]
-                py-[18px] border-b-[2px] border-dashed border-[#e8ebf0]"
-              >
-                Shop Lipstick
-                <span className="font-semibold text-[13px] leading-[196%] uppercase text-[#666]">
-                  (1)
-                </span>
-              </li>
-              <li
-                className="font-semibold text-[13px] leading-[178%] uppercase text-[#080808]
-                py-[18px] border-b-[2px] border-dashed border-[#e8ebf0]"
-              >
-                Shop Perfume
-                <span className="font-semibold text-[13px] leading-[196%] uppercase text-[#666]">
-                  (19)
-                </span>
-              </li>
-              <li
-                className="font-semibold text-[13px] leading-[178%] uppercase text-[#080808]
-                py-[18px] border-b-[2px] border-dashed border-[#e8ebf0]"
-              >
-                Soap Beauty
-                <span className="font-semibold text-[13px] leading-[196%] uppercase text-[#666]">
-                  (9)
-                </span>
-              </li>
+                >
+                  {item}
+                  <span className="font-semibold text-[13px] leading-[196%] uppercase text-[#666]">
+                    (6)
+                  </span>
+                </li>
+              ))}
             </div>
             <div className="mt-8 mb-[50px]">
               <CatLine categoryName="Price" />
