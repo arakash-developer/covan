@@ -49,6 +49,7 @@ const page = () => {
 
   const handlerItemCount = (value) => {
     setSortType(value);
+    setIsPopupVisible(false);
   };
   return (
     <>
@@ -330,7 +331,7 @@ const page = () => {
                     </div>
                   )}
 
-                  <p className="font-medium text-sm leading-[286%] capitalize text-[#666] flex items-center gap-1">
+                  <p onClick={togglePopup} className="font-medium text-sm leading-[286%] capitalize text-[#666] flex items-center gap-1">
                     {sortType}
                     <FaCaretDown />
                   </p>
