@@ -1,4 +1,5 @@
 "use client";
+import React, { useState, useEffect, useRef } from 'react';
 import MultiRangeSlider from "@/app/component/multiRangeSlider/PriceRangeSlider";
 import Brand1 from "@/public/brand1.png";
 import { Prata } from "next/font/google";
@@ -18,6 +19,32 @@ const Pratafont = Prata({
 const page = () => {
   const [rangeValues, setRangeValues] = useState({ min: 0, max: 100 });
   let [sortType, setSortType] = useState(12);
+  const [isPopupVisible, setIsPopupVisible] = useState(false);
+  const popupRef = useRef(null);
+
+
+
+  // Toggle popup visibility
+  const togglePopup = () => {
+    setIsPopupVisible(!isPopupVisible);
+  };
+
+  // Close the popup if clicked outside
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (popupRef.current && !popupRef.current.contains(event.target)) {
+        setIsPopupVisible(false);
+      }
+    };
+
+    // Listen for outside clicks
+    document.addEventListener('mousedown', handleClickOutside);
+
+    // Cleanup the event listener on component unmount
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, []);
 
   const handleRangeChange = (values) => {
     setRangeValues(values);
