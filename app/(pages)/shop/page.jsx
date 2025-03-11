@@ -310,7 +310,10 @@ const page = () => {
             </div>
             {loading ? (
               <div className="flex justify-center items-end w-full relative">
-                <ScaleLoader className="absolute top-[200px]" color="#E7B053" />
+                <ScaleLoader
+                  className="absolute top-1/2 lg:top-[100px]"
+                  color="#E7B053"
+                />
               </div>
             ) : (
               <Paginate itemsPerPage={sortType} catagory={category} />
