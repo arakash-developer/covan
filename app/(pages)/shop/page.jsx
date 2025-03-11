@@ -1,10 +1,9 @@
 "use client";
-import React, { useState, useEffect, useRef } from 'react';
 import MultiRangeSlider from "@/app/component/multiRangeSlider/PriceRangeSlider";
 import Brand1 from "@/public/brand1.png";
 import { Prata } from "next/font/google";
 import Image from "next/image";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { FaAngleRight, FaCaretDown, FaServer } from "react-icons/fa";
 import { TfiLayoutGrid3Alt } from "react-icons/tfi";
 import Container from "../../component/Container";
@@ -22,8 +21,6 @@ const page = () => {
   const [isPopupVisible, setIsPopupVisible] = useState(false);
   const popupRef = useRef(null);
 
-
-
   // Toggle popup visibility
   const togglePopup = () => {
     setIsPopupVisible(!isPopupVisible);
@@ -38,11 +35,11 @@ const page = () => {
     };
 
     // Listen for outside clicks
-    document.addEventListener('mousedown', handleClickOutside);
+    document.addEventListener("mousedown", handleClickOutside);
 
     // Cleanup the event listener on component unmount
     return () => {
-      document.removeEventListener('mousedown', handleClickOutside);
+      document.removeEventListener("mousedown", handleClickOutside);
     };
   }, []);
 
@@ -299,34 +296,40 @@ const page = () => {
               </div>
               <div className="flex items-center gap-[10px]">
                 <div className="leading-[43px] h-full px-[11px] border-2 border-[#ccc] cursor-pointer relative">
-                  <div className="absolute right-0 top-[105%] w-[70px] justify-center flex border border-[#00000026] z-20 bg-[#fff]">
-                    <div className="flex flex-col gap-y-1 w-full  ">
-                      <div
-                        onClick={() => handlerItemCount(24)}
-                        className="w-full flex justify-center hover:bg-[#e7b053] hover:text-[#fff]"
-                      >
-                        <p className="font-medium text-sm leading-[286%] capitalize text-[#666]">
-                          24
-                        </p>
-                      </div>
-                      <div
-                        onClick={() => handlerItemCount(36)}
-                        className="w-full flex justify-center hover:bg-[#e7b053] hover:text-[#fff]"
-                      >
-                        <p className="font-medium text-sm leading-[286%] capitalize text-[#666]">
-                          36
-                        </p>
-                      </div>
-                      <div
-                        onClick={() => handlerItemCount(48)}
-                        className="w-full flex justify-center hover:bg-[#e7b053] hover:text-[#fff]"
-                      >
-                        <p className="font-medium text-sm leading-[286%] capitalize text-[#666]">
-                          48
-                        </p>
+                  {isPopupVisible && (
+                    <div
+                      ref={popupRef}
+                      className="absolute right-0 top-[105%] w-[70px] justify-center flex border border-[#00000026] z-20 bg-[#fff]"
+                    >
+                      <div className="flex flex-col gap-y-1 w-full  ">
+                        <div
+                          onClick={() => handlerItemCount(24)}
+                          className="w-full flex justify-center hover:bg-[#e7b053] hover:text-[#fff]"
+                        >
+                          <p className="font-medium text-sm leading-[286%] capitalize text-[#666]">
+                            24
+                          </p>
+                        </div>
+                        <div
+                          onClick={() => handlerItemCount(36)}
+                          className="w-full flex justify-center hover:bg-[#e7b053] hover:text-[#fff]"
+                        >
+                          <p className="font-medium text-sm leading-[286%] capitalize text-[#666]">
+                            36
+                          </p>
+                        </div>
+                        <div
+                          onClick={() => handlerItemCount(48)}
+                          className="w-full flex justify-center hover:bg-[#e7b053] hover:text-[#fff]"
+                        >
+                          <p className="font-medium text-sm leading-[286%] capitalize text-[#666]">
+                            48
+                          </p>
+                        </div>
                       </div>
                     </div>
-                  </div>
+                  )}
+
                   <p className="font-medium text-sm leading-[286%] capitalize text-[#666] flex items-center gap-1">
                     {sortType}
                     <FaCaretDown />
