@@ -1,5 +1,6 @@
 "use client";
 import MultiRangeSlider from "@/app/component/multiRangeSlider/PriceRangeSlider";
+import getAllProduct from "@/app/utils/getAllProduct";
 import Brand1 from "@/public/brand1.png";
 import { Prata } from "next/font/google";
 import Image from "next/image";
@@ -9,7 +10,6 @@ import { TfiLayoutGrid3Alt } from "react-icons/tfi";
 import Container from "../../component/Container";
 import Paginate from "../../component/Paginate";
 import CatLine from "../../component/layers/CatLine";
-import getAllProduct from "@/app/utils/getAllProduct";
 
 const Pratafont = Prata({
   weight: "400",
@@ -29,8 +29,6 @@ const page = () => {
     setIsPopupVisible(!isPopupVisible);
   };
 
-  
-
   // Close the popup if clicked outside
   useEffect(() => {
     const handleClickOutside = (event) => {
@@ -48,7 +46,6 @@ const page = () => {
     };
   }, []);
 
-
   const handleRangeChange = (values) => {
     setRangeValues(values);
   };
@@ -57,7 +54,6 @@ const page = () => {
     setSortType(value);
     setIsPopupVisible(false);
   };
-
 
   // fetch data from
   let getdata = async () => {
