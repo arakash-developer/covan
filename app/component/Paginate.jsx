@@ -41,36 +41,7 @@ const Paginate = ({ itemsPerPage, catagory }) => {
   useEffect(() => {
     getdata();
   }, [catagory]);
-  // console.log(items);
 
-  // let filpro = items.filter((data) => data.category == catagory);
-  // console.log(filpro);
-
-  // useEffect(() => {
-  //   let Products = [];
-  //   for (let i = 1; i <= 200; i++) {
-  //     Products.push(i);
-  //   }
-  //   setItems(Products);
-  // }, []);
-  // useEffect(() => {
-  //     let getdata = async () => {
-  //         let response = await fetch("https://dummyjson.com/products");
-  //         let data = await response.json();
-  //         let newdata = data.products;
-  //         setItems(newdata);
-
-  //         let cat = newdata.filter((data)=>{
-  //             return data.category == catagory
-  //         })
-  //         setItems(cat)
-
-  //         if(catagory == "regular"){
-  //             setItems(newdata)
-  //         }
-  //     }
-  //     getdata();
-  // },[catagory])
 
   const [itemOffset, setItemOffset] = useState(0);
 
