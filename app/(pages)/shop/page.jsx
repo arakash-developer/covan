@@ -7,10 +7,10 @@ import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 import { FaAngleRight, FaCaretDown, FaServer } from "react-icons/fa";
 import { TfiLayoutGrid3Alt } from "react-icons/tfi";
+import { ScaleLoader } from "react-spinners";
 import Container from "../../component/Container";
 import Paginate from "../../component/Paginate";
 import CatLine from "../../component/layers/CatLine";
-
 const Pratafont = Prata({
   weight: "400",
   subsets: ["latin"],
@@ -24,6 +24,8 @@ const page = () => {
   let [category, setCategory] = useState();
   let [product, setProduct] = useState([]);
   let [filterLeft, setFilterLeft] = useState(false);
+  let [loading, setLoading] = useState(true);
+
   // Toggle popup visibility
   const togglePopup = () => {
     setIsPopupVisible(!isPopupVisible);
@@ -306,7 +308,13 @@ const page = () => {
                 </div>
               </div>
             </div>
-            <Paginate itemsPerPage={sortType} catagory={category} />
+            {loading ? (
+              <div className="flex justify-center items-end w-full relative">
+                <ScaleLoader className="absolute top-[200px]" color="#E7B053" />
+              </div>
+            ) : (
+              <Paginate itemsPerPage={sortType} catagory={category} />
+            )}
           </div>
         </Container>
       </section>
