@@ -60,7 +60,7 @@ const Item = ({
             <TiStarFullOutline className="inline-block text-[#ccc]" />
           </div>
           <h3 className="font-normal text-lg leading-[123%] capitalize text-[#080808]">
-            {Name.substr(0, 26) + "..."}
+            {Name.substr(0, 34) + "..."}
             {/* True Cosme */}
           </h3>
           <h3 className="font-normal text-base text-[#e7b053] mt-2">

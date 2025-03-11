@@ -16,6 +16,7 @@ function Items({ currentItems }) {
                 Name={item?.title}
                 thumbnail={item?.thumbnail}
                 id={item.id}
+                Price={item?.price}
               />
             </div>
           ))}
