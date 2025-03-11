@@ -24,7 +24,7 @@ const page = () => {
   let [category, setCategory] = useState();
   let [product, setProduct] = useState([]);
   let [filterLeft, setFilterLeft] = useState(false);
-  let [loading, setLoading] = useState(true);
+  let [loading, setLoading] = useState();
 
   // Toggle popup visibility
   const togglePopup = () => {
@@ -57,6 +57,7 @@ const page = () => {
 
   // fetch data
   let getdata = async () => {
+    setLoading(true);
     let response = await getAllProduct();
     let product = response.products;
     setProduct(product);
@@ -317,7 +318,12 @@ const page = () => {
                 />
               </div>
             ) : (
-              <Paginate itemsPerPage={sortType} catagory={category} loading={loading} />
+              <Paginate
+                itemsPerPage={sortType}
+                catagory={category}
+                loading={loading}
+                setLoading={setLoading}
+              />
             )}
           </div>
         </Container>

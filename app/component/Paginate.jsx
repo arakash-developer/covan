@@ -24,7 +24,7 @@ function Items({ currentItems }) {
   );
 }
 
-const Paginate = ({ itemsPerPage, catagory }) => {
+const Paginate = ({ itemsPerPage, catagory, setLoading,loading }) => {
   let [items, setItems] = useState([]);
 
   let getdata = async () => {
