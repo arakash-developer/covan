@@ -60,6 +60,7 @@ const page = () => {
     let response = await getAllProduct();
     let product = response.products;
     setProduct(product);
+    setLoading(false);
   };
 
   useEffect(() => {
