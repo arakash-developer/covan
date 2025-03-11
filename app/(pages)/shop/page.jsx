@@ -317,7 +317,7 @@ const page = () => {
                 />
               </div>
             ) : (
-              <Paginate itemsPerPage={sortType} catagory={category} />
+              <Paginate itemsPerPage={sortType} catagory={category} loading={loading} />
             )}
           </div>
         </Container>

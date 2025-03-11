@@ -63,7 +63,9 @@ const Paginate = ({ itemsPerPage, catagory }) => {
   return (
     <>
       <Items currentItems={currentItems} />
-      <div className="flex flex-col sm:flex-row md:items-end items-center justify-between mt-[50px]">
+      <div
+        className={`flex-col sm:flex-row md:items-end items-center justify-between mt-[50px]`}
+      >
         <ReactPaginate
           breakLabel="..."
           nextLabel="next >"
