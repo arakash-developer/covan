@@ -21,7 +21,7 @@ const page = () => {
   let [sortType, setSortType] = useState(12);
   const [isPopupVisible, setIsPopupVisible] = useState(false);
   const popupRef = useRef(null);
-  let [category, setCategory] = useState(null);
+  let [category, setCategory] = useState();
   let [product, setProduct] = useState([]);
 
   // Toggle popup visibility

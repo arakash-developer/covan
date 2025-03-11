@@ -7,7 +7,7 @@ import getAllProduct from "../utils/getAllProduct";
 function Items({ currentItems }) {
   return (
     <>
-      <div className=" grid justify-between grid-cols-1 xsm:grid-cols-2 md:grid-cols-3 gap-[30px]">
+      <div className="grid justify-between grid-cols-1 xsm:grid-cols-2 md:grid-cols-3 gap-[30px]">
         {currentItems &&
           currentItems.map((item, index) => (
             <div key={index}>
@@ -26,7 +26,6 @@ function Items({ currentItems }) {
 
 const Paginate = ({ itemsPerPage, catagory }) => {
   let [items, setItems] = useState([]);
-  console.log(catagory);
 
   let getdata = async () => {
     let response = await getAllProduct();
