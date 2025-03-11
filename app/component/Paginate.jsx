@@ -11,7 +11,12 @@ function Items({ currentItems }) {
         {currentItems &&
           currentItems.map((item, index) => (
             <div key={index}>
-              <Item2 className="w-full xsm:w-auto" Name={item?.title} thumbnail={item?.thumbnail} id={item.id} />
+              <Item2
+                className="w-full xsm:w-auto"
+                Name={item?.title}
+                thumbnail={item?.thumbnail}
+                id={item.id}
+              />
             </div>
           ))}
       </div>
@@ -21,14 +26,25 @@ function Items({ currentItems }) {
 
 const Paginate = ({ itemsPerPage, catagory }) => {
   let [items, setItems] = useState([]);
+  console.log(catagory);
+
   let getdata = async () => {
     let response = await getAllProduct();
-    setItems(response.products);
+    let product = response.products;
+    if (catagory) {
+      let filpro = product.filter((data) => data.category == catagory);
+      setItems(filpro);
+    } else {
+      setItems(product);
+    }
   };
   useEffect(() => {
     getdata();
   }, []);
-  console.log(items);
+  // console.log(items);
+
+  // let filpro = items.filter((data) => data.category == catagory);
+  // console.log(filpro);
 
   // useEffect(() => {
   //   let Products = [];

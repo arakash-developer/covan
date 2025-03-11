@@ -9,6 +9,7 @@ import { TfiLayoutGrid3Alt } from "react-icons/tfi";
 import Container from "../../component/Container";
 import Paginate from "../../component/Paginate";
 import CatLine from "../../component/layers/CatLine";
+import getAllProduct from "@/app/utils/getAllProduct";
 
 const Pratafont = Prata({
   weight: "400",
@@ -20,11 +21,15 @@ const page = () => {
   let [sortType, setSortType] = useState(12);
   const [isPopupVisible, setIsPopupVisible] = useState(false);
   const popupRef = useRef(null);
+  let [category, setCategory] = useState(null);
+  let [product, setProduct] = useState([]);
 
   // Toggle popup visibility
   const togglePopup = () => {
     setIsPopupVisible(!isPopupVisible);
   };
+
+  
 
   // Close the popup if clicked outside
   useEffect(() => {
@@ -43,6 +48,7 @@ const page = () => {
     };
   }, []);
 
+
   const handleRangeChange = (values) => {
     setRangeValues(values);
   };
@@ -51,6 +57,21 @@ const page = () => {
     setSortType(value);
     setIsPopupVisible(false);
   };
+
+
+  // fetch data from
+  let getdata = async () => {
+    let response = await getAllProduct();
+    let product = response.products;
+    setProduct(product);
+  };
+
+  useEffect(() => {
+    getdata();
+  }, []);
+
+  const uniqueCategories = [...new Set(product.map((item) => item.category))];
+  console.log(uniqueCategories);
   return (
     <>
       {/* Shop */}
@@ -347,7 +368,7 @@ const page = () => {
                 </div>
               </div>
             </div>
-            <Paginate itemsPerPage={sortType} />
+            <Paginate itemsPerPage={sortType} catagory={category} />
           </div>
         </Container>
       </section>
