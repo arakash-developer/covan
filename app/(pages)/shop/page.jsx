@@ -17,15 +17,15 @@ const Pratafont = Prata({
 
 const page = () => {
   const [rangeValues, setRangeValues] = useState({ min: 0, max: 100 });
+  let [sortType, setSortType] = useState(12);
 
   const handleRangeChange = (values) => {
     setRangeValues(values);
   };
 
-  let Products = [];
-  for (let i = 1; i <= 200; i++) {
-    Products.push(i);
-  }
+  const handlerItemCount = (value) => {
+    setSortType(value);
+  };
   return (
     <>
       {/* Shop */}
@@ -274,17 +274,26 @@ const page = () => {
                 <div className="leading-[43px] h-full px-[11px] border-2 border-[#ccc] cursor-pointer relative">
                   <div className="absolute right-0 top-[105%] w-[70px] justify-center flex border border-[#00000026] z-20 bg-[#fff]">
                     <div className="flex flex-col gap-y-1 w-full  ">
-                      <div className="w-full flex justify-center hover:bg-[#e7b053] hover:text-[#fff]">
+                      <div
+                        onClick={() => handlerItemCount(24)}
+                        className="w-full flex justify-center hover:bg-[#e7b053] hover:text-[#fff]"
+                      >
                         <p className="font-medium text-sm leading-[286%] capitalize text-[#666]">
                           24
                         </p>
                       </div>
-                      <div className="w-full flex justify-center hover:bg-[#e7b053] hover:text-[#fff]">
+                      <div
+                        onClick={() => handlerItemCount(36)}
+                        className="w-full flex justify-center hover:bg-[#e7b053] hover:text-[#fff]"
+                      >
                         <p className="font-medium text-sm leading-[286%] capitalize text-[#666]">
                           36
                         </p>
                       </div>
-                      <div className="w-full flex justify-center hover:bg-[#e7b053] hover:text-[#fff]">
+                      <div
+                        onClick={() => handlerItemCount(48)}
+                        className="w-full flex justify-center hover:bg-[#e7b053] hover:text-[#fff]"
+                      >
                         <p className="font-medium text-sm leading-[286%] capitalize text-[#666]">
                           48
                         </p>
@@ -292,7 +301,7 @@ const page = () => {
                     </div>
                   </div>
                   <p className="font-medium text-sm leading-[286%] capitalize text-[#666] flex items-center gap-1">
-                    12
+                    {sortType}
                     <FaCaretDown />
                   </p>
                 </div>
@@ -304,7 +313,7 @@ const page = () => {
                 </div>
               </div>
             </div>
-            <Paginate itemsPerPage={12} />
+            <Paginate itemsPerPage={sortType} />
           </div>
         </Container>
       </section>
