@@ -56,17 +56,14 @@ const ProductLens = ({ id = 1 }) => {
   let handlerPicture =
     (index = 0) =>
     () => {
-      
       setProductImage(index);
     };
 
   return (
     <div className="productLens w-full">
       <Image
-        className="h-[840px] w-full lg:min-w-[670px] object-cover"
-        src={
-      product.images?.[productImage]
-        }
+        className="w-full h-full object-cover "
+        src={product.images?.[productImage]}
       />
       <div className="suggetion w-full mt-5 cursor-pointer">
         <Slider {...settings} className="h-[150px] w-full flex relative left-4">
@@ -79,7 +76,7 @@ const ProductLens = ({ id = 1 }) => {
               }}
               key={index}
               preview={false}
-              className="w-[150px]"
+              className="w-[150px] h-[150px] border  border-transparent"
               src={item}
             />
           ))}
