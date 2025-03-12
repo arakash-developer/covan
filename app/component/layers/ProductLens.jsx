@@ -63,8 +63,9 @@ const ProductLens = ({ id = 1 }) => {
     <div className="productLens w-full">
       <div className="w-full h-full justify-center items-center">
         <Image
-          className="w-full lg:w-[650px] h-[650px] bg-[#F6F6F6]"
+          className="w-full !lg:w-[650px] !h-[650px] bg-[#F6F6F6]"
           src={product.images?.[productImage]}
+          alt={product.title}
         />
       </div>
       <div className="suggetion w-full mt-5 cursor-pointer">

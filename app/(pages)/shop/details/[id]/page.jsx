@@ -117,12 +117,12 @@ const page = async ({ params }) => {
               SKU :<p className="text-[#666666]">VN00189</p>
             </div>
             <div className="pt-[13px] pb-[14px] border-b border-solid  flex items-center gap-1 font-normal text-sm leading-[175%] capitalize ">
-              Categories :<p className="text-[#666666]">{product.category}</p>
+              Categories :<p className="text-[#666666]">{product.category?product.category:null}</p>
             </div>
             <div className="pt-[13px] pb-[14px] border-b border-solid  flex items-center gap-1 font-normal text-sm leading-[175%] capitalize ">
               Tags :
               <div className="flex items-center gap-1 flex-wrap">
-                {product.tags.map((tag, index) => (
+                {product.tags?.map((tag, index) => (
                   <p className="text-[#666666]" key={index}>
                     {tag}
                   </p>
