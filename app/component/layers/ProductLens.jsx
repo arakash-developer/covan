@@ -63,8 +63,7 @@ const ProductLens = ({ id = 1 }) => {
     <div className="productLens w-full">
       <div className="w-full lg:w-[650px] h-[650px] bg-[#F6F6F6] justify-center items-center">
         <Image
-          className="w-full h-full object-cover"
-          height={650}
+          className="w-full h-full bg-cover max-w-full"
           src={product.images?.[productImage]}
         />
       </div>
@@ -79,7 +78,7 @@ const ProductLens = ({ id = 1 }) => {
               }}
               key={index}
               preview={false}
-              className="w-[150px] h-[150px] border  border-transparent"
+              className="w-[150px] h-[150px] border  border-transparent bg-[#F6F6F6]"
               src={item}
               height={150}
             />
