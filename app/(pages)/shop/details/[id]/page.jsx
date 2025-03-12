@@ -12,6 +12,17 @@ const Pratafont = Prata({
   subsets: ["latin"],
 });
 
+// or Dynamic metadata
+export async function generateMetadata({ params }) {
+  let { id } = await params;
+  let product = await getSingleProduct(id);
+  return {
+    title: `Product - ${product.title}`,
+    description: product.description,
+    image: product.thumbnail
+  };
+}
+
 const page = async ({ params }) => {
   let { id } = await params;
   let product = await getSingleProduct(id);
