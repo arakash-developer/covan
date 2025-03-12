@@ -3,8 +3,9 @@ import ProductLens from "@/app/component/layers/ProductLens";
 import getSingleProduct from "@/app/utils/getSingleProduct";
 import { Prata } from "next/font/google";
 import { AiOutlineMinus, AiOutlinePlus } from "react-icons/ai";
-import { FaAngleRight } from "react-icons/fa";
+import { FaAngleRight, FaRegHeart } from "react-icons/fa";
 import { FaStar } from "react-icons/fa6";
+import { VscGitCompare } from "react-icons/vsc";
 
 const Pratafont = Prata({
   weight: "400",
@@ -59,7 +60,7 @@ const page = async ({ params }) => {
               {product.title}
             </h2>
             <h3 className="mt-[17px] mb-[19px] font-normal text-xl leading-[100%] text-[#e7b053]">
-              {product.price}
+              $ {product.price}
             </h3>
             <p className="font-normal text-sm leading-[175%] text-[#666]">
               {product.description}
@@ -82,6 +83,39 @@ const page = async ({ params }) => {
               </div>
               <div className="font-normal text-[0.81rem] leading-[323%] uppercase text-center text-[#fff] bg-[#e7b053] px-6 cursor-pointer">
                 Add to cart
+              </div>
+            </div>
+            <div className="flex items-center gap-5">
+              <div className="flex items-center gap-2 cursor-pointer">
+                <FaRegHeart className="font-normal text-sm leading-[175%] text-center text-[#666] text-[21px]" />
+                <h3 className="font-normal text-sm leading-[175%] text-center text-[#666]">
+                  Add to Wishlist
+                </h3>
+              </div>
+              <div
+                className="flex items-center gap-1  cursor-pointer
+              "
+              >
+                <VscGitCompare className="font-normal text-sm leading-[175%] text-center text-[#666] text-[21px]" />
+                <h3 className="font-normal text-sm leading-[175%] text-center text-[#666]">
+                  Compare
+                </h3>
+              </div>
+            </div>
+            <div className="mt-[38px] pb-[14px] border-b border-solid  flex items-center gap-1 font-normal text-sm leading-[175%] capitalize ">
+              SKU :<p className="text-[#666666]">VN00189</p>
+            </div>
+            <div className="pt-[13px] pb-[14px] border-b border-solid  flex items-center gap-1 font-normal text-sm leading-[175%] capitalize ">
+              Categories :<p className="text-[#666666]">{product.category}</p>
+            </div>
+            <div className="pt-[13px] pb-[14px] border-b border-solid  flex items-center gap-1 font-normal text-sm leading-[175%] capitalize ">
+              Tags :
+              <div className="flex items-center gap-1 flex-wrap">
+                {product.tags.map((tag, index) => (
+                  <p className="text-[#666666]" key={index}>
+                    {tag}
+                  </p>
+                ))}
               </div>
             </div>
           </div>
