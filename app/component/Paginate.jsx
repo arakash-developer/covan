@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import ReactPaginate from "react-paginate";
 import Item2 from "../component/Item2";
 import getAllProduct from "../utils/getAllProduct";
+import Item from "./Item";
 
 function Items({ currentItems }) {
   return (
@@ -11,7 +12,7 @@ function Items({ currentItems }) {
         {currentItems &&
           currentItems.map((item, index) => (
             <div key={index}>
-              <Item2
+              <Item
                 className="w-full xsm:w-auto"
                 Name={item?.title}
                 thumbnail={item?.thumbnail}
