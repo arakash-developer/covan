@@ -43,7 +43,7 @@ const Item = ({
           </div>
         </div>
 
-        <div className="w-full lg:h-[339px] h-[300px] flex justify-center items-center border border-[#e5e7eb]">
+        <div className="w-full lg:h-[339px] h-[300px] flex justify-center items-center border bg-[#F6F6F6]">
           <Image
             src={thumbnail}
             alt="product"
