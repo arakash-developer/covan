@@ -61,10 +61,13 @@ const ProductLens = ({ id = 1 }) => {
 
   return (
     <div className="productLens w-full">
-      <Image
-        className="w-full h-full object-cover "
-        src={product.images?.[productImage]}
-      />
+      <div className="w-full lg:w-[650px] h-[650px] bg-[#F6F6F6] justify-center items-center">
+        <Image
+          className="w-full h-full object-cover"
+          height={650}
+          src={product.images?.[productImage]}
+        />
+      </div>
       <div className="suggetion w-full mt-5 cursor-pointer">
         <Slider {...settings} className="h-[150px] w-full flex relative left-4">
           {product.images?.map((item, index) => (

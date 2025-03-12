@@ -40,7 +40,7 @@ const page = async ({ params }) => {
       {/* Product */}
       <section className="my-8 md:my-[110px]">
         <Container className="flex flex-col lg:flex-row gap-[30px] justify-between ">
-          <div className="product_img w-full lg:w-[650px] h-[840px] border border-green-400">
+          <div className="product_img w-full lg:w-[650px] h-[840px]">
             <ProductLens id={id} />
           </div>
           <div className="product_details">
@@ -113,7 +113,7 @@ const page = async ({ params }) => {
               <div className="flex items-center gap-1 flex-wrap">
                 {product.tags.map((tag, index) => (
                   <p className="text-[#666666]" key={index}>
-                    {tag},
+                    {tag}
                   </p>
                 ))}
               </div>
