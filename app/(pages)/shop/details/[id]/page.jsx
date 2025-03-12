@@ -113,7 +113,7 @@ const page = async ({ params }) => {
               <div className="flex items-center gap-1 flex-wrap">
                 {product.tags.map((tag, index) => (
                   <p className="text-[#666666]" key={index}>
-                    {tag}
+                    {tag},
                   </p>
                 ))}
               </div>
