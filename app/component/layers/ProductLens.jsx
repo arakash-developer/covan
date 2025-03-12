@@ -78,6 +78,7 @@ const ProductLens = ({ id = 1 }) => {
               preview={false}
               className="w-[150px] h-[150px] border  border-transparent"
               src={item}
+              height={150}
             />
           ))}
         </Slider>
