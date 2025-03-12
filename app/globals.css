@@ -175,3 +175,6 @@ img{
   pointer-events: all;
   position: relative;
 }
+.suggetion slick-current .sug_image{
+  background: #e7b053!important;
+}

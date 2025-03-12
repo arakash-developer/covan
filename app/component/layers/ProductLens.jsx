@@ -79,7 +79,7 @@ const ProductLens = ({ id = 1 }) => {
               }}
               key={index}
               preview={false}
-              className="w-[150px] h-[150px] border  border-transparent bg-[#F6F6F6]"
+              className="sug_image w-[150px] h-[150px] border  border-transparent bg-[#F6F6F6] hover:border-[#e7b053]"
               src={item}
               height={150}
             />
