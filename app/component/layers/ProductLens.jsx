@@ -61,9 +61,9 @@ const ProductLens = ({ id = 1 }) => {
 
   return (
     <div className="productLens w-full">
-      <div className="w-full lg:w-[650px] h-[650px] bg-[#F6F6F6] justify-center items-center">
+      <div className="w-full h-full justify-center items-center">
         <Image
-          className="w-full h-full bg-cover max-w-full"
+          className="w-full lg:w-[650px] h-[650px] bg-[#F6F6F6]"
           src={product.images?.[productImage]}
         />
       </div>
