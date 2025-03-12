@@ -28,17 +28,17 @@ const Item = ({
           </p>
         </div>
 
-        <div className="absolute right-[-10px] top-1/2 -translate-y-1/2 flex flex-col gap-1 invisible actionbtn transition-all ease-in-out duration-[0.3s]">
-          <div className="w-10 h-10 group hover:bg-[#e7b053] transition-all ease-linear duration-[0.1s] rounded-full flex justify-center items-center">
+        <div className="absolute -right-0  top-1/2 -translate-y-1/4 flex flex-col gap-1 invisible actionbtn transition-all ease-in-out duration-[0.3s]">
+          <div className="w-10 h-10 bg-[#fff] group hover:bg-[#e7b053] transition-all ease-linear duration-[0.1s] rounded-full flex justify-center items-center">
             <FaArrowRightLong className="inline-block text-[17px] text-[#666] group-hover:text-[#fff]" />
           </div>
-          <div className="w-10 h-10 hover:bg-[#e7b053] group transition-all ease-linear duration-[0.1s] rounded-full flex items-center relative">
+          <div className="w-10 h-10 bg-[#fff] hover:bg-[#e7b053] group transition-all ease-linear duration-[0.1s] rounded-full flex items-center relative">
             <FaRegHeart className="inline-block text-[17px] text-[#666] group-hover:text-[#fff]" />
             <div className="absolute right-0 -bottom-[6px]">
               <FaRegHeart className="inline-block text-[20px]" />
             </div>
           </div>
-          <div className="w-10 h-10 hover:bg-[#e7b053] group transition-all ease-linear duration-[0.1s] rounded-full flex justify-center items-center">
+          <div className="w-10 h-10 bg-[#fff] hover:bg-[#e7b053] group transition-all ease-linear duration-[0.1s] rounded-full flex justify-center items-center">
             <HiSearch className="inline-block text-[19px] text-[#666] group-hover:text-[#fff]" />
           </div>
         </div>
