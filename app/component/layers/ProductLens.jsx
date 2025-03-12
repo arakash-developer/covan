@@ -68,7 +68,7 @@ const ProductLens = ({ id = 1 }) => {
           alt={product.title}
         />
       </div>
-      {product.images?.length >= 4 && (
+      {product.images?.length >= 3 ? (
         <div className="suggetion w-full mt-5 cursor-pointer">
           <Slider
             {...settings}
@@ -89,6 +89,10 @@ const ProductLens = ({ id = 1 }) => {
               />
             ))}
           </Slider>
+        </div>
+      ) : (
+        <div className="suggetion w-full mt-5 cursor-pointer h-[150px] bg-[#F6F6F6] flex justify-center items-center">
+          <h2 className="text-[#666]">Image Not Found</h2>
         </div>
       )}
     </div>
