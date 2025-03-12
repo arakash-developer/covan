@@ -61,31 +61,36 @@ const ProductLens = ({ id = 1 }) => {
 
   return (
     <div className="productLens w-full">
-      <div className="w-full h-full justify-center items-center">
+      <div className="w-full h-full lg:w-[650px] flex justify-center items-center bg-[#F6F6F6]">
         <Image
-          className="w-full !lg:w-[650px] !h-[650px] bg-[#F6F6F6]"
+          className="w-full lg:w-[650px] h-[650px] "
           src={product.images?.[productImage]}
           alt={product.title}
         />
       </div>
-      <div className="suggetion w-full mt-5 cursor-pointer">
-        <Slider {...settings} className="h-[150px] w-full flex relative left-4">
-          {product.images?.map((item, index) => (
-            <Image
-              onClick={() => {
-                if (index >= 0 && index < product.images.length) {
-                  handlerPicture(index)();
-                }
-              }}
-              key={index}
-              preview={false}
-              className="sug_image w-[150px] h-[150px] border  border-transparent bg-[#F6F6F6] hover:border-[#e7b053]"
-              src={item}
-              height={150}
-            />
-          ))}
-        </Slider>
-      </div>
+      {product.images?.length >= 4 && (
+        <div className="suggetion w-full mt-5 cursor-pointer">
+          <Slider
+            {...settings}
+            className="h-[150px] w-full flex relative left-4"
+          >
+            {product.images?.map((item, index) => (
+              <Image
+                onClick={() => {
+                  if (index >= 0 && index < product.images.length) {
+                    handlerPicture(index)();
+                  }
+                }}
+                key={index}
+                preview={false}
+                className="sug_image w-[150px] h-[150px] border  border-transparent bg-[#F6F6F6] hover:border-[#e7b053]"
+                src={item}
+                height={150}
+              />
+            ))}
+          </Slider>
+        </div>
+      )}
     </div>
   );
 };
