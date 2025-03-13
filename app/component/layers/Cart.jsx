@@ -7,11 +7,9 @@ const Cart = () => {
   let cartbtn = useRef(null);
   let { products, setProduct } = useContext(Context);
   let [count, setCount] = useState(0);
-  // Calculate the total count
-let total () =>{
 
-}
   useEffect(() => {
+    // Calculate the total count
     let totalCount = products.reduce(
       (total, product) => total + product.count,
       0
