@@ -173,14 +173,8 @@ const Navbar = () => {
                 </p>
               </div>
             </div>
-            <div className="relative">
+            <div className="">
               <Cart />
-
-              <div className="absolute w-6 h-6 rounded-full bg-[#e7b053] bottom-[10px] left-[13px] flex justify-center items-center">
-                <p className="font-normal text-[0.81rem] leading-[185%] text-center text-[#fff]">
-                  0
-                </p>
-              </div>
             </div>
           </div>
         </div>
