@@ -36,9 +36,7 @@ const Cart = () => {
       {open && (
         <div className="xsm:w-[380px] w-[200px] absolute right-0 top-full mt-4 py-8 px-5 bg-[#fff] border-2 border-[#f3f3f3] text-[#080808] z-[99999999]">
           No products in the cart.
-          {products.map((Item) => (
-            <p>{Item.count}</p>
-          ))}
+         
         </div>
       )}
     </div>
