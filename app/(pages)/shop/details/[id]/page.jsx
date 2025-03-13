@@ -1,8 +1,8 @@
 import Container from "@/app/component/Container";
+import CartCounter from "@/app/component/layers/CartCounter";
 import ProductLens from "@/app/component/layers/ProductLens";
 import getSingleProduct from "@/app/utils/getSingleProduct";
 import { Prata } from "next/font/google";
-import { AiOutlineMinus, AiOutlinePlus } from "react-icons/ai";
 import { FaAngleRight, FaRegHeart } from "react-icons/fa";
 import { FaStar } from "react-icons/fa6";
 import { VscGitCompare } from "react-icons/vsc";
@@ -19,7 +19,7 @@ export async function generateMetadata({ params }) {
   return {
     title: `Product - ${product.title}`,
     description: product.description,
-    image: product.thumbnail
+    image: product.thumbnail,
   };
 }
 
@@ -76,26 +76,8 @@ const page = async ({ params }) => {
             <p className="font-normal text-sm leading-[175%] text-[#666]">
               {product.description}
             </p>
-            <div className="mt-6 mb-[15px] h-[42px] flex gap-5">
-              <div className="h-full border border-[#8F8F8F] inline-block ">
-                <div className="flex cursor-pointer items-center h-full">
-                  <div className="border-r border-[#8F8F8F] h-full px-4 flex justify-center items-center">
-                    <AiOutlineMinus />
-                  </div>
-                  <div className=" h-full px-7 flex justify-center items-center">
-                    <h3 className="font-normal text-xl leading-[200%] text-center text-[#666]">
-                      1
-                    </h3>
-                  </div>
-                  <div className="border-l border-[#8F8F8F] h-full px-4 flex justify-center items-center">
-                    <AiOutlinePlus />
-                  </div>
-                </div>
-              </div>
-              <div className="font-normal text-[0.81rem] leading-[323%] uppercase text-center text-[#fff] bg-[#e7b053] px-6 cursor-pointer">
-                Add to cart
-              </div>
-            </div>
+            <CartCounter id={id} title={product.title} price={product.price} />
+
             <div className="flex items-center gap-5">
               <div className="flex items-center gap-2 cursor-pointer">
                 <FaRegHeart className="font-normal text-sm leading-[175%] text-center text-[#666] text-[21px]" />
@@ -117,7 +99,10 @@ const page = async ({ params }) => {
               SKU :<p className="text-[#666666]">VN00189</p>
             </div>
             <div className="pt-[13px] pb-[14px] border-b border-solid  flex items-center gap-1 font-normal text-sm leading-[175%] capitalize ">
-              Categories :<p className="text-[#666666]">{product.category?product.category:null}</p>
+              Categories :
+              <p className="text-[#666666]">
+                {product.category ? product.category : null}
+              </p>
             </div>
             <div className="pt-[13px] pb-[14px] border-b border-solid  flex items-center gap-1 font-normal text-sm leading-[175%] capitalize ">
               Tags :
