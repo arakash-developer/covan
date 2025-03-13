@@ -12,6 +12,7 @@ const Cart = () => {
     (total, product) => total + product.count,
     0
   );
+  console.log(totalCount);
 
   useEffect(() => {
     document.addEventListener("click", (event) => {
@@ -30,13 +31,12 @@ const Cart = () => {
       <BiShoppingBag className="font-normal text-[22px] leading-[109%] uppercase text-[#080808] hover:text-[#e7b053]  cursor-pointer" />
       <div className="absolute w-6 h-6 rounded-full bg-[#e7b053] bottom-[10px] left-[13px] flex justify-center items-center">
         <p className="font-normal text-[0.81rem] leading-[185%] text-center text-[#fff]">
-          {totalCount}
+          6
         </p>
       </div>
       {open && (
         <div className="xsm:w-[380px] w-[200px] absolute right-0 top-full mt-4 py-8 px-5 bg-[#fff] border-2 border-[#f3f3f3] text-[#080808] z-[99999999]">
           No products in the cart.
-         
         </div>
       )}
     </div>
