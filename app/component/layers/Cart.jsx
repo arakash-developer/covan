@@ -27,7 +27,7 @@ const Cart = () => {
   }, [open]);
 
   return (
-    <div className="relative cursor-pointer bg-red-400" ref={cartbtn}>
+    <div className="relative cursor-pointer" ref={cartbtn}>
       <BiShoppingBag className="font-normal text-[22px] leading-[109%] uppercase text-[#080808] hover:text-[#e7b053]  cursor-pointer" />
       <div className="absolute w-6 h-6 rounded-full bg-[#e7b053] bottom-[10px] left-[13px] flex justify-center items-center">
         <p className="font-normal text-[0.81rem] leading-[185%] text-center text-[#fff]">
