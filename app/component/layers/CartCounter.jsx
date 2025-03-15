@@ -3,7 +3,7 @@ import { Context } from "@/app/context/productContext";
 import { useContext, useState } from "react";
 import { AiOutlineMinus, AiOutlinePlus } from "react-icons/ai";
 
-const CartCounter = ({ id, title, price }) => {
+const CartCounter = ({ id, title, price, product }) => {
   let [count, setCount] = useState(1);
   let { setProduct, products } = useContext(Context);
   let handleminus = () => {
@@ -12,26 +12,15 @@ const CartCounter = ({ id, title, price }) => {
     }
   };
   let handleplus = () => {
-    setCount(count + 1);
+    setCount((prev) => prev + 1);
   };
-  let handlerAdd = () => {
-    let ob = {
-      id,
-      title,
-      price,
-      count,
-    };
-
-    // Check if the product with the same ID already exists
-    const productExists = products.find((p) => p.id === id);
-
-    if (productExists) {
-      // If product exists, update its count
-      productExists.count += ob.count;
-    } else {
-      // If product doesn't exist, push a new product
-      setProduct((prevProducts) => [...prevProducts, ob]);
-    }
+  let handlerAdd = (payload) => {
+    setProduct((prv) => {
+      return [
+        ...prv,
+        { id: payload.id, count, title: payload.title, price: payload.price },
+      ];
+    });
   };
   return (
     <div className="mt-6 mb-[15px] h-[42px] flex gap-5">
@@ -57,7 +46,7 @@ const CartCounter = ({ id, title, price }) => {
         </div>
       </div>
       <div
-        onClick={() => handlerAdd()}
+        onClick={() => handlerAdd(product)}
         className="font-normal text-[0.81rem] leading-[323%] uppercase text-center text-[#fff] bg-[#e7b053] px-6 cursor-pointer"
       >
         Add to cart

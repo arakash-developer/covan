@@ -1,31 +1,51 @@
 "use client";
+import { Context } from "@/app/context/productContext";
 import Logo from "@/public/logo.png";
+import { Prata } from "next/font/google";
 import Image from "next/image";
+import Link from "next/link";
+import { useContext, useEffect, useRef, useState } from "react";
+import { BiShoppingBag } from "react-icons/bi";
 import { FaAngleDown, FaRegUser } from "react-icons/fa";
 import { FaRegHeart } from "react-icons/fa6";
 import { IoClose, IoMenu, IoSearchSharp } from "react-icons/io5";
 import { LuPhoneCall } from "react-icons/lu";
 import { MdOutlineEmail } from "react-icons/md";
-
-import { Prata } from "next/font/google";
-import Link from "next/link";
-import { useState } from "react";
 import {
   RiFacebookFill,
   RiInstagramLine,
   RiTwitterXFill,
   RiYoutubeFill,
 } from "react-icons/ri";
-import Cart from "./layers/Cart";
 const Pratafont = Prata({
   weight: "400",
   subsets: ["latin"],
 });
 const Navbar = () => {
+  let [open, setOpen] = useState(false);
+  let cartbtn = useRef(null);
   let [isOpen, setIsOpen] = useState(false);
+  let { products, setProduct } = useContext(Context);
   let closehandler = () => {
     setIsOpen(!isOpen);
   };
+
+  useEffect(() => {
+    document.addEventListener("click", (event) => {
+      setOpen(!open);
+      if (cartbtn.current.contains(event.target)) {
+        setOpen(!open);
+      } else {
+        setOpen(false);
+      }
+    });
+  }, [open]);
+
+  let [ncount, setCount] = useState(0);
+  useEffect(() => {
+    let count = products.reduce((total, product) => total + product.count, 0);
+    setCount(count);
+  }, [products]);
 
   return (
     <>
@@ -174,7 +194,20 @@ const Navbar = () => {
               </div>
             </div>
             <div className="">
-              <Cart />
+              {/* <Cart /> */}
+              <div className="relative cursor-pointer" ref={cartbtn}>
+                <BiShoppingBag className="font-normal text-[22px] leading-[109%] uppercase text-[#080808] hover:text-[#e7b053]  cursor-pointer" />
+                <div className="absolute w-6 h-6 rounded-full bg-[#e7b053] bottom-[10px] left-[13px] flex justify-center items-center">
+                  <p className="font-normal text-[0.81rem] leading-[185%] text-center text-[#fff]">
+                    {ncount}
+                  </p>
+                </div>
+                {open && (
+                  <div className="xsm:w-[380px] w-[200px] absolute right-0 top-full mt-4 py-8 px-5 bg-[#fff] border-2 border-[#f3f3f3] text-[#080808] z-[99999999]">
+                    No products in the cart.
+                  </div>
+                )}
+              </div>
             </div>
           </div>
         </div>

@@ -76,7 +76,7 @@ const page = async ({ params }) => {
             <p className="font-normal text-sm leading-[175%] text-[#666]">
               {product.description}
             </p>
-            <CartCounter id={id} title={product.title} price={product.price} />
+            <CartCounter id={id} title={product.title} price={product.price} product={product} />
 
             <div className="flex items-center gap-5">
               <div className="flex items-center gap-2 cursor-pointer">
