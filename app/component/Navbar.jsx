@@ -236,9 +236,19 @@ const Navbar = () => {
                                 </div>
                               </div>
                               <p onClick={() => handleDelete(product.id)}>
-                                <MdDelete className="text-md" />
+                                <MdDelete className="text-xl" />
                               </p>
                             </div>
+                            
+                          <div className="mt-5 flex justify-between items-center">
+                            <h4 className="text-sm font-medium text-[#080808] uppercase leading-[1.63rem]">
+                              Total
+                            </h4>
+                            <div className="border-t border-[#e1e1e1] w-full"></div>
+                            <h3 className="text-md font-medium text-[#080808] uppercase leading-[1.63rem]">
+                              $ {product.count * product.price}
+                            </h3>
+                          </div>
                           ))}
                         </div>
                       </>
