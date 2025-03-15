@@ -215,7 +215,6 @@ const Navbar = () => {
               </div>
             </div>
             <div className="">
-              {/* <Cart /> */}
               <div className="relative cursor-pointer" ref={cartbtn}>
                 <BiShoppingBag className="font-normal text-[22px] leading-[109%] uppercase text-[#080808] hover:text-[#e7b053]  cursor-pointer" />
                 <div className="absolute w-6 h-6 rounded-full bg-[#e7b053] bottom-[10px] left-[13px] flex justify-center items-center">
@@ -224,7 +223,7 @@ const Navbar = () => {
                   </p>
                 </div>
                 {open && (
-                  <div className="xsm:w-[380px] w-1/2 absolute right-0 top-full mt-4 py-8 px-5 bg-[#fff] border-2 border-[#f3f3f3] text-[#080808] z-[99999999]">
+                  <div className="w-[300px] sm:w-[380px] absolute right-0 top-full mt-4 py-8 px-5 bg-[#fff] border-2 border-[#f3f3f3] text-[#080808] z-[99999999]">
                     {products.length > 0 ? (
                       <>
                         <div className="flex flex-col gap-5">
