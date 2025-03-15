@@ -41,11 +41,13 @@ const Navbar = () => {
     });
   }, [open]);
 
-  let [ncount, setCount] = useState(0);
+  let [totalCount, totalsetCount] = useState(0);
+  let [price, setPrice] = useState(0);
   useEffect(() => {
     let count = products.reduce((total, product) => total + product.count, 0);
-    setCount(count);
-    console.log(products);
+    let price = products.reduce((total, product) => total + product.price, 0);
+    totalsetCount(count);
+    setPrice(price);
   }, [products]);
 
   let handleDelete = (id) => {
@@ -203,7 +205,7 @@ const Navbar = () => {
                 <BiShoppingBag className="font-normal text-[22px] leading-[109%] uppercase text-[#080808] hover:text-[#e7b053]  cursor-pointer" />
                 <div className="absolute w-6 h-6 rounded-full bg-[#e7b053] bottom-[10px] left-[13px] flex justify-center items-center">
                   <p className="font-normal text-[0.81rem] leading-[185%] text-center text-[#fff]">
-                    {ncount}
+                    {totalCount}
                   </p>
                 </div>
                 {open && (
@@ -212,44 +214,61 @@ const Navbar = () => {
                       <>
                         <div className="">
                           {products.map((product) => (
-                            <div
-                              key={product.id}
-                              className="flex justify-between items-center"
-                            >
-                              <Image
-                                src={product.thumbnail}
-                                alt=""
-                                width={50}
-                                height={50}
-                                className="w-[50px] h-[50px] object-cover"
-                              />
-                              <div className="">
-                                <h3 className="text-[0.94rem] leading-5 mb-1.5 font-medium">
-                                  {product.title}
-                                </h3>
-                                <div className="flex gap-2 items-center">
-                                  <p className="text-md">{product.count}</p>
-                                  <p className="text-xs">X</p>
-                                  <p className="text-[#e7b053] text-base leading-5 font-bold">
-                                    {product.price}
-                                  </p>
+                            <div key={product.id}>
+                              <div className="flex justify-between items-center">
+                                <Image
+                                  src={product.thumbnail}
+                                  alt=""
+                                  width={50}
+                                  height={50}
+                                  className="w-[50px] h-[50px] object-cover"
+                                />
+                                <div className="">
+                                  <h3 className="text-[0.94rem] leading-5 mb-1.5 font-medium">
+                                    {product.title}
+                                  </h3>
+                                  <div className="flex gap-2 items-center">
+                                    <p className="text-md">{product.count}</p>
+                                    <p className="text-xs">X</p>
+                                    <p className="text-[#e7b053] text-base leading-5 font-bold">
+                                      {product.price}
+                                    </p>
+                                  </div>
                                 </div>
+                                <p onClick={() => handleDelete(product.id)}>
+                                  <MdDelete className="text-xl" />
+                                </p>
                               </div>
-                              <p onClick={() => handleDelete(product.id)}>
-                                <MdDelete className="text-xl" />
-                              </p>
                             </div>
-                            
-                          <div className="mt-5 flex justify-between items-center">
-                            <h4 className="text-sm font-medium text-[#080808] uppercase leading-[1.63rem]">
-                              Total
-                            </h4>
-                            <div className="border-t border-[#e1e1e1] w-full"></div>
-                            <h3 className="text-md font-medium text-[#080808] uppercase leading-[1.63rem]">
-                              $ {product.count * product.price}
-                            </h3>
-                          </div>
                           ))}
+                          <div className="mt-10">
+                            <div className=" flex justify-between items-center">
+                              <h4 className="text-sm font-medium text-[#080808] uppercase leading-[1.63rem]">
+                                Total
+                              </h4>
+                              <div className="border-t border-[#e1e1e1] w-full"></div>
+                              <h3 className="text-md font-medium text-[#080808] uppercase leading-[1.63rem]">
+                                ${price*totalCount}
+                              </h3>
+                            </div>
+                            <div
+                              className="mt-2 flex items-center justify-between
+                            "
+                            >
+                              <Link
+                                href="/cart"
+                                className="bg-[#e7b053] overflow-hidden relative uppercase text-[0.81rem] text-[#fff] rounded-none px-10 py-2 transition-all duration-300 ease-linear hover:bg-[#080808]"
+                              >
+                                View cart
+                              </Link>
+                              <Link
+                                href="/cart"
+                                className="overflow-hidden relative uppercase text-[0.81rem] text-[#fff] rounded-none bg-[#080808] hover:bg-[#e7b053] transition-all duration-300 ease-linear px-10 py-2"
+                              >
+                                checkout
+                              </Link>
+                            </div>
+                          </div>
                         </div>
                       </>
                     ) : (
