@@ -10,7 +10,7 @@ import { FaAngleDown, FaRegUser } from "react-icons/fa";
 import { FaRegHeart } from "react-icons/fa6";
 import { IoClose, IoMenu, IoSearchSharp } from "react-icons/io5";
 import { LuPhoneCall } from "react-icons/lu";
-import { MdOutlineEmail } from "react-icons/md";
+import { MdDelete, MdOutlineEmail } from "react-icons/md";
 import {
   RiFacebookFill,
   RiInstagramLine,
@@ -214,7 +214,7 @@ const Navbar = () => {
                           {products.map((product) => (
                             <div
                               key={product.id}
-                              className="flex gap-1 items-center"
+                              className="flex justify-between items-center"
                             >
                               <Image
                                 src={product.thumbnail}
@@ -224,15 +224,19 @@ const Navbar = () => {
                                 className="w-[50px] h-[50px] object-cover"
                               />
                               <div className="">
-                                <h3>{product.title}</h3>
+                                <h3 className="text-[0.94rem] leading-5 mb-1.5 font-medium">
+                                  {product.title}
+                                </h3>
                                 <div className="flex gap-2 items-center">
-                                  <p>{product.count}</p>
-                                  X
-                                  <p className="text-[#e7b053]">{product.price}</p>
+                                  <p className="text-md">{product.count}</p>
+                                  <p className="text-xs">X</p>
+                                  <p className="text-[#e7b053] text-base leading-5 font-bold">
+                                    {product.price}
+                                  </p>
                                 </div>
                               </div>
                               <p onClick={() => handleDelete(product.id)}>
-                                Delete
+                                <MdDelete className="text-md" />
                               </p>
                             </div>
                           ))}
