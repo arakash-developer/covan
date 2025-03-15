@@ -45,8 +45,13 @@ const Navbar = () => {
   useEffect(() => {
     let count = products.reduce((total, product) => total + product.count, 0);
     setCount(count);
+    console.log(products);
   }, [products]);
 
+  let handleDelete = (id) => {
+    setProduct((prev) => prev.filter((item) => item.id !== id));
+
+  };
   return (
     <>
       {/* top */}
@@ -205,6 +210,20 @@ const Navbar = () => {
                 {open && (
                   <div className="xsm:w-[380px] w-[200px] absolute right-0 top-full mt-4 py-8 px-5 bg-[#fff] border-2 border-[#f3f3f3] text-[#080808] z-[99999999]">
                     No products in the cart.
+                    <div className="">
+                      {products.map((product) => (
+                        <div
+                          key={product.id}
+                          className="flex gap-1 items-center"
+                        >
+                          <p>{product.id}</p>
+                          <p>{product.title}</p>
+                          <p>{product.price}</p>
+                          <p>{product.count}</p>
+                          <p onClick={() => handleDelete(product.id)}>Delete</p>
+                        </div>
+                      ))}
+                    </div>
                   </div>
                 )}
               </div>
