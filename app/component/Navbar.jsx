@@ -50,7 +50,6 @@ const Navbar = () => {
 
   let handleDelete = (id) => {
     setProduct((prev) => prev.filter((item) => item.id !== id));
-
   };
   return (
     <>
@@ -209,21 +208,39 @@ const Navbar = () => {
                 </div>
                 {open && (
                   <div className="xsm:w-[380px] w-[200px] absolute right-0 top-full mt-4 py-8 px-5 bg-[#fff] border-2 border-[#f3f3f3] text-[#080808] z-[99999999]">
-                    No products in the cart.
-                    <div className="">
-                      {products.map((product) => (
-                        <div
-                          key={product.id}
-                          className="flex gap-1 items-center"
-                        >
-                          <p>{product.id}</p>
-                          <p>{product.title}</p>
-                          <p>{product.price}</p>
-                          <p>{product.count}</p>
-                          <p onClick={() => handleDelete(product.id)}>Delete</p>
+                    {products.length > 0 ? (
+                      <>
+                        <div className="">
+                          {products.map((product) => (
+                            <div
+                              key={product.id}
+                              className="flex gap-1 items-center"
+                            >
+                              <Image
+                                src={product.thumbnail}
+                                alt=""
+                                width={50}
+                                height={50}
+                                className="w-[50px] h-[50px] object-cover"
+                              />
+                              <div className="">
+                                <h3>{product.title}</h3>
+                                <div className="flex gap-2 items-center">
+                                  <p>{product.count}</p>
+                                  X
+                                  <p className="text-[#e7b053]">{product.price}</p>
+                                </div>
+                              </div>
+                              <p onClick={() => handleDelete(product.id)}>
+                                Delete
+                              </p>
+                            </div>
+                          ))}
                         </div>
-                      ))}
-                    </div>
+                      </>
+                    ) : (
+                      <>No products in the cart.</>
+                    )}
                   </div>
                 )}
               </div>

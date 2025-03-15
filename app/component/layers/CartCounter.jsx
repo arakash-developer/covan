@@ -18,7 +18,7 @@ const CartCounter = ({ id, title, price, product }) => {
     setProduct((prv) => {
       return [
         ...prv,
-        { id: payload.id, count, title: payload.title, price: payload.price },
+        { id: payload.id, count, title: payload.title, price: payload.price, thumbnail: payload.thumbnail},
       ];
     });
   };
