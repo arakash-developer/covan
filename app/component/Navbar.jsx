@@ -43,11 +43,26 @@ const Navbar = () => {
 
   let [totalCount, totalsetCount] = useState(0);
   let [price, setPrice] = useState(0);
+  let [updateproducts, setUpdateProducts] = useState([]);
   useEffect(() => {
     let count = products.reduce((total, product) => total + product.count, 0);
     let price = products.reduce((total, product) => total + product.price, 0);
     totalsetCount(count);
     setPrice(price);
+
+    const groupedItems = products.reduce((acc, item) => {
+      // Find if an item with the same id already exists
+      const existingItem = acc.find((i) => i.id === item.id);
+      if (existingItem) {
+        // If the item exists, update the count
+        existingItem.count += item.count;
+      } else {
+        // If it doesn't exist, add it to the accumulator
+        acc.push({ ...item });
+      }
+      return acc;
+    }, []);
+    setUpdateProducts(groupedItems);
   }, [products]);
 
   let handleDelete = (id) => {
@@ -212,8 +227,8 @@ const Navbar = () => {
                   <div className="xsm:w-[380px] w-[200px] absolute right-0 top-full mt-4 py-8 px-5 bg-[#fff] border-2 border-[#f3f3f3] text-[#080808] z-[99999999]">
                     {products.length > 0 ? (
                       <>
-                        <div className="">
-                          {products.map((product) => (
+                        <div className="flex flex-col gap-5">
+                          {updateproducts.map((product) => (
                             <div key={product.id}>
                               <div className="flex justify-between items-center">
                                 <Image
@@ -248,7 +263,7 @@ const Navbar = () => {
                               </h4>
                               <div className="border-t border-[#e1e1e1] w-full"></div>
                               <h3 className="text-md font-medium text-[#080808] uppercase leading-[1.63rem]">
-                                ${price*totalCount}
+                                ${(price * totalCount).toFixed(2)}
                               </h3>
                             </div>
                             <div

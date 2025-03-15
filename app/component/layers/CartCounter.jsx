@@ -47,7 +47,7 @@ const CartCounter = ({ id, title, price, product }) => {
       </div>
       <div
         onClick={() => handlerAdd(product)}
-        className="font-normal text-[0.81rem] leading-[323%] uppercase text-center text-[#fff] bg-[#e7b053] px-6 cursor-pointer"
+        className="font-normal text-[0.81rem] leading-[323%] uppercase text-center text-[#fff] bg-[#e7b053] px-6 cursor-pointer hover:bg-[#080808] transition-all ease-in-out duration-[0.3s]"
       >
         Add to cart
       </div>
