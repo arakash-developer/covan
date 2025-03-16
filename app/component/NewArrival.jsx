@@ -33,7 +33,7 @@ function SamplePrevArrow(props) {
   );
 }
 
-const App = ({ products =[]}) => {
+const App = ({ products=[]}) => {
   var settings = {
     arrows: true,
     dots: false,
