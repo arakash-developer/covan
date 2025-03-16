@@ -1,9 +1,9 @@
 "use client";
+import Avatar from "@/public/avatar.png";
 import { Tabs } from "antd";
 import { Prata } from "next/font/google";
-import { FaStar } from "react-icons/fa";
-import Avatar from "@/public/avatar.png";
 import Image from "next/image";
+import { FaStar } from "react-icons/fa";
 
 const items = [
   {
@@ -105,18 +105,28 @@ const items = [
             1 review for <span className="text-[#e7b053]">Mac Color Brown</span>
           </h1>
           <div className="mt-8 flex items-start gap-3">
-            <div className="">
-              <Image src={Avatar} alt="Avatar" />
+            <div className="rounded-full w-14 h-14 overflow-hidden">
+              <Image
+                className="w-full h-full object-cover"
+                src={Avatar}
+                alt="Avatar"
+              />
             </div>
             <div className="">
-              <div className="">
-              <FaStar />
+              <div className="flex items-center gap-1">
+                <FaStar className="text-[#e7b053] text-base" />
+                <FaStar className="text-[#e7b053] text-base" />
+                <FaStar className="text-[#e7b053] text-base" />
+                <FaStar className="text-[#e7b053] text-base" />
+                <FaStar className="text-[#e7b053] text-base" />
               </div>
               <div className="flex items-center gap-4 mt-1 mb-4">
                 <h5 className="font-normal text-sm leading-[200%] uppercase text-[#080808]">
                   Wpbingo
                 </h5>
-                <p className="font-normal text-sm leading-[200%] text-[#909090]">May 3, 2016</p>
+                <p className="font-normal text-sm leading-[200%] text-[#909090]">
+                  May 3, 2016
+                </p>
               </div>
               <p className="font-normal text-base leading-[175%] text-[#666] max-w-[470px]">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam
