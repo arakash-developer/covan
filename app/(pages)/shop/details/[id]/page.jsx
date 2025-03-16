@@ -1,6 +1,8 @@
 import Container from "@/app/component/Container";
 import CartCounter from "@/app/component/layers/CartCounter";
 import ProductLens from "@/app/component/layers/ProductLens";
+import NewArrival from "@/app/component/NewArrival";
+import getAllProduct from "@/app/utils/getAllProduct";
 import getSingleProduct from "@/app/utils/getSingleProduct";
 import { Prata } from "next/font/google";
 import Link from "next/link";
@@ -32,6 +34,10 @@ export async function generateMetadata({ params }) {
 const page = async ({ params }) => {
   let { id } = await params;
   let product = await getSingleProduct(id);
+  let category = product.category;
+  let res = await getAllProduct();
+  let allProduct = res.products;
+  let filterProducts = allProduct.filter((data) => data.category == category);
 
   return (
     <>
@@ -159,16 +165,24 @@ const page = async ({ params }) => {
           </div>
           <div className="mt-[95px]">
             <div className="heading mx-auto flex items-center gap-6 justify-center">
-              <h3 className="font-normal text-md leading-[175%] uppercase text-center text-[#e7b053] cursor-pointer">
+              <h3
+                className={`${Pratafont.className} font-normal text-md leading-[175%] uppercase text-center text-[#e7b053] cursor-pointer`}
+              >
                 Description
               </h3>
-              <h3 className="font-normal text-md leading-[175%] uppercase text-center text-[#080808] cursor-pointer">
+              <h3
+                className={`${Pratafont.className} font-normal text-md leading-[175%] uppercase text-center text-[#080808] cursor-pointer`}
+              >
                 Additional information
               </h3>
-              <h3 className="font-normal text-md leading-[175%] uppercase text-center text-[#080808] cursor-pointer">
+              <h3
+                className={`${Pratafont.className} font-normal text-md leading-[175%] uppercase text-center text-[#080808] cursor-pointer`}
+              >
                 Reviews (1)
               </h3>
-              <h3 className="font-normal text-md leading-[175%] uppercase text-center text-[#080808] cursor-pointer">
+              <h3
+                className={`${Pratafont.className} font-normal text-md leading-[175%] uppercase text-center text-[#080808] cursor-pointer`}
+              >
                 More Products
               </h3>
             </div>
@@ -237,6 +251,14 @@ const page = async ({ params }) => {
                 vestibulum. Ut porta et ex maximus malesuada.
               </p>
             </div>
+          </div>
+          <div className="mt-[45px]">
+            <h2
+              className={`font-normal text-2xl leading-[120%] capitalize text-center text-[#080808] mb-6 ${Pratafont.className}`}
+            >
+              Related Products
+            </h2>
+            <NewArrival products={filterProducts} />
           </div>
         </Container>
       </section>

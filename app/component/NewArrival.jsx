@@ -33,7 +33,7 @@ function SamplePrevArrow(props) {
   );
 }
 
-const App = () => {
+const App = ({ products }) => {
   var settings = {
     arrows: true,
     dots: false,
@@ -82,8 +82,14 @@ const App = () => {
   };
 
   let [allProducts, setAllProduct] = useState([]);
+  
+  
   useEffect(() => {
-    getData();
+    if (products.length > 0) {
+      setAllProduct(products);
+    } else {
+      getData();
+    }
   }, []);
 
   let getData = async () => {
