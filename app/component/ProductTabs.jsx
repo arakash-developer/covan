@@ -1,6 +1,9 @@
 "use client";
 import { Tabs } from "antd";
 import { Prata } from "next/font/google";
+import { FaStar } from "react-icons/fa";
+import Avatar from "@/public/avatar.png";
+import Image from "next/image";
 
 const items = [
   {
@@ -101,10 +104,14 @@ const items = [
           <h1 className="font-normal text-lg leading-[120%] uppercase text-[#080808]">
             1 review for <span className="text-[#e7b053]">Mac Color Brown</span>
           </h1>
-          <div className="mt-8 flex items-center gap-3">
-            <div className="">a</div>
+          <div className="mt-8 flex items-start gap-3">
             <div className="">
-              <div className="">icons</div>
+              <Image src={Avatar} alt="Avatar" />
+            </div>
+            <div className="">
+              <div className="">
+              <FaStar />
+              </div>
               <div className="flex items-center gap-4 mt-1 mb-4">
                 <h5 className="font-normal text-sm leading-[200%] uppercase text-[#080808]">
                   Wpbingo
