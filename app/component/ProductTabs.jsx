@@ -98,7 +98,28 @@ const items = [
     children: (
       <div className="flex justify-start my-10">
         <div className="">
-          <h1 className="font-normal text-lg leading-[120%] uppercase text-[#080808]">1 review for <span>Mac Color Brown</span></h1>
+          <h1 className="font-normal text-lg leading-[120%] uppercase text-[#080808]">
+            1 review for <span className="text-[#e7b053]">Mac Color Brown</span>
+          </h1>
+          <div className="mt-8 flex items-center gap-3">
+            <div className="">a</div>
+            <div className="">
+              <div className="">icons</div>
+              <div className="flex items-center gap-4 mt-1 mb-4">
+                <h5 className="font-normal text-sm leading-[200%] uppercase text-[#080808]">
+                  Wpbingo
+                </h5>
+                <p className="font-normal text-sm leading-[200%] text-[#909090]">May 3, 2016</p>
+              </div>
+              <p className="font-normal text-base leading-[175%] text-[#666] max-w-[470px]">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam
+                fringilla augue nec est tristique auctor. Donec non est at
+                libero vulputate rutrum. Morbi ornare lectus quis justo gravida
+                semper. Nulla tellus mi, vulputate adipiscing cursus eu,
+                suscipit id nulla.
+              </p>
+            </div>
+          </div>
         </div>
       </div>
     ),
@@ -116,21 +137,6 @@ const items = [
     ),
     children: (
       <div className="flex justify-start my-10">Content of Tab Pane 3</div>
-    ),
-  },
-  {
-    key: "4",
-    label: (
-      <div className="flex items-center">
-        <h3
-          className={`${Pratafont.className} font-normal text-md leading-[175%] uppercase text-center text-[#080808] cursor-pointer`}
-        >
-          Reviews (1)
-        </h3>
-      </div>
-    ),
-    children: (
-      <div className="flex justify-start my-10">Content of Tab Pane 4</div>
     ),
   },
   {

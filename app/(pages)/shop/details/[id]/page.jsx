@@ -166,12 +166,12 @@ const page = async ({ params }) => {
           </div>
           <div className="mt-[95px]">
             <div className="heading mx-auto flex items-center gap-6 justify-center"></div>
-  
+
             <ProductTabs />
           </div>
           <div className="mt-[45px]">
             <h2
-              className={`font-normal text-2xl leading-[120%] capitalize text-center text-[#080808] mb-8 ${Pratafont.className}`}
+              className={`font-normal text-2xl leading-[120%] capitalize text-center text-[#080808] mb-10 ${Pratafont.className}`}
             >
               Related Products
             </h2>
