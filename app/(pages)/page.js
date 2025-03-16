@@ -152,7 +152,7 @@ const page = () => {
               />
             </div>
           </Container>
-          <NewArrival />
+          <NewArrival autoplay={true} />
         </section>
         {/* New Arrivals */}
 
