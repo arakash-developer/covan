@@ -1,3 +1,8 @@
+import AppendDots from "@/app/component/AppendDots";
+import Container from "@/app/component/Container";
+import NewArrival from "@/app/component/NewArrival";
+import News from "@/app/component/News";
+import Heading from "@/app/component/layers/Heading";
 import star3 from "@/public/3star.png";
 import Cat1 from "@/public/cat1.jpg";
 import Cat2 from "@/public/cat2.jpg";
@@ -9,11 +14,6 @@ import { Prata } from "next/font/google";
 import Image from "next/image";
 import Link from "next/link";
 import { HiOutlineMail } from "react-icons/hi";
-import AppendDots from "./component/AppendDots";
-import Container from "./component/Container";
-import NewArrival from "./component/NewArrival";
-import News from "./component/News";
-import Heading from "./component/layers/Heading";
 
 const Pratafont = Prata({
   weight: "400",
@@ -23,7 +23,6 @@ const page = () => {
   return (
     <>
       <div className="overflow-x-hidden">
-
         <div
           className="bg-[#FFC312] border-t-4 border-[#ffa305] rounded-b text-teal-900 px-2 py-1 shadow-md 
           fixed bottom-10 left-5 z-[9999999999999]"
@@ -40,10 +39,10 @@ const page = () => {
               </svg>
             </div>
             <div>
-              <p className="font-bold text-[#fff] uppercase tracking-[1px]">In Progress</p>
-              <p className="text-sm text-[#fff]">
-                Updating.. 
+              <p className="font-bold text-[#fff] uppercase tracking-[1px]">
+                In Progress
               </p>
+              <p className="text-sm text-[#fff]">Updating..</p>
             </div>
           </div>
         </div>

@@ -33,12 +33,12 @@ function SamplePrevArrow(props) {
   );
 }
 
-const App = ({ products=[]}) => {
+const App = ({ products=[],autoplay=false}) => {
   var settings = {
     arrows: true,
     dots: false,
     infinite: true,
-    autoplay: true,
+    autoplay,
     autoplaySpeed: 2000,
     speed: 500,
     slidesToShow: 4,
