@@ -167,7 +167,7 @@ const page = async ({ params }) => {
           <div className="mt-[95px]">
             <div className="heading mx-auto flex items-center gap-6 justify-center"></div>
 
-            <ProductTabs />
+            <ProductTabs product={product} />
           </div>
           <div className="mt-[45px]">
             <h2
