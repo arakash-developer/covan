@@ -3,10 +3,10 @@ import CartCounter from "@/app/component/layers/CartCounter";
 import ProductLens from "@/app/component/layers/ProductLens";
 import getSingleProduct from "@/app/utils/getSingleProduct";
 import { Prata } from "next/font/google";
-import { FaAngleRight, FaRegHeart } from "react-icons/fa";
-import { FaStar } from "react-icons/fa6";
+import { FaAngleRight, FaFacebookF, FaLinkedin, FaRegHeart } from "react-icons/fa";
+import { FaStar, FaXTwitter } from "react-icons/fa6";
 import { VscGitCompare } from "react-icons/vsc";
-
+import { GrInstagram } from "react-icons/gr";
 const Pratafont = Prata({
   weight: "400",
   subsets: ["latin"],
@@ -76,7 +76,12 @@ const page = async ({ params }) => {
             <p className="font-normal text-sm leading-[175%] text-[#666]">
               {product.description}
             </p>
-            <CartCounter id={id} title={product.title} price={product.price} product={product} />
+            <CartCounter
+              id={id}
+              title={product.title}
+              price={product.price}
+              product={product}
+            />
 
             <div className="flex items-center gap-5">
               <div className="flex items-center gap-2 cursor-pointer">
@@ -112,6 +117,23 @@ const page = async ({ params }) => {
                     {tag}
                   </p>
                 ))}
+              </div>
+            </div>
+            <div className="pt-[13px] pb-[14px]  flex items-center gap-1 font-normal text-sm leading-[175%] capitalize ">
+              Share :
+              <div className="flex items-center gap-1 flex-wrap">
+                <Link href="#" className="rounded-full w-9 h-9 border-2 border-solid border-[#8F8F8F] flex justify-center items-center opacity-[25%] cursor-pointer">
+                  <FaFacebookF />
+                </Link>
+                <Link href="#" className="rounded-full w-9 h-9 border-2 border-solid border-[#8F8F8F] flex justify-center items-center opacity-[25%] cursor-pointer">
+                <FaXTwitter />
+                </Link>
+                <Link href="#" className="rounded-full w-9 h-9 border-2 border-solid border-[#8F8F8F] flex justify-center items-center opacity-[25%] cursor-pointer">
+                <FaLinkedin />
+                </Link>
+                <Link href="#" className="rounded-full w-9 h-9 border-2 border-solid border-[#8F8F8F] flex justify-center items-center opacity-[25%] cursor-pointer">
+                <GrInstagram />
+                </Link>
               </div>
             </div>
           </div>
