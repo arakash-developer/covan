@@ -2,6 +2,7 @@ import Container from "@/app/component/Container";
 import CartCounter from "@/app/component/layers/CartCounter";
 import ProductLens from "@/app/component/layers/ProductLens";
 import NewArrival from "@/app/component/NewArrival";
+import ProductTabs from "@/app/component/ProductTabs";
 import getAllProduct from "@/app/utils/getAllProduct";
 import getSingleProduct from "@/app/utils/getSingleProduct";
 import { Prata } from "next/font/google";
@@ -164,28 +165,7 @@ const page = async ({ params }) => {
             </div>
           </div>
           <div className="mt-[95px]">
-            <div className="heading mx-auto flex items-center gap-6 justify-center">
-              <h3
-                className={`${Pratafont.className} font-normal text-md leading-[175%] uppercase text-center text-[#e7b053] cursor-pointer`}
-              >
-                Description
-              </h3>
-              <h3
-                className={`${Pratafont.className} font-normal text-md leading-[175%] uppercase text-center text-[#080808] cursor-pointer`}
-              >
-                Additional information
-              </h3>
-              <h3
-                className={`${Pratafont.className} font-normal text-md leading-[175%] uppercase text-center text-[#080808] cursor-pointer`}
-              >
-                Reviews (1)
-              </h3>
-              <h3
-                className={`${Pratafont.className} font-normal text-md leading-[175%] uppercase text-center text-[#080808] cursor-pointer`}
-              >
-                More Products
-              </h3>
-            </div>
+            <div className="heading mx-auto flex items-center gap-6 justify-center"></div>
             <div className="mt-10">
               <p className="font-normal text-sm leading-[200%] text-[#666]">
                 Curabitur egestas malesuada volutpat. Nunc vel vestibulum odio,
@@ -251,10 +231,11 @@ const page = async ({ params }) => {
                 vestibulum. Ut porta et ex maximus malesuada.
               </p>
             </div>
+            <ProductTabs />
           </div>
           <div className="mt-[45px]">
             <h2
-              className={`font-normal text-2xl leading-[120%] capitalize text-center text-[#080808] mb-6 ${Pratafont.className}`}
+              className={`font-normal text-2xl leading-[120%] capitalize text-center text-[#080808] mb-8 ${Pratafont.className}`}
             >
               Related Products
             </h2>
