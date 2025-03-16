@@ -112,9 +112,9 @@ const ProductTabs = ({ product }) => {
               <span className="text-[#e7b053]">Mac Color Brown</span>
             </h1>
             <div className="w-full bg-lime-200 grid grid-cols-1 md:grid-cols-2">
-              {product.reviews?.map((data,index) => (
+              {product.reviews?.map((data, index) => (
                 <div key={index} className="review">
-                  <div className="mt-8 flex items-start gap-3">
+                  <div className="mt-8 flex items-start gap-3 justify-start">
                     <div className="rounded-full w-14 h-14 overflow-hidden">
                       <Image
                         className="w-full h-full object-cover"
@@ -138,7 +138,7 @@ const ProductTabs = ({ product }) => {
                           May 3, 2016
                         </p>
                       </div>
-                      <p className="font-normal text-base leading-[175%] text-[#666] max-w-[470px]">
+                      <p className="font-normal text-base leading-[175%] text-[#666] w-full md:max-w-[470px]">
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                         Nam fringilla augue nec est tristique auctor. Donec non
                         est at libero vulputate rutrum. Morbi ornare lectus quis
