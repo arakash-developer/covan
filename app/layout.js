@@ -17,7 +17,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`${mulish.className}`}>
+      <body className={`${mulish.className} overflow-x-hidden`}>
         <StoreProvider>
           <Navbar />
           {children}
