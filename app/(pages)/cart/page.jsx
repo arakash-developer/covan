@@ -37,7 +37,7 @@ const page = () => {
       </section>
       {/* Shop */}
       <Container className="mt-[110px] mb-[150px] flex md:flex-row flex-col justify-between items-start">
-        <div className="overflow-x-scroll">
+        <div className="w-full overflow-x-scroll">
           <table className="w-[700px] border-2 border-[#f5f5f5]">
             <thead className="h-[50px] bg-[#f5f5f5] border-2 border-[#f5f5f5]">
               <tr className="text-left">
