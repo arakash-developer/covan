@@ -11,6 +11,8 @@ const Pratafont = Prata({
 });
 
 const ProductTabs = ({ product }) => {
+  console.log(product);
+
   const items = [
     {
       key: "1",
@@ -147,18 +149,14 @@ const ProductTabs = ({ product }) => {
                       </div>
                       <div className="flex items-center gap-4 mt-1 mb-4">
                         <h5 className="font-normal text-sm leading-[200%] uppercase text-[#080808]">
-                          Wpbingo
+                          {data.reviewerName}
                         </h5>
                         <p className="font-normal text-sm leading-[200%] text-[#909090]">
                           May 3, 2016
                         </p>
                       </div>
                       <p className="font-normal text-base leading-[175%] text-[#666] w-full md:max-w-[470px]">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                        Nam fringilla augue nec est tristique auctor. Donec non
-                        est at libero vulputate rutrum. Morbi ornare lectus quis
-                        justo gravida semper. Nulla tellus mi, vulputate
-                        adipiscing cursus eu, suscipit id nulla.
+                        {data.comment}
                       </p>
                     </div>
                   </div>
