@@ -100,6 +100,21 @@ const ProductTabs = ({ product }) => {
           <h3
             className={`${Pratafont.className} font-normal text-md leading-[175%] uppercase text-center text-[#080808] cursor-pointer`}
           >
+            Additional information
+          </h3>
+        </div>
+      ),
+      children: (
+        <div className="flex justify-start my-10">Content of Tab Pane 3</div>
+      ),
+    },
+    {
+      key: "3",
+      label: (
+        <div className="flex items-center">
+          <h3
+            className={`${Pratafont.className} font-normal text-md leading-[175%] uppercase text-center text-[#080808] cursor-pointer`}
+          >
             Reviews
           </h3>
         </div>
@@ -152,36 +167,6 @@ const ProductTabs = ({ product }) => {
             </div>
           </div>
         </div>
-      ),
-    },
-    {
-      key: "3",
-      label: (
-        <div className="flex items-center">
-          <h3
-            className={`${Pratafont.className} font-normal text-md leading-[175%] uppercase text-center text-[#080808] cursor-pointer`}
-          >
-            Additional information
-          </h3>
-        </div>
-      ),
-      children: (
-        <div className="flex justify-start my-10">Content of Tab Pane 3</div>
-      ),
-    },
-    {
-      key: "5",
-      label: (
-        <div className="flex items-center">
-          <h3
-            className={`${Pratafont.className} font-normal text-md leading-[175%] uppercase text-center cursor-pointer text-[#080808]`}
-          >
-            More Products
-          </h3>
-        </div>
-      ),
-      children: (
-        <div className="flex justify-start my-10">Content of Tab Pane 5</div>
       ),
     },
   ];
