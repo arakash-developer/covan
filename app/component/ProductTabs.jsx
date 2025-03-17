@@ -94,23 +94,23 @@ const ProductTabs = ({ product }) => {
         </div>
       ),
     },
+    // {
+    //   key: "2",
+    //   label: (
+    //     <div className="flex items-center">
+    //       <h3
+    //         className={`${Pratafont.className} font-normal text-md leading-[175%] uppercase text-center text-[#080808] cursor-pointer`}
+    //       >
+    //         Additional
+    //       </h3>
+    //     </div>
+    //   ),
+    //   children: (
+    //     <div className="flex justify-start my-10">Content of Tab Pane 3</div>
+    //   ),
+    // },
     {
       key: "2",
-      label: (
-        <div className="flex items-center">
-          <h3
-            className={`${Pratafont.className} font-normal text-md leading-[175%] uppercase text-center text-[#080808] cursor-pointer`}
-          >
-            Additional
-          </h3>
-        </div>
-      ),
-      children: (
-        <div className="flex justify-start my-10">Content of Tab Pane 3</div>
-      ),
-    },
-    {
-      key: "3",
       label: (
         <div className="flex items-center">
           <h3
