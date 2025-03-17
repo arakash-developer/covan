@@ -41,7 +41,7 @@ const page = async ({ params }) => {
   let filterProducts = allProduct.filter((data) => data.category == category);
 
   return (
-    <>
+    <div className="overflow-x-hidden">
       {/* Shop */}
       <section className="flex justify-center items-center flex-col py-[120px] bg-shop bg-cover bg-no-repeat bg-center">
         <h2
@@ -165,9 +165,7 @@ const page = async ({ params }) => {
             </div>
           </div>
           <div className="mt-[95px]">
-            <div className="overflow-x-hidden">
-              <ProductTabs product={product} />
-            </div>
+            <ProductTabs product={product} />
           </div>
           <div className="mt-[45px]">
             <h2
@@ -180,7 +178,7 @@ const page = async ({ params }) => {
         </Container>
       </section>
       {/* Product */}
-    </>
+    </div>
   );
 };
 
