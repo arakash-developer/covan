@@ -176,7 +176,7 @@ const ProductTabs = ({ product }) => {
       defaultActiveKey="1"
       items={items}
       onChange={onChange}
-      className="product-tabs border-none overflow-x-hidden"
+        className="product-tabs border-none"
       centered
     />
   );
