@@ -101,7 +101,7 @@ const ProductTabs = ({ product }) => {
           <h3
             className={`${Pratafont.className} font-normal text-md leading-[175%] uppercase text-center text-[#080808] cursor-pointer`}
           >
-            Additional information
+            Additional
           </h3>
         </div>
       ),
