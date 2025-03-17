@@ -81,7 +81,7 @@ const page = () => {
                   </td>
                   <td>
                     <h3 className="font-normal text-[0.94rem] leading-5 text-[#080808]">
-                      {data.title}
+                      {data.title.slice(0,20)}... 
                     </h3>
                   </td>
                   <td>
