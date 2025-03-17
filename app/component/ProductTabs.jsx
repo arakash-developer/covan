@@ -107,15 +107,15 @@ const ProductTabs = ({ product }) => {
       children: (
         <div className="flex justify-start my-10">
           <div>
-            <h1 className="font-normal text-lg leading-[120%] uppercase text-[#080808]">
+            <h1 className="font-normal text-lg leading-[120%] uppercase text-[#080808] mb-5">
               1 review for
               <span className="text-[#e7b053]">Mac Color Brown</span>
             </h1>
-            <div className="w-full bg-lime-200 grid grid-cols-1 md:grid-cols-2">
+            <div className="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[30px] justify-center">
               {product.reviews?.map((data, index) => (
                 <div key={index} className="review">
                   <div className="mt-8 flex items-start gap-3 justify-start">
-                    <div className="rounded-full w-14 h-14 overflow-hidden">
+                    <div className="rounded-full w-14 h-14 overflow-hidden flex-shrink-0">
                       <Image
                         className="w-full h-full object-cover"
                         src={Avatar}
