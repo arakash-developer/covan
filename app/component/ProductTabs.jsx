@@ -11,7 +11,6 @@ const Pratafont = Prata({
 });
 
 const ProductTabs = ({ product }) => {
-  console.log(product);
 
   const items = [
     {
@@ -125,8 +124,8 @@ const ProductTabs = ({ product }) => {
         <div className="flex justify-start my-10">
           <div className="w-full">
             <h1 className="font-normal text-lg leading-[120%] uppercase text-[#080808] mb-5">
-              1 review for
-              <span className="text-[#e7b053]">Mac Color Brown</span>
+              {product?.reviews?.length} review for
+              <span className="text-[#e7b053]"> {product?.title}</span>
             </h1>
             <div className="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[30px] justify-between">
               {product.reviews?.map((data, index) => (
