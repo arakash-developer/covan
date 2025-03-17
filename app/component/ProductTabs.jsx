@@ -123,12 +123,12 @@ const ProductTabs = ({ product }) => {
       ),
       children: (
         <div className="flex justify-start my-10">
-          <div>
+          <div className="w-full">
             <h1 className="font-normal text-lg leading-[120%] uppercase text-[#080808] mb-5">
               1 review for
               <span className="text-[#e7b053]">Mac Color Brown</span>
             </h1>
-            <div className="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[30px] justify-center">
+            <div className="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[30px] justify-between">
               {product.reviews?.map((data, index) => (
                 <div key={index} className="review">
                   <div className="mt-8 flex items-start gap-3 justify-start">
