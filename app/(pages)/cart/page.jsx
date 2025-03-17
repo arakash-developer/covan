@@ -1,5 +1,9 @@
+"use client";
 import Container from "@/app/component/Container";
+import { Context } from "@/app/context/productContext";
 import { Prata } from "next/font/google";
+import Image from "next/image";
+import { useContext } from "react";
 import { FaAngleRight } from "react-icons/fa";
 import { IoMdCloseCircleOutline } from "react-icons/io";
 const Pratafont = Prata({
@@ -7,6 +11,9 @@ const Pratafont = Prata({
   subsets: ["latin"],
 });
 const page = () => {
+  let { products, setProduct } = useContext(Context);
+  console.log(products);
+
   return (
     <>
       {/* Shop */}
@@ -55,19 +62,32 @@ const page = () => {
             </tr>
           </thead>
           <tbody className="border-2 border-[#f5f5f5] h-[132px]">
-            <tr>
-              <td>
-                <IoMdCloseCircleOutline />
-              </td>
-              <td>
-                <h3 className="font-normal text-[0.94rem] leading-5 text-[#080808]">
-                  Cover FX
-                </h3>
-              </td>
-              <td>c</td>
-              <td>d</td>
-              <td>e</td>
-            </tr>
+            {products.map((data) => (
+              <>
+                <tr key={data.id}>
+                  <td>
+                    <div className="flex gap-2">
+                      <IoMdCloseCircleOutline />
+                      <Image
+                      className="w-[100px] h-[100px]"
+                        src={data.thumbnail}
+                        alt={data.thumbnail}
+                        width={100}
+                        height={100}
+                      />
+                    </div>
+                  </td>
+                  <td>
+                    <h3 className="font-normal text-[0.94rem] leading-5 text-[#080808]">
+                      {data.title}
+                    </h3>
+                  </td>
+                  <td>c</td>
+                  <td>{data.price}</td>
+                  <td>{data.price}</td>
+                </tr>
+              </>
+            ))}
           </tbody>
         </table>
         <div>page</div>
