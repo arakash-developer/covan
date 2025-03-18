@@ -14,11 +14,34 @@ import { Prata } from "next/font/google";
 import Image from "next/image";
 import Link from "next/link";
 import { HiOutlineMail } from "react-icons/hi";
+import Storebanner from "@/public/storebanner.png"
 
 const Pratafont = Prata({
   weight: "400",
   subsets: ["latin"],
 });
+
+export const metadata = {
+  title: "My Page Title",
+  description: "This is a description for my page.",
+  openGraph: {
+    title: "Covan",
+    description: "This is an Open Graph description.",
+    url:"https://covan.vercel.app/",
+    siteName: "Covan",
+    images: [
+      {
+        url: `${Storebanner}`,
+        width: 1200,
+        height: 630,
+        alt: "My Open Graph Image",
+      },
+    ],
+    type: "website",
+  },
+};
+
+
 const page = () => {
   return (
     <>
