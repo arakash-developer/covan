@@ -3,6 +3,7 @@ import Container from "@/app/component/Container";
 import { Context } from "@/app/context/productContext";
 import { Prata } from "next/font/google";
 import Image from "next/image";
+import Link from "next/link";
 import { useContext } from "react";
 import { AiOutlineMinus, AiOutlinePlus } from "react-icons/ai";
 import { FaAngleRight } from "react-icons/fa";
@@ -156,7 +157,7 @@ const page = () => {
                         <span className="flex items-center justify-between">
                           <IoMdCloseCircleOutline className="flex-shrink-0 text-xl text-[#080808]" />
                           <Image
-                            className="w-[100px] h-[100px]"
+                            className="w-[100px] h-[100px] md:flex-shrink-0"
                             src={data.thumbnail}
                             alt={data.thumbnail}
                             width={100}
@@ -204,128 +205,133 @@ const page = () => {
             </div>
           </div>
         </div>
-        <div className={`w-full md:w-[370px] border ${Pratafont.className}`}>
-          <div className="py-5 bg-[#f5f5f5] flex justify-center items-center">
-            <h3
-              className={`font-normal text-sm leading-[180%] uppercase text-center text-[#080808] ${Pratafont.className}`}
-            >
-              Cart totals
-            </h3>
-          </div>
-          <div className="w-full">
-            <div className="grid grid-cols-2 gap-[10px] py-4 border-b pl-2">
-              <h3 className="font-normal text-sm leading-[200%] text-[#080808] ">
-                Subtotal
+        <div className="">
+          <div className={`w-full md:w-[370px] border ${Pratafont.className}`}>
+            <div className="py-5 bg-[#f5f5f5] flex justify-center items-center">
+              <h3
+                className={`font-normal text-sm leading-[180%] uppercase text-center text-[#080808] ${Pratafont.className}`}
+              >
+                Cart totals
               </h3>
-              <div className="">
-                <h3 className="font-normal text-sm leading-[200%] text-[#666]">
-                  $113.00
+            </div>
+            <div className="w-full">
+              <div className="grid grid-cols-2 gap-[10px] py-4 border-b pl-2">
+                <h3 className="font-normal text-sm leading-[200%] text-[#080808] ">
+                  Subtotal
                 </h3>
+                <div className="">
+                  <h3 className="font-normal text-sm leading-[200%] text-[#666]">
+                    $113.00
+                  </h3>
+                </div>
               </div>
-            </div>
-            <div className="grid grid-cols-2 gap-[10px] py-4 border-b pl-2">
-              <h3 className="font-normal text-sm leading-[200%] text-[#080808] ">
-                Shipping: Pharmark
-              </h3>
-              <form className="">
-                <div className="flex items-center gap-1">
-                  <input
-                    id="red-radio"
-                    type="radio"
-                    value=""
-                    name="colored-radio"
-                    class="w-4 h-4  bg-gray-100 border-gray-300 cursor-pointer focus:ring-2 "
-                  />
-                  <label
-                    for="red-radio"
-                    class="font-normal text-sm leading-[200%] text-[#666]captialize"
-                  >
-                    FreeShipping
-                  </label>
-                </div>
-                <div className="flex items-center gap-1">
-                  <input
-                    id="red-radio"
-                    type="radio"
-                    value=""
-                    name="colored-radio"
-                    class="w-4 h-4  bg-gray-100 border-gray-300 cursor-pointer focus:ring-2 "
-                  />
-                  <label
-                    for="red-radio"
-                    class="font-normal text-sm leading-[200%] text-[#666]captialize"
-                  >
-                    Flat rate
-                  </label>
-                </div>
-                <p className="font-normal text-sm leading-[200%] text-[#666]">
-                  Shipping to{" "}
-                  <span className="font-normal text-sm leading-[200%] text-[#080808]">
-                    Bangladesh
-                  </span>
-                </p>
-                <p className="font-normal text-[0.69rem] leading-[200%] text-[#666]">
-                  Aqualia Thermal ×1
-                </p>
-              </form>
-            </div>
-            <div className="grid grid-cols-2 gap-[10px] py-4 border-b pl-2">
-              <h3 className="font-normal text-sm leading-[200%] text-[#080808] ">
-                Shipping: Phavalin
-              </h3>
-              <form className="">
-                <div className="flex items-center gap-1">
-                  <input
-                    id="red-radio"
-                    type="radio"
-                    value=""
-                    name="colored-radio"
-                    class="w-4 h-4  bg-gray-100 border-gray-300 cursor-pointer focus:ring-2 "
-                  />
-                  <label
-                    for="red-radio"
-                    class="font-normal text-sm leading-[200%] text-[#666]captialize"
-                  >
-                    FreeShipping
-                  </label>
-                </div>
-                <div className="flex items-center gap-1">
-                  <input
-                    id="red-radio"
-                    type="radio"
-                    value=""
-                    name="colored-radio"
-                    class="w-4 h-4  bg-gray-100 border-gray-300 cursor-pointer focus:ring-2 "
-                  />
-                  <label
-                    for="red-radio"
-                    class="font-normal text-sm leading-[200%] text-[#666]captialize"
-                  >
-                    Flat rate
-                  </label>
-                </div>
-                <p className="font-normal text-sm leading-[200%] text-[#666]">
-                  Shipping to
-                  <span className="font-normal text-sm leading-[200%] text-[#080808]">
-                    Bangladesh
-                  </span>
-                </p>
-                <p className="font-normal text-[0.69rem] leading-[200%] text-[#666]">
-                  Aqualia Thermal ×1
-                </p>
-              </form>
-            </div>
+              <div className="grid grid-cols-2 gap-[10px] py-4 border-b pl-2">
+                <h3 className="font-normal text-sm leading-[200%] text-[#080808] ">
+                  Shipping: Pharmark
+                </h3>
+                <form className="">
+                  <div className="flex items-center gap-1">
+                    <input
+                      id="red-radio"
+                      type="radio"
+                      value=""
+                      name="colored-radio"
+                      className="w-4 h-4  bg-gray-100 border-gray-300 cursor-pointer focus:ring-2 "
+                    />
+                    <label
+                      htmlFor="red-radio"
+                      className="font-normal text-sm leading-[200%] text-[#666]captialize"
+                    >
+                      FreeShipping
+                    </label>
+                  </div>
+                  <div className="flex items-center gap-1">
+                    <input
+                      id="red-radio"
+                      type="radio"
+                      value=""
+                      name="colored-radio"
+                      className="w-4 h-4  bg-gray-100 border-gray-300 cursor-pointer focus:ring-2 "
+                    />
+                    <label
+                      htmlFor="red-radio"
+                      className="font-normal text-sm leading-[200%] text-[#666]captialize"
+                    >
+                      Flat rate
+                    </label>
+                  </div>
+                  <p className="font-normal text-sm leading-[200%] text-[#666]">
+                    Shipping to{" "}
+                    <span className="font-normal text-sm leading-[200%] text-[#080808]">
+                      Bangladesh
+                    </span>
+                  </p>
+                  <p className="font-normal text-[0.69rem] leading-[200%] text-[#666]">
+                    Aqualia Thermal ×1
+                  </p>
+                </form>
+              </div>
+              <div className="grid grid-cols-2 gap-[10px] py-4 border-b pl-2">
+                <h3 className="font-normal text-sm leading-[200%] text-[#080808] ">
+                  Shipping: Phavalin
+                </h3>
+                <form className="">
+                  <div className="flex items-center gap-1">
+                    <input
+                      id="red-radio"
+                      type="radio"
+                      value=""
+                      name="colored-radio"
+                      className="w-4 h-4  bg-gray-100 border-gray-300 cursor-pointer focus:ring-2 "
+                    />
+                    <label
+                      htmlFor="red-radio"
+                      className="font-normal text-sm leading-[200%] text-[#666]captialize"
+                    >
+                      FreeShipping
+                    </label>
+                  </div>
+                  <div className="flex items-center gap-1">
+                    <input
+                      id="red-radio"
+                      type="radio"
+                      value=""
+                      name="colored-radio"
+                      className="w-4 h-4  bg-gray-100 border-gray-300 cursor-pointer focus:ring-2 "
+                    />
+                    <label
+                      htmlFor="red-radio"
+                      className="font-normal text-sm leading-[200%] text-[#666]captialize"
+                    >
+                      Flat rate
+                    </label>
+                  </div>
+                  <p className="font-normal text-sm leading-[200%] text-[#666]">
+                    Shipping to
+                    <span className="font-normal text-sm leading-[200%] text-[#080808]">
+                      Bangladesh
+                    </span>
+                  </p>
+                  <p className="font-normal text-[0.69rem] leading-[200%] text-[#666]">
+                    Aqualia Thermal ×1
+                  </p>
+                </form>
+              </div>
 
-            <div className="grid grid-cols-2 gap-[10px] py-4 border-b pl-2">
-              <h3 className="font-normal text-sm leading-[200%] text-[#080808] ">
-                Total
-              </h3>
-              <div className="">
-                <h3 className="font-normal text-base leading-[200%] text-[#e7b053]">
-                  $113.00
+              <div className="grid grid-cols-2 gap-[10px] py-4 border-b pl-2">
+                <h3 className="font-normal text-sm leading-[200%] text-[#080808] ">
+                  Total
                 </h3>
+                <div className="">
+                  <h3 className="font-normal text-base leading-[200%] text-[#e7b053]">
+                    $113.00
+                  </h3>
+                </div>
               </div>
             </div>
+          </div>
+          <div className="mt-8">
+            <Link href="/checkout" className={`py-3 px-5 bg-[#e7b053] font-normal text-xs leading-[175%] uppercase text-[#fff] hover:bg-[#080808] inline-block tracking-[0.2em] ${Pratafont.className}`}>Proceed to checkout</Link>
           </div>
         </div>
       </Container>
