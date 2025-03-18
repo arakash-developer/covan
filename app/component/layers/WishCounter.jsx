@@ -7,7 +7,16 @@ const WishCounter = ({ product = [] }) => {
   let { wishlist, setWishlist } = useContext(Context);
   let [active, setActive] = useState(false);
   const handleWishlist = () => {
-    setWishlist((prv) => [...prv, product]);
+    setWishlist((prv) => [
+      ...prv,
+      {
+        id: product.id,
+        count: 1,
+        title: product.title,
+        price: product.price,
+        thumbnail: product.thumbnail,
+      },
+    ]);
     setActive(true);
   };
   console.log(wishlist);
