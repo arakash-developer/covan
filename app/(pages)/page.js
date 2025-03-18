@@ -25,7 +25,7 @@ export const metadata = {
   description: "Covan is made by Atiqur Rahman Akash, a cosmetic e-commerce using Next JS.",
   openGraph: {
     title: "Covan",
-    description: "This is an Open Graph description.",
+    description: "Covan is made by Atiqur Rahman Akash, a cosmetic e-commerce using Next JS.",
     url: "https://covan.vercel.app/",
     siteName: "Covan",
     imageUrl: "/storebanner.png",
@@ -36,9 +36,9 @@ export const metadata = {
       },
     ],
     twitter: {
-      card: "summary_large_image",
-      title: "My Awesome Page",
-      description: "This is a description of my page.",
+      card: "Covan",
+      title: "Covan",
+      description: "Covan is made by Atiqur Rahman Akash, a cosmetic e-commerce using Next JS.",
       site: "@covan",
       creator: "@akash",
       images: ["/storebanner.png"],
