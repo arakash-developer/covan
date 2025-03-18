@@ -10,11 +10,11 @@ import Cat3 from "@/public/cat3.jpg";
 import CatLine from "@/public/catline.png";
 import Blog2 from "@/public/image21.jpg";
 import Blog1 from "@/public/image22.jpg";
+import Storebanner from "@/public/storebanner.png";
 import { Prata } from "next/font/google";
 import Image from "next/image";
 import Link from "next/link";
 import { HiOutlineMail } from "react-icons/hi";
-import Storebanner from "@/public/storebanner.png"
 
 const Pratafont = Prata({
   weight: "400",
@@ -22,12 +22,12 @@ const Pratafont = Prata({
 });
 
 export const metadata = {
-  title: "My Page Title",
-  description: "This is a description for my page.",
+  title: "Covan",
+  description: "This is an Open Graph description.",
   openGraph: {
     title: "Covan",
     description: "This is an Open Graph description.",
-    url:"https://covan.vercel.app/",
+    url: "https://covan.vercel.app/",
     siteName: "Covan",
     imageUrl: `${Storebanner}`,
     images: [
@@ -38,10 +38,17 @@ export const metadata = {
         alt: "My Open Graph Image",
       },
     ],
+    twitter: {
+      card: "summary_large_image",
+      title: "My Awesome Page",
+      description: "This is a description of my page.",
+      site: "@covan", 
+      creator: "@akash",
+      images: [`${Storebanner}`],
+    },
     type: "website",
   },
 };
-
 
 const page = () => {
   return (
