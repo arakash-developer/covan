@@ -29,10 +29,10 @@ export const metadata = {
     description: "This is an Open Graph description.",
     url: "https://covan.vercel.app/",
     siteName: "Covan",
-    imageUrl: `${Storebanner}`,
+    imageUrl:'/public/storebanner.png',
     images: [
       {
-        url: `${Storebanner}`,
+        url: "/public/storebanner.png",
         width: 1200,
         height: 630,
         alt: "My Open Graph Image",
@@ -44,7 +44,7 @@ export const metadata = {
       description: "This is a description of my page.",
       site: "@covan", 
       creator: "@akash",
-      images: [`${Storebanner}`],
+      images: ["/public/storebanner.png"],
     },
     type: "website",
   },
