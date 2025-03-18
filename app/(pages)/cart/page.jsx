@@ -204,7 +204,7 @@ const page = () => {
             </div>
           </div>
         </div>
-        <div className={`w-[370px] border-2 ${Pratafont.className}`}>
+        <div className={`w-[370px] border ${Pratafont.className}`}>
           <div className="py-5 bg-[#f5f5f5] flex justify-center items-center">
             <h3
               className={`font-normal text-sm leading-[180%] uppercase text-center text-[#080808] ${Pratafont.className}`}
@@ -214,12 +214,29 @@ const page = () => {
           </div>
           <div className="w-full grid grid-cols-2 justify-between">
             <div className="pl-3">
-              <div className="py-5 font-normal text-sm leading-[200%] text-[#080808]">
+              <div className="py-5 font-normal text-sm leading-[200%] text-[#080808] border-b">
                 Subtotal
+              </div>
+              <div className="py-5 font-normal text-sm leading-[200%] text-[#080808]  border-b">
+                Shipping: Pharmark
+              </div>
+              <div className="py-5 font-normal text-sm leading-[200%] text-[#080808]  border-b">
+                Shipping: Pharmark
+              </div>
+              <div className="py-5 font-normal text-sm leading-[200%] text-[#080808]  border-b">
+                Shipping: Phavalin
+              </div>
+              <div className="py-5 font-normal text-sm leading-[200%] text-[#080808]">
+                Total
               </div>
             </div>
             <div className="">
-              <div className="py-5">Subtotal</div>
+              <div className="py-5 font-normal text-sm leading-[200%] text-[#666]border-b">
+              $113.00
+              </div>
+              <div className="py-5 font-normal text-sm leading-[200%] text-[#666]border-b">
+              $113.00
+              </div>
             </div>
           </div>
         </div>
