@@ -40,7 +40,7 @@ export const metadata = {
       title: "Covan",
       description: "Covan is made by Atiqur Rahman Akash, a cosmetic e-commerce using Next JS.",
       site: "@covan",
-      creator: "@akash",
+      creator: "@atiqurrahmanakash",
       images: ["/storebanner.png"],
     },
     type: "website",
