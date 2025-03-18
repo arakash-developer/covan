@@ -29,6 +29,7 @@ export const metadata = {
     description: "This is an Open Graph description.",
     url:"https://covan.vercel.app/",
     siteName: "Covan",
+    imageUrl: `${Storebanner}`,
     images: [
       {
         url: `${Storebanner}`,
