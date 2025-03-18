@@ -4,6 +4,7 @@ import { Context } from "@/app/context/productContext";
 import { Prata } from "next/font/google";
 import Image from "next/image";
 import { useContext } from "react";
+import { AiOutlineMinus, AiOutlinePlus } from "react-icons/ai";
 import { FaAngleRight } from "react-icons/fa";
 import { IoMdCloseCircleOutline } from "react-icons/io";
 const Pratafont = Prata({
@@ -37,7 +38,7 @@ const page = () => {
       {/* Shop */}
       <Container className="mt-[110px] mb-[150px] flex md:flex-row flex-col justify-between items-start">
         <div className="w-full overflow-x-scroll md:overflow-auto">
-          <table className="w-[700px] border-2 border-[#f5f5f5]">
+          <table className="w-[700px] border-2 border-[#f5f5f5] border-spacing-4">
             <thead className="h-[50px] bg-[#f5f5f5] border-2 border-[#f5f5f5]">
               <tr className="text-left">
                 <th>c</th>
@@ -49,13 +50,14 @@ const page = () => {
                 <th
                   className={`${Pratafont.className} font-normal text-sm leading-[200%] uppercase text-[#080808]`}
                 >
-                  Quantity
+                  price
                 </th>
                 <th
                   className={`${Pratafont.className} font-normal text-sm leading-[200%] uppercase text-[#080808]`}
                 >
-                  price
+                  Quantity
                 </th>
+
                 <th
                   className={`${Pratafont.className} font-normal text-sm leading-[200%] uppercase text-[#080808]`}
                 >
@@ -66,26 +68,38 @@ const page = () => {
             <tbody className="border-2 border-[#f5f5f5] h-[132px]">
               {products.map((data) => (
                 <tr key={data.id}>
-                  <td className="flex gap-2 items-center">
-                    <IoMdCloseCircleOutline />
-                    <Image
-                      className="w-[100px] h-[100px]"
-                      src={data.thumbnail}
-                      alt={data.thumbnail}
-                      width={100}
-                      height={100}
-                    />
+                  <td>
+                    <span className="flex items-center justify-between">
+                      <IoMdCloseCircleOutline className="text-xl" />
+                      <Image
+                        className="w-[100px] h-[100px] flex-shrink-0"
+                        src={data.thumbnail}
+                        alt={data.thumbnail}
+                        width={100}
+                        height={100}
+                      />
+                    </span>
                   </td>
                   <td>
                     <h3 className="font-normal text-[0.94rem] leading-5 text-[#080808]">
                       {data.title.slice(0, 20)}...
                     </h3>
                   </td>
+                  <td className="font-normal text-base leading-[200%] text-[#080808]">${data.price}</td>
                   <td>
-                    <span>ss</span>
+                    <span className="flex items-center justify-between border border-[#8F8F8F] cursor-pointer mx-2">
+                      <p className="border-r border-[#8F8F8F] h-full px-3">
+                        <AiOutlineMinus />
+                      </p>
+                      <h3 className="font-normal text-xl leading-[200%] text-center text-[#666]">
+                        {1}
+                      </h3>
+                      <p className="border-l border-[#8F8F8F] h-full px-3">
+                        <AiOutlinePlus />
+                      </p>
+                    </span>
                   </td>
-                  <td>{data.price}</td>
-                  <td>{data.price}</td>
+                  <td className="font-normal text-base leading-[200%] text-[#e7b053]"> ${data.price}</td>
                 </tr>
               ))}
             </tbody>
