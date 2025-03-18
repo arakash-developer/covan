@@ -14,8 +14,20 @@ const Pratafont = Prata({
 
 const page = () => {
   let { products, setProduct } = useContext(Context);
-  let handleminus = () => {};
-  let handleplus = () => {};
+  let handleminus = (id) => {
+    setProduct(
+      products.map((item) =>
+        item.id === id ? { ...item, count: item.count - 1 } : item
+      )
+    );
+  };
+  let handleplus = (id) => {
+    setProduct(
+      products.map((item) =>
+        item.id === id ? { ...item, count: item.count + 1 } : item
+      )
+    );
+  };
   return (
     <>
       {/* Shop */}
@@ -85,21 +97,31 @@ const page = () => {
                       {data.title.slice(0, 20)}...
                     </h3>
                   </td>
-                  <td className="font-normal text-base leading-[200%] text-[#080808]">${data.price}</td>
-                  <td>
-                    <span className="flex items-center justify-between border border-[#8F8F8F] cursor-pointer mx-2">
-                      <p className="border-r border-[#8F8F8F] h-full px-3">
+                  <td className="font-normal text-base leading-[200%] text-[#080808]">
+                    ${data.price}
+                  </td>
+                  <td className="h-full">
+                    <span className="flex items-center justify-between border border-[#8F8F8F] cursor-pointer mx-2 h-[25px]">
+                      <p
+                        className="border-r border-[#8F8F8F] h-full px-3 flex items-center"
+                        onClick={() => handleminus(data.id)}
+                      >
                         <AiOutlineMinus />
                       </p>
-                      <h3 className="font-normal text-xl leading-[200%] text-center text-[#666]">
-                        {1}
+                      <h3 className="font-normal text-lg leading-[200%] text-center text-[#666]">
+                        {data.count}
                       </h3>
-                      <p className="border-l border-[#8F8F8F] h-full px-3">
+                      <p
+                        className="border-l border-[#8F8F8F] h-full px-3 flex items-center"
+                        onClick={() => handleplus(data.id)}
+                      >
                         <AiOutlinePlus />
                       </p>
                     </span>
                   </td>
-                  <td className="font-normal text-base leading-[200%] text-[#e7b053]"> ${data.price}</td>
+                  <td className="font-normal text-base leading-[200%] text-[#e7b053]">
+                    ${data.price}
+                  </td>
                 </tr>
               ))}
             </tbody>
