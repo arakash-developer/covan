@@ -25,6 +25,8 @@ const Navbar = () => {
   let [open, setOpen] = useState(false);
   let cartbtn = useRef(null);
   let [isOpen, setIsOpen] = useState(false);
+  let [wish, setWish] = useState(false);
+  let wishbtn = useRef(null);
   let { products, setProduct } = useContext(Context);
   let closehandler = () => {
     setIsOpen(!isOpen);
@@ -40,6 +42,18 @@ const Navbar = () => {
       }
     });
   }, [open]);
+
+  useEffect(() => {
+    document.addEventListener("click", (event) => {
+      setWish(!wish);
+      if (wishbtn.current.contains(event.target)) {
+        setWish(!wish);
+      } else {
+        setWish(false);
+      }
+    });
+  }, [wish]);
+  console.log(wish);
 
   let [totalCount, totalsetCount] = useState(0);
   let [price, setPrice] = useState(0);
@@ -206,13 +220,83 @@ const Navbar = () => {
           </div>
           <div className="flex items-center gap-4 lg:gap-6">
             <IoSearchSharp className="font-normal text-[22px] leading-[109%] uppercase text-[#080808] hover:text-[#e7b053]  cursor-pointer" />
-            <div className="relative cursor-pointer group">
+            <div className="relative cursor-pointer group" ref={wishbtn}>
               <FaRegHeart className="font-normal text-[22px] leading-[109%] uppercase text-[#080808] hover:text-[#e7b053]  cursor-pointer" />
               <div className="absolute w-6 h-6 rounded-full bg-[#e7b053] bottom-[10px] left-[13px] flex justify-center items-center">
                 <p className="font-normal text-[0.81rem] leading-[185%] text-center text-[#fff]">
                   0
                 </p>
               </div>
+              {wish && (
+                <div className="w-[300px] sm:w-[380px] absolute right-0 top-full mt-4 py-8 px-5 bg-[#fff] border-2 border-[#f3f3f3] text-[#080808] z-[99999999]">
+                  {products.length > 0 ? (
+                    <>
+                      <div className="flex flex-col gap-5">
+                        {updateproducts.map((product) => (
+                          <div key={product.id}>
+                            <div className="flex justify-between items-center">
+                              <div className="flex items-start gap-4">
+                                <Image
+                                  src={product.thumbnail}
+                                  alt=""
+                                  width={50}
+                                  height={50}
+                                  className="w-[50px] h-[50px] object-cover flex-shrink-0"
+                                />
+                                <div className="">
+                                  <h3 className="text-[0.94rem] leading-5 mb-1.5 font-medium">
+                                    {product.title}
+                                  </h3>
+                                  <div className="flex gap-2 items-center">
+                                    <p className="text-md">{product.count}</p>
+                                    <p className="text-xs">X</p>
+                                    <p className="text-[#e7b053] text-base leading-5 font-bold">
+                                      {product.price}
+                                    </p>
+                                  </div>
+                                </div>
+                              </div>
+                              <p onClick={() => handleDelete(product.id)}>
+                                <MdDelete className="text-xl" />
+                              </p>
+                            </div>
+                          </div>
+                        ))}
+                        <div className="mt-10">
+                          <div className=" flex justify-between items-center">
+                            <h4 className="text-sm font-medium text-[#080808] uppercase leading-[1.63rem]">
+                              Total
+                            </h4>
+                            <div className="border-t border-[#e1e1e1] w-full"></div>
+                            <h3 className="text-md font-medium text-[#080808] uppercase leading-[1.63rem]">
+                              ${(price * totalCount).toFixed(2)}
+                            </h3>
+                          </div>
+                          <div
+                            className="mt-2 flex items-center justify-between
+                            "
+                          >
+                            <Link
+                              href="/cart"
+                              className="bg-[#e7b053] overflow-hidden relative uppercase text-[0.81rem] text-[#fff] rounded-none px-5 md:px-10 py-2 transition-all duration-300 ease-linear hover:bg-[#080808]"
+                            >
+                              View cart
+                            </Link>
+                            <Link
+                              href="/cart"
+                              className="overflow-hidden relative uppercase text-[0.81rem] text-[#fff] rounded-none bg-[#080808] hover:bg-[#e7b053] transition-all duration-300 ease-linear px-5 md:px-10 py-2"
+                            >
+                              checkout
+                            </Link>
+                          </div>
+                        </div>
+                      </div>
+                    </>
+                  ) : (
+                    <>No products in the cart.</>
+                  )}
+                </div>
+              )}
             </div>
             <div className="">
               <div className="relative cursor-pointer" ref={cartbtn}>

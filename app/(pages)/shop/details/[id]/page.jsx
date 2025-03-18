@@ -1,18 +1,14 @@
 import Container from "@/app/component/Container";
 import CartCounter from "@/app/component/layers/CartCounter";
 import ProductLens from "@/app/component/layers/ProductLens";
+import WishCounter from "@/app/component/layers/WishCounter";
 import NewArrival from "@/app/component/NewArrival";
 import ProductTabs from "@/app/component/ProductTabs";
 import getAllProduct from "@/app/utils/getAllProduct";
 import getSingleProduct from "@/app/utils/getSingleProduct";
 import { Prata } from "next/font/google";
 import Link from "next/link";
-import {
-  FaAngleRight,
-  FaFacebookF,
-  FaLinkedin,
-  FaRegHeart,
-} from "react-icons/fa";
+import { FaAngleRight, FaFacebookF, FaLinkedin } from "react-icons/fa";
 import { FaStar, FaXTwitter } from "react-icons/fa6";
 import { GrInstagram } from "react-icons/gr";
 import { VscGitCompare } from "react-icons/vsc";
@@ -98,12 +94,7 @@ const page = async ({ params }) => {
               />
 
               <div className="flex items-center gap-5">
-                <div className="flex items-center gap-2 cursor-pointer">
-                  <FaRegHeart className="font-normal text-sm leading-[175%] text-center text-[#666] text-[21px]" />
-                  <h3 className="font-normal text-sm leading-[175%] text-center text-[#666]">
-                    Add to Wishlist
-                  </h3>
-                </div>
+                <WishCounter product={product} />
                 <div
                   className="flex items-center gap-1  cursor-pointer
               "

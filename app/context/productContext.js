@@ -17,9 +17,11 @@ const productContext = ({ children }) => {
     },
   ]);
 
+  let [wishlist, setWishlist] = useState([]);
+
   return (
     <Context.Provider
-      value={{ productImage, setProductImage, setProduct, products }}
+      value={{ productImage, setProductImage, setProduct, products, wishlist, setWishlist }}
     >
       {children}
     </Context.Provider>
