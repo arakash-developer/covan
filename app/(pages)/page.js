@@ -22,7 +22,7 @@ const Pratafont = Prata({
 
 export const metadata = {
   title: "Covan",
-  description: "This is an Open Graph description.",
+  description: "Covan is made by Atiqur Rahman Akash, a cosmetic e-commerce using Next JS.",
   openGraph: {
     title: "Covan",
     description: "This is an Open Graph description.",
