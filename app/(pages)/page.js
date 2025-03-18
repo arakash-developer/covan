@@ -10,7 +10,6 @@ import Cat3 from "@/public/cat3.jpg";
 import CatLine from "@/public/catline.png";
 import Blog2 from "@/public/image21.jpg";
 import Blog1 from "@/public/image22.jpg";
-import Storebanner from "@/public/storebanner.png";
 import { Prata } from "next/font/google";
 import Image from "next/image";
 import Link from "next/link";
@@ -29,10 +28,10 @@ export const metadata = {
     description: "This is an Open Graph description.",
     url: "https://covan.vercel.app/",
     siteName: "Covan",
-    imageUrl:'/public/storebanner.png',
+    imageUrl: "/storebanner.png",
     images: [
       {
-        url: "/public/storebanner.png",
+        url: "/storebanner.png",
         width: 1200,
         height: 630,
         alt: "My Open Graph Image",
@@ -42,9 +41,9 @@ export const metadata = {
       card: "summary_large_image",
       title: "My Awesome Page",
       description: "This is a description of my page.",
-      site: "@covan", 
+      site: "@covan",
       creator: "@akash",
-      images: ["/public/storebanner.png"],
+      images: ["/storebanner.png"],
     },
     type: "website",
   },
