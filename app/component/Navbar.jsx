@@ -230,23 +230,25 @@ const Navbar = () => {
                           {updateproducts.map((product) => (
                             <div key={product.id}>
                               <div className="flex justify-between items-center">
-                                <Image
-                                  src={product.thumbnail}
-                                  alt=""
-                                  width={50}
-                                  height={50}
-                                  className="w-[50px] h-[50px] object-cover"
-                                />
-                                <div className="">
-                                  <h3 className="text-[0.94rem] leading-5 mb-1.5 font-medium">
-                                    {product.title}
-                                  </h3>
-                                  <div className="flex gap-2 items-center">
-                                    <p className="text-md">{product.count}</p>
-                                    <p className="text-xs">X</p>
-                                    <p className="text-[#e7b053] text-base leading-5 font-bold">
-                                      {product.price}
-                                    </p>
+                                <div className="flex items-start gap-4">
+                                  <Image
+                                    src={product.thumbnail}
+                                    alt=""
+                                    width={50}
+                                    height={50}
+                                    className="w-[50px] h-[50px] object-cover flex-shrink-0"
+                                  />
+                                  <div className="">
+                                    <h3 className="text-[0.94rem] leading-5 mb-1.5 font-medium">
+                                      {product.title}
+                                    </h3>
+                                    <div className="flex gap-2 items-center">
+                                      <p className="text-md">{product.count}</p>
+                                      <p className="text-xs">X</p>
+                                      <p className="text-[#e7b053] text-base leading-5 font-bold">
+                                        {product.price}
+                                      </p>
+                                    </div>
                                   </div>
                                 </div>
                                 <p onClick={() => handleDelete(product.id)}>

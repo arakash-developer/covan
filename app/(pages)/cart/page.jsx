@@ -70,7 +70,7 @@ const page = () => {
                 <tr key={data.id}>
                   <td>
                     <span className="flex items-center justify-between">
-                      <IoMdCloseCircleOutline className="text-xl" />
+                      <IoMdCloseCircleOutline className="text-xl text-[#080808]" />
                       <Image
                         className="w-[100px] h-[100px] flex-shrink-0"
                         src={data.thumbnail}
