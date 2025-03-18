@@ -32,8 +32,6 @@ export const metadata = {
     images: [
       {
         url: "/storebanner.png",
-        width: 1200,
-        height: 630,
         alt: "My Open Graph Image",
       },
     ],
