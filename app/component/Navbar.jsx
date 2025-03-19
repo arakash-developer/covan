@@ -291,7 +291,7 @@ const Navbar = () => {
                                 View cart
                               </Link>
                               <Link
-                                href="/cart"
+                                href="/checkout"
                                 className="overflow-hidden relative uppercase text-[0.81rem] text-[#fff] rounded-none bg-[#080808] hover:bg-[#e7b053] transition-all duration-300 ease-linear px-5 md:px-10 py-2"
                               >
                                 checkout
