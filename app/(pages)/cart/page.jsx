@@ -221,9 +221,9 @@ const page = () => {
                       Bangladesh
                     </span>
                   </p>
-                  <p className="font-normal text-[0.69rem] leading-[200%] text-[#666]">
+                  {/* <p className="font-normal text-[0.69rem] leading-[200%] text-[#666]">
                     Aqualia Thermal ×1
-                  </p>
+                  </p> */}
                 </form>
               </div>
               <div className="grid grid-cols-2 gap-[10px] py-4 border-b pl-2">
@@ -267,9 +267,9 @@ const page = () => {
                       Bangladesh
                     </span>
                   </p>
-                  <p className="font-normal text-[0.69rem] leading-[200%] text-[#666]">
+                  {/* <p className="font-normal text-[0.69rem] leading-[200%] text-[#666]">
                     Aqualia Thermal ×1
-                  </p>
+                  </p> */}
                 </form>
               </div>
 
