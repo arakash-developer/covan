@@ -69,7 +69,7 @@ const page = () => {
               <table className="w-full flex flex-row flex-no-wrap sm:bg-white overflow-hidden border">
                 <thead className="bg-[#f5f5f5]">
                   {products?.map((data) => (
-                    <tr className="flex flex-col flex-no wrap sm:table-row mb-2 sm:mb-0">
+                    <tr key={data.id} className="flex flex-col flex-no wrap sm:table-row mb-2 sm:mb-0">
                       <th className="p-3 text-left h-[124px] sm:h-auto">
                         Image
                       </th>
