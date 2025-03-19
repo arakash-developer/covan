@@ -116,7 +116,7 @@ const page = () => {
                           </td>
                           <td className="p-3 hover:font-medium cursor-pointer">
                             <h3 className="font-normal text-base leading-[200%] text-[#080808]">
-                              ${data.price}
+                              ${data.price.toFixed(2)}
                             </h3>
                           </td>
 
