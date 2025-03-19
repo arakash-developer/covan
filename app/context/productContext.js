@@ -10,7 +10,7 @@ const productContext = ({ children }) => {
     {
       id: 1,
       count: 4,
-      title: "Essence Mascara Lash Princess",
+      title: "Default Essence Mascara Lash Princess",
       price: 9.99,
       thumbnail:
         "https://cdn.dummyjson.com/products/images/beauty/Essence%20Mascara%20Lash%20Princess/thumbnail.png",
