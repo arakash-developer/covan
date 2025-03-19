@@ -89,6 +89,14 @@ const page = () => {
             <div className="bg-[#f5f5f5] border">
               <div className=" bg-[#fff] m-5">
                 <div className="grid grid-cols-2 gap-[10px] py-4 border-b pl-2">
+                  <h3 className="font-bold text-md leading-[200%] text-[#080808] capitalize">
+                    Product
+                  </h3>
+                  <h3 className="font-bold text-md leading-[200%] text-[#080808] capitalize">
+                    SubTotal
+                  </h3>
+                </div>
+                <div className="grid grid-cols-2 gap-[10px] py-4 border-b pl-2">
                   <h3 className="font-normal text-sm leading-[200%] text-[#080808] ">
                     Subtotal
                   </h3>
