@@ -62,7 +62,7 @@ const page = () => {
         </div>
       </section>
       {/* Shop */}
-      <Container className="mt-[110px] mb-[150px] flex md:flex-row flex-col justify-between items-start gap-[30px]">
+      <Container className="mt-[110px] mb-[150px] flex xl:flex-row flex-col justify-between items-start gap-[30px]">
         <div className="w-full">
           <div className="w-full flex items-center justify-center">
             <div className="w-full">
@@ -121,7 +121,7 @@ const page = () => {
                           </td>
 
                           <td className="p-3 hover:font-medium cursor-pointer">
-                            <span className="flex items-center justify-between border border-[#8F8F8F] cursor-pointer mx-2 h-[25px]">
+                            <span className="w-[140px] md:w-full flex items-center justify-between border border-[#8F8F8F] cursor-pointer mx-2 h-[25px]">
                               <p
                                 className="border-r border-[#8F8F8F] h-full px-3 flex items-center"
                                 onClick={() => handleminus(data.id)}
@@ -157,7 +157,7 @@ const page = () => {
             </div>
           </div>
         </div>
-        <div className="w-full md:w-[370px]">
+        <div className="w-full xl:w-[370px]">
           <div className={`border ${Pratafont.className}`}>
             <div className="py-5 bg-[#f5f5f5] flex justify-center items-center">
               <h3
