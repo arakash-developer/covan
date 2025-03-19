@@ -69,7 +69,10 @@ const page = () => {
               <table className="w-full flex flex-row flex-no-wrap sm:bg-white overflow-hidden border">
                 <thead className="bg-[#f5f5f5]">
                   {products?.map((data) => (
-                    <tr key={data.id} className="flex flex-col flex-no wrap sm:table-row mb-2 sm:mb-0">
+                    <tr
+                      key={data.id}
+                      className="flex flex-col flex-no wrap sm:table-row mb-2 sm:mb-0"
+                    >
                       <th className="p-3 text-left h-[124px] sm:h-auto">
                         Image
                       </th>
@@ -140,7 +143,7 @@ const page = () => {
                             </span>
                           </td>
                           <td className="p-3 hover:font-medium cursor-pointer">
-                            ${data.price * data.count}
+                            ${(data.price * data.count).toFixed(2)}
                           </td>
                         </tr>
                       ))}
@@ -184,14 +187,14 @@ const page = () => {
                 <form className="">
                   <div className="flex items-center gap-1">
                     <input
-                      id="red-radio"
+                      id="radio1"
                       type="radio"
                       value=""
                       name="colored-radio"
                       className="w-4 h-4  bg-gray-100 border-gray-300 cursor-pointer focus:ring-2 "
                     />
                     <label
-                      htmlFor="red-radio"
+                      htmlFor="radio1"
                       className="font-normal text-sm leading-[200%] text-[#666]captialize"
                     >
                       FreeShipping
@@ -199,21 +202,21 @@ const page = () => {
                   </div>
                   <div className="flex items-center gap-1">
                     <input
-                      id="red-radio"
+                      id="radio2"
                       type="radio"
                       value=""
                       name="colored-radio"
                       className="w-4 h-4  bg-gray-100 border-gray-300 cursor-pointer focus:ring-2 "
                     />
                     <label
-                      htmlFor="red-radio"
+                      htmlFor="radio2"
                       className="font-normal text-sm leading-[200%] text-[#666]captialize"
                     >
                       Flat rate
                     </label>
                   </div>
                   <p className="font-normal text-sm leading-[200%] text-[#666]">
-                    Shipping to{" "}
+                    Shipping to
                     <span className="font-normal text-sm leading-[200%] text-[#080808]">
                       Bangladesh
                     </span>
@@ -230,14 +233,14 @@ const page = () => {
                 <form className="">
                   <div className="flex items-center gap-1">
                     <input
-                      id="red-radio"
+                      id="radio3"
                       type="radio"
                       value=""
                       name="colored-radio"
                       className="w-4 h-4  bg-gray-100 border-gray-300 cursor-pointer focus:ring-2 "
                     />
                     <label
-                      htmlFor="red-radio"
+                      htmlFor="radio3"
                       className="font-normal text-sm leading-[200%] text-[#666]captialize"
                     >
                       FreeShipping
@@ -245,14 +248,14 @@ const page = () => {
                   </div>
                   <div className="flex items-center gap-1">
                     <input
-                      id="red-radio"
+                      id="radio4"
                       type="radio"
                       value=""
                       name="colored-radio"
                       className="w-4 h-4  bg-gray-100 border-gray-300 cursor-pointer focus:ring-2 "
                     />
                     <label
-                      htmlFor="red-radio"
+                      htmlFor="radio4"
                       className="font-normal text-sm leading-[200%] text-[#666]captialize"
                     >
                       Flat rate
