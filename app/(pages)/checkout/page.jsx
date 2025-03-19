@@ -6,7 +6,7 @@ const page = () => {
     <section className="my-[110px]">
       <Container>
         <div className="flex justify-between gap-5 items-start">
-          <form className="w-full flex flex-col gap-y-[30px]">
+          <form className="w-full flex flex-col gap-y-[30px] ">
             <h2 className="font-normal text-xl leading-[120%] uppercase text-[#080808] mb-[30px]">
               Billing details
             </h2>
@@ -82,11 +82,127 @@ const page = () => {
               </select>
             </div>
           </form>
-          <div className="w-[480px] bg-red">
+          <div className="w-[500px]">
             <h2 className="font-normal text-xl leading-[120%] uppercase text-[#080808] mb-[30px]">
-            Your order
+              Your order
             </h2>
-            <div className="bg-[#f5f5f5]">aaa</div>
+            <div className="bg-[#f5f5f5] border">
+              <div className=" bg-[#fff] m-5">
+                <div className="grid grid-cols-2 gap-[10px] py-4 border-b pl-2">
+                  <h3 className="font-normal text-sm leading-[200%] text-[#080808] ">
+                    Subtotal
+                  </h3>
+                  <div className="">
+                    <h3 className="font-normal text-sm leading-[200%] text-[#666]">
+                      0
+                    </h3>
+                  </div>
+                </div>
+                <div className="grid grid-cols-2 gap-[10px] py-4 border-b pl-2">
+                  <h3 className="font-normal text-sm leading-[200%] text-[#080808] ">
+                    Shipping: Pharmark
+                  </h3>
+                  <form className="">
+                    <div className="flex items-center gap-1">
+                      <input
+                        id="red-radio"
+                        type="radio"
+                        value=""
+                        name="colored-radio"
+                        className="w-4 h-4  bg-gray-100 border-gray-300 cursor-pointer focus:ring-2 "
+                      />
+                      <label
+                        htmlFor="red-radio"
+                        className="font-normal text-sm leading-[200%] text-[#666]captialize"
+                      >
+                        FreeShipping
+                      </label>
+                    </div>
+                    <div className="flex items-center gap-1">
+                      <input
+                        id="red-radio"
+                        type="radio"
+                        value=""
+                        name="colored-radio"
+                        className="w-4 h-4  bg-gray-100 border-gray-300 cursor-pointer focus:ring-2 "
+                      />
+                      <label
+                        htmlFor="red-radio"
+                        className="font-normal text-sm leading-[200%] text-[#666]captialize"
+                      >
+                        Flat rate
+                      </label>
+                    </div>
+                    <p className="font-normal text-sm leading-[200%] text-[#666]">
+                      Shipping to{" "}
+                      <span className="font-normal text-sm leading-[200%] text-[#080808]">
+                        Bangladesh
+                      </span>
+                    </p>
+                    <p className="font-normal text-[0.69rem] leading-[200%] text-[#666]">
+                      Aqualia Thermal ×1
+                    </p>
+                  </form>
+                </div>
+                <div className="grid grid-cols-2 gap-[10px] py-4 border-b pl-2">
+                  <h3 className="font-normal text-sm leading-[200%] text-[#080808] ">
+                    Shipping: Phavalin
+                  </h3>
+                  <form className="">
+                    <div className="flex items-center gap-1">
+                      <input
+                        id="red-radio"
+                        type="radio"
+                        value=""
+                        name="colored-radio"
+                        className="w-4 h-4  bg-gray-100 border-gray-300 cursor-pointer focus:ring-2 "
+                      />
+                      <label
+                        htmlFor="red-radio"
+                        className="font-normal text-sm leading-[200%] text-[#666]captialize"
+                      >
+                        FreeShipping
+                      </label>
+                    </div>
+                    <div className="flex items-center gap-1">
+                      <input
+                        id="red-radio"
+                        type="radio"
+                        value=""
+                        name="colored-radio"
+                        className="w-4 h-4  bg-gray-100 border-gray-300 cursor-pointer focus:ring-2 "
+                      />
+                      <label
+                        htmlFor="red-radio"
+                        className="font-normal text-sm leading-[200%] text-[#666]captialize"
+                      >
+                        Flat rate
+                      </label>
+                    </div>
+                    <p className="font-normal text-sm leading-[200%] text-[#666]">
+                      Shipping to
+                      <span className="font-normal text-sm leading-[200%] text-[#080808]">
+                        Bangladesh
+                      </span>
+                    </p>
+                    <p className="font-normal text-[0.69rem] leading-[200%] text-[#666]">
+                      Aqualia Thermal ×1
+                    </p>
+                  </form>
+                </div>
+
+                <div className="grid grid-cols-2 gap-[10px] py-4 border-b pl-2">
+                  <h3 className="font-normal text-sm leading-[200%] text-[#080808] ">
+                    Total
+                  </h3>
+                  <div className="">
+                    <h3 className="font-normal text-base leading-[200%] text-[#e7b053]">
+                      0
+                    </h3>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </Container>
