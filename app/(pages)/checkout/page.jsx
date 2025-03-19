@@ -133,44 +133,41 @@ const page = () => {
                     Shipping: Pharmark
                   </h3>
                   <form className="">
-                    <div className="flex items-center gap-1">
+                    <div className="flex items-center gap-1 cursor-pointer">
                       <input
-                        id="red-radio"
+                        id="radio1"
                         type="radio"
                         value=""
                         name="colored-radio"
                         className="w-4 h-4  bg-gray-100 border-gray-300 cursor-pointer focus:ring-2 "
                       />
                       <label
-                        htmlFor="red-radio"
+                        htmlFor="radio1"
                         className="font-normal text-sm leading-[200%] text-[#666]captialize"
                       >
                         FreeShipping
                       </label>
                     </div>
-                    <div className="flex items-center gap-1">
+                    <div className="flex items-center gap-1 cursor-pointer">
                       <input
-                        id="red-radio"
+                        id="radio2"
                         type="radio"
                         value=""
                         name="colored-radio"
                         className="w-4 h-4  bg-gray-100 border-gray-300 cursor-pointer focus:ring-2 "
                       />
                       <label
-                        htmlFor="red-radio"
+                        htmlFor="radio2"
                         className="font-normal text-sm leading-[200%] text-[#666]captialize"
                       >
                         Flat rate
                       </label>
                     </div>
                     <p className="font-normal text-sm leading-[200%] text-[#666]">
-                      Shipping to{" "}
-                      <span className="font-normal text-sm leading-[200%] text-[#080808]">
+                      Shipping to
+                      <span className="font-normal text-sm leading-[200%] text-[#080808] ml-1">
                         Bangladesh
                       </span>
-                    </p>
-                    <p className="font-normal text-[0.69rem] leading-[200%] text-[#666]">
-                      Aqualia Thermal ×1
                     </p>
                   </form>
                 </div>
@@ -181,14 +178,14 @@ const page = () => {
                   <form className="">
                     <div className="flex items-center gap-1">
                       <input
-                        id="red-radio"
+                        id="radio3"
                         type="radio"
                         value=""
                         name="colored-radio"
                         className="w-4 h-4  bg-gray-100 border-gray-300 cursor-pointer focus:ring-2 "
                       />
                       <label
-                        htmlFor="red-radio"
+                        htmlFor="radio3"
                         className="font-normal text-sm leading-[200%] text-[#666]captialize"
                       >
                         FreeShipping
@@ -196,14 +193,14 @@ const page = () => {
                     </div>
                     <div className="flex items-center gap-1">
                       <input
-                        id="red-radio"
+                        id="radio4"
                         type="radio"
                         value=""
                         name="colored-radio"
                         className="w-4 h-4  bg-gray-100 border-gray-300 cursor-pointer focus:ring-2 "
                       />
                       <label
-                        htmlFor="red-radio"
+                        htmlFor="radio4"
                         className="font-normal text-sm leading-[200%] text-[#666]captialize"
                       >
                         Flat rate
@@ -211,12 +208,9 @@ const page = () => {
                     </div>
                     <p className="font-normal text-sm leading-[200%] text-[#666]">
                       Shipping to
-                      <span className="font-normal text-sm leading-[200%] text-[#080808]">
+                      <span className="font-normal text-sm leading-[200%] text-[#080808] ml-1">
                         Bangladesh
                       </span>
-                    </p>
-                    <p className="font-normal text-[0.69rem] leading-[200%] text-[#666]">
-                      Aqualia Thermal ×1
                     </p>
                   </form>
                 </div>
@@ -227,7 +221,7 @@ const page = () => {
                   </h3>
                   <div className="">
                     <h3 className="font-normal text-base leading-[200%] text-[#e7b053]">
-                      $ {price*totalCount.toFixed(2)}
+                      $ {price * totalCount.toFixed(2)}
                     </h3>
                   </div>
                 </div>
