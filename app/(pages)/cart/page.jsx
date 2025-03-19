@@ -42,8 +42,6 @@ const page = () => {
     setTotalPrice(total);
   }, [products]);
 
-
-
   return (
     <>
       {/* Shop */}
@@ -70,19 +68,23 @@ const page = () => {
             <div className="w-full">
               <table className="w-full flex flex-row flex-no-wrap sm:bg-white overflow-hidden border">
                 <thead className="bg-[#f5f5f5]">
-                  <tr className="flex flex-col flex-no wrap sm:table-row mb-2 sm:mb-0">
-                    <th className="p-3 text-left h-[124px] sm:h-auto">Image</th>
-                    <th className="p-3 text-left">Name</th>
-                    <th className="p-3 text-left" width="110px">
-                      Price
-                    </th>
-                    <th className="p-3 text-left" width="110px">
-                      Quantity
-                    </th>
-                    <th className="p-3 text-left" width="110px">
-                      Subtotal
-                    </th>
-                  </tr>
+                  {products?.map((data) => (
+                    <tr className="flex flex-col flex-no wrap sm:table-row mb-2 sm:mb-0">
+                      <th className="p-3 text-left h-[124px] sm:h-auto">
+                        Image
+                      </th>
+                      <th className="p-3 text-left">Name</th>
+                      <th className="p-3 text-left" width="110px">
+                        Price
+                      </th>
+                      <th className="p-3 text-left" width="110px">
+                        Quantity
+                      </th>
+                      <th className="p-3 text-left" width="110px">
+                        Subtotal
+                      </th>
+                    </tr>
+                  ))}
                 </thead>
                 <tbody className="flex-1 sm:flex-none">
                   {products.length > 0 ? (
