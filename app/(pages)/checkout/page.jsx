@@ -97,7 +97,7 @@ const page = () => {
             <h2 className="font-normal text-xl leading-[120%] uppercase text-[#080808] mb-[30px]">
               Your order
             </h2>
-            <div className="bg-[#f5f5f5] border">
+            <div className="bg-[#f5f5f5] border border-transparent">
               <div className=" bg-[#fff] m-5">
                 <div className="grid grid-cols-2 gap-[10px] py-4 border-b pl-2">
                   <h3 className="font-bold text-md leading-[200%] text-[#080808] capitalize">
