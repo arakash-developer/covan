@@ -4,7 +4,7 @@ import { Context } from "@/app/context/productContext";
 import { Prata } from "next/font/google";
 import Image from "next/image";
 import Link from "next/link";
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 import { AiOutlineMinus, AiOutlinePlus } from "react-icons/ai";
 import { FaAngleRight } from "react-icons/fa";
 import { IoMdCloseCircleOutline } from "react-icons/io";
@@ -29,6 +29,21 @@ const page = () => {
       )
     );
   };
+  let handleDelete = (id) => {
+    setProduct((prev) => prev.filter((item) => item.id !== id));
+  };
+
+  let [totalPrice, setTotalPrice] = useState(0);
+  useEffect(() => {
+    let total = products.reduce(
+      (acc, item) => acc + item.price * item.count,
+      0
+    );
+    setTotalPrice(total);
+  }, [products]);
+
+
+
   return (
     <>
       {/* Shop */}
@@ -50,84 +65,6 @@ const page = () => {
       </section>
       {/* Shop */}
       <Container className="mt-[110px] mb-[150px] flex md:flex-row flex-col justify-between items-start gap-[30px]">
-        {/* <div className="w-full overflow-x-scroll md:overflow-auto">
-          <table className="w-[700px] border-2 border-[#f5f5f5] border-spacing-4">
-            <thead className="h-[50px] bg-[#f5f5f5] border-2 border-[#f5f5f5]">
-              <tr className="text-left">
-                <th>c</th>
-                <th
-                  className={`${Pratafont.className} font-normal text-sm leading-[200%] uppercase text-[#080808]`}
-                >
-                  Product
-                </th>
-                <th
-                  className={`${Pratafont.className} font-normal text-sm leading-[200%] uppercase text-[#080808]`}
-                >
-                  price
-                </th>
-                <th
-                  className={`${Pratafont.className} font-normal text-sm leading-[200%] uppercase text-[#080808]`}
-                >
-                  Quantity
-                </th>
-
-                <th
-                  className={`${Pratafont.className} font-normal text-sm leading-[200%] uppercase text-[#080808]`}
-                >
-                  Subtotal
-                </th>
-              </tr>
-            </thead>
-            <tbody className="border-2 border-[#f5f5f5] h-[132px]">
-              {products.map((data) => (
-                <tr key={data.id}>
-                  <td>
-                    <span className="flex items-center justify-between">
-                      <IoMdCloseCircleOutline className="text-xl text-[#080808]" />
-                      <Image
-                        className="w-[100px] h-[100px] flex-shrink-0"
-                        src={data.thumbnail}
-                        alt={data.thumbnail}
-                        width={100}
-                        height={100}
-                      />
-                    </span>
-                  </td>
-                  <td>
-                    <h3 className="font-normal text-[0.94rem] leading-5 text-[#080808]">
-                      {data.title.slice(0, 20)}...
-                    </h3>
-                  </td>
-                  <td className="font-normal text-base leading-[200%] text-[#080808]">
-                    ${data.price}
-                  </td>
-                  <td className="h-full">
-                    <span className="flex items-center justify-between border border-[#8F8F8F] cursor-pointer mx-2 h-[25px]">
-                      <p
-                        className="border-r border-[#8F8F8F] h-full px-3 flex items-center"
-                        onClick={() => handleminus(data.id)}
-                      >
-                        <AiOutlineMinus />
-                      </p>
-                      <h3 className="font-normal text-lg leading-[200%] text-center text-[#666]">
-                        {data.count}
-                      </h3>
-                      <p
-                        className="border-l border-[#8F8F8F] h-full px-3 flex items-center"
-                        onClick={() => handleplus(data.id)}
-                      >
-                        <AiOutlinePlus />
-                      </p>
-                    </span>
-                  </td>
-                  <td className="font-normal text-base leading-[200%] text-[#e7b053]">
-                    ${data.price}
-                  </td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div> */}
         <div className="w-full">
           <div className="w-full flex items-center justify-center">
             <div className="w-full">
@@ -148,58 +85,71 @@ const page = () => {
                   </tr>
                 </thead>
                 <tbody className="flex-1 sm:flex-none">
-                  {products.map((data) => (
-                    <tr
-                      key={data.id}
-                      className="flex flex-col flex-no wrap sm:table-row mb-2 sm:mb-0"
-                    >
-                      <td className="p-3">
-                        <span className="flex items-center justify-between">
-                          <IoMdCloseCircleOutline className="flex-shrink-0 text-xl text-[#080808]" />
-                          <Image
-                            className="w-[100px] h-[100px] md:flex-shrink-0"
-                            src={data.thumbnail}
-                            alt={data.thumbnail}
-                            width={100}
-                            height={100}
-                          />
-                        </span>
-                      </td>
-                      <td className=" p-3 hover:font-medium cursor-pointer">
-                        <h3 className="font-normal text-[0.94rem] leading-5 text-[#080808]">
-                          {data.title.slice(0, 20)}...
-                        </h3>
-                      </td>
-                      <td className="p-3 hover:font-medium cursor-pointer">
-                        <h3 className="font-normal text-base leading-[200%] text-[#080808]">
-                          ${data.price}
-                        </h3>
-                      </td>
+                  {products.length > 0 ? (
+                    <>
+                      {products.map((data) => (
+                        <tr
+                          key={data.id}
+                          className="flex flex-col flex-no wrap sm:table-row mb-2 sm:mb-0"
+                        >
+                          <td className="p-3">
+                            <span className="flex items-center justify-between">
+                              <IoMdCloseCircleOutline
+                                className="flex-shrink-0 text-xl text-[#080808] cursor-pointer"
+                                onClick={() => handleDelete(data.id)}
+                              />
+                              <Image
+                                className="w-[100px] h-[100px] md:flex-shrink-0"
+                                src={data.thumbnail}
+                                alt={data.thumbnail}
+                                width={100}
+                                height={100}
+                              />
+                            </span>
+                          </td>
+                          <td className=" p-3 hover:font-medium cursor-pointer">
+                            <h3 className="font-normal text-[0.94rem] leading-5 text-[#080808]">
+                              {data.title.slice(0, 20)}...
+                            </h3>
+                          </td>
+                          <td className="p-3 hover:font-medium cursor-pointer">
+                            <h3 className="font-normal text-base leading-[200%] text-[#080808]">
+                              ${data.price}
+                            </h3>
+                          </td>
 
-                      <td className="p-3 hover:font-medium cursor-pointer">
-                        <span className="flex items-center justify-between border border-[#8F8F8F] cursor-pointer mx-2 h-[25px]">
-                          <p
-                            className="border-r border-[#8F8F8F] h-full px-3 flex items-center"
-                            onClick={() => handleminus(data.id)}
-                          >
-                            <AiOutlineMinus />
-                          </p>
-                          <h3 className="font-normal text-lg leading-[200%] text-center text-[#666] mx-2">
-                            {data.count}
-                          </h3>
-                          <p
-                            className="border-l border-[#8F8F8F] h-full px-3 flex items-center"
-                            onClick={() => handleplus(data.id)}
-                          >
-                            <AiOutlinePlus />
-                          </p>
-                        </span>
-                      </td>
-                      <td className="p-3 hover:font-medium cursor-pointer">
-                        ${data.price}
-                      </td>
-                    </tr>
-                  ))}
+                          <td className="p-3 hover:font-medium cursor-pointer">
+                            <span className="flex items-center justify-between border border-[#8F8F8F] cursor-pointer mx-2 h-[25px]">
+                              <p
+                                className="border-r border-[#8F8F8F] h-full px-3 flex items-center"
+                                onClick={() => handleminus(data.id)}
+                              >
+                                <AiOutlineMinus />
+                              </p>
+                              <h3 className="font-normal text-lg leading-[200%] text-center text-[#666] mx-2">
+                                {data.count}
+                              </h3>
+                              <p
+                                className="border-l border-[#8F8F8F] h-full px-3 flex items-center"
+                                onClick={() => handleplus(data.id)}
+                              >
+                                <AiOutlinePlus />
+                              </p>
+                            </span>
+                          </td>
+                          <td className="p-3 hover:font-medium cursor-pointer">
+                            ${data.price * data.count}
+                          </td>
+                        </tr>
+                      ))}
+                    </>
+                  ) : (
+                    <>
+                      <tr>
+                        <td className="p-5">No Products in the Cart !!</td>
+                      </tr>
+                    </>
+                  )}
                 </tbody>
               </table>
             </div>
@@ -221,7 +171,7 @@ const page = () => {
                 </h3>
                 <div className="">
                   <h3 className="font-normal text-sm leading-[200%] text-[#666]">
-                    $113.00
+                    ${totalPrice.toFixed(2)}
                   </h3>
                 </div>
               </div>
@@ -324,14 +274,19 @@ const page = () => {
                 </h3>
                 <div className="">
                   <h3 className="font-normal text-base leading-[200%] text-[#e7b053]">
-                    $113.00
+                    ${totalPrice.toFixed(2)}
                   </h3>
                 </div>
               </div>
             </div>
           </div>
           <div className="mt-8">
-            <Link href="/checkout" className={`py-3 px-5 bg-[#e7b053] font-normal text-xs leading-[175%] uppercase text-[#fff] hover:bg-[#080808] inline-block tracking-[0.2em] ${Pratafont.className}`}>Proceed to checkout</Link>
+            <Link
+              href="/checkout"
+              className={`py-3 px-5 bg-[#e7b053] font-normal text-xs leading-[175%] uppercase text-[#fff] hover:bg-[#080808] inline-block tracking-[0.2em] ${Pratafont.className}`}
+            >
+              Proceed to checkout
+            </Link>
           </div>
         </div>
       </Container>
