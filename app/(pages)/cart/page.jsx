@@ -95,7 +95,7 @@ const page = () => {
                           className="flex flex-col flex-no wrap sm:table-row mb-2 sm:mb-0"
                         >
                           <td className="p-3">
-                            <span className="flex items-center justify-between">
+                            <span className="flex items-center gap-2">
                               <IoMdCloseCircleOutline
                                 className="flex-shrink-0 text-xl text-[#080808] cursor-pointer"
                                 onClick={() => handleDelete(data.id)}
@@ -157,8 +157,8 @@ const page = () => {
             </div>
           </div>
         </div>
-        <div className="">
-          <div className={`w-full md:w-[370px] border ${Pratafont.className}`}>
+        <div className="w-full md:w-[370px]">
+          <div className={`border ${Pratafont.className}`}>
             <div className="py-5 bg-[#f5f5f5] flex justify-center items-center">
               <h3
                 className={`font-normal text-sm leading-[180%] uppercase text-center text-[#080808] ${Pratafont.className}`}
