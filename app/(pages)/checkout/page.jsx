@@ -221,7 +221,7 @@ const page = () => {
                   </h3>
                   <div className="">
                     <h3 className="font-normal text-base leading-[200%] text-[#e7b053]">
-                      $ {price * totalCount.toFixed(2)}
+                      $ {(price * totalCount).toFixed(2)}
                     </h3>
                   </div>
                 </div>
