@@ -42,8 +42,8 @@ const Navbar = () => {
   }, [open]);
 
   let [totalCount, totalsetCount] = useState(0);
-  let [totalwishCount, totalwishsetCount] = useState(0);
   let [price, setPrice] = useState(0);
+  let [totalwishCount, totalwishsetCount] = useState(0);
   let [updateproducts, setUpdateProducts] = useState([]);
   useEffect(() => {
     let count = products.reduce((total, product) => total + product.count, 0);

@@ -1,7 +1,18 @@
 "use client";
 import Container from "@/app/component/Container";
+import { Context } from "@/app/context/productContext";
+import { useContext, useEffect, useState } from "react";
 
 const page = () => {
+  let [totalCount, totalsetCount] = useState(0);
+  let [price, setPrice] = useState(0);
+  let { products } = useContext(Context);
+  useEffect(() => {
+    let count = products.reduce((total, product) => total + product.count, 0);
+    totalsetCount(count);
+    let price = products.reduce((total, product) => total + product.price, 0);
+    setPrice(price);
+  }, [products]);
   return (
     <section className="my-[110px]">
       <Container>
@@ -82,7 +93,7 @@ const page = () => {
               </select>
             </div>
           </form>
-          <div className="w-[500px]">
+          <div className="w-[600px]">
             <h2 className="font-normal text-xl leading-[120%] uppercase text-[#080808] mb-[30px]">
               Your order
             </h2>
@@ -96,16 +107,27 @@ const page = () => {
                     SubTotal
                   </h3>
                 </div>
-                <div className="grid grid-cols-2 gap-[10px] py-4 border-b pl-2">
-                  <h3 className="font-normal text-sm leading-[200%] text-[#080808] ">
-                    Subtotal
-                  </h3>
-                  <div className="">
-                    <h3 className="font-normal text-sm leading-[200%] text-[#666]">
-                      0
-                    </h3>
-                  </div>
-                </div>
+                {products.length > 0 ? (
+                  <>
+                    {products.map((data) => (
+                      <div key={data.id} className="w-full">
+                        <div className="grid grid-cols-2 gap-[10px] py-4 border-b pl-2">
+                          <h3 className="font-bold text-sm leading-[200%] text-[#666] ">
+                            {data.title.slice(0, 16)}
+                            <span> X 1</span>
+                          </h3>
+                          <div className="">
+                            <h3 className="font-bold text-sm leading-[200%] text-[#080808]">
+                              $ {(data.price * data.count).toFixed(2)}
+                            </h3>
+                          </div>
+                        </div>
+                      </div>
+                    ))}
+                  </>
+                ) : (
+                  <>naiii</>
+                )}
                 <div className="grid grid-cols-2 gap-[10px] py-4 border-b pl-2">
                   <h3 className="font-normal text-sm leading-[200%] text-[#080808] ">
                     Shipping: Pharmark
@@ -205,7 +227,7 @@ const page = () => {
                   </h3>
                   <div className="">
                     <h3 className="font-normal text-base leading-[200%] text-[#e7b053]">
-                      0
+                      $ {price*totalCount.toFixed(2)}
                     </h3>
                   </div>
                 </div>
