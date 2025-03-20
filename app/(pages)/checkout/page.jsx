@@ -182,6 +182,21 @@ const page = () => {
                 required
               />
             </div>
+            <div className="item">
+              <div className="flex gap-[2px] items-center">
+                <label className="text-md capitalize font-normal leading-[175%]">
+                  Order notes (optional)
+                </label>
+              </div>
+              <input
+                type="text"
+                name="phone_number"
+                id="floating_email"
+                className="bg-transparent border-[#ddd] border-0 border-b-2 text-gray-900 text-sm w-full appearance-none block focus:border-[#e7b053] focus:outline-none focus:ring-0 peer px-0 py-2.5"
+                placeholder=" "
+                required
+              />
+            </div>
           </form>
           <div className="w-[600px]">
             <h2 className="text-[#080808] text-xl font-normal leading-[120%] mb-[30px] uppercase">
