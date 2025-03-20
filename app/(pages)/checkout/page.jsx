@@ -31,13 +31,11 @@ const page = () => {
                 <label className="text-md capitalize font-normal leading-[175%]">
                   First name
                 </label>
-                <span className="text-[#e42234] text-md font-normal inline-block leading-[175%] underline">
-                  
-                </span>
+                <span className="text-[#e42234] text-md font-normal inline-block leading-[175%] underline"></span>
               </div>
               <input
                 type="text"
-                name="first_name" 
+                name="first_name"
                 id="floating_email"
                 className="bg-transparent border-[#ddd] border-0 border-b-2 text-gray-900 text-sm w-full appearance-none block focus:border-[#e7b053] focus:outline-none focus:ring-0 peer px-0 py-2.5"
                 placeholder=" "
@@ -49,7 +47,6 @@ const page = () => {
                 <label className="text-md capitalize font-normal leading-[175%]">
                   Last name
                 </label>
-               
               </div>
               <input
                 type="text"
@@ -98,6 +95,26 @@ const page = () => {
             <div className="item">
               <div className="flex gap-[2px] items-center">
                 <label className="text-md capitalize font-normal leading-[175%]">
+                  Town / City 
+                </label>
+                <span className="text-[#e42234] text-md font-normal inline-block leading-[175%] underline">
+                  *
+                </span>
+              </div>
+              <select
+                className="bg-transparent border-[#ddd] border-0 border-b-2 text-gray-500 text-sm w-full appearance-none block cursor-pointer focus:border-[#e7b053] focus:outline-none focus:ring-0 peer px-0 py-2.5"
+                defaultValue="bangladesh"
+              >
+                <option value="bangladesh">Bangladesh</option>
+                <option value="US">United States</option>
+                <option value="CA">Canada</option>
+                <option value="FR">France</option>
+                <option value="DE">Germany</option>
+              </select>
+            </div>
+            <div className="item">
+              <div className="flex gap-[2px] items-center">
+                <label className="text-md capitalize font-normal leading-[175%]">
                   Street address 
                 </label>
                 <span className="text-[#e42234] text-md font-normal inline-block leading-[175%] underline">
@@ -116,11 +133,9 @@ const page = () => {
             <div className="item">
               <div className="flex gap-[2px] items-center">
                 <label className="text-md capitalize font-normal leading-[175%]">
-                Apartment, suite, unit, etc. (optional)
+                  Apartment, suite, unit, etc. (optional)
                 </label>
-                <span className="text-[#e42234] text-md font-normal inline-block leading-[175%] underline">
-              
-                </span>
+                <span className="text-[#e42234] text-md font-normal inline-block leading-[175%] underline"></span>
               </div>
               <input
                 type="text"
@@ -134,7 +149,25 @@ const page = () => {
             <div className="item">
               <div className="flex gap-[2px] items-center">
                 <label className="text-md capitalize font-normal leading-[175%]">
-                Phone 
+                  Phone 
+                </label>
+                <span className="text-[#e42234] text-md font-normal inline-block leading-[175%] underline">
+                  *
+                </span>
+              </div>
+              <input
+                type="text"
+                name="phone_number"
+                id="floating_email"
+                className="bg-transparent border-[#ddd] border-0 border-b-2 text-gray-900 text-sm w-full appearance-none block focus:border-[#e7b053] focus:outline-none focus:ring-0 peer px-0 py-2.5"
+                placeholder=" "
+                required
+              />
+            </div>
+            <div className="item">
+              <div className="flex gap-[2px] items-center">
+                <label className="text-md capitalize font-normal leading-[175%]">
+                  Email Address
                 </label>
                 <span className="text-[#e42234] text-md font-normal inline-block leading-[175%] underline">
                   *
