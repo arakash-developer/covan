@@ -1,5 +1,9 @@
 "use client";
 import getSingleProduct from "@/app/utils/getSingleProduct";
+import Preview1 from "@/public/preview1.png"; 
+import Preview2 from "@/public/preview2.png";
+import Preview3 from "@/public/preview3.png";
+import Preview4 from "@/public/preview4.png";
 import { Image } from "antd";
 import { useEffect, useState } from "react";
 import { FaArrowRightLong } from "react-icons/fa6";
@@ -31,7 +35,7 @@ function SampleNextArrow(props) {
 //     </div>
 //   );
 // }
-const ProductLens = ({ id = 1 }) => {
+const ProductLens = ({ id = 1, imageArray = [] }) => {
   var settings = {
     arrows: true,
     dots: false,
@@ -44,11 +48,16 @@ const ProductLens = ({ id = 1 }) => {
     initialSlide: 0,
     nextArrow: <SampleNextArrow />,
   };
+  let imgages = [Preview1, Preview2, Preview3, Preview4];
+  console.log(imgages[0]);
+  
   let [product, setProduct] = useState([]);
   let getData = async () => {
     let products = await getSingleProduct(id);
     setProduct(products);
   };
+
+
   useEffect(() => {
     getData();
   }, []);
@@ -68,13 +77,13 @@ const ProductLens = ({ id = 1 }) => {
           alt={product.title}
         />
       </div>
-      {product.images?.length >= 3 ? (
+      {imgages?.length >= 3 ? (
         <div className="suggetion w-full mt-5 cursor-pointer">
           <Slider
             {...settings}
             className="h-[150px] w-full flex relative left-4"
           >
-            {product.images?.map((item, index) => (
+            {imgages?.map((item, index) => (
               <Image
                 onClick={() => {
                   if (index >= 0 && index < product.images.length) {

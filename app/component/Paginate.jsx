@@ -1,8 +1,7 @@
 "use client";
 import { useEffect, useState } from "react";
 import ReactPaginate from "react-paginate";
-import Item2 from "../component/Item2";
-import getAllProduct from "../utils/getAllProduct";
+import getProducts from "../utils/getProducts";
 import Item from "./Item";
 
 function Items({ currentItems }) {
@@ -15,9 +14,9 @@ function Items({ currentItems }) {
               <Item
                 className="w-full xsm:w-auto"
                 Name={item?.title}
-                thumbnail={item?.thumbnail}
-                id={item.id}
-                Price={item?.price}
+                thumbnail={`https://bcovan.onrender.com/api/v1/frontend/public/images/${item?.imageArray[0]}`}
+                id={item._id}
+                Price={item?.amount}
               />
             </div>
           ))}
@@ -32,8 +31,12 @@ const Paginate = ({ itemsPerPage, catagory }) => {
 
   let getdata = async () => {
     setLoading(true);
-    let response = await getAllProduct();
-    let product = response.products;
+    let response = await getProducts();
+    let product = response?.success.data;
+    console.log(product);
+    console.log(product.imageArray);
+
+    console.log(product);
     if (catagory) {
       let filpro = product.filter((data) => data.category == catagory);
       setItems(filpro);

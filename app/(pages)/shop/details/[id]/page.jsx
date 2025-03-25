@@ -5,6 +5,7 @@ import WishCounter from "@/app/component/layers/WishCounter";
 import NewArrival from "@/app/component/NewArrival";
 import ProductTabs from "@/app/component/ProductTabs";
 import getAllProduct from "@/app/utils/getAllProduct";
+import getProduct from "@/app/utils/getProduct";
 import getSingleProduct from "@/app/utils/getSingleProduct";
 import { Prata } from "next/font/google";
 import Link from "next/link";
@@ -20,7 +21,10 @@ const Pratafont = Prata({
 // or Dynamic metadata
 export async function generateMetadata({ params }) {
   let { id } = await params;
-  let product = await getSingleProduct(id);
+  let res = await getProduct(id);
+  let product = res.success.data[0]
+  console.log(product);
+
   return {
     title: `Product - ${product.title}`,
     description: product.description,
@@ -30,6 +34,8 @@ export async function generateMetadata({ params }) {
 
 const page = async ({ params }) => {
   let { id } = await params;
+  let res1 = await getProduct(id);
+  let product1 = res1.success.data[0]
   let product = await getSingleProduct(id);
   let category = product.category;
   let res = await getAllProduct();
@@ -62,7 +68,7 @@ const page = async ({ params }) => {
         <Container>
           <div className="flex flex-col lg:flex-row gap-[30px] justify-between ">
             <div className="product_img w-full lg:w-[650px]">
-              <ProductLens id={id} />
+              <ProductLens id={id} imageArray={product1.imageArray} />
             </div>
             <div className="product_details">
               <div className="flex items-center gap-1">
@@ -78,13 +84,13 @@ const page = async ({ params }) => {
                 </h4>
               </div>
               <h2 className="mt-6 font-normal text-3xl leading-[100%] capitalize text-[#080808]">
-                {product.title}
+                {product1?.title}
               </h2>
               <h3 className="mt-[17px] mb-[19px] font-normal text-xl leading-[100%] text-[#e7b053]">
-                $ {product.price}
+                $ {product1?.amount}
               </h3>
               <p className="font-normal text-sm leading-[175%] text-[#666]">
-                {product.description}
+                {product1?.description}
               </p>
               <CartCounter
                 id={id}

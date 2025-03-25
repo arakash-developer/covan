@@ -10,7 +10,7 @@ const Item = ({
   Name = "Product Name",
   Price = 0,
   thumbnail = Product1,
-  id = 1,
+  id = 0,
 }) => {
   const router = useRouter();
   const handlerClick = () => {
