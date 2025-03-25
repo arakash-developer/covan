@@ -293,7 +293,7 @@ const Navbar = () => {
               <IoClose className="font-normal text-[35px] pt-2 text-[#fff]" />
             </div>
             <ul
-              className="flex flex-col md:flex-row items-start md:items-center md:gap-5 lg:gap-10  
+              className="h-full flex flex-col md:flex-row items-start md:items-center md:gap-5 lg:gap-10  
            md:bg-transparent px-5 mt-5 md:mt-0
           md:px-0 gap-y-4
           "
@@ -320,7 +320,7 @@ const Navbar = () => {
                   </span>
                 </Link>
               </li>
-              <li className="group">
+              <li className="group h-full">
                 <Link
                   className="flex items-center gap-1 font-normal text-[15px] leading-[109%] uppercase text-[#080808] hover:text-[#e7b053] relative after:w-0 after:h-[2px] after:absolute after:left-0 after:bottom-[-5px] after:bg-[#e7b053] after:transition-all after:ease-linear after:duration-[0.3s] hover:after:w-full w-[240px] md:w-auto justify-between md:justify-start py-5 md:py-0 border-b-2 md:border-0"
                   href="/blog"
@@ -331,7 +331,7 @@ const Navbar = () => {
                   </span>
                 </Link>
 
-                <div className="dropdown w-[96%] bg-slate-100 absolute left-full md:left-1/2 -translate-x-1/2 top-0 md:top-[100%] z-[999999] invisible opacity-0 group-hover:visible group-hover:opacity-100 transition-all duration-300 ease-linear px-5">
+                <div className="max-h-[75vh] overflow-y-scroll dropdown w-[96%] bg-slate-100 absolute left-full md:left-1/2 -translate-x-1/2 top-0 md:top-[100%] z-[999999] invisible opacity-0 group-hover:visible group-hover:opacity-100 transition-all duration-300 ease-linear px-5">
                   <div className="py-5 w-full grid md:grid-cols-3 lg:grid-cols-6 items-start gap-4 justify-between">
                     {categoryList.map((category) => (
                   <div key={category.id}>
