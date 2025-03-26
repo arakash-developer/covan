@@ -87,8 +87,8 @@ const page = ({ params }) => {
             Home
           </p>
           <FaAngleRight className="font-normal text-[0.81rem] leading-[176%] text-[#fff]" />
-          <p className="font-normal text-[0.81rem] leading-[179%] text-[#e7b053]">
-            Shop/${cat[0]/cat[1]}
+          <p className="font-normal text-[0.81rem] leading-[179%] text-[#e7b053] capitalize">
+            Shop/{cat[0]}/{cat[1]}
           </p>
         </div>
       </section>
