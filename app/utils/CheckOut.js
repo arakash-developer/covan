@@ -21,12 +21,11 @@ const CheckOut = async (data) => {
       throw new Error(`HTTP error! status: ${response.status}`);
     }
 
-    const responseData = await response;
-    console.log("Data:", responseData);
+    const responseData = await response.json();
+    return responseData;
   } catch (error) {
     console.error("Error fetching product:", error);
   }
 };
 
 export default CheckOut;
-

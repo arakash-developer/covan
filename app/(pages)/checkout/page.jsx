@@ -36,7 +36,7 @@ const page = () => {
     setPrice(price);
   }, [products]);
 
-  let handlerCheckOut = () => {
+  let handlerCheckOut = async () => {
     let data = {
       firstName,
       lastName,
@@ -81,7 +81,9 @@ const page = () => {
     } else if (!paymentGateway) {
       setError("Payment Gateway is required to place order");
     } else {
-      CheckOut(data);
+      let res = await CheckOut(data);
+      console.log(res);
+
       setFirstName("");
       setLastName("");
       setCompanyName("");
