@@ -1,8 +1,8 @@
 "use client";
 import Container from "@/app/component/Container";
 import { Context } from "@/app/context/productContext";
+import Bdcity from "@/app/lib/BdCity";
 import { Prata } from "next/font/google";
-import Link from "next/link";
 import { useContext, useEffect, useState } from "react";
 const Pratafont = Prata({
   weight: "400",
@@ -23,6 +23,7 @@ const page = () => {
   let [email, setEmail] = useState();
   let [orderNotes, setOrderNotes] = useState();
   let [Error, setError] = useState("Fill up the Form");
+  console.log(Bdcity.length);
 
   useEffect(() => {
     let count = products.reduce((total, product) => total + product.count, 0);
@@ -35,10 +36,6 @@ const page = () => {
     console.log("Checkout");
     if (!firstName) {
       setError("First Name is required");
-    } else if (!lastName) {
-      setError("Last Name is required");
-    } else if (!companyName) {
-      setError("Company Name is required");
     } else if (!country) {
       setError("Country is required");
     } else if (!city) {
@@ -49,8 +46,6 @@ const page = () => {
       setError("Phone is required");
     } else if (!email) {
       setError("Email is required");
-    } else if (!orderNotes) {
-      setError("Order Notes is required");
     } else {
       setError("Success");
     }
@@ -76,7 +71,7 @@ const page = () => {
                 id="floating_email"
                 className="bg-transparent border-[#ddd] border-0 border-b-2 text-gray-900 text-sm w-full appearance-none block focus:border-[#e7b053] focus:outline-none focus:ring-0 peer px-0 py-2.5"
                 placeholder=" "
-                required
+                onChange={(e) => setFirstName(e.target.value)}
               />
             </div>
             <div className="item">
@@ -91,7 +86,7 @@ const page = () => {
                 id="floating_email"
                 className="bg-transparent border-[#ddd] border-0 border-b-2 text-gray-900 text-sm w-full appearance-none block focus:border-[#e7b053] focus:outline-none focus:ring-0 peer px-0 py-2.5"
                 placeholder=" "
-                required
+                onChange={(e) => setLastName(e.target.value)}
               />
             </div>
             <div className="item">
@@ -107,6 +102,7 @@ const page = () => {
                 className="bg-transparent border-[#ddd] border-0 border-b-2 text-gray-900 text-sm w-full appearance-none block focus:border-[#e7b053] focus:outline-none focus:ring-0 peer px-0 py-2.5"
                 placeholder=" "
                 required
+                onChange={(e) => setCompanyName(e.target.value)}
               />
             </div>
             <div className="item">
@@ -121,6 +117,7 @@ const page = () => {
               <select
                 className="bg-transparent border-[#ddd] border-0 border-b-2 text-gray-500 text-sm w-full appearance-none block cursor-pointer focus:border-[#e7b053] focus:outline-none focus:ring-0 peer px-0 py-2.5"
                 defaultValue="bangladesh"
+                onChange={(e) => setCountry(e.target.value)}
               >
                 <option value="bangladesh">Bangladesh</option>
                 <option value="US">United States</option>
@@ -141,12 +138,17 @@ const page = () => {
               <select
                 className="bg-transparent border-[#ddd] border-0 border-b-2 text-gray-500 text-sm w-full appearance-none block cursor-pointer focus:border-[#e7b053] focus:outline-none focus:ring-0 peer px-0 py-2.5"
                 defaultValue="bangladesh"
+                onChange={(e) => setCity(e.target.value)}
               >
-                <option value="bangladesh">Bangladesh</option>
-                <option value="US">United States</option>
-                <option value="CA">Canada</option>
-                <option value="FR">France</option>
-                <option value="DE">Germany</option>
+                {Bdcity.map((city, index) => (
+                  <option
+                    key={index}
+                    value="bangladesh"
+                    className={`${Pratafont.className}`}
+                  >
+                    {city}
+                  </option>
+                ))}
               </select>
             </div>
             <div className="item">
@@ -164,7 +166,7 @@ const page = () => {
                 id="floating_email"
                 className="bg-transparent border-[#ddd] border-0 border-b-2 text-gray-900 text-sm w-full appearance-none block focus:border-[#e7b053] focus:outline-none focus:ring-0 peer px-0 py-2.5"
                 placeholder=" "
-                required
+                onChange={(e) => setStreetAddress(e.target.value)}
               />
             </div>
             <div className="item">
@@ -180,7 +182,7 @@ const page = () => {
                 id="floating_email"
                 className="bg-transparent border-[#ddd] border-0 border-b-2 text-gray-900 text-sm w-full appearance-none block focus:border-[#e7b053] focus:outline-none focus:ring-0 peer px-0 py-2.5"
                 placeholder=" "
-                required
+                onChange={(e) => setApartment(e.target.value)}
               />
             </div>
             <div className="item">
@@ -199,6 +201,7 @@ const page = () => {
                 className="bg-transparent border-[#ddd] border-0 border-b-2 text-gray-900 text-sm w-full appearance-none block focus:border-[#e7b053] focus:outline-none focus:ring-0 peer px-0 py-2.5"
                 placeholder=" "
                 required
+                onChange={(e) => setPhone(e.target.value)}
               />
             </div>
             <div className="item">
@@ -217,6 +220,7 @@ const page = () => {
                 className="bg-transparent border-[#ddd] border-0 border-b-2 text-gray-900 text-sm w-full appearance-none block focus:border-[#e7b053] focus:outline-none focus:ring-0 peer px-0 py-2.5"
                 placeholder=" "
                 required
+                onChange={(e) => setEmail(e.target.value)}
               />
             </div>
             <div className="item">
@@ -231,7 +235,7 @@ const page = () => {
                 id="floating_email"
                 className="bg-transparent border-[#ddd] border-0 border-b-2 text-gray-900 text-sm w-full appearance-none block focus:border-[#e7b053] focus:outline-none focus:ring-0 peer px-0 py-2.5"
                 placeholder=""
-                onChange={(e) => setPhone(e.target.value)}
+                onChange={(e) => setOrderNotes(e.target.value)}
               />
             </div>
           </form>
@@ -391,7 +395,7 @@ const page = () => {
                   {Error}
                 </p>
                 <div className="mt-10 cursor-pointer" onClick={handlerCheckOut}>
-                  <h3             
+                  <h3
                     className={`bg-[#080808] text-[#fff] text-md text-center font-normal inline-block  px-[50px] py-[17px] uppercase hover:bg-[#e7b053] transition-all ease-in-out duration-[0.3s] ${Pratafont.className}`}
                   >
                     Place Order
