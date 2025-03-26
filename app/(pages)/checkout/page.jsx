@@ -2,6 +2,7 @@
 import Container from "@/app/component/Container";
 import { Context } from "@/app/context/productContext";
 import Bdcity from "@/app/lib/BdCity";
+import CheckOut from "@/app/utils/CheckOut";
 import { Prata } from "next/font/google";
 import { useContext, useEffect, useState } from "react";
 const Pratafont = Prata({
@@ -39,17 +40,28 @@ const page = () => {
     let data = {
       firstName,
       lastName,
-      companyName,
-      country,
-      city,
+      companyName: company,
       streetAddress,
       apartment,
       phone,
       email,
       orderNotes,
+      country,
       paymentGateway,
+      amount: required,
+      userId: null,
+      city,
+      apartment,
+      shipping: "Flat Rate",
+      productInfo: [
+        {
+          id: "67e2c2911d80ea3c33f71801",
+          title: "Demo Title 3",
+          price: 100,
+          quantity: 4,
+        },
+      ],
     };
-    console.log("Checkout", data);
     if (!firstName) {
       setError("First Name is required");
     } else if (!country) {
@@ -66,10 +78,20 @@ const page = () => {
       setError("Email is required");
     } else if (!emailRegex.test(email)) {
       setError("Email is not valid");
-    }else if(!paymentGateway){
+    } else if (!paymentGateway) {
       setError("Payment Gateway is required to place order");
-    } 
-    else {
+    } else {
+      CheckOut(data);
+      setFirstName("");
+      setLastName("");
+      setCompanyName("");
+      setCountry("");
+      setCity("");
+      setStreetAddress("");
+      setApartment("");
+      setPhone("");
+      setEmail("");
+      setOrderNotes("");
       setError("Success");
     }
   };
