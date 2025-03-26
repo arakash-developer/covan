@@ -307,28 +307,6 @@ const Navbar = () => {
           md:px-0 gap-y-4
           "
             >
-              <li className="">
-                <Link
-                  className="flex items-center gap-1 font-normal text-[15px] leading-[109%] uppercase text-[#e7b053] relative after:w-0 after:h-[2px] after:absolute after:left-0 after:bottom-[-5px] after:bg-[#e7b053] after:transition-all after:ease-linear after:duration-[0.3s] hover:after:w-full w-[240px] md:w-auto justify-between md:justify-start py-5 md:py-0 border-b-2 md:border-0"
-                  href="/"
-                >
-                  Home
-                  <span>
-                    <FaAngleDown />
-                  </span>
-                </Link>
-              </li>
-              <li>
-                <Link
-                  className="flex items-center gap-1 font-normal text-[15px] leading-[109%] uppercase text-[#080808] hover:text-[#e7b053] relative after:w-0 after:h-[2px] after:absolute after:left-0 after:bottom-[-5px] after:bg-[#e7b053] after:transition-all after:ease-linear after:duration-[0.3s] hover:after:w-full w-[240px] md:w-auto justify-between md:justify-start py-5 md:py-0 border-b-2 md:border-0 cursor-pointer"
-                  href="/shop"
-                >
-                  Shop
-                  <span>
-                    <FaAngleDown />
-                  </span>
-                </Link>
-              </li>
               <li className="group h-full">
                 <Link
                   className="flex items-center gap-1 font-normal text-[15px] leading-[109%] uppercase text-[#080808] hover:text-[#e7b053] relative after:w-0 after:h-[2px] after:absolute after:left-0 after:bottom-[-5px] after:bg-[#e7b053] after:transition-all after:ease-linear after:duration-[0.3s] hover:after:w-full w-[240px] md:w-auto justify-between md:justify-start py-5 md:py-0 border-b-2 md:border-0"
@@ -340,7 +318,7 @@ const Navbar = () => {
                   </span>
                 </Link>
 
-                <div className="dropdown max-h-[82vh] overflow-y-scroll  w-[96%] bg-slate-100 absolute left-full md:left-1/2 -translate-x-1/2 top-0 md:top-[100%] z-[999999] invisible opacity-0 group-hover:visible group-hover:opacity-100 transition-all duration-300 ease-linear px-5">
+                <div className="dropdown max-h-[82vh] overflow-y-scroll  w-[96%] bg-slate-100 absolute left-full md:left-1/2 -translate-x-1/2 top-0 md:top-[100%] z-[999999] invisible opacity-0 group-hover:visible group-hover:opacity-100 transition-all duration-300 ease-linear px-10 py-10">
                   <div className="py-5 w-full grid md:grid-cols-3 lg:grid-cols-6 items-start gap-4 justify-between">
                     {categoryList.map((category) => (
                       <div key={category.id}>
@@ -363,31 +341,6 @@ const Navbar = () => {
                     ))}
                   </div>
                 </div>
-              </li>
-              <li className="relative">
-                <Link
-                  className="flex items-center gap-1 font-normal text-[15px] leading-[109%] uppercase text-[#080808] hover:text-[#e7b053] relative after:w-0 after:h-[2px] after:absolute after:left-0 after:bottom-[-5px] after:bg-[#e7b053] after:transition-all after:ease-linear after:duration-[0.3s] hover:after:w-full w-[240px] md:w-auto justify-between md:justify-start py-5 md:py-0 border-b-2 md:border-0"
-                  href=""
-                >
-                  Page
-                  <span>
-                    <FaAngleDown />
-                  </span>
-                </Link>
-                <div className="hidden absolute top-[150%] left-0 w-full bg-[#e7b053]">
-                  ddd
-                </div>
-              </li>
-              <li>
-                <Link
-                  className="flex items-center gap-1 font-normal text-[15px] leading-[109%] uppercase text-[#080808] hover:text-[#e7b053] relative after:w-0 after:h-[2px] after:absolute after:left-0 after:bottom-[-5px] after:bg-[#e7b053] after:transition-all after:ease-linear after:duration-[0.3s] hover:after:w-full w-[240px] md:w-auto justify-between md:justify-start md:border-0"
-                  href="/vendors"
-                >
-                  Vendors
-                  <span>
-                    <FaAngleDown />
-                  </span>
-                </Link>
               </li>
             </ul>
           </div>
