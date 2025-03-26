@@ -6,7 +6,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useContext, useEffect, useRef, useState } from "react";
 import { BiShoppingBag } from "react-icons/bi";
-import { FaAngleDown, FaRegUser } from "react-icons/fa";
+import { FaRegUser } from "react-icons/fa";
 import { FaRegHeart } from "react-icons/fa6";
 import { IoClose, IoMenu, IoSearchSharp } from "react-icons/io5";
 import { LuPhoneCall } from "react-icons/lu";
@@ -17,7 +17,7 @@ import {
   RiTwitterXFill,
   RiYoutubeFill,
 } from "react-icons/ri";
-import CatLine from "./layers/CatLine";
+import MyLi from "./layers/MyLi";
 const Pratafont = Prata({
   weight: "400",
   subsets: ["latin"],
@@ -307,42 +307,13 @@ const Navbar = () => {
           md:px-0 gap-y-4
           "
             >
-              <li className="group h-full w-full md:w-auto relative">
-                <Link
-                  className="flex items-center gap-1 w-full font-normal text-[15px] leading-[109%] uppercase text-[#080808] hover:text-[#e7b053] relative after:w-0 after:h-[2px] after:absolute after:left-0 after:bottom-[-5px] after:bg-[#e7b053] after:transition-all after:ease-linear after:duration-[0.3s] hover:after:w-full md:w-auto justify-between md:justify-start py-5 md:py-0 border-b-2 md:border-0"
-                  href="/blog"
-                >
-                  Blog
-                  <span>
-                    <FaAngleDown />
-                  </span>
-                </Link>
-
-                <div className="dropdown w-full md:w-[96%] bg-slate-100 md:absolute left-0 md:left-1/2 md:-translate-x-1/2 top-0 md:top-[100%] z-[999999] invisible opacity-0 group-hover:visible group-hover:opacity-100 transition-all duration-300 ease-linear px-10 bg-sale bg-cover bg-top bg-no-repeat py-10 overflow-y-scroll max-h-[80vh] no-scrollbar">
-                  <div className="h-[100px]"></div>
-                  <div className="mt-5 py-5 w-full grid md:grid-cols-3 lg:grid-cols-6 items-start gap-4 justify-between ">
-                    {categoryList.map((category) => (
-                      <div key={category.id}>
-                        <CatLine categoryName={category.categoryName} />
-                        <ul className="mt-3">
-                          {category.subcategory.map((item, index) => (
-                            <li
-                              key={index}
-                              className="font-semibold text-[13px] leading-[178%] uppercase text-[#080808]
-            py-[5px] border-b-[2px] border-dashed border-[#e8ebf0] cursor-pointer"
-                            >
-                              {item}
-                              <span className="font-semibold text-[13px] leading-[196%] uppercase text-[#666]">
-                                (6)
-                              </span>
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              </li>
+              <MyLi name="MakeUp" link="/" />
+              <MyLi name="Skin" link="/" />
+              <MyLi name="Hair" link="/" />
+              <MyLi name="Essentials" link="/" />
+              <MyLi name="Fragnance" link="/" />
+              <MyLi name="Baby" link="/" />
+              <MyLi name="New" link="/" />
             </ul>
           </div>
           <div className="flex items-center gap-4 lg:gap-6">
