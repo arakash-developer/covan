@@ -33,7 +33,7 @@ function SampleNextArrow(props) {
 //     </div>
 //   );
 // }
-const ProductLens = ({ id = 1, imageArray = [] }) => {
+const ProductLens = ({ id = 1, imageArray = [Preview1, Preview2, Preview3, Preview4] }) => {
   var settings = {
     arrows: true,
     dots: false,
@@ -46,9 +46,6 @@ const ProductLens = ({ id = 1, imageArray = [] }) => {
     initialSlide: 0,
     nextArrow: <SampleNextArrow />,
   };
-  let imgages = [Preview1.src, Preview2.src, Preview3.src, Preview4.src];
-  console.log("xx",imgages[0]);
-
   let [product, setProduct] = useState([]);
   let getData = async () => {
     // let products = await getSingleProduct(id);
@@ -66,26 +63,24 @@ const ProductLens = ({ id = 1, imageArray = [] }) => {
     () => {
       setProductImage(index);
     };
-  console.log("image",
-    `https://bcovan.onrender.com/api/v1/frontend/public/images/${imageArray[0]}`
-  );
+
 
   return (
     <div className="productLens w-full">
       <div className="w-full h-full lg:w-[650px] flex justify-center items-center bg-[#F6F6F6]">
         <Image
           className="w-full lg:w-[650px] h-[650px] "
-          src={Preview1.src}
+          src={imageArray[0].src}
           alt={product.title}
         />
       </div>
-      {/* {imgages?.length >= 3 ? (
+      {imageArray?.length >= 3 ? (
         <div className="suggetion w-full mt-5 cursor-pointer">
           <Slider
             {...settings}
             className="h-[150px] w-full flex relative left-4"
           >
-            {imgages?.map((item, index) => (
+            {imageArray?.map((item, index) => (
               <Image
                 onClick={() => {
                   if (index >= 0 && index < product.images.length) {
@@ -95,7 +90,7 @@ const ProductLens = ({ id = 1, imageArray = [] }) => {
                 key={index}
                 preview={false}
                 className="sug_image w-[150px] h-[150px] border  border-transparent bg-[#F6F6F6] hover:border-[#e7b053]"
-                src={item}
+                src={item.src}
                 height={150}
               />
             ))}
@@ -105,7 +100,7 @@ const ProductLens = ({ id = 1, imageArray = [] }) => {
         <div className="suggetion w-full mt-5 cursor-pointer h-[150px] bg-[#F6F6F6] flex justify-center items-center">
           <h2 className="text-[#666]">Image Not Found</h2>
         </div>
-      )} */}
+      )}
     </div>
   );
 };
