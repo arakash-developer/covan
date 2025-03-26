@@ -206,6 +206,12 @@ const Navbar = () => {
     totalsetCount(count);
     let price = products.reduce((total, product) => total + product.price, 0);
     setPrice(price);
+    
+    console.log(products);
+    console.log(count);
+    console.log(price);
+    
+    
     const groupedWish = wishlist.reduce((acc, item) => {
       const existingItem = acc.find((i) => i.id === item.id);
       if (existingItem) {
