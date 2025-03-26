@@ -307,9 +307,9 @@ const Navbar = () => {
           md:px-0 gap-y-4
           "
             >
-              <li className="group h-full">
+              <li className="group h-full w-full md:w-auto relative">
                 <Link
-                  className="flex items-center gap-1 font-normal text-[15px] leading-[109%] uppercase text-[#080808] hover:text-[#e7b053] relative after:w-0 after:h-[2px] after:absolute after:left-0 after:bottom-[-5px] after:bg-[#e7b053] after:transition-all after:ease-linear after:duration-[0.3s] hover:after:w-full w-[240px] md:w-auto justify-between md:justify-start py-5 md:py-0 border-b-2 md:border-0"
+                  className="flex items-center gap-1 w-full font-normal text-[15px] leading-[109%] uppercase text-[#080808] hover:text-[#e7b053] relative after:w-0 after:h-[2px] after:absolute after:left-0 after:bottom-[-5px] after:bg-[#e7b053] after:transition-all after:ease-linear after:duration-[0.3s] hover:after:w-full md:w-auto justify-between md:justify-start py-5 md:py-0 border-b-2 md:border-0"
                   href="/blog"
                 >
                   Blog
@@ -318,7 +318,7 @@ const Navbar = () => {
                   </span>
                 </Link>
 
-                <div className="dropdown  w-[96%] bg-slate-100 absolute left-full md:left-1/2 -translate-x-1/2 top-0 md:top-[100%] z-[999999] invisible opacity-0 group-hover:visible group-hover:opacity-100 transition-all duration-300 ease-linear px-10 bg-sale bg-cover bg-top bg-no-repeat py-10 overflow-y-scroll  max-h-[80vh] no-scrollbar">
+                <div className="dropdown w-full md:w-[96%] bg-slate-100 md:absolute left-0 md:left-1/2 md:-translate-x-1/2 top-0 md:top-[100%] z-[999999] invisible opacity-0 group-hover:visible group-hover:opacity-100 transition-all duration-300 ease-linear px-10 bg-sale bg-cover bg-top bg-no-repeat py-10 overflow-y-scroll max-h-[80vh] no-scrollbar">
                   <div className="h-[100px]"></div>
                   <div className="mt-5 py-5 w-full grid md:grid-cols-3 lg:grid-cols-6 items-start gap-4 justify-between ">
                     {categoryList.map((category) => (
