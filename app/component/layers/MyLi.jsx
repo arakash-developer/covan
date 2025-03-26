@@ -158,7 +158,7 @@ const MyLi = ({
   return (
     <li className="group w-full md:w-auto">
       <Link
-        className="flex items-center gap-1 font-normal text-[15px] leading-[109%] uppercase text-[#080808] hover:text-[#e7b053] relative after:w-0 after:h-[2px] after:absolute after:left-0 after:bottom-[-5px] after:bg-[#e7b053] after:transition-all after:ease-linear after:duration-[0.3s] hover:after:w-full md:w-auto justify-between md:justify-start py-5 md:py-0 border-b-2 md:border-0 w-full"
+        className="flex items-center md:gap-1 font-normal text-[15px] leading-[109%] uppercase text-[#080808] hover:text-[#e7b053] relative after:w-0 after:h-[2px] after:absolute after:left-0 after:bottom-[-5px] after:bg-[#e7b053] after:transition-all after:ease-linear after:duration-[0.3s] hover:after:w-full md:w-auto justify-between md:justify-start py-5 md:py-0 border-b-2 md:border-0 w-full"
         href={link}
       >
         {name}

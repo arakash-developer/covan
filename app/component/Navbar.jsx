@@ -302,7 +302,7 @@ const Navbar = () => {
               <IoClose className="font-normal text-[35px] pt-2 text-[#fff]" />
             </div>
             <ul
-              className="h-full flex flex-col md:flex-row items-start md:items-center md:gap-5 lg:gap-10  
+              className="h-full flex flex-col md:flex-row items-start md:items-center gap-2 lg:gap-5 xl:gap-10  
            md:bg-transparent px-5 mt-5 md:mt-0
           md:px-0 gap-y-4
           "
