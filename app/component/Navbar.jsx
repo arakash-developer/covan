@@ -318,8 +318,9 @@ const Navbar = () => {
                   </span>
                 </Link>
 
-                <div className="dropdown  w-[96%] bg-slate-100 absolute left-full md:left-1/2 -translate-x-1/2 top-0 md:top-[100%] z-[999999] invisible opacity-0 group-hover:visible group-hover:opacity-100 transition-all duration-300 ease-linear px-10 bg-sale bg-cover bg-top bg-no-repeat py-10 before:left-0 before:top-0 before:w-full before:h-full before:bg-[rgba(255,255,255,0.5)] before:absolute before:z-[-1]">
-                  <div className="mt-5 py-5 w-full grid md:grid-cols-3 lg:grid-cols-6 items-start gap-4 justify-between overflow-y-scroll h-full max-h-[80vh] no-scrollbar">
+                <div className="dropdown  w-[96%] bg-slate-100 absolute left-full md:left-1/2 -translate-x-1/2 top-0 md:top-[100%] z-[999999] invisible opacity-0 group-hover:visible group-hover:opacity-100 transition-all duration-300 ease-linear px-10 bg-sale bg-cover bg-top bg-no-repeat py-10 overflow-y-scroll  max-h-[80vh] no-scrollbar">
+                  <div className="h-[100px]"></div>
+                  <div className="mt-5 py-5 w-full grid md:grid-cols-3 lg:grid-cols-6 items-start gap-4 justify-between ">
                     {categoryList.map((category) => (
                       <div key={category.id}>
                         <CatLine categoryName={category.categoryName} />
