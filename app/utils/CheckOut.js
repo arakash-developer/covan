@@ -23,10 +23,8 @@ const CheckOut = async (data) => {
 
     const responseData = await response.json();
     console.log("Data:", responseData);
-    return responseData;
   } catch (error) {
     console.error("Error fetching product:", error);
-    return null;
   }
 };
 
