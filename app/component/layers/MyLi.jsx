@@ -124,7 +124,7 @@ const MyLi = ({ name = "Default", link = "/" }) => {
                     className="font-semibold text-[13px] leading-[178%] uppercase text-[#080808] hover:text-[#e7b053] transition-all ease-linear duration-300
 py-[5px] border-b-[2px] border-dashed border-[#e8ebf0] cursor-pointer"
                   >
-                    <Link href={`/shop/${item.link}`}>{item.name}</Link>
+                    <Link href={`/shop/${link}/${item.link}`}>{item.name}</Link>
                   </li>
                 ))}
               </ul>
