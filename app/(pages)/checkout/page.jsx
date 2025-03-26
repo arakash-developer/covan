@@ -66,7 +66,10 @@ const page = () => {
       setError("Email is required");
     } else if (!emailRegex.test(email)) {
       setError("Email is not valid");
-    } else {
+    }else if(!paymentGateway){
+      setError("Payment Gateway is required to place order");
+    } 
+    else {
       setError("Success");
     }
   };
