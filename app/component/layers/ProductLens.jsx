@@ -8,7 +8,7 @@ import { useEffect, useState } from "react";
 import { FaArrowRightLong } from "react-icons/fa6";
 import "slick-carousel/slick/slick-theme.css";
 import "slick-carousel/slick/slick.css";
-import Slider from "react-slick";
+// import Slider from "react-slick";
 
 function SampleNextArrow(props) {
   const { className, style, onClick } = props;
@@ -34,7 +34,7 @@ function SampleNextArrow(props) {
 //     </div>
 //   );
 // }
-const ProductLens = ({ id = 1, imageArray = [Preview1, Preview2, Preview3, Preview4] }) => {
+const ProductLens = () => {
   var settings = {
     arrows: true,
     dots: false,
@@ -47,6 +47,7 @@ const ProductLens = ({ id = 1, imageArray = [Preview1, Preview2, Preview3, Previ
     initialSlide: 0,
     nextArrow: <SampleNextArrow />,
   };
+  let imageArray = [Preview1, Preview2, Preview3, Preview4]
   let [product, setProduct] = useState([]);
   let getData = async () => {
     // let products = await getSingleProduct(id);
