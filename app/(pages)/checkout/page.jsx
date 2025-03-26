@@ -12,12 +12,49 @@ const page = () => {
   let [totalCount, totalsetCount] = useState(0);
   let [price, setPrice] = useState(0);
   let { products } = useContext(Context);
+  let [firstName, setFirstName] = useState();
+  let [lastName, setLastName] = useState();
+  let [companyName, setCompanyName] = useState();
+  let [country, setCountry] = useState();
+  let [city, setCity] = useState();
+  let [streetAddress, setStreetAddress] = useState();
+  let [apartment, setApartment] = useState();
+  let [phone, setPhone] = useState();
+  let [email, setEmail] = useState();
+  let [orderNotes, setOrderNotes] = useState();
+  let [Error, setError] = useState("Fill up the Form");
+
   useEffect(() => {
     let count = products.reduce((total, product) => total + product.count, 0);
     totalsetCount(count);
     let price = products.reduce((total, product) => total + product.price, 0);
     setPrice(price);
   }, [products]);
+
+  let handlerCheckOut = () => {
+    console.log("Checkout");
+    if (!firstName) {
+      setError("First Name is required");
+    } else if (!lastName) {
+      setError("Last Name is required");
+    } else if (!companyName) {
+      setError("Company Name is required");
+    } else if (!country) {
+      setError("Country is required");
+    } else if (!city) {
+      setError("City is required");
+    } else if (!streetAddress) {
+      setError("Street Address is required");
+    } else if (!phone) {
+      setError("Phone is required");
+    } else if (!email) {
+      setError("Email is required");
+    } else if (!orderNotes) {
+      setError("Order Notes is required");
+    } else {
+      setError("Success");
+    }
+  };
   return (
     <section className="my-[110px]">
       <Container>
@@ -193,8 +230,8 @@ const page = () => {
                 name="phone_number"
                 id="floating_email"
                 className="bg-transparent border-[#ddd] border-0 border-b-2 text-gray-900 text-sm w-full appearance-none block focus:border-[#e7b053] focus:outline-none focus:ring-0 peer px-0 py-2.5"
-                placeholder=" "
-                required
+                placeholder=""
+                onChange={(e) => setPhone(e.target.value)}
               />
             </div>
           </form>
@@ -347,13 +384,18 @@ const page = () => {
                     Cash on delivery
                   </label>
                 </div>
-                <div className="mt-10">
-                  <Link
-                    href="#"
+                <p
+                  htmlFor="cod"
+                  className="text-[#e7b053] captialize text-md font-normal leading-[200%]"
+                >
+                  {Error}
+                </p>
+                <div className="mt-10 cursor-pointer" onClick={handlerCheckOut}>
+                  <h3             
                     className={`bg-[#080808] text-[#fff] text-md text-center font-normal inline-block  px-[50px] py-[17px] uppercase hover:bg-[#e7b053] transition-all ease-in-out duration-[0.3s] ${Pratafont.className}`}
                   >
                     Place Order
-                  </Link>
+                  </h3>
                 </div>
               </div>
             </div>
