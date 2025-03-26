@@ -12,18 +12,20 @@ const page = () => {
   let [totalCount, totalsetCount] = useState(0);
   let [price, setPrice] = useState(0);
   let { products } = useContext(Context);
-  let [firstName, setFirstName] = useState();
-  let [lastName, setLastName] = useState();
-  let [companyName, setCompanyName] = useState();
+  let [firstName, setFirstName] = useState("");
+  let [lastName, setLastName] = useState("");
+  let [companyName, setCompanyName] = useState("");
   let [country, setCountry] = useState();
-  let [city, setCity] = useState();
-  let [streetAddress, setStreetAddress] = useState();
-  let [apartment, setApartment] = useState();
+  let [city, setCity] = useState("");
+  let [streetAddress, setStreetAddress] = useState("");
+  let [apartment, setApartment] = useState("");
   let [phone, setPhone] = useState();
   let [email, setEmail] = useState();
-  let [orderNotes, setOrderNotes] = useState();
+  let [orderNotes, setOrderNotes] = useState("");
   let [Error, setError] = useState("Fill up the Form");
-  console.log(Bdcity.length);
+  const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+  const phoneRegex = /^\+?[1-9]\d{1,14}$/; // International
+  const bdPhoneRegex = /^(?:\+8801|01)[3-9]\d{8}$/; // Bangladesh
 
   useEffect(() => {
     let count = products.reduce((total, product) => total + product.count, 0);
@@ -33,7 +35,19 @@ const page = () => {
   }, [products]);
 
   let handlerCheckOut = () => {
-    console.log("Checkout");
+    let data ={
+      firstName,
+      lastName,
+      companyName, 
+      country,
+      city,
+      streetAddress,
+      apartment,
+      phone,
+      email,
+      orderNotes
+    }
+    console.log("Checkout",data);
     if (!firstName) {
       setError("First Name is required");
     } else if (!country) {
@@ -44,8 +58,12 @@ const page = () => {
       setError("Street Address is required");
     } else if (!phone) {
       setError("Phone is required");
+    } else if (!bdPhoneRegex.test(phone)) {
+      setError("Phone is not valid for Bangladesh");
     } else if (!email) {
       setError("Email is required");
+    } else if (!emailRegex.test(email)) {
+      setError("Email is not valid");
     } else {
       setError("Success");
     }
