@@ -1,5 +1,5 @@
 const CheckOut = async (data) => {
-  const getToken = "RtEidkqe6G_2$vIp";
+  const getToken = "KzHk6G_YS!X3weTsj81";
   const authHeader = "Basic " + btoa("user:" + getToken);
 
   const config = {
@@ -21,7 +21,7 @@ const CheckOut = async (data) => {
       throw new Error(`HTTP error! status: ${response.status}`);
     }
 
-    const responseData = await response.json();
+    const responseData = await response;
     console.log("Data:", responseData);
   } catch (error) {
     console.error("Error fetching product:", error);
