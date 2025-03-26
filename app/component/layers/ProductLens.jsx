@@ -83,7 +83,7 @@ const ProductLens = ({ id = 1, imageArray = [Preview1, Preview2, Preview3, Previ
             {imageArray?.map((item, index) => (
               <Image
                 onClick={() => {
-                  if (index >= 0 && index < product.images.length) {
+                  if (index >= 0 && index < imageArray.length) {
                     handlerPicture(index)();
                   }
                 }}
