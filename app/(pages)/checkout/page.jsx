@@ -40,7 +40,7 @@ const page = () => {
     let data = {
       firstName,
       lastName,
-      companyName: company,
+      company: companyName,
       streetAddress,
       apartment,
       phone,
@@ -48,7 +48,7 @@ const page = () => {
       orderNotes,
       country,
       paymentGateway,
-      amount: required,
+      amount: 1000,
       userId: null,
       city,
       apartment,
