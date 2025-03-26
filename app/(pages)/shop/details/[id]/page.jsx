@@ -22,7 +22,7 @@ const Pratafont = Prata({
 export async function generateMetadata({ params }) {
   let { id } = await params;
   let res = await getProduct(id);
-  let product = res.success.data[0]
+  let product = res.success.data[0];
   console.log(product);
 
   return {
@@ -35,7 +35,7 @@ export async function generateMetadata({ params }) {
 const page = async ({ params }) => {
   let { id } = await params;
   let res1 = await getProduct(id);
-  let product1 = res1.success.data[0]
+  let product1 = res1.success.data[0];
   let product = await getSingleProduct(id);
   let category = product.category;
   let res = await getAllProduct();
@@ -100,7 +100,7 @@ const page = async ({ params }) => {
               />
 
               <div className="flex items-center gap-5">
-                <WishCounter product={product} />
+                <WishCounter product={product1} />
                 <div
                   className="flex items-center gap-1  cursor-pointer
               "
