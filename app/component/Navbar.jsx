@@ -116,7 +116,7 @@ const Navbar = () => {
         "Hair Care",
         "Hair Accessories",
       ],
-    },  
+    },
     {
       id: 11,
       categoryName: "Body",
@@ -164,7 +164,7 @@ const Navbar = () => {
         "Hair Care",
         "Hair Accessories",
       ],
-    },  
+    },
   ];
   let [open, setOpen] = useState(false);
   let cartbtn = useRef(null);
@@ -275,10 +275,10 @@ const Navbar = () => {
             <Image src={Logo} alt="logo" />
           </Link>
           <div
-            className={`md:static absolute top-0 w-[280px] md:w-auto z-[9999999] bg-[#fff] md:bg-transparent h-full transition-all duration-[0.5s] ease-in-out  ${
+            className={`md:static absolute top-0 w-[280px] md:w-auto !z-[9999999999] !bg-[#fff] md:bg-transparent h-full transition-all duration-[0.5s] ease-in-out  ${
               isOpen
-                ? "opacity-100 left-0"
-                : "-left-40 opacity-0 pointer-events-none"
+                ? "opacity-100 left-0 h-[100vh]"
+                : "-left-40 opacity-0 pointer-events-none  h-auto"
             } md:opacity-100 md:pointer-events-auto`}
           >
             <div
@@ -334,26 +334,24 @@ const Navbar = () => {
                 <div className="max-h-[75vh] overflow-y-scroll dropdown w-[96%] bg-slate-100 absolute left-full md:left-1/2 -translate-x-1/2 top-0 md:top-[100%] z-[999999] invisible opacity-0 group-hover:visible group-hover:opacity-100 transition-all duration-300 ease-linear px-5">
                   <div className="py-5 w-full grid md:grid-cols-3 lg:grid-cols-6 items-start gap-4 justify-between">
                     {categoryList.map((category) => (
-                  <div key={category.id}>
-                  <CatLine categoryName={category.categoryName} />
-                  <ul className="mt-3">
-                    {
-                      category.subcategory.map((item) => (
-                    
-                    <li
-                      className="font-semibold text-[13px] leading-[178%] uppercase text-[#080808]
+                      <div key={category.id}>
+                        <CatLine categoryName={category.categoryName} />
+                        <ul className="mt-3">
+                          {category.subcategory.map((item, index) => (
+                            <li
+                              key={index}
+                              className="font-semibold text-[13px] leading-[178%] uppercase text-[#080808]
             py-[5px] border-b-[2px] border-dashed border-[#e8ebf0] cursor-pointer"
-                    >
-                      {item}
-                      <span className="font-semibold text-[13px] leading-[196%] uppercase text-[#666]">
-                        (6)
-                      </span>
-                    </li>
-                      ))
-                    }
-                  </ul>
-                </div>  
-                  ))}
+                            >
+                              {item}
+                              <span className="font-semibold text-[13px] leading-[196%] uppercase text-[#666]">
+                                (6)
+                              </span>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    ))}
                   </div>
                 </div>
               </li>
