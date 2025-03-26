@@ -1,13 +1,11 @@
 "use client";
-import getSingleProduct from "@/app/utils/getSingleProduct";
-import Preview1 from "@/public/preview1.png"; 
+import Preview1 from "@/public/preview1.png";
 import Preview2 from "@/public/preview2.png";
 import Preview3 from "@/public/preview3.png";
 import Preview4 from "@/public/preview4.png";
 import { Image } from "antd";
 import { useEffect, useState } from "react";
 import { FaArrowRightLong } from "react-icons/fa6";
-import Slider from "react-slick";
 import "slick-carousel/slick/slick-theme.css";
 import "slick-carousel/slick/slick.css";
 
@@ -50,7 +48,7 @@ const ProductLens = ({ id = 1, imageArray = [] }) => {
   };
   let imgages = [Preview1, Preview2, Preview3, Preview4];
   console.log(imgages[0]);
-  
+
   let [product, setProduct] = useState([]);
   let getData = async () => {
     // let products = await getSingleProduct(id);
@@ -58,7 +56,6 @@ const ProductLens = ({ id = 1, imageArray = [] }) => {
   };
 
   console.log(imageArray);
-  
 
   useEffect(() => {
     // getData();
@@ -69,6 +66,9 @@ const ProductLens = ({ id = 1, imageArray = [] }) => {
     () => {
       setProductImage(index);
     };
+  console.log("image",
+    `https://bcovan.onrender.com/api/v1/frontend/public/images/${imageArray[0]}`
+  );
 
   return (
     <div className="productLens w-full">
