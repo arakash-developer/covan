@@ -7,11 +7,11 @@ import getAllProduct from "@/app/utils/getAllProduct";
 import Brand1 from "@/public/brand1.png";
 import { Prata } from "next/font/google";
 import Image from "next/image";
+import { useParams } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 import { FaAngleRight, FaCaretDown, FaServer } from "react-icons/fa";
 import { TfiLayoutGrid3Alt } from "react-icons/tfi";
 import { ScaleLoader } from "react-spinners";
-import { useParams } from "next/navigation";
 const Pratafont = Prata({
   weight: "400",
   subsets: ["latin"],
@@ -19,8 +19,6 @@ const Pratafont = Prata({
 
 const page = ({ params }) => {
   const { cat } = useParams();
-  console.log(cat);
-  
   const [rangeValues, setRangeValues] = useState({ min: 0, max: 100 });
   let [sortType, setSortType] = useState(12);
   const [isPopupVisible, setIsPopupVisible] = useState(false);
@@ -88,8 +86,20 @@ const page = ({ params }) => {
           </p>
           <FaAngleRight className="font-normal text-[0.81rem] leading-[176%] text-[#fff]" />
           <p className="font-normal text-[0.81rem] leading-[179%] text-[#e7b053] capitalize">
-            Shop/{cat[0]}/{cat[1]}
+            Shop
           </p>
+          <FaAngleRight className="font-normal text-[0.81rem] leading-[176%] text-[#fff]" />
+          <p className="font-normal text-[0.81rem] leading-[179%] text-[#e7b053] capitalize">
+            {cat[0]}
+          </p>
+          {cat.length > 1 && (
+            <>
+              <FaAngleRight className="font-normal text-[0.81rem] leading-[176%] text-[#fff]" />
+              <p className="font-normal text-[0.81rem] leading-[179%] text-[#e7b053] capitalize">
+                {cat[1]}
+              </p>
+            </>
+          )}
         </div>
       </section>
       {/* Shop */}
