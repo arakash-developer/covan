@@ -46,8 +46,8 @@ const ProductLens = ({ id = 1, imageArray = [] }) => {
     initialSlide: 0,
     nextArrow: <SampleNextArrow />,
   };
-  let imgages = [Preview1, Preview2, Preview3, Preview4];
-  console.log(imgages[0]);
+  let imgages = [Preview1.src, Preview2.src, Preview3.src, Preview4.src];
+  console.log("xx",imgages[0]);
 
   let [product, setProduct] = useState([]);
   let getData = async () => {
