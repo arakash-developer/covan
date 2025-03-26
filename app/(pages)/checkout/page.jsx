@@ -82,7 +82,7 @@ const page = () => {
       setError("Payment Gateway is required to place order");
     } else {
       let res = await CheckOut(data);
-      console.log(res);
+      console.log(res.success.data);
 
       setFirstName("");
       setLastName("");
