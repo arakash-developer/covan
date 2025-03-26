@@ -307,12 +307,12 @@ const Navbar = () => {
           md:px-0 gap-y-4
           "
             >
-              <MyLi name="New" link="/" />
-              <MyLi name="MakeUp" link="#" />
-              <MyLi name="Skin" link="/" />
-              <MyLi name="Hair" link="/" />
-              <MyLi name="Fragnance" link="/" /> 
-              <MyLi name="Baby" link="/" />
+              <MyLi name="New" link="new" />
+              <MyLi name="MakeUp" link="makeup" />
+              <MyLi name="Skin" link="skin" />
+              <MyLi name="Hair" link="hair" />
+              <MyLi name="Fragnance" link="fragnance" /> 
+              <MyLi name="Baby" link="baby" />
             </ul>
           </div>
           <div className="flex items-center gap-4 lg:gap-6">
