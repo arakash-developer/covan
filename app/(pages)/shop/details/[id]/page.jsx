@@ -96,7 +96,7 @@ const page = async ({ params }) => {
                 id={id}
                 title={product1?.title}
                 price={product1?.amount}
-                product={product1?product1:null}
+                product={product1}
               />
 
               <div className="flex items-center gap-5">
