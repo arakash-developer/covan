@@ -168,11 +168,23 @@ const Navbar = () => {
   ];
   let [open, setOpen] = useState(false);
   let cartbtn = useRef(null);
+  let menubtn = useRef(null);
   let [isOpen, setIsOpen] = useState(false);
   let { products, setProduct, wishlist, setWishlist } = useContext(Context);
   let closehandler = () => {
-    setIsOpen(!isOpen);
+    // setIsOpen(!isOpen);
   };
+
+  useEffect(() => {
+    document.addEventListener("click", (event) => {
+      setIsOpen(!isOpen);
+      if (menubtn.current.contains(event.target)) {
+        setIsOpen(!isOpen);
+      } else {
+        setIsOpen(false);
+      }
+    });
+  }, [isOpen]);
 
   useEffect(() => {
     document.addEventListener("click", (event) => {
@@ -269,7 +281,7 @@ const Navbar = () => {
         <div className="max-w-[1800px] mx-auto px-3 flex justify-between items-center">
           <IoMenu
             className="font-normal text-[30px] leading-[109%] uppercase text-[#080808] hover:text-[#e7b053] cursor-pointer md:hidden"
-            onClick={closehandler}
+            ref={menubtn}
           />
           <Link href="/">
             <Image src={Logo} alt="logo" />
@@ -281,10 +293,7 @@ const Navbar = () => {
                 : "-left-40 opacity-0 pointer-events-none h-auto"
             } md:h-auto md:opacity-100 md:pointer-events-auto`}
           >
-            <div
-              className="bg-[#e7b053] w-full md:hidden pt-[10px] pb-5 px-5 text-right flex items-center justify-end cursor-pointer"
-              onClick={closehandler}
-            >
+            <div className="bg-[#e7b053] w-full md:hidden pt-[10px] pb-5 px-5 text-right flex items-center justify-end cursor-pointer">
               <h3
                 className={`font-normal text-lg uppercase pt-2 ${Pratafont.className} text-[#fff]`}
               >
