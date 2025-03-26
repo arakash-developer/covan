@@ -1,4 +1,7 @@
 "use client";
+import Container from "@/app/component/Container";
+import Paginate from "@/app/component/Paginate";
+import CatLine from "@/app/component/layers/CatLine";
 import MultiRangeSlider from "@/app/component/multiRangeSlider/PriceRangeSlider";
 import getAllProduct from "@/app/utils/getAllProduct";
 import Brand1 from "@/public/brand1.png";
@@ -8,16 +11,14 @@ import { useEffect, useRef, useState } from "react";
 import { FaAngleRight, FaCaretDown, FaServer } from "react-icons/fa";
 import { TfiLayoutGrid3Alt } from "react-icons/tfi";
 import { ScaleLoader } from "react-spinners";
-import Container from "@/app/component/Container";
-import Paginate from "@/app/component/Paginate";
-import CatLine from "@/app/component/layers/CatLine";
 const Pratafont = Prata({
   weight: "400",
   subsets: ["latin"],
 });
 
 const page = ({ params }) => {
-  let {cat} = params;
+  console.log(params);
+
   const [rangeValues, setRangeValues] = useState({ min: 0, max: 100 });
   let [sortType, setSortType] = useState(12);
   const [isPopupVisible, setIsPopupVisible] = useState(false);
@@ -61,7 +62,6 @@ const page = ({ params }) => {
     setLoading(true);
     let response = await getAllProduct();
     let product = response.products;
-    console.log(product);
 
     setProduct(product);
     setLoading(false);
