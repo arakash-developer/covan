@@ -75,7 +75,7 @@ const ProductLens = ({ id = 1, imageArray = [] }) => {
       <div className="w-full h-full lg:w-[650px] flex justify-center items-center bg-[#F6F6F6]">
         <Image
           className="w-full lg:w-[650px] h-[650px] "
-          src={`https://bcovan.onrender.com/api/v1/frontend/public/images/${imageArray[0]}`}
+          src={Preview1.src}
           alt={product.title}
         />
       </div>
