@@ -24,6 +24,7 @@ export default {
         'deal': "url('/deal2.png')",
         'newslatter': "url('/newslatter.png')",
         'shop': "url('/image06.jpg')",
+        'sale': "url('/sale.jpg')",
       },
     },
   },
