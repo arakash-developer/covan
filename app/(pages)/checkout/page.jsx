@@ -62,6 +62,7 @@ const page = () => {
         },
       ],
     };
+
     if (!firstName) {
       setError("First Name is required");
     } else if (!country) {
@@ -82,9 +83,10 @@ const page = () => {
       setError("Payment Gateway is required to place order");
     } else {
       let res = await CheckOut(data);
+      setError(res.success.message);
       console.log(res.success);
-
-      setFirstName("");
+      
+      setFirstName();
       setLastName("");
       setCompanyName("");
       setCountry("");
@@ -94,7 +96,6 @@ const page = () => {
       setPhone("");
       setEmail("");
       setOrderNotes("");
-      setError("Success");
     }
   };
   return (
