@@ -21,7 +21,7 @@ const page = () => {
   return (
     <section className="my-[110px]">
       <Container>
-        <div className="flex justify-between gap-5 items-start">
+        <div className="flex flex-col md:flex-row md:justify-between gap-5 items-start">
           <form className="flex flex-col w-full gap-y-[30px]">
             <h2 className="text-[#080808] text-xl font-normal leading-[120%] mb-[30px] uppercase">
               Billing details
