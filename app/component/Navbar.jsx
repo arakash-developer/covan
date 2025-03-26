@@ -275,7 +275,7 @@ const Navbar = () => {
             <Image src={Logo} alt="logo" />
           </Link>
           <div
-            className={`md:static absolute top-0 w-[280px] md:w-auto !z-[9999999999] !bg-[#fff] md:bg-transparent  transition-all duration-[0.5s] ease-in-out ${
+            className={`md:static absolute top-0 w-full md:w-auto !z-[9999999999] !bg-[#fff] md:bg-transparent  transition-all duration-[0.5s] ease-in-out ${
               isOpen
                 ? "opacity-100 pointer-events-auto left-0 h-[100vh]"
                 : "-left-40 opacity-0 pointer-events-none h-auto"
