@@ -1,10 +1,14 @@
-import React from 'react'
+import Container from "@/app/component/Container";
 
-const page = async ({params}) => {
-    let {cat} = await params
+const page = async ({ params }) => {
+  let { cat } = await params;
   return (
-    <div>page -{cat}</div>
-  )
-}
+    <>
+      <Container>
+        <div>page -{cat}</div>
+      </Container>
+    </>
+  );
+};
 
-export default page
+export default page;
