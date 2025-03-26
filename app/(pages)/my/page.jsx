@@ -1,10 +1,9 @@
-import getProducts from "@/app/utils/getProducts";
+import React from 'react'
 
-const page = async () => {
-  let res = await getProducts();
-  console.log(res.success.data);
+const page = () => {
+  return (
+    <div>page</div>
+  )
+}
 
-  return <div>page</div>;
-};
-
-export default page;
+export default page
