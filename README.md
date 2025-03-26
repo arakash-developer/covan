@@ -37,3 +37,19 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/bui
 
 
 
+
+
+[
+    {
+      id: 1,
+      categoryName: "Eye",
+      subcategory: [
+        {
+          id: 1,
+          name: "Eye Shadow",
+          link: "/eye-shadow",
+        },
+     
+      ],
+    },
+]

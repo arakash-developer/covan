@@ -1,157 +1,101 @@
 "use client";
+import CatLine from "@/app/component/layers/CatLine";
 import { Prata } from "next/font/google";
 import Link from "next/link";
 import { FaAngleDown } from "react-icons/fa";
-import CatLine from "@/app/component/layers/CatLine";
 const Pratafont = Prata({
   weight: "400",
   subsets: ["latin"],
 });
 
-const MyLi = ({
-    name="Default",
-    link="/",
-}) => {
+const MyLi = ({ name = "Default", link = "/" }) => {
   let categoryList = [
     {
       id: 1,
       categoryName: "Eye",
       subcategory: [
-        "Eye Shadow",
-        "Eyebrow",
-        "Eyeliner",
-        "False Eyelashes",
-        "Kajal",
-        "Mascara",
+        {
+          id: 1,
+          name: "Eye Shadow",
+          link: "/eye-shadow",
+        },
+        {
+          id: 2,
+          name: "Eyebrow",
+          link: "/eyebrow",
+        },
+        {
+          id: 3,
+          name: "Eyeliner",
+          link: "/eyeliner",
+        },
+        {
+          id: 4,
+          name: "False Eyelashes",
+          link: "/false-eyelashes",
+        },
+        {
+          id: 5,
+          name: "Kajal",
+          link: "/kajal",
+        },
+        {
+          id: 6,
+          name: "Mascara",
+          link: "/mascara",
+        },
       ],
     },
     {
       id: 2,
-      categoryName: "Lip",
-      subcategory: ["Lip Gloss", "Lipstick", "Lip Liner"],
-    },
+      categoryName: "Lips",
+      subcategory: [
+        {
+          id: 1,
+          name: "Lipstick",
+          link: "/lipstick",
+        },
+        {
+          id: 2,
+          name: "Lip Gloss",
+          link: "/lip-gloss",
+        },
+        {
+          id: 3,
+          name: "Lip Liner",
+          link: "/lip-liner",
+        },
+        {
+          id: 4,
+          name: "Lipstick",
+          link: "/lipstick",
+        },
+      ],
+    },  
     {
       id: 3,
-      categoryName: "Face",
+      categoryName: "Nails",
       subcategory: [
-        "Face Powder",
-        "Face Primer",
-        "Concealer",
-        "Foundation",
-        "Highlighter",
-        "Bronzer",
-        "Blusher",
-      ],
-    },
-    {
-      id: 4,
-      categoryName: "Nail",
-      subcategory: ["Nail Polish", "Nail Care", "Nail Art"],
-    },
-    {
-      id: 5,
-      categoryName: "Hair",
-      subcategory: [
-        "Hair Color",
-        "Hair Styling",
-        "Hair Care",
-        "Hair Accessories",
-      ],
-    },
-    {
-      id: 6,
-      categoryName: "Body",
-      subcategory: [
-        "Body Lotion",
-        "Body Wash",
-        "Body Scrub",
-        "Body Oil",
-        "Body Care",
-      ],
-    },
-    {
-      id: 7,
-      categoryName: "Tools",
-      subcategory: [
-        "Makeup Brushes",
-        "Makeup Tools",
-        "Makeup Accessories",
-        "Makeup Bags",
-        "Makeup Remover",
-      ],
-    },
-    {
-      id: 8,
-      categoryName: "Skin",
-      subcategory: [
-        "Face Wash",
-        "Face Mask",
-        "Face Serum",
-        "Face Cream",
-        "Face Care",
-      ],
-    },
-    {
-      id: 9,
-      categoryName: "Fragrance",
-      subcategory: ["Perfume", "Deodorant", "Body Mist"],
-    },
-    {
-      id: 10,
-      categoryName: "Hair",
-      subcategory: [
-        "Hair Color",
-        "Hair Styling",
-        "Hair Care",
-        "Hair Accessories",
-      ],
-    },
-    {
-      id: 11,
-      categoryName: "Body",
-      subcategory: [
-        "Body Lotion",
-        "Body Wash",
-        "Body Scrub",
-        "Body Oil",
-        "Body Care",
-      ],
-    },
-    {
-      id: 12,
-      categoryName: "Tools",
-      subcategory: [
-        "Makeup Brushes",
-        "Makeup Tools",
-        "Makeup Accessories",
-        "Makeup Bags",
-        "Makeup Remover",
-      ],
-    },
-    {
-      id: 13,
-      categoryName: "Skin",
-      subcategory: [
-        "Face Wash",
-        "Face Mask",
-        "Face Serum",
-        "Face Cream",
-        "Face Care",
-      ],
-    },
-    {
-      id: 14,
-      categoryName: "Fragrance",
-      subcategory: ["Perfume", "Deodorant", "Body Mist"],
-    },
-    {
-      id: 15,
-      categoryName: "Hair",
-      subcategory: [
-        "Hair Color",
-        "Hair Styling",
-        "Hair Care",
-        "Hair Accessories",
+        {
+          id: 1,
+          name: "Nail Polish",
+          link: "/nail-polish",
+        },
+        {
+          id: 2,
+          name: "Nail Polish Remover",
+          link: "/nail-polish-remover",
+        },
+        {
+          id: 3,
+          name: "Nail Polish Set",
+          link: "/nail-polish-set",
+        },
+        {
+          id: 4,
+          name: "Nail Polish Set",
+          link: "/nail-polish-set",
+        },
       ],
     },
   ];
@@ -176,14 +120,11 @@ const MyLi = ({
               <ul className="mt-3">
                 {category.subcategory.map((item, index) => (
                   <li
-                    key={index}
-                    className="font-semibold text-[13px] leading-[178%] uppercase text-[#080808]
+                    key={item.id}
+                    className="font-semibold text-[13px] leading-[178%] uppercase text-[#080808] hover:text-[#e7b053] transition-all ease-linear duration-300
 py-[5px] border-b-[2px] border-dashed border-[#e8ebf0] cursor-pointer"
                   >
-                    {item}
-                    <span className="font-semibold text-[13px] leading-[196%] uppercase text-[#666]">
-                      (6)
-                    </span>
+                    <Link href={`/shop/${item.link}`}>{item.name}</Link>
                   </li>
                 ))}
               </ul>
