@@ -11,14 +11,16 @@ import { useEffect, useRef, useState } from "react";
 import { FaAngleRight, FaCaretDown, FaServer } from "react-icons/fa";
 import { TfiLayoutGrid3Alt } from "react-icons/tfi";
 import { ScaleLoader } from "react-spinners";
+import { useParams } from "next/navigation";
 const Pratafont = Prata({
   weight: "400",
   subsets: ["latin"],
 });
 
 const page = ({ params }) => {
-  console.log(params);
-
+  const { cat } = useParams();
+  console.log(cat);
+  
   const [rangeValues, setRangeValues] = useState({ min: 0, max: 100 });
   let [sortType, setSortType] = useState(12);
   const [isPopupVisible, setIsPopupVisible] = useState(false);
@@ -62,7 +64,6 @@ const page = ({ params }) => {
     setLoading(true);
     let response = await getAllProduct();
     let product = response.products;
-
     setProduct(product);
     setLoading(false);
   };
@@ -87,7 +88,7 @@ const page = ({ params }) => {
           </p>
           <FaAngleRight className="font-normal text-[0.81rem] leading-[176%] text-[#fff]" />
           <p className="font-normal text-[0.81rem] leading-[179%] text-[#e7b053]">
-            Shop
+            Shop/${cat[0]/cat[1]}
           </p>
         </div>
       </section>
