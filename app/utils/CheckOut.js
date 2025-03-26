@@ -31,3 +31,4 @@ const CheckOut = async (data) => {
 };
 
 export default CheckOut;
+
