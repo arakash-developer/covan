@@ -8,7 +8,7 @@ import { useEffect, useState } from "react";
 import { FaArrowRightLong } from "react-icons/fa6";
 import "slick-carousel/slick/slick-theme.css";
 import "slick-carousel/slick/slick.css";
-// import Slider from "react-slick";
+import Slider from "react-slick";
 
 function SampleNextArrow(props) {
   const { className, style, onClick } = props;
@@ -72,13 +72,13 @@ const ProductLens = () => {
       <div className="w-full h-full lg:w-[650px] flex justify-center items-center bg-[#F6F6F6]">
         <Image
           className="w-full lg:w-[650px] h-[650px] "
-          src={imageArray[0].src}
+          src={imageArray[productImage].src}
           alt={product.title}
         />
       </div>
       {imageArray?.length >= 3 ? (
         <div className="suggetion w-full mt-5 cursor-pointer">
-          {/* <Slider
+          <Slider
             {...settings}
             className="h-[150px] w-full flex relative left-4"
           >
@@ -96,7 +96,7 @@ const ProductLens = () => {
                 height={150}
               />
             ))}
-          </Slider> */}
+          </Slider>
         </div>
       ) : (
         <div className="suggetion w-full mt-5 cursor-pointer h-[150px] bg-[#F6F6F6] flex justify-center items-center">
