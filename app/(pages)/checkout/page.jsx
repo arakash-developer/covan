@@ -4,6 +4,7 @@ import { Context } from "@/app/context/productContext";
 import Bdcity from "@/app/lib/BdCity";
 import CheckOut from "@/app/utils/CheckOut";
 import { Prata } from "next/font/google";
+import { number } from "prop-types";
 import { useContext, useEffect, useState } from "react";
 const Pratafont = Prata({
   weight: "400",
@@ -36,6 +37,9 @@ const page = () => {
     setPrice(price);
   }, [products]);
 
+
+
+
   let handlerCheckOut = async () => {
     let data = {
       firstName,
@@ -48,18 +52,13 @@ const page = () => {
       orderNotes,
       country,
       paymentGateway,
-      amount: 1000,
+      amount: price*totalCount,
       userId: null,
       city,
       apartment,
       shipping: "Flat Rate",
       productInfo: [
-        {
-          id: "67e2c2911d80ea3c33f71801",
-          title: "Demo Title 3",
-          price: 100,
-          quantity: 4,
-        },
+        products[0]
       ],
     };
 
@@ -85,7 +84,7 @@ const page = () => {
       let res = await CheckOut(data);
       setError(res.success.message);
       console.log(res.success);
-      
+
       setFirstName();
       setLastName("");
       setCompanyName("");
