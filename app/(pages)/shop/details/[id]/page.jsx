@@ -94,9 +94,9 @@ const page = async ({ params }) => {
               </p>
               <CartCounter
                 id={id}
-                title={product.title}
-                price={product.price}
-                product={product}
+                title={product1?.title}
+                price={product1?.amount}
+                product={product1?product1:null}
               />
 
               <div className="flex items-center gap-5">
