@@ -22,6 +22,7 @@ const page = () => {
   let [phone, setPhone] = useState();
   let [email, setEmail] = useState();
   let [orderNotes, setOrderNotes] = useState("");
+  let [paymentGateway, setPaymentGateway] = useState(false);
   let [Error, setError] = useState("Fill up the Form");
   const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
   const phoneRegex = /^\+?[1-9]\d{1,14}$/; // International
@@ -35,19 +36,20 @@ const page = () => {
   }, [products]);
 
   let handlerCheckOut = () => {
-    let data ={
+    let data = {
       firstName,
       lastName,
-      companyName, 
+      companyName,
       country,
       city,
       streetAddress,
       apartment,
       phone,
       email,
-      orderNotes
-    }
-    console.log("Checkout",data);
+      orderNotes,
+      paymentGateway,
+    };
+    console.log("Checkout", data);
     if (!firstName) {
       setError("First Name is required");
     } else if (!country) {
@@ -398,6 +400,7 @@ const page = () => {
                     value=""
                     name="colored-radio"
                     className="bg-gray-100 border-gray-300 h-4 w-4 cursor-pointer focus:ring-2"
+                    onChange={(e) => setPaymentGateway(e.target.checked)}
                   />
                   <label
                     htmlFor="cod"
