@@ -77,7 +77,7 @@ const ProductLens = ({ id = 1, imageArray = [Preview1, Preview2, Preview3, Previ
       </div>
       {imageArray?.length >= 3 ? (
         <div className="suggetion w-full mt-5 cursor-pointer">
-          <Slider
+          {/* <Slider
             {...settings}
             className="h-[150px] w-full flex relative left-4"
           >
@@ -95,7 +95,7 @@ const ProductLens = ({ id = 1, imageArray = [Preview1, Preview2, Preview3, Previ
                 height={150}
               />
             ))}
-          </Slider>
+          </Slider> */}
         </div>
       ) : (
         <div className="suggetion w-full mt-5 cursor-pointer h-[150px] bg-[#F6F6F6] flex justify-center items-center">
