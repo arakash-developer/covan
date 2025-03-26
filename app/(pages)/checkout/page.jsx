@@ -287,7 +287,7 @@ const page = () => {
               />
             </div>
           </form>
-          <div className="w-[600px]">
+          <div className="w-full md:w-[600px]">
             <h2 className="text-[#080808] text-xl font-normal leading-[120%] mb-[30px] uppercase">
               Your order
             </h2>
