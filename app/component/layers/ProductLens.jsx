@@ -53,13 +53,15 @@ const ProductLens = ({ id = 1, imageArray = [] }) => {
   
   let [product, setProduct] = useState([]);
   let getData = async () => {
-    let products = await getSingleProduct(id);
-    setProduct(products);
+    // let products = await getSingleProduct(id);
+    // setProduct(products);
   };
 
+  console.log(imageArray);
+  
 
   useEffect(() => {
-    getData();
+    // getData();
   }, []);
   let [productImage, setProductImage] = useState(0);
   let handlerPicture =
@@ -73,11 +75,11 @@ const ProductLens = ({ id = 1, imageArray = [] }) => {
       <div className="w-full h-full lg:w-[650px] flex justify-center items-center bg-[#F6F6F6]">
         <Image
           className="w-full lg:w-[650px] h-[650px] "
-          src={product.images?.[productImage]}
+          src={`https://bcovan.onrender.com/api/v1/frontend/public/images/${imageArray[0]}`}
           alt={product.title}
         />
       </div>
-      {imgages?.length >= 3 ? (
+      {/* {imgages?.length >= 3 ? (
         <div className="suggetion w-full mt-5 cursor-pointer">
           <Slider
             {...settings}
@@ -103,7 +105,7 @@ const ProductLens = ({ id = 1, imageArray = [] }) => {
         <div className="suggetion w-full mt-5 cursor-pointer h-[150px] bg-[#F6F6F6] flex justify-center items-center">
           <h2 className="text-[#666]">Image Not Found</h2>
         </div>
-      )}
+      )} */}
     </div>
   );
 };
