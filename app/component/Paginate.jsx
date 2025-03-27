@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import ReactPaginate from "react-paginate";
 import getProducts from "../utils/getProducts";
 import Item from "./Item";
-
+import Preview1 from "@/public/preview1.png";
 function Items({ currentItems }) {
   return (
     <>
@@ -14,7 +14,8 @@ function Items({ currentItems }) {
               <Item
                 className="w-full xsm:w-auto"
                 Name={item?.title}
-                thumbnail={`https://bcovan.onrender.com/api/v1/frontend/public/images/${item?.imageArray[0]}`}
+                // thumbnail={`https://bcovan.onrender.com/api/v1/frontend/public/images/${item?.imageArray[0]}`}
+                thumbnail={Preview1}
                 id={item._id}
                 Price={item?.amount}
               />
@@ -34,7 +35,7 @@ const Paginate = ({ itemsPerPage, catagory }) => {
     let response = await getProducts();
     let product = response?.success.data;
     console.log(product);
-    console.log(product.imageArray);
+    
 
     console.log(product);
     if (catagory) {
