@@ -40,7 +40,7 @@ const page = () => {
       (sum, product) => sum + product.count * product.price,
       0
     );
-    setTotalCost(tCost);
+    totalsetCost(tCost);
   }, [products]);
 
 
