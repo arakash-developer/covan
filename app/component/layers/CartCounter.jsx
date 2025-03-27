@@ -2,6 +2,7 @@
 import { Context } from "@/app/context/productContext";
 import { useContext, useState } from "react";
 import { AiOutlineMinus, AiOutlinePlus } from "react-icons/ai";
+import Preview1 from "@/public/preview1.png";
 
 const CartCounter = ({ id, title, price, product }) => {
   let [count, setCount] = useState(1);
@@ -18,7 +19,7 @@ const CartCounter = ({ id, title, price, product }) => {
     setProduct((prv) => {
       return [
         ...prv,
-        { id: payload.id, count, title: payload.title, price: payload.amount, thumbnail: payload.thumbnail},
+        { id: payload.id, count, title: payload.title, price: payload.amount, thumbnail: Preview1},
       ];
     });
   };
