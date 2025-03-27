@@ -171,6 +171,7 @@ const Navbar = () => {
   let menubtn = useRef(null);
   let [isOpen, setIsOpen] = useState(false);
   let { products, setProduct, wishlist, setWishlist } = useContext(Context);
+  let [totalCost, setTotalCost] = useState(0);
   let closehandler = () => {
     // setIsOpen(!isOpen);
   };
@@ -206,12 +207,18 @@ const Navbar = () => {
     totalsetCount(count);
     let price = products.reduce((total, product) => total + product.price, 0);
     setPrice(price);
-    
+    console.log(products);
+
     console.log(products);
     console.log(count);
-    console.log(price);
-    
-    
+    console.log(products, price, count);
+
+    const tCost = products.reduce(
+      (sum, product) => sum + product.count * product.price,
+      0
+    );
+    setTotalCost(tCost);
+
     const groupedWish = wishlist.reduce((acc, item) => {
       const existingItem = acc.find((i) => i.id === item.id);
       if (existingItem) {
@@ -317,7 +324,7 @@ const Navbar = () => {
               <MyLi name="MakeUp" link="makeup" />
               <MyLi name="Skin" link="skin" />
               <MyLi name="Hair" link="hair" />
-              <MyLi name="Fragnance" link="fragnance" /> 
+              <MyLi name="Fragnance" link="fragnance" />
               <MyLi name="Baby" link="baby" />
             </ul>
           </div>
@@ -384,7 +391,7 @@ const Navbar = () => {
                               </h4>
                               <div className="border-t border-[#e1e1e1] w-full"></div>
                               <h3 className="text-md font-medium text-[#080808] uppercase leading-[1.63rem]">
-                                ${(price * totalCount).toFixed(2)}
+                                ${totalCost.toFixed(2)}
                               </h3>
                             </div>
                             <div
