@@ -23,7 +23,7 @@ export async function generateMetadata({ params }) {
   let { id } = await params;
   let res = await getProduct(id);
   let product = res.success.data[0];
-  console.log(product);
+
 
   return {
     title: `Product - ${product.title}`,

@@ -89,7 +89,7 @@ const page = () => {
     } else {
       let res = await CheckOut(data);
       setError(res.success.message);
-      console.log(res.success);
+
 
       setFirstName();
       setLastName("");

@@ -19,7 +19,7 @@ const WishCounter = ({ product = [] }) => {
     ]);
     setActive(true);
   };
-  console.log(wishlist);
+
 
   return (
     <div

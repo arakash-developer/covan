@@ -60,7 +60,7 @@ const page = () => {
     setLoading(true);
     let response = await getAllProduct();
     let product = response.products;
-    console.log(product);
+
 
     setProduct(product);
     setLoading(false);

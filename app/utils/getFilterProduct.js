@@ -1,5 +1,5 @@
 const getFilterProduct = async (category, page = 1, limit = 12) => {
-  console.log(category);
+  
   if (!category) {
     let response = await fetch(
       `https://dummyjson.com/products?limit=${limit}&page=${page}`
