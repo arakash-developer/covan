@@ -54,8 +54,6 @@ const ProductLens = () => {
     // setProduct(products);
   };
 
-  console.log(imageArray);
-
   useEffect(() => {
     // getData();
   }, []);
