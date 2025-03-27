@@ -207,12 +207,7 @@ const Navbar = () => {
     totalsetCount(count);
     let price = products.reduce((total, product) => total + product.price, 0);
     setPrice(price);
-    console.log(products);
-
-    console.log(products);
-    console.log(count);
-    console.log(products, price, count);
-
+  
     const tCost = products.reduce(
       (sum, product) => sum + product.count * product.price,
       0

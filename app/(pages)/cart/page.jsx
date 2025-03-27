@@ -35,11 +35,11 @@ const page = () => {
 
   let [totalPrice, setTotalPrice] = useState(0);
   useEffect(() => {
-    let total = products.reduce(
-      (acc, item) => acc + item.price * item.count,
+    const tCost = products.reduce(
+      (sum, product) => sum + product.count * product.price,
       0
     );
-    setTotalPrice(total);
+    setTotalPrice(tCost);
   }, [products]);
 
   return (
