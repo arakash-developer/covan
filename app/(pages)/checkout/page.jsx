@@ -12,6 +12,7 @@ const Pratafont = Prata({
 });
 const page = () => {
   let [totalCount, totalsetCount] = useState(0);
+  let [totalCost, totalsetCost] = useState(0);
   let [price, setPrice] = useState(0);
   let { products } = useContext(Context);
   let [firstName, setFirstName] = useState("");
@@ -35,6 +36,11 @@ const page = () => {
     totalsetCount(count);
     let price = products.reduce((total, product) => total + product.price, 0);
     setPrice(price);
+    const tCost = products.reduce(
+      (sum, product) => sum + product.count * product.price,
+      0
+    );
+    setTotalCost(tCost);
   }, [products]);
 
 
@@ -414,7 +420,7 @@ const page = () => {
                   </h3>
                   <div className="">
                     <h3 className="text-[#e7b053] text-2xl font-normal leading-[200%]">
-                      $ {(price * totalCount).toFixed(2)}
+                      $ {totalCost.toFixed(2)}
                     </h3>
                   </div>
                 </div>
