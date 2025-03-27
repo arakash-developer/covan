@@ -34,10 +34,10 @@ const Paginate = ({ itemsPerPage, catagory }) => {
     setLoading(true);
     let response = await getProducts();
     let product = response?.success.data;
-    console.log(product);
+     
     
 
-    console.log(product);
+  
     if (catagory) {
       let filpro = product.filter((data) => data.category == catagory);
       setItems(filpro);
