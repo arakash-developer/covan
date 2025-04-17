@@ -8,7 +8,7 @@ const getProduct = async (id) => {
       },
     };
     const response = await fetch(
-      `https://bcovan.onrender.com/api/v1/frontend/product/view/${id}`, 
+      `https://www.seoumi.com/api/v1/frontend/product/view/${id}`, 
       config
     );
     if (!response.ok) {
