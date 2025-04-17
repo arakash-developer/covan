@@ -46,7 +46,7 @@ const Item = ({
         <div className="w-full lg:h-[339px] h-[300px] flex justify-center items-center border bg-[#F6F6F6]">
           <Image
             src={thumbnail}
-            alt="product"
+            alt="Product Image Not Found"
             className="w-full h-full object-contain"
             width={1000}
             height={1000}

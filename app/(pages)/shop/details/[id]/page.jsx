@@ -36,6 +36,7 @@ const page = async ({ params }) => {
   let { id } = await params;
   let res1 = await getProduct(id);
   let product1 = res1.success.data[0];
+  console.log(product1.imageArray);  
   let product = await getSingleProduct(id);
   let category = product.category;
   let res = await getAllProduct();

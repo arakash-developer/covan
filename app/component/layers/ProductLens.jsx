@@ -4,11 +4,11 @@ import Preview2 from "@/public/preview2.png";
 import Preview3 from "@/public/preview3.png";
 import Preview4 from "@/public/preview4.png";
 import { Image } from "antd";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { FaArrowRightLong } from "react-icons/fa6";
+import Slider from "react-slick";
 import "slick-carousel/slick/slick-theme.css";
 import "slick-carousel/slick/slick.css";
-import Slider from "react-slick";
 
 function SampleNextArrow(props) {
   const { className, style, onClick } = props;
@@ -34,7 +34,9 @@ function SampleNextArrow(props) {
 //     </div>
 //   );
 // }
-const ProductLens = () => {
+const ProductLens = ({
+  imageArray = [Preview1, Preview2, Preview3, Preview4],
+}) => {
   var settings = {
     arrows: true,
     dots: false,
@@ -47,23 +49,14 @@ const ProductLens = () => {
     initialSlide: 0,
     nextArrow: <SampleNextArrow />,
   };
-  let imageArray = [Preview1, Preview2, Preview3, Preview4]
   let [product, setProduct] = useState([]);
-  let getData = async () => {
-    // let products = await getSingleProduct(id);
-    // setProduct(products);
-  };
-
-  useEffect(() => {
-    // getData();
-  }, []);
+  console.log(imageArray[0].imageURL);
   let [productImage, setProductImage] = useState(0);
   let handlerPicture =
     (index = 0) =>
     () => {
       setProductImage(index);
     };
-
 
   return (
     <div className="productLens w-full">
@@ -80,20 +73,25 @@ const ProductLens = () => {
             {...settings}
             className="h-[150px] w-full flex relative left-4"
           >
-            {imageArray?.map((item, index) => (
-              <Image
-                onClick={() => {
-                  if (index >= 0 && index < imageArray.length) {
-                    handlerPicture(index)();
-                  }
-                }}
-                key={index}
-                preview={false}
-                className="sug_image w-[150px] h-[150px] border  border-transparent bg-[#F6F6F6] hover:border-[#e7b053]"
-                src={item.src}
-                height={150}
-              />
-            ))}
+            {imageArray?.map((item, index) => {
+              console.log(item.imageURL);
+              
+              return (
+                <Image
+                  // onClick={() => {
+                  //   if (index >= 0 && index < imageArray.length) {
+                  //     handlerPicture(index)();
+                  //   }
+                  // }}
+                  key={index}
+                  preview={false}
+                  className="sug_image w-[150px] h-[150px] border  border-transparent bg-[#F6F6F6] hover:border-[#e7b053]"
+                  // src={`http://api.seoumi.com/api/v1/frontend/public/images/${item.imageURL}`}
+                  src="https://images.unsplash.com/photo-1596462502278-27bfdc403348?q=80&w=2080&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                  height={150}
+                />
+              );
+            })}
           </Slider>
         </div>
       ) : (

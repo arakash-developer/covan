@@ -14,8 +14,7 @@ function Items({ currentItems }) {
               <Item
                 className="w-full xsm:w-auto"
                 Name={item?.title}
-                // thumbnail={`https://bcovan.onrender.com/api/v1/frontend/public/images/${item?.imageArray[0]}`}
-                thumbnail={Preview1}
+                thumbnail={`https://api.seoumi.com/api/v1/frontend/public/images/${item?.thumbnails}`}
                 id={item._id}
                 Price={item?.amount}
               />
@@ -29,14 +28,14 @@ function Items({ currentItems }) {
 const Paginate = ({ itemsPerPage, catagory }) => {
   let [items, setItems] = useState([]);
   let [loading, setLoading] = useState();
-  // let[a,seta] = useState([])
 
   let getdata = async () => {
     setLoading(true);
     let response = await getProducts();
     let product = response?.success.data.products;
-    console.log("product", product);
+    console.log(product);
     
+
     if (catagory) {
       let filpro = product.filter((data) => data.category == catagory);
       setItems(filpro);
