@@ -1,9 +1,9 @@
 "use client";
+import Preview1 from "@/public/preview1.png";
 import { useEffect, useState } from "react";
 import ReactPaginate from "react-paginate";
 import getProducts from "../utils/getProducts";
 import Item from "./Item";
-import Preview1 from "@/public/preview1.png";
 function Items({ currentItems }) {
   return (
     <>
@@ -29,12 +29,14 @@ function Items({ currentItems }) {
 const Paginate = ({ itemsPerPage, catagory }) => {
   let [items, setItems] = useState([]);
   let [loading, setLoading] = useState();
+  // let[a,seta] = useState([])
 
   let getdata = async () => {
     setLoading(true);
     let response = await getProducts();
-    let product = response?.success.data;
-  
+    let product = response?.success.data.products;
+    console.log("product", product);
+    
     if (catagory) {
       let filpro = product.filter((data) => data.category == catagory);
       setItems(filpro);
@@ -43,6 +45,11 @@ const Paginate = ({ itemsPerPage, catagory }) => {
     }
     setLoading(false);
   };
+  useEffect(() => {
+    getdata();
+    console.log("items", items);
+  }, []);
+
   useEffect(() => {
     getdata();
   }, [catagory]);

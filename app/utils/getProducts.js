@@ -8,7 +8,7 @@ const getProducts = async () => {
     },
   };
   const response = await fetch(
-    "https://bcovan.onrender.com/api/v1/frontend/product/all",
+    "https://api.seoumi.com/api/v1/frontend/product/all",
     config
   );
   if (!response.ok) {
