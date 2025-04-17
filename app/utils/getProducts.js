@@ -1,4 +1,4 @@
-const getProducts = async () => {
+const getProducts = async (dataview = 12) => {
   let getToken = "C7w%e6G_2Eidkq";
   const authHeader = "Basic " + btoa("user:" + getToken);
   const config = {
@@ -8,7 +8,7 @@ const getProducts = async () => {
     },
   };
   const response = await fetch(
-    "https://api.seoumi.com/api/v1/frontend/product/all",
+    `https://api.seoumi.com/api/v1/frontend/product/all?page=1&dataview=${dataview}`,
     config
   );
   if (!response.ok) {

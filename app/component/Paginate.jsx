@@ -45,10 +45,6 @@ const Paginate = ({ itemsPerPage, catagory }) => {
     }
     setLoading(false);
   };
-  useEffect(() => {
-    getdata();
-    console.log("items", items);
-  }, []);
 
   useEffect(() => {
     getdata();
