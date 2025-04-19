@@ -2,10 +2,10 @@ name: Deployment to CP
 on:
   push:
     branches:
-      - production
+      - main
   pull_request:
     branches:
-      - production
+      - main
 
 jobs:
   build:
