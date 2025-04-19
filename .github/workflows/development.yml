@@ -34,7 +34,7 @@ jobs:
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
           port: ${{ secrets.FTP_PORT || 21 }}
-          local-dir: ./.next, ./public   # Upload both .next and public directories
+          local-dir: ./.next, ./public/   # Upload both .next and public directories
 
       - name: SSH to server and start app
         uses: appleboy/ssh-action@v0.1.0
