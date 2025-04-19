@@ -1,4 +1,4 @@
-const getProducts = async (dataview) => {
+const getProducts = async (dataview="all") => {
   let getToken = "C7w%e6G_2Eidkq";
   const authHeader = "Basic " + btoa("user:" + getToken);
   const config = {
