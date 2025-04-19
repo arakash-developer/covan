@@ -337,6 +337,7 @@ const page = ({ params }) => {
                 catagory={category}
                 loading={loading}
                 setLoading={setLoading}
+                category={cat} 
               />
             )}
           </div>
