@@ -7,6 +7,7 @@ import "slick-carousel/slick/slick-theme.css";
 import "slick-carousel/slick/slick.css";
 import getAllProduct from "../utils/getAllProduct";
 import Item from "./Item";
+import getProducts from "../utils/getProducts";
 
 function SampleNextArrow(props) {
   const { className, style, onClick } = props;
@@ -82,8 +83,6 @@ const App = ({ products=[],autoplay=false}) => {
   };
 
   let [allProducts, setAllProduct] = useState([]);
-  
-  
   useEffect(() => {
     if (products.length > 0) {
       setAllProduct(products);
@@ -93,8 +92,9 @@ const App = ({ products=[],autoplay=false}) => {
   }, []);
 
   let getData = async () => {
-    let res = await getAllProduct();
-    setAllProduct(res.products);
+    let res = await getProducts();
+    // console.log(res?.success.data.products.reverse());
+    setAllProduct(res?.success.data.products.reverse());
   };
 
   return (
@@ -105,12 +105,13 @@ const App = ({ products=[],autoplay=false}) => {
           <Slider {...settings}>
             {allProducts?.map((item) => (
               <Item
-                key={item.id}
+                key={item._id}
                 className="w-full px-[30px] lg:px-[15px] 2xl:px-0"
-                Name={item.name}
-                Price={item.price}
-                thumbnail={item.thumbnail}
-                id={item.id}
+                Name={item.title}
+                Price={item.amount}
+                // thumbnail={item.thumbnails}
+                thumbnail={`https://api.seoumi.com/api/v1/frontend/public/images/${item.thumbnails}`} 
+                id={item._id}
                 title={item.title}
               />
             ))}
