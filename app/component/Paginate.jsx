@@ -32,10 +32,8 @@ const Paginate = ({ itemsPerPage, catagory }) => {
   let getdata = async () => {
     setLoading(true);
     let response = await getProducts();
-    let product = response?.success.data.products;
+    let product = response?.success.data.products.reverse();
     console.log(product);
-    
-
     if (catagory) {
       let filpro = product.filter((data) => data.category == catagory);
       setItems(filpro);
