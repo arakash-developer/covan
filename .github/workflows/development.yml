@@ -39,8 +39,7 @@ jobs:
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
           port: ${{ secrets.FTP_PORT || 21 }}
-          local-dir: ./.next  # Upload only the .next directory
-          ftp-args: "--passive-ftp --timeout 600"  # Use passive FTP and increase timeout
+          local-dir: ./.next/  # Upload only the .next directory (note the trailing slash)
 
       # Step 6: Upload public directory to the server via FTP
       - name: Upload public directory via FTP
@@ -50,8 +49,7 @@ jobs:
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
           port: ${{ secrets.FTP_PORT || 21 }}
-          local-dir: ./public  # Upload only the public directory
-          ftp-args: "--passive-ftp --timeout 600"  # Use passive FTP and increase timeout
+          local-dir: ./public/  # Upload only the public directory (note the trailing slash)
 
       # Step 7: SSH into the server and start the app using PM2
       - name: SSH to server and start app
