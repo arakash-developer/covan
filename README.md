@@ -58,4 +58,5 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/bui
 FTP_USERNAME 
 FTP_PORT
 FTP_PASSWORD 
+j
 FTP_HOST 
