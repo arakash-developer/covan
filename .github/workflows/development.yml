@@ -13,43 +13,65 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      # Step 1: Checkout the repository code
       - name: Checkout code
         uses: actions/checkout@v3
 
+      # Step 2: Setup Node.js with version 18
       - name: Setup node.js
         uses: actions/setup-node@v4
         with:
           node-version: "18"
 
+      # Step 3: Install project dependencies
       - name: Install dependencies
         run: npm install
 
+      # Step 4: Build the project (creates .next and other necessary files)
       - name: Build project
         run: npm run build
 
-      - name: Upload files via FTP
+      # Step 5: Upload .next directory to the server
+      - name: Upload .next directory via FTP
         uses: SamKirkland/FTP-Deploy-Action@v4.3.4
         with:
           server: ${{ secrets.FTP_HOST }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
           port: ${{ secrets.FTP_PORT || 21 }}
-          local-dir: ./.next, ./public/   # Upload both .next and public directories
+          local-dir: ./.next  # Upload only the .next directory
 
+      # Step 6: Upload public directory to the server
+      - name: Upload public directory via FTP
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.4
+        with:
+          server: ${{ secrets.FTP_HOST }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          port: ${{ secrets.FTP_PORT || 21 }}
+          local-dir: ./public  # Upload only the public directory
+
+      # Step 7: SSH into the server and start the app using PM2
       - name: SSH to server and start app
         uses: appleboy/ssh-action@v0.1.0
         with:
           host: ${{ secrets.SSH_HOST }}
           username: ${{ secrets.SSH_USERNAME }}
-          password: ${{ secrets.SSH_PASSWORD }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}  # Use private key for authentication
           port: 22
           script: |
             # Navigate to the directory where your app is deployed
             cd /home/username/your_project_directory
 
-            # Install dependencies (if not already done)
+            # Install dependencies on the server (if not already done)
             npm install
 
             # Start the app with PM2 to keep it running
             pm2 start npm --name "next-app" -- start
-            pm2 save # Save the PM2 process list to ensure the app restarts after reboot
+
+            # Save the PM2 process list
+            pm2 save
+
+            # Ensure PM2 restarts the app on system boot (if not already done)
+            pm2 startup
+            pm2 save
