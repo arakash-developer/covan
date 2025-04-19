@@ -13,7 +13,7 @@ const CheckOut = async (data) => {
 
   try {
     const response = await fetch(
-      "https://bcovan.onrender.com/api/v1/backend/order/store",
+      "https://api.seoumi.com/api/v1/backend/order/store",
       config
     );
 

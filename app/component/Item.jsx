@@ -1,5 +1,6 @@
 import Product1 from "@/public/product1.jpg";
 import Image from "next/image";
+import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { FaArrowRightLong, FaRegHeart } from "react-icons/fa6";
 import { HiSearch } from "react-icons/hi";
@@ -17,9 +18,10 @@ const Item = ({
     router.push(`/shop/details/${id}`);
   };
   return (
-    <div
-      className={`product ${className} w-[270px] h-[436px] cursor-pointer`}
-      onClick={handlerClick}
+    <Link 
+    href={`/shop/details/${id}`}
+      className={`product ${className} w-[270px] h-[436px] cursor-pointer inline-block`}
+      // onClick={handlerClick}
     >
       <div className="w-full h-full relative">
         <div className="flex justify-center items-center absolute left-[20px] top-[20px] w-[55px] h-[30px] bg-[#82aa17]">
@@ -69,7 +71,7 @@ const Item = ({
           </h3>
         </div>
       </div>
-    </div>
+    </Link>
   );
 };
 
