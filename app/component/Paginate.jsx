@@ -31,9 +31,9 @@ const Paginate = ({ itemsPerPage, catagory }) => {
 
   let getdata = async () => {
     setLoading(true);
-    let response = await getProducts();
+    let response = await getProducts(itemsPerPage);
     let product = response?.success.data.products.reverse();
-    console.log(product);
+    console.log(response?.success);
     if (catagory) {
       let filpro = product.filter((data) => data.category == catagory);
       setItems(filpro);
@@ -45,7 +45,7 @@ const Paginate = ({ itemsPerPage, catagory }) => {
 
   useEffect(() => {
     getdata();
-  }, [catagory]);
+  }, [catagory,itemsPerPage]);
 
   const [itemOffset, setItemOffset] = useState(0);
 
