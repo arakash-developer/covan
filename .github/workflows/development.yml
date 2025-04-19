@@ -46,4 +46,4 @@ jobs:
           password: ${{ secrets.FTP_PASSWORD }}
           port: ${{ secrets.FTP_PORT || 21 }}
           # local-dir: ./dist/
-          local-dir: ./public, ./.next   # Include both public and .next
+          local-dir: ./public, ./.next/  # Include both public and .next
