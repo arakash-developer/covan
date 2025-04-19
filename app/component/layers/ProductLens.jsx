@@ -1,8 +1,4 @@
 "use client";
-import Preview1 from "@/public/preview1.png";
-import Preview2 from "@/public/preview2.png";
-import Preview3 from "@/public/preview3.png";
-import Preview4 from "@/public/preview4.png";
 import { Image } from "antd";
 import { useState } from "react";
 import { FaArrowRightLong } from "react-icons/fa6";
@@ -11,7 +7,7 @@ import "slick-carousel/slick/slick-theme.css";
 import "slick-carousel/slick/slick.css";
 
 function SampleNextArrow(props) {
-  const { className, style, onClick } = props;
+  const { onClick } = props;
   return (
     <div
       className="rightarrow absolute right-0 md:right-[-80px] top-1/2 -translate-y-1/2 cursor-pointer w-10 h-10 hover:bg-[#e7b053] border border-[#ccc] hover:border-[#e7b053] hidden md:flex justify-center items-center group"
@@ -22,22 +18,19 @@ function SampleNextArrow(props) {
   );
 }
 
-// function SamplePrevArrow(props) {
-//   const { className, style, onClick } = props;
-//   return (
-//     <div
-//       className="leftarrow absolute right-[80px] -top-10 2xl:right-full z-[99999] 2xl:top-1/2 2xl:-translate-y-1/2 cursor-pointer
-//       w-10 h-10 hover:bg-[#e7b053] border border-[#ccc] hover:border-[#e7b053] flex justify-center items-center group"
-//       onClick={onClick}
-//     >
-//       <FaArrowLeftLong className="text-[#ccc] text-[20px] group-hover:text-[#fff] inline-block" />
-//     </div>
-//   );
-// }
-const ProductLens = ({
-  imageArray = [Preview1, Preview2, Preview3, Preview4],
-}) => {
-  var settings = {
+const ProductLens = ({ imageArray }) => {
+  // Convert imageURL into full src path
+  let imageArrays = imageArray?.map((item) => ({
+    id: item.id,
+    src: `http://api.seoumi.com/api/v1/frontend/public/images/${item.imageURL}`,
+  }));
+
+  let [productImage, setProductImage] = useState(0);
+  const handlerPicture = (index = 0) => () => {
+    setProductImage(index);
+  };
+
+  const settings = {
     arrows: true,
     dots: false,
     infinite: true,
@@ -49,49 +42,33 @@ const ProductLens = ({
     initialSlide: 0,
     nextArrow: <SampleNextArrow />,
   };
-  let [product, setProduct] = useState([]);
-  console.log(imageArray[0].imageURL);
-  let [productImage, setProductImage] = useState(0);
-  let handlerPicture =
-    (index = 0) =>
-    () => {
-      setProductImage(index);
-    };
 
   return (
     <div className="productLens w-full">
       <div className="w-full h-full lg:w-[650px] flex justify-center items-center bg-[#F6F6F6]">
         <Image
-          className="w-full lg:w-[650px] h-[650px] "
-          src={imageArray[productImage].src}
-          alt={product.title}
+          className="w-full lg:w-[650px] h-[650px]"
+          src={imageArrays?.[productImage]?.src}
+          alt={`Product ${imageArrays?.[productImage]?.id}`}
         />
       </div>
-      {imageArray?.length >= 3 ? (
+
+      {imageArrays?.length >= 3 ? (
         <div className="suggetion w-full mt-5 cursor-pointer">
           <Slider
             {...settings}
             className="h-[150px] w-full flex relative left-4"
           >
-            {imageArray?.map((item, index) => {
-              console.log(item.imageURL);
-              
-              return (
-                <Image
-                  // onClick={() => {
-                  //   if (index >= 0 && index < imageArray.length) {
-                  //     handlerPicture(index)();
-                  //   }
-                  // }}
-                  key={index}
-                  preview={false}
-                  className="sug_image w-[150px] h-[150px] border  border-transparent bg-[#F6F6F6] hover:border-[#e7b053]"
-                  // src={`http://api.seoumi.com/api/v1/frontend/public/images/${item.imageURL}`}
-                  src="https://images.unsplash.com/photo-1596462502278-27bfdc403348?q=80&w=2080&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                  height={150}
-                />
-              );
-            })}
+            {imageArrays.map((item, index) => (
+              <Image
+                onClick={handlerPicture(index)}
+                key={item.id}
+                preview={false}
+                className="sug_image w-[150px] h-[150px] border border-transparent bg-[#F6F6F6] hover:border-[#e7b053]"
+                src={item.src}
+                height={150}
+              />
+            ))}
           </Slider>
         </div>
       ) : (
