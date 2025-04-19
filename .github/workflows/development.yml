@@ -1,0 +1,48 @@
+name: Deployment to CP
+on:
+  push:
+    branches:
+      - production
+  pull_request:
+    branches:
+      - production
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    # environment:
+    #   name: Production
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Setup node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "18"
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build project
+        run: npm run build
+
+      # - name: Deploying to cPanel
+      #   uses: SamKirkland/FTP-Deploy-Action@4.1.0
+      #   with:
+      #     server: ${{ secrets.CPANEL_SERVER }}
+      #     username: ${{ secrets.CPANEL_USERNAME }}
+      #     password: ${{ secrets.CPANEL_PASSWORD }}
+      #     local-dir: ./dist
+      #     server-dir: /home/username/public_html/your_project_directory
+      #     protocol: ftp
+      #     port: 21
+      #     git-ftp-args: --insecure --remote-root /home/username/public_html/your_project_directory
+      - name: Upload files via FTP
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.4
+        with:
+          server: ${{ secrets.FTP_HOST }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          port: ${{ secrets.FTP_PORT || 21 }}
+          local-dir: ./dist/
