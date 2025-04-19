@@ -1,4 +1,5 @@
 name: Deployment to CP
+
 on:
   push:
     branches:
@@ -10,8 +11,7 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    # environment:
-    #   name: Production
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
@@ -27,17 +27,6 @@ jobs:
       - name: Build project
         run: npm run build
 
-      # - name: Deploying to cPanel
-      #   uses: SamKirkland/FTP-Deploy-Action@4.1.0
-      #   with:
-      #     server: ${{ secrets.CPANEL_SERVER }}
-      #     username: ${{ secrets.CPANEL_USERNAME }}
-      #     password: ${{ secrets.CPANEL_PASSWORD }}
-      #     local-dir: ./dist
-      #     server-dir: /home/username/public_html/your_project_directory
-      #     protocol: ftp
-      #     port: 21
-      #     git-ftp-args: --insecure --remote-root /home/username/public_html/your_project_directory
       - name: Upload files via FTP
         uses: SamKirkland/FTP-Deploy-Action@v4.3.4
         with:
@@ -45,5 +34,22 @@ jobs:
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
           port: ${{ secrets.FTP_PORT || 21 }}
-          # local-dir: ./dist/
-          local-dir: ./.next/  # Include both public and .next
+          local-dir: ./.next, ./public   # Upload both .next and public directories
+
+      - name: SSH to server and start app
+        uses: appleboy/ssh-action@v0.1.0
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USERNAME }}
+          password: ${{ secrets.SSH_PASSWORD }}
+          port: 22
+          script: |
+            # Navigate to the directory where your app is deployed
+            cd /home/username/your_project_directory
+
+            # Install dependencies (if not already done)
+            npm install
+
+            # Start the app with PM2 to keep it running
+            pm2 start npm --name "next-app" -- start
+            pm2 save # Save the PM2 process list to ensure the app restarts after reboot
