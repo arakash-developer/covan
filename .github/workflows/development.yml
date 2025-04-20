@@ -4,9 +4,6 @@ on:
   push:
     branches:
       - main
-  pull_request:
-    branches:
-      - main
 
 jobs:
   deploy:
@@ -27,24 +24,28 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      # Step 4: Build the project
+      # Step 4: Build project
       - name: Build project
         run: npm run build
 
-      # Step 5: Deploy via FTP (excluding node_modules)
-      - name: Upload project via FTP (excluding node_modules)
+      # Step 5: Upload entire project excluding unnecessary files
+      - name: Upload project via FTP
         uses: SamKirkland/FTP-Deploy-Action@v4.3.4
         with:
           server: ${{ secrets.FTP_HOST }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
           port: ${{ secrets.FTP_PORT || 21 }}
-          local-dir: ./  # Upload everything from current folder
-          server-dir: /path/on/server/  # Update with your actual target path
+          local-dir: ./  # Upload from root
+          server-dir: /your/server/path/  # Change this to your actual path
           exclude: |
             **/node_modules/**
             **/.git/**
             **/.github/**
+            **/.vscode/**
+            **/.env
             **/README.md
             **/package-lock.json
-            **/.env
+            **/.next/cache/**
+          log-level: verbose
+          timeout: 600
