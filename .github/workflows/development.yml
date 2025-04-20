@@ -1,4 +1,4 @@
-name: Deploy to Server (via FTP + SSH)
+name: Deploy via SSH + SCP (no FTP)
 
 on:
   push:
@@ -10,8 +10,8 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # 1. Checkout the code
-      - name: Checkout repository
+      # 1. Checkout the repository
+      - name: Checkout code
         uses: actions/checkout@v3
 
       # 2. Setup Node.js
@@ -20,37 +20,33 @@ jobs:
         with:
           node-version: "18"
 
-      # 3. Install and Build
-      - name: Install dependencies and build
+      # 3. Install and build
+      - name: Install and build
         run: |
           npm install
           npm run build
 
-      # 4. Prepare deployment folder
-      - name: Create deployment folder and zip
+      # 4. Create deployable ZIP
+      - name: Prepare ZIP for deployment
         run: |
           mkdir deploy
           cp -r .next package.json public deploy/
-          # only copy next.config.js if it exists
           if [ -f next.config.js ]; then cp next.config.js deploy/; fi
           cd deploy
           zip -r deploy.zip .
 
-      # 5. Upload zipped project via FTP
-      - name: Upload zipped build via FTP
-        uses: SamKirkland/FTP-Deploy-Action@v4.3.4
+      # 5. Upload ZIP to server via SCP
+      - name: Upload deploy.zip via SCP
+        uses: appleboy/scp-action@master
         with:
-          server: ${{ secrets.FTP_HOST }}
-          username: ${{ secrets.FTP_USERNAME }}
-          password: ${{ secrets.FTP_PASSWORD }}
-          local-dir: ./deploy/
-          server-dir: /home/username/app-deploy/  # 🔁 change this to your server path
-          exclude: |
-            **/node_modules/**
-          timeout: 600
-          log-level: verbose
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USERNAME }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          port: 22
+          source: "deploy/deploy.zip"
+          target: "/home/username/app-deploy/"  # 🔁 change this path to match your server
 
-      # 6. SSH to server and deploy
+      # 6. SSH to server and unzip + start PM2
       - name: SSH and deploy on server
         uses: appleboy/ssh-action@v0.1.0
         with:
@@ -59,7 +55,7 @@ jobs:
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           port: 22
           script: |
-            cd /home/username/app-deploy
+            cd /home/username/app-deploy  # 🔁 make sure this matches the above
             unzip -o deploy.zip
             npm install
             pm2 delete next-app || true
