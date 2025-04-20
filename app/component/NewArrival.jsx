@@ -104,7 +104,7 @@ const App = ({ products = [], autoplay = false }) => {
     <>
       {loading ? (
         <div className="flex items-center justify-center h-[300px]">
-          <ScaleLoader color={"#36d7b7"} loading={loading} />
+          <ScaleLoader color={"#e7b053"} loading={loading} />
         </div>
       ) : (
         <div className="arrivals">
