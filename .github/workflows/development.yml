@@ -1,4 +1,4 @@
-name: Deploy to CP
+name: Deploy to Server
 
 on:
   push:
@@ -10,58 +10,55 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # Step 1: Checkout repository
-      - name: Checkout code
+      # 1. Checkout
+      - name: Checkout repository
         uses: actions/checkout@v3
 
-      # Step 2: Setup Node.js
+      # 2. Setup Node.js
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: "18"
 
-      # Step 3: Install dependencies
-      - name: Install dependencies
-        run: npm install
+      # 3. Install and Build
+      - name: Install and Build
+        run: |
+          npm install
+          npm run build
 
-      # Step 4: Build Next.js project
-      - name: Build project
-        run: npm run build
+      # 4. Zip build
+      - name: Zip the project
+        run: |
+          mkdir deploy
+          cp -r .next package.json public next.config.js deploy/
+          cd deploy
+          zip -r deploy.zip .
 
-      # Step 5: Upload project excluding .next and node_modules
-      - name: Upload app files (excluding .next and node_modules)
+      # 5. Upload the zip file via FTP
+      - name: Upload zipped project via FTP
         uses: SamKirkland/FTP-Deploy-Action@v4.3.4
         with:
           server: ${{ secrets.FTP_HOST }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
-          port: ${{ secrets.FTP_PORT || 21 }}
-          local-dir: ./
-          server-dir: /your/server/path/
+          local-dir: ./deploy/
+          server-dir: /home/username/app-deploy/  # Change to your actual path
           exclude: |
             **/node_modules/**
-            **/.next/**
-            **/.git/**
-            **/.github/**
-            **/.vscode/**
-            **/.env
-            **/README.md
-            **/package-lock.json
-          timeout: 900
-          log-level: verbose
+          timeout: 600
 
-      # Step 6: Upload .next folder separately, excluding cache
-      - name: Upload .next folder (build output)
-        uses: SamKirkland/FTP-Deploy-Action@v4.3.4
+      # 6. SSH in and unzip
+      - name: SSH and Deploy on Server
+        uses: appleboy/ssh-action@v0.1.0
         with:
-          server: ${{ secrets.FTP_HOST }}
-          username: ${{ secrets.FTP_USERNAME }}
-          password: ${{ secrets.FTP_PASSWORD }}
-          port: ${{ secrets.FTP_PORT || 21 }}
-          local-dir: .next/
-          server-dir: /
-          exclude: |
-            **/cache/**
-            **/webpack/**
-          timeout: 900
-          log-level: verbose
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USERNAME }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          port: 22
+          script: |
+            cd /home/username/app-deploy
+            unzip -o deploy.zip
+            npm install
+            pm2 delete next-app || true
+            pm2 start npm --name "next-app" -- start
+            pm2 save
