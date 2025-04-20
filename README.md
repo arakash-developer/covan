@@ -12,7 +12,7 @@ yarn devnn
 pnpm devsss
 # orj
 bun dev
-```bbvv
+```bbvvv
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
