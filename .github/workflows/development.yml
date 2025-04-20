@@ -42,7 +42,7 @@ jobs:
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
           local-dir: ./deploy/
-          server-dir: /home/username/app-deploy/  # Change to your actual path
+          server-dir: /
           exclude: |
             **/node_modules/**
           timeout: 600
