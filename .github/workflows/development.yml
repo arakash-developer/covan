@@ -1,4 +1,4 @@
-name: Deployment to CP
+name: Deploy to CP
 
 on:
   push:
@@ -9,69 +9,42 @@ on:
       - main
 
 jobs:
-  build:
+  deploy:
     runs-on: ubuntu-latest
 
     steps:
-      # Step 1: Checkout the repository code
+      # Step 1: Checkout code
       - name: Checkout code
         uses: actions/checkout@v3
 
-      # Step 2: Setup Node.js with version 18
-      - name: Setup node.js
+      # Step 2: Setup Node.js
+      - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: "18"
 
-      # Step 3: Install project dependencies
+      # Step 3: Install dependencies
       - name: Install dependencies
         run: npm install
 
-      # Step 4: Build the project (creates .next and other necessary files)
+      # Step 4: Build the project
       - name: Build project
         run: npm run build
 
-      # Step 5: Upload .next directory to the server via FTP
-      - name: Upload .next directory via FTP
+      # Step 5: Deploy via FTP (excluding node_modules)
+      - name: Upload project via FTP (excluding node_modules)
         uses: SamKirkland/FTP-Deploy-Action@v4.3.4
         with:
           server: ${{ secrets.FTP_HOST }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
           port: ${{ secrets.FTP_PORT || 21 }}
-          local-dir: ./.next/  # Upload only the .next directory (note the trailing slash)
-
-      # Step 6: Upload public directory to the server via FTP
-      - name: Upload public directory via FTP
-        uses: SamKirkland/FTP-Deploy-Action@v4.3.4
-        with:
-          server: ${{ secrets.FTP_HOST }}
-          username: ${{ secrets.FTP_USERNAME }}
-          password: ${{ secrets.FTP_PASSWORD }}
-          port: ${{ secrets.FTP_PORT || 21 }}
-          local-dir: ./public/  # Upload only the public directory (note the trailing slash)
-
-      # Step 7: SSH into the server and start the app using PM2
-      - name: SSH to server and start app
-        uses: appleboy/ssh-action@v0.1.0
-        with:
-          host: ${{ secrets.SSH_HOST }}
-          username: ${{ secrets.SSH_USERNAME }}
-          key: ${{ secrets.SSH_PRIVATE_KEY }}  # Use private key for authentication
-          port: 22
-          script: |
-            # Navigate to the directory where your app is deployed
-            cd /home/username/your_project_directory
-
-            # Install dependencies on the server (if not already done)
-            npm install
-
-            # Start the app with PM2 to keep it running
-            pm2 start npm --name "next-app" -- start
-
-            # Save the PM2 process list
-            pm2 save
-
-            # Ensure PM2 restarts the app on system boot (if not already done)
-            pm2 startup
-            pm2 save
+          local-dir: ./  # Upload everything from current folder
+          server-dir: /path/on/server/  # Update with your actual target path
+          exclude: |
+            **/node_modules/**
+            **/.git/**
+            **/.github/**
+            **/README.md
+            **/package-lock.json
+            **/.env
