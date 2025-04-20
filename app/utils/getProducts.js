@@ -8,8 +8,7 @@ const getProducts = async (dataview=99999999,page=1) => {
     },
   };
   const response = await fetch(
-    // `https://api.seoumi.com/api/v1/frontend/product/all?dataview=${dataview}&page=${page}`,
-    `https://api.seoumi.com/api/v1/frontend/product/newarrival`,
+    `https://api.seoumi.com/api/v1/frontend/product/all?dataview=${dataview}&page=${page}`,
     config
   );
   if (!response.ok) {

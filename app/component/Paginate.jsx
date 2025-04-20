@@ -48,7 +48,6 @@ const Paginate = ({ itemsPerPage, catagory }) => {
   useEffect(() => {
     getdata();
   }, [catagory,itemsPerPage]);
-
   const [itemOffset, setItemOffset] = useState(0);
 
   // Simulate fetching items from another resources.
