@@ -1,4 +1,4 @@
-name: Deploy to Server
+name: Deploy to Server (via FTP + SSH)
 
 on:
   push:
@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # 1. Checkout
+      # 1. Checkout the code
       - name: Checkout repository
         uses: actions/checkout@v3
 
@@ -21,34 +21,37 @@ jobs:
           node-version: "18"
 
       # 3. Install and Build
-      - name: Install and Build
+      - name: Install dependencies and build
         run: |
           npm install
           npm run build
 
-      # 4. Zip build
-      - name: Zip the project
+      # 4. Prepare deployment folder
+      - name: Create deployment folder and zip
         run: |
           mkdir deploy
-          cp -r .next package.json public next.config.js deploy/
+          cp -r .next package.json public deploy/
+          # only copy next.config.js if it exists
+          if [ -f next.config.js ]; then cp next.config.js deploy/; fi
           cd deploy
           zip -r deploy.zip .
 
-      # 5. Upload the zip file via FTP
-      - name: Upload zipped project via FTP
+      # 5. Upload zipped project via FTP
+      - name: Upload zipped build via FTP
         uses: SamKirkland/FTP-Deploy-Action@v4.3.4
         with:
           server: ${{ secrets.FTP_HOST }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
           local-dir: ./deploy/
-          server-dir: /
+          server-dir: /home/username/app-deploy/  # 🔁 change this to your server path
           exclude: |
             **/node_modules/**
           timeout: 600
+          log-level: verbose
 
-      # 6. SSH in and unzip
-      - name: SSH and Deploy on Server
+      # 6. SSH to server and deploy
+      - name: SSH and deploy on server
         uses: appleboy/ssh-action@v0.1.0
         with:
           host: ${{ secrets.SSH_HOST }}
