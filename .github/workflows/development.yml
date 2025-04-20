@@ -55,7 +55,7 @@ jobs:
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           port: 22
           script: |
-            cd /home/username/app-deploy  # 🔁 make sure this matches the above
+            cd /
             unzip -o deploy.zip
             npm install
             pm2 delete next-app || true
