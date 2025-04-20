@@ -1,4 +1,4 @@
-name: Deploy via SSH + SCP (no FTP)
+name: Full Project FTP Deploy (Long Timeout)
 
 on:
   push:
@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # 1. Checkout the repository
+      # 1. Checkout project
       - name: Checkout code
         uses: actions/checkout@v3
 
@@ -20,44 +20,30 @@ jobs:
         with:
           node-version: "18"
 
-      # 3. Install and build
-      - name: Install and build
+      # 3. Install and Build (for generating .next folder)
+      - name: Install and Build
         run: |
           npm install
           npm run build
 
-      # 4. Create deployable ZIP
-      - name: Prepare ZIP for deployment
-        run: |
-          mkdir deploy
-          cp -r .next package.json public deploy/
-          if [ -f next.config.js ]; then cp next.config.js deploy/; fi
-          cd deploy
-          zip -r deploy.zip .
-
-      # 5. Upload ZIP to server via SCP
-      - name: Upload deploy.zip via SCP
-        uses: appleboy/scp-action@master
+      # 4. Upload everything except node_modules, git & dev files
+      - name: Upload full project via FTP (no node_modules)
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.4
         with:
-          host: ${{ secrets.SSH_HOST }}
-          username: ${{ secrets.SSH_USERNAME }}
-          key: ${{ secrets.SSH_PRIVATE_KEY }}
-          port: 22
-          source: "deploy/deploy.zip"
-          target: "/home/username/app-deploy/"  # 🔁 change this path to match your server
-
-      # 6. SSH to server and unzip + start PM2
-      - name: SSH and deploy on server
-        uses: appleboy/ssh-action@v0.1.0
-        with:
-          host: ${{ secrets.SSH_HOST }}
-          username: ${{ secrets.SSH_USERNAME }}
-          key: ${{ secrets.SSH_PRIVATE_KEY }}
-          port: 22
-          script: |
-            cd /
-            unzip -o deploy.zip
-            npm install
-            pm2 delete next-app || true
-            pm2 start npm --name "next-app" -- start
-            pm2 save
+          server: ${{ secrets.FTP_HOST }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          port: ${{ secrets.FTP_PORT || 21 }}
+          local-dir: ./  # Project root
+         
+          exclude: |
+            **/node_modules/**
+            **/.git/**
+            **/.gitignore
+            **/.github/**
+            **/.vscode/**
+            **/.env
+            **/README.md
+            **/package-lock.json
+          timeout: 3600  # 1 hour timeout (max allowed for FTP servers)
+          log-level: minimal
