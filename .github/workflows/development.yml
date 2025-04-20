@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # Step 1: Checkout code
+      # Step 1: Checkout repository
       - name: Checkout code
         uses: actions/checkout@v3
 
@@ -24,28 +24,44 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      # Step 4: Build project
+      # Step 4: Build Next.js project
       - name: Build project
         run: npm run build
 
-      # Step 5: Upload entire project excluding unnecessary files
-      - name: Upload project via FTP
+      # Step 5: Upload project excluding .next and node_modules
+      - name: Upload app files (excluding .next and node_modules)
         uses: SamKirkland/FTP-Deploy-Action@v4.3.4
         with:
           server: ${{ secrets.FTP_HOST }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
           port: ${{ secrets.FTP_PORT || 21 }}
-          local-dir: ./  # Upload from root
-          server-dir: /your/server/path/  # Change this to your actual path
+          local-dir: ./
+          server-dir: /your/server/path/
           exclude: |
             **/node_modules/**
+            **/.next/**
             **/.git/**
             **/.github/**
             **/.vscode/**
             **/.env
             **/README.md
             **/package-lock.json
-            **/.next/cache/**
+          timeout: 900
           log-level: verbose
-          timeout: 600
+
+      # Step 6: Upload .next folder separately, excluding cache
+      - name: Upload .next folder (build output)
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.4
+        with:
+          server: ${{ secrets.FTP_HOST }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          port: ${{ secrets.FTP_PORT || 21 }}
+          local-dir: .next/
+          server-dir: /your/server/path/.next/
+          exclude: |
+            **/cache/**
+            **/webpack/**
+          timeout: 900
+          log-level: verbose
