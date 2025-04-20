@@ -8,6 +8,8 @@ import "slick-carousel/slick/slick.css";
 import getAllProduct from "../utils/getAllProduct";
 import Item from "./Item";
 import getProducts from "../utils/getProducts";
+import newArrival from "../utils/newArrival";
+import { ScaleLoader } from "react-spinners";
 
 function SampleNextArrow(props) {
   const { className, style, onClick } = props;
@@ -34,7 +36,7 @@ function SamplePrevArrow(props) {
   );
 }
 
-const App = ({ products=[],autoplay=false}) => {
+const App = ({ products = [], autoplay = false }) => {
   var settings = {
     arrows: true,
     dots: false,
@@ -83,6 +85,7 @@ const App = ({ products=[],autoplay=false}) => {
   };
 
   let [allProducts, setAllProduct] = useState([]);
+  let [loading, setLoading] = useState(false);
   useEffect(() => {
     if (products.length > 0) {
       setAllProduct(products);
@@ -92,32 +95,37 @@ const App = ({ products=[],autoplay=false}) => {
   }, []);
 
   let getData = async () => {
-    let res = await getProducts();
-    console.log("result",res?.success.data.products.reverse());
+    setLoading(true);
+    let res = await newArrival();
     setAllProduct(res?.success.data.products.reverse());
+    setLoading(false);
   };
-
   return (
     <>
-      <div className="arrivals">
-        {/* <Container className="mb-8 bg-fuchsia-600">App</Container> */}
-        <Container className="max-w-[1296px]">
-          <Slider {...settings}>
-            {allProducts?.map((item) => (
-              <Item
-                key={item._id}
-                className="w-full px-[30px] lg:px-[15px] 2xl:px-0"
-                Name={item.title}
-                Price={item.amount}
-                // thumbnail={item.thumbnails}
-                thumbnail={`https://api.seoumi.com/api/v1/frontend/public/images/${item.thumbnails}`} 
-                id={item._id}
-                title={item.title}
-              />
-            ))}
-          </Slider>
-        </Container>
-      </div>
+      {loading ? (
+        <div className="flex items-center justify-center h-[300px]">
+          <ScaleLoader color={"#36d7b7"} loading={loading} />
+        </div>
+      ) : (
+        <div className="arrivals">
+          <Container className="max-w-[1296px]">
+            <Slider {...settings}>
+              {allProducts?.map((item) => (
+                <Item
+                  key={item._id}
+                  className="w-full px-[30px] lg:px-[15px] 2xl:px-0"
+                  Name={item.title}
+                  Price={item.amount}
+                  // thumbnail={item.thumbnails}
+                  thumbnail={`https://api.seoumi.com/api/v1/frontend/public/images/${item.thumbnails}`}
+                  id={item._id}
+                  title={item.title}
+                />
+              ))}
+            </Slider>
+          </Container>
+        </div>
+      )}
     </>
   );
 };
