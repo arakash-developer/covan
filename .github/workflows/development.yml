@@ -59,7 +59,7 @@ jobs:
           password: ${{ secrets.FTP_PASSWORD }}
           port: ${{ secrets.FTP_PORT || 21 }}
           local-dir: .next/
-          server-dir: /your/server/path/.next/
+          server-dir: /
           exclude: |
             **/cache/**
             **/webpack/**
