@@ -32,7 +32,7 @@ const Paginate = ({ itemsPerPage, catagory }) => {
   let getdata = async () => {
     setLoading(true);
     let response = await getProducts();
-    console.log("response", response);
+    // console.log("response", response);
     
     let product = response?.success.data.products.reverse();
     // console.log(response?.success);

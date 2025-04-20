@@ -93,7 +93,7 @@ const App = ({ products=[],autoplay=false}) => {
 
   let getData = async () => {
     let res = await getProducts();
-    // console.log(res?.success.data.products.reverse());
+    console.log("result",res?.success.data.products.reverse());
     setAllProduct(res?.success.data.products.reverse());
   };
 
