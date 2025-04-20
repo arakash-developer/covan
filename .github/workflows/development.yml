@@ -1,66 +1,66 @@
-name: Deploy via SCP and SSH (No FTP)
+# name: Deploy via SCP and SSH (No FTP)
 
-on:
-  push:
-    branches:
-      - main
+# on:
+#   push:
+#     branches:
+#       - main
 
-jobs:
-  deploy:
-    runs-on: ubuntu-latest
+# jobs:
+#   deploy:
+#     runs-on: ubuntu-latest
 
-    steps:
-      # 1. Checkout the code
-      - name: Checkout repository
-        uses: actions/checkout@v3
+#     steps:
+#       # 1. Checkout the code
+#       - name: Checkout repository
+#         uses: actions/checkout@v3
 
-      # 2. Setup Node.js
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: "18"
+#       # 2. Setup Node.js
+#       - name: Setup Node.js
+#         uses: actions/setup-node@v4
+#         with:
+#           node-version: "18"
 
-      # 3. Install and Build Project
-      - name: Install dependencies and build
-        run: |
-          npm install
-          npm run build
+#       # 3. Install and Build Project
+#       - name: Install dependencies and build
+#         run: |
+#           npm install
+#           npm run build
 
-      # 4. Create deployable ZIP
-      - name: Zip the full project
-        run: |
-          mkdir deploy
-          cp -r .next public package.json deploy/
-          if [ -d app ]; then cp -r app deploy/; fi
-          if [ -d pages ]; then cp -r pages deploy/; fi
-          if [ -d components ]; then cp -r components deploy/; fi
-          if [ -f next.config.js ]; then cp next.config.js deploy/; fi
-          cd deploy
-          zip -r deploy.zip .
+#       # 4. Create deployable ZIP
+#       - name: Zip the full project
+#         run: |
+#           mkdir deploy
+#           cp -r .next public package.json deploy/
+#           if [ -d app ]; then cp -r app deploy/; fi
+#           if [ -d pages ]; then cp -r pages deploy/; fi
+#           if [ -d components ]; then cp -r components deploy/; fi
+#           if [ -f next.config.js ]; then cp next.config.js deploy/; fi
+#           cd deploy
+#           zip -r deploy.zip .
 
-      # 5. Upload ZIP via SCP
-      - name: Upload project to server via SCP
-        uses: appleboy/scp-action@master
-        with:
-          host: ${{ secrets.SSH_HOST }}
-          username: ${{ secrets.SSH_USERNAME }}
-          key: ${{ secrets.SSH_PRIVATE_KEY }}
-          port: 22
-          source: "deploy/deploy.zip"
-          target: "/"
+#       # 5. Upload ZIP via SCP
+#       - name: Upload project to server via SCP
+#         uses: appleboy/scp-action@master
+#         with:
+#           host: ${{ secrets.SSH_HOST }}
+#           username: ${{ secrets.SSH_USERNAME }}
+#           key: ${{ secrets.SSH_PRIVATE_KEY }}
+#           port: 22
+#           source: "deploy/deploy.zip"
+#           target: "/"
 
-      # 6. SSH into server to unzip and deploy
-      - name: SSH into server and deploy
-        uses: appleboy/ssh-action@v0.1.0
-        with:
-          host: ${{ secrets.SSH_HOST }}
-          username: ${{ secrets.SSH_USERNAME }}
-          key: ${{ secrets.SSH_PRIVATE_KEY }}
-          port: 22
-          script: |
-            cd /home/username/app-deploy
-            unzip -o deploy.zip
-            npm install
-            pm2 delete next-app || true
-            pm2 start npm --name "next-app" -- start
-            pm2 save
+#       # 6. SSH into server to unzip and deploy
+#       - name: SSH into server and deploy
+#         uses: appleboy/ssh-action@v0.1.0
+#         with:
+#           host: ${{ secrets.SSH_HOST }}
+#           username: ${{ secrets.SSH_USERNAME }}
+#           key: ${{ secrets.SSH_PRIVATE_KEY }}
+#           port: 22
+#           script: |
+#             cd /home/username/app-deploy
+#             unzip -o deploy.zip
+#             npm install
+#             pm2 delete next-app || true
+#             pm2 start npm --name "next-app" -- start
+#             pm2 save
