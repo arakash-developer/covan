@@ -41,6 +41,10 @@ const page = async ({ params }) => {
   let category = product.category;
   let res = await getAllProduct();
   let allProduct = res.products;
+  console.log(product1);
+  
+ 
+  
   let filterProducts = allProduct.filter((data) => data.category == category);
 
   return (
@@ -118,15 +122,15 @@ const page = async ({ params }) => {
               <div className="pt-[13px] pb-[14px] border-b border-solid  flex items-center gap-1 font-normal text-sm leading-[175%] capitalize ">
                 Categories :
                 <p className="text-[#666666]">
-                  {product.category ? product.category : null}
+                  {product1.categoryId ? product1.categoryId.categoryName : null},
                 </p>
               </div>
               <div className="pt-[13px] pb-[14px] border-b border-solid  flex items-center gap-1 font-normal text-sm leading-[175%] capitalize ">
                 Tags :
                 <div className="flex items-center gap-1 flex-wrap">
-                  {product.tags?.map((tag, index) => (
-                    <p className="text-[#666666]" key={index}>
-                      {tag}
+                  {product1.tagId?.map((tag) => (
+                    <p className="text-[#666666]" key={tag.id}>
+                      {tag.tagName},
                     </p>
                   ))}
                 </div>
