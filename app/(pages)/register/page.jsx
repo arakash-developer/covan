@@ -101,7 +101,7 @@ const Register = () => {
             name="password"
             value={formData.password}
             onChange={handleChange}
-            className="w-[35.63rem] h-9 border border-[#ddd] placeholder:px-2 pl-4 pr-4 outline-none"
+            className="h-9 border border-[#ddd] placeholder:px-2 pl-4 pr-4 outline-none"
           />
           {errors.password && (
             <p className="text-red-500 text-xs">{errors.password}</p>
