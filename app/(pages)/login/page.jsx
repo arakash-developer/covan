@@ -65,7 +65,7 @@ const Login = () => {
       </h2>
       <form
         action=""
-        className="mt-2 flex flex-col gap-y-4 max-w-[570px]"
+        className="mt-2 flex flex-col gap-y-4 md:w-[570px] w-full"  
         onSubmit={handleSubmit}
       >
         <div className="flex flex-col gap-2">
@@ -81,7 +81,7 @@ const Login = () => {
             name="username"
             value={formData.username}
             onChange={handleChange}
-            className="w-[35.63rem] h-9 border border-[#ddd] placeholder:px-2 pl-4 pr-4 outline-none"
+            className="w-full h-9 border border-[#ddd] placeholder:px-2 pl-4 pr-4 outline-none"
           />
           {errors.username && (
             <p className="text-red-500 text-xs">{errors.username}</p>
@@ -101,7 +101,7 @@ const Login = () => {
             name="password"
             value={formData.password}
             onChange={handleChange}
-            className="w-[35.63rem] h-9 border border-[#ddd] placeholder:px-2 pl-4 pr-4 outline-none"
+            className="h-9 border border-[#ddd] placeholder:px-2 pl-4 pr-4 outline-none"
           />
           {errors.password && (
             <p className="text-red-500 text-xs">{errors.password}</p>

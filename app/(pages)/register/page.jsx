@@ -81,7 +81,7 @@ const Register = () => {
             name="username"
             value={formData.username}
             onChange={handleChange}
-            className="w-[35.63rem] h-9 border border-[#ddd] placeholder:px-2 pl-4 pr-4 outline-none"
+            className="h-9 border border-[#ddd] placeholder:px-2 pl-4 pr-4 outline-none"
           />
           {errors.username && (
             <p className="text-red-500 text-xs">{errors.username}</p>
