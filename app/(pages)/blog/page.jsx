@@ -1,11 +1,12 @@
 "use client";
+import BlogPaginate from "@/app/component/BlogPaginate";
 import Product5 from "@/public/image27.jpg";
 import { Prata } from "next/font/google";
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 import { AiOutlineSearch } from "react-icons/ai";
-import { FaAngleRight, FaCommentDots, FaRegEdit } from "react-icons/fa";
+import { FaAngleRight, FaCommentDots } from "react-icons/fa";
 import { MdAccessTime } from "react-icons/md";
 import Container from "../../component/Container";
 
@@ -61,6 +62,7 @@ const page = () => {
                   <AiOutlineSearch className="font-normal text-lg leading-[250%] text-center text-[#fff]" />
                 </div>
               </div>
+              <BlogPaginate />
               <div className="w-full flex flex-col gap-[80px]">
                 {Products.map((product, index) => (
                   <div className="w-full" key={index}>
@@ -72,7 +74,9 @@ const page = () => {
                       />
                     </div>
                     <div className="mt-5">
-                      <h2 className={`font-normal text-[2.06rem] leading-[130%] capitalize text-[#080808] ${Pratafont.className}`}>
+                      <h2
+                        className={`font-normal text-[2.06rem] leading-[130%] capitalize text-[#080808] ${Pratafont.className}`}
+                      >
                         Traveling Solo Is Awesome
                       </h2>
                       <div className="flex items-center sm:gap-[50px] gap-2 mt-2 mb-5">

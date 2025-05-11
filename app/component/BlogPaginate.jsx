@@ -1,54 +1,49 @@
 "use client";
-import Preview1 from "@/public/preview1.png";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import ReactPaginate from "react-paginate";
-import getProducts from "../utils/getProducts";
-import Item from "./Item";
+import BlogItems from "./layers/BlogItems";
 function Items({ currentItems }) {
   return (
     <>
-      <div className="grid justify-between grid-cols-1 xsm:grid-cols-2 md:grid-cols-3 gap-[30px]">
+      <div className="w-full flex flex-col gap-[80px]">
         {currentItems &&
-          currentItems.map((item, index) => (
-            <div key={index}>
-              <Item
-                className="w-full xsm:w-auto"
-                Name={item?.title}
-                thumbnail={`https://api.seoumi.com/api/v1/frontend/public/images/${item?.thumbnails}`}
-                id={item._id}
-                Price={item?.amount}
-              />
-            </div>
-          ))}
+          currentItems.map((item, index) =>(
+             <BlogItems key={index} />
+            ))}
       </div>
     </>
   );
 }
 
-const BlogPaginate = ({ itemsPerPage=12, catagory }) => {
-  let [items, setItems] = useState([]);
-  let [loading, setLoading] = useState();
+const BlogPaginate = ({ itemsPerPage = 12 }) => {
+  let [items, setItems] = useState([
+    1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21,
+    22, 23, 24,
+  ]);
+  //   let [loading, setLoading] = useState();
 
-  let getdata = async () => {
-    setLoading(true);
-    let response = await getProducts();
-    // console.log("response", response);
-    
-    let product = response?.success.data.products.reverse();
-    // console.log(response?.success);
-    if (catagory) {
-      let filpro = product.filter((data) => data.category == catagory);
-      setItems(filpro);
-    } else {
-      setItems(product);
-    }
-    setLoading(false);
-  };
+  //   let getdata = async () => {
+  //     setLoading(true);
+  //     let response = await getProducts();
+  //     // console.log("response", response);
 
-  useEffect(() => {
-    getdata();
-  }, [catagory,itemsPerPage]);
-  const [itemOffset, setItemOffset] = useState(0);
+  //     let product = response?.success.data.products.reverse();
+  //     // console.log(response?.success);
+  //     if (catagory) {
+  //       let filpro = product.filter((data) => data.category == catagory);
+  //       setItems(filpro);
+  //     } else {
+  //       setItems(product);
+  //     }
+  //     setLoading(false);
+  //   };
+
+  //   useEffect(() => {
+  //     getdata();
+  //   }, [catagory,itemsPerPage]);
+
+
+    const [itemOffset, setItemOffset] = useState(0);
 
   // Simulate fetching items from another resources.
   // (This could be items from props; or items loaded in a local state
@@ -71,9 +66,7 @@ const BlogPaginate = ({ itemsPerPage=12, catagory }) => {
     <>
       <Items currentItems={currentItems} />
       <div
-        className={`flex-col sm:flex-row md:items-end items-center justify-between mt-[50px]  ${
-          loading ? "hidden" : "flex"
-        } `}
+        className={`flex-col sm:flex-row md:items-end items-center justify-between mt-[50px] `}
       >
         <ReactPaginate
           breakLabel="..."
