@@ -8,7 +8,7 @@ function Items({ currentItems }) {
       <div className="w-full flex flex-col gap-[80px]">
         {currentItems &&
           currentItems.map((item, index) =>(
-             <BlogItems key={index} />
+             <BlogItems key={index}  />
             ))}
       </div>
     </>
