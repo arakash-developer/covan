@@ -64,7 +64,7 @@ const page = () => {
               <div className="w-full flex flex-col gap-[80px]">
                 {Products.map((product, index) => (
                   <div className="w-full" key={index}>
-                    <div className="w-full md:h-[571px] sm:h-[600px] h-[400px] overflow-hidden">
+                    <div className="w-full md:h-[900px] sm:h-[600px] h-[400px] overflow-hidden">
                       <Image
                         src={Product5}
                         alt={Product5}
