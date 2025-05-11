@@ -185,15 +185,41 @@ const Comment = () => {
         </p>
         <form action="" className="flex flex-col gap-y-5">
           <textarea
-            className="bg-[#EDEDED80] border border-[#eee] w-[53.13rem] h-60 pl-5 pt-3 outline-none font-normal text-sm leading-[200%] text-[#909090]"
+            className="bg-[#EDEDED80] border border-[#eee] w-full h-60 pl-5 pt-3 outline-none font-normal text-sm leading-[200%] text-[#909090]"
             name=""
             id=""
           >
             Comment
           </textarea>
-          <input type="text" />
-          <input type="email" />
-          <input type="text" />
+          <div className="flex gap-x-[30px] items-center">
+            <input
+              className="bg-[#EDEDED80] border border-[#eee] w-1/2 px-[21px] py-[14px] outline-none font-normal text-sm leading-[200%] text-[#909090]"
+              type="text"
+              placeholder="Your Name *"
+            />
+            <input
+              className="bg-[#EDEDED80] border border-[#eee] w-1/2 px-[21px] py-[14px] outline-none font-normal text-sm leading-[200%] text-[#909090]"
+              type="email"
+              placeholder="Your Name *"
+            />
+          </div>
+          <div className="flex gap-x-[30px] items-center">
+            <input
+              className="bg-[#EDEDED80] border border-[#eee] w-1/2 px-[21px] py-[14px] outline-none font-normal text-sm leading-[200%] text-[#909090]"
+              type="text"
+              placeholder="Your Name *"
+            />
+            <input
+              className="bg-[#EDEDED80] border border-[#eee] w-1/2 px-[21px] py-[14px] outline-none font-normal text-sm leading-[200%] text-[#909090]"
+              type="email"
+              placeholder="Your Name *"
+            />
+          </div>
+          <input
+            className="bg-[#EDEDED80] border border-[#eee] w-full px-[21px] py-[14px] outline-none font-normal text-sm leading-[200%] text-[#909090]"
+            type="email"
+            placeholder="Website"
+          />
           <button>Post Comment</button>
         </form>
       </div>
