@@ -104,7 +104,6 @@ const page = ({ params }) => {
                 </h2>
                 <Comment />
               </div>
-              <div className="border-b border-[#8F8F8F] opacity-25"></div>
             </div>
           </div>
         </Container>
