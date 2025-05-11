@@ -1,3 +1,4 @@
+import Comment from "@/app/component/Comment";
 import Container from "@/app/component/Container";
 import Product5 from "@/public/image27.jpg";
 import { Prata } from "next/font/google";
@@ -101,7 +102,7 @@ const page = ({ params }) => {
                 <h2 className={`font-normal text-2xl leading-[120%] text-[#080808] ${Pratafont.className}`}>
                   4 Comments
                 </h2>
-                <div className=""></div>
+                <Comment />
               </div>
               <div className="border-b border-[#8F8F8F] opacity-25"></div>
             </div>
