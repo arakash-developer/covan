@@ -15,36 +15,16 @@ function Items({ currentItems }) {
   );
 }
 
-const BlogPaginate = ({ itemsPerPage = 12 }) => {
+const BlogPaginate = ({ itemsPerPage = 5 }) => {
   let [items, setItems] = useState([
     1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21,
     22, 23, 24,
   ]);
-  //   let [loading, setLoading] = useState();
-
-  //   let getdata = async () => {
-  //     setLoading(true);
-  //     let response = await getProducts();
-  //     // console.log("response", response);
-
-  //     let product = response?.success.data.products.reverse();
-  //     // console.log(response?.success);
-  //     if (catagory) {
-  //       let filpro = product.filter((data) => data.category == catagory);
-  //       setItems(filpro);
-  //     } else {
-  //       setItems(product);
-  //     }
-  //     setLoading(false);
-  //   };
-
-  //   useEffect(() => {
-  //     getdata();
-  //   }, [catagory,itemsPerPage]);
+  
 
 
+  
     const [itemOffset, setItemOffset] = useState(0);
-
   // Simulate fetching items from another resources.
   // (This could be items from props; or items loaded in a local state
   // from an API endpoint with useEffect and useState)
