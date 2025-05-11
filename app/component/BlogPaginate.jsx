@@ -23,7 +23,7 @@ const BlogPaginate = ({ itemsPerPage = 5 }) => {
   
 
 
-  
+
     const [itemOffset, setItemOffset] = useState(0);
   // Simulate fetching items from another resources.
   // (This could be items from props; or items loaded in a local state
@@ -57,17 +57,17 @@ const BlogPaginate = ({ itemsPerPage = 5 }) => {
           previousLabel="< previous"
           previousClassName="hidden"
           nextClassName="hidden"
-          containerClassName="ul flex gap-x-[15px]"
+          containerClassName="ul flex gap-x-[15px] justify-center items-center"
           pageClassName="w-9 h-9 border border-[1px] border-[#E7B053] text-[#767676]"
           pageLinkClassName="h-full w-full flex justify-center items-center font-normal hover:text-[#767676] text-sm font-dm hover:no-underline"
           activeClassName="bg-[#E7B053] text-[#fff] border-[#E7B053]"
           renderOnZeroPageCount={null}
         />
-        <p>
+        {/* <p>
           Products from {itemOffset + 1} to{" "}
           {endOffset > items.length ? items.length : endOffset} of{" "}
           {items.length}
-        </p>
+        </p> */}
       </div>
     </>
   );
