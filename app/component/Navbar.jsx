@@ -322,6 +322,7 @@ const Navbar = () => {
               <MyLi name="Skin Texture" link="shop/baby" />
               <MyLi name="Blog" link="blog" />
               <MyLi name="Contact" link="shop/baby" />
+              
             </ul>
           </div>
           <div className="flex items-center gap-4 lg:gap-6">
