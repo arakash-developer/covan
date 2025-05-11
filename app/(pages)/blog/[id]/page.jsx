@@ -67,7 +67,7 @@ const page = ({ params }) => {
                       </p>
                     </div>
                   </div>
-                  <p className="font-normal text-sm leading-[175%] text-[#666] max-w-[816px] mb-[33px]">
+                  <p className="font-normal text-sm leading-[175%] text-[#666] w-full mb-[33px]">
                     Donec at nunc et felis vehicula imperdiet. Aliquam ac nulla
                     id purus lacinia imperdiet commodo sit amet nunc. Interdum
                     et malesuada fames ac ante ipsum primis in faucibus. Aenean
@@ -77,6 +77,9 @@ const page = ({ params }) => {
                     blandis.
                   </p>
                 </div>
+              </div>
+              <div className="w-full h-[100px] bg-[#e7b053]">
+               paste html here
               </div>
             </div>
           </div>
