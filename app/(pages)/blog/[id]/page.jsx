@@ -29,7 +29,7 @@ const page = ({ params }) => {
           </p>
           <FaAngleRight className="font-normal text-[0.81rem] leading-[176%] text-[#fff]" />
           <p className="font-normal text-[0.81rem] leading-[179%] text-[#e7b053]">
-            Blog
+            Traveling Solo Is Awesome
           </p>
         </div>
       </section>
@@ -78,9 +78,32 @@ const page = ({ params }) => {
                   </p>
                 </div>
               </div>
-              <div className="w-full h-[100px] bg-[#e7b053]">
-               paste html here
+              <div className="w-full flex justify-content-between items-center py-[33px] px-10 gap-x-6">
+                <div className="border-r-[4px] border-[#E7B053] h-[114px]"></div>
+                <p className="italic font-bold text-[0.81rem] leading-[182%] text-[#080808]">
+                  In mattis scelerisque magna, ut tincidunt ex. Quisque nibh
+                  urna, pre in tristique in, bibendum sed libero. Pellent mauris
+                  nunc, pretium non erat non, finibus are tristique dui. Ut sed
+                  sem orci. Interdum et malesuada fames ac ante ipsum primis.
+                </p>
               </div>
+              <p className="font-normal text-sm leading-[175%] text-[#666] w-full mb-[33px]">
+                Quisque a ante massa. Donec molestie varius dui nec ornare.
+                Morbi iaculis consequat tempus. Curabitur at est mollis,
+                ultrices dolor vitae, scelerisque augue. Nam commodo nisl
+                tortor, bibendum consequat ante mollis quis. Praesent non auctor
+                dui. Vivamus dui arcu, vulputate sit amet nisi eget, iaculis
+                vehicula mi. tortor a sem. Donec vehicula neque vel nisl
+                malesuada blandis.
+              </p>
+              <div className="border-b border-[#8F8F8F] opacity-25"></div>
+              <div className="pt-[70px] pb-[36px]">
+                <h2 className={`font-normal text-2xl leading-[120%] text-[#080808] ${Pratafont.className}`}>
+                  4 Comments
+                </h2>
+                <div className=""></div>
+              </div>
+              <div className="border-b border-[#8F8F8F] opacity-25"></div>
             </div>
           </div>
         </Container>
