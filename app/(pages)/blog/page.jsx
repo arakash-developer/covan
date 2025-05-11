@@ -57,7 +57,7 @@ const page = () => {
                   className="w-full h-full px-4 outline-none  border-2 border-[#8F8F8F40] font-normal text-sm text-[#757575]"
                   placeholder="Search..."
                 />
-                <div className="h-full w-[100px] flex justify-center items-center bg-[#e7b053]  border-2 border-[#e7b053] cursor-pointer">
+                <div className="h-full w-[100px] flex justify-center items-center bg-[#e7b053] hover:bg-[#080808] transition-all duration-300 ease-in-out  border-2 border-[#e7b053] hover:border-[#080808]  cursor-pointer">
                   <AiOutlineSearch className="font-normal text-lg leading-[250%] text-center text-[#fff]" />
                 </div>
               </div>
@@ -72,7 +72,7 @@ const page = () => {
                       />
                     </div>
                     <div className="mt-5">
-                      <h2 className="font-normal text-[2.06rem] leading-[130%] capitalize text-[#080808]">
+                      <h2 className={`font-normal text-[2.06rem] leading-[130%] capitalize text-[#080808] ${Pratafont.className}`}>
                         Traveling Solo Is Awesome
                       </h2>
                       <div className="flex items-center sm:gap-[50px] gap-2 mt-2 mb-5">
@@ -99,7 +99,7 @@ const page = () => {
                       </p>
                       <Link
                         href="#"
-                        className="font-bold text-[0.69rem] leading-[273%] uppercase text-[#fff] tracking-[3px] px-5 py-2 bg-[#e7b053]"
+                        className="font-bold text-[0.69rem] leading-[273%] uppercase text-[#fff] tracking-[3px] px-5 py-3 bg-[#e7b053] hover:bg-[#080808] transition-all duration-300 ease-in-out"
                       >
                         Read More
                       </Link>
