@@ -203,24 +203,16 @@ const Comment = () => {
               placeholder="Your Name *"
             />
           </div>
-          <div className="flex gap-x-[30px] items-center">
-            <input
-              className="bg-[#EDEDED80] border border-[#eee] w-1/2 px-[21px] py-[14px] outline-none font-normal text-sm leading-[200%] text-[#909090]"
-              type="text"
-              placeholder="Your Name *"
-            />
-            <input
-              className="bg-[#EDEDED80] border border-[#eee] w-1/2 px-[21px] py-[14px] outline-none font-normal text-sm leading-[200%] text-[#909090]"
-              type="email"
-              placeholder="Your Name *"
-            />
-          </div>
           <input
             className="bg-[#EDEDED80] border border-[#eee] w-full px-[21px] py-[14px] outline-none font-normal text-sm leading-[200%] text-[#909090]"
             type="email"
             placeholder="Website"
           />
-          <button>Post Comment</button>
+          <div className="">
+            <button className="font-normal text-xs leading-[125%] uppercase text-center text-[#fff] inline-block bg-[#e7b053] py-[13px] px-[20px] tracking-[0.173em]">
+              Post Comment
+            </button>
+          </div>
         </form>
       </div>
     </div>
