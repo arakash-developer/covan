@@ -65,7 +65,7 @@ const Register = () => {
       </h2>
       <form
         action=""
-        className="mt-2 flex flex-col gap-y-4 max-w-[570px]"
+        className="mt-2 flex flex-col gap-y-4 md:w-[570px] w-full"
         onSubmit={handleSubmit}
       >
         <div className="flex flex-col gap-2">
