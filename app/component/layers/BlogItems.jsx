@@ -18,7 +18,7 @@ const BlogItems = ({ item , title, description, date, comment}) => {
   };
   return (
     <div onClick={handlerCLick} className="w-full block cursor-pointer">
-      <div className="w-full md:h-[900px] sm:h-[600px] h-[400px] overflow-hidden">
+      <div className="w-full xl:h-[900px] md:h-[800px] sm:h-[600px] h-[400px] overflow-hidden">
         <Image
           src={Product5}
           alt={Product5}
