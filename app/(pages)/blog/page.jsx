@@ -39,7 +39,7 @@ const page = () => {
       </section>
       {/* blog */}
 
-      <div className="my-[110px]">
+      <div className="xl:my-[110px] md:my-[50px] my-[40px]">
         <Container>
           <div className="flex flex-col md:flex-row md:justify-between md:items-start gap-[35px]">
             <div className="w-full">
