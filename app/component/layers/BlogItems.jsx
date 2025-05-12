@@ -18,7 +18,7 @@ const BlogItems = ({ item , title, description, date, comment}) => {
   };
   return (
     <div onClick={handlerCLick} className="cursor-pointer">
-      <div className="md:h-[600px] sm:h-[600px] h-[400px] overflow-hidden">
+      <div className="md:h-[600px] sm:h-[400px] h-[300px] overflow-hidden">
         <Image
           src={Product5}
           alt={Product5}
