@@ -41,7 +41,7 @@ const page = ({ params }) => {
           <div className="flex flex-col md:flex-row md:justify-between md:items-start gap-[35px]">
             <div className="w-full">
               <div className="w-full block cursor-pointer">
-                <div className="w-full xl:h-[900px] md:h-[800px] sm:h-[600px] h-[400px] overflow-hidden">
+                <div className="w-full xl:h-[700px] md:h-[400px] h-[300px] overflow-hidden">
                   <Image
                     src={Product5}
                     alt={Product5}
