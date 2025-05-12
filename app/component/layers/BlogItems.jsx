@@ -17,12 +17,12 @@ const BlogItems = ({ item , title, description, date, comment}) => {
     router.push(`/blog/${item}`);
   };
   return (
-    <div onClick={handlerCLick} className="w-full block cursor-pointer">
-      <div className="w-full xl:h-[900px] md:h-[800px] sm:h-[600px] h-[400px] overflow-hidden">
+    <div onClick={handlerCLick} className="cursor-pointer">
+      <div className="md:h-[600px] sm:h-[600px] h-[400px] overflow-hidden">
         <Image
           src={Product5}
           alt={Product5}
-          className="w-full h-full bg-cover"
+          className="w-full mx-auto h-full bg-cover"
         />
       </div>
       <div className="mt-5">
