@@ -40,7 +40,7 @@ const page = () => {
       {/* blog */}
 
       <div className="xl:my-[110px] md:my-[50px] my-[40px]">
-        <Container>
+        <Container className="max-w-[950px]"> 
           <div className="flex flex-col md:flex-row md:justify-between md:items-start gap-[35px]">
             <div className="w-full">
               <div className="search w-full h-[45px] flex items-center mb-10">
